@@ -1,0 +1,3 @@
+<items gfxroot="gfx/items/" deathanm2="gfx/death_item.anm2" version="1">
+        <passive  id="77702" name="Fiendish Seed" gfx ="FiendishSeed.png" description="The dawn ..." quality="2"/>
+</items>

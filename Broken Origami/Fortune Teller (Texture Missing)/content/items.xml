@@ -1,0 +1,3 @@
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_Fortune_Teller.anm2" version="1">
+        <passive  id="77702" name="Fortune Teller" gfx ="FortuneTeller.png" description="This is not a game kid" quality="2"/>
+</items>

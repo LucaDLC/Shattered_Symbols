@@ -1,0 +1,81 @@
+<ItemPools>
+
+    <Pool Name="treasure">
+	<Item Name="Fiendish Seed" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="shop">
+	<Item Name="Fiendish Seed" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="greedTreasure">
+        <Item Name="Fiendish Seed" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Paper Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="greedShop">
+        <Item Name="Fiendish Seed" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Paper Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="demonBagger">
+        <Item Name="Fiendish Seed" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="angel">
+	<Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="goldenChest">
+	<Item Name="Fiendish Seed" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Paper Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="greedGoldenChest">
+	<Item Name="Fiendish Seed" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Paper Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="greedAngel">
+        <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="secret">
+        <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+    
+
+    <Pool Name="greedSecret">
+        <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="boss">
+	<Item Name="Paper Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="devil">
+        <Item Name="Paper Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="curse">
+        <Item Name="Paper Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+
+    <Pool Name="greedCurse">
+        <Item Name="Paper Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+</ItemPools>

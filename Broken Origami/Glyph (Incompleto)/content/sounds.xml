@@ -1,0 +1,5 @@
+<sounds root="sfx/">
+	<sound name="Glyph">
+		<sample weight="1" path="Glyph.wav" />
+	</sound>
+</sounds>

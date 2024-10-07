@@ -1,0 +1,34 @@
+<ItemPools>
+    <Pool Name="boss">
+	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+    <Pool Name="goldenChest">
+	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+    <Pool Name="greedGoldenChest">
+	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+    <Pool Name="greedTreasure">
+        <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+    <Pool Name="devil">
+        <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+    <Pool Name="curse">
+        <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+    <Pool Name="greedCurse">
+        <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+    <Pool Name="greedShop">
+        <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
+</ItemPools>

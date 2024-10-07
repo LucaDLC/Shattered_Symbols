@@ -1,0 +1,3 @@
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_Sacred_Lantern.anm2" version="1">
+        <passive  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the Angels's Light" quality="3"/>
+</items>

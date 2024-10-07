@@ -1,0 +1,3 @@
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_UpsideDownDeckofCards.anm2" version="1">
+        <active  id="77705" name="Upside Down Deck of Cards" gfx ="Upside_Down_Deck_of_Cards.png" description="Ops..." quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
+</items>

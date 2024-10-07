@@ -1,0 +1,3 @@
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_Constellation.anm2" version="1">
+        <active  id="77706" name="Constellation" gfx ="Constellation.png" description="Look the sky!" quality="3" maxcharges="0" chargetype="normal"/>
+</items>

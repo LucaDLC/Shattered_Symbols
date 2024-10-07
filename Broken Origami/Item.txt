@@ -1,0 +1,24 @@
+77701 - Sacred Lantern 
+	Rimuove i Broken Heart per il resto della partita, li sostituisce con Half Soul Heart
+77702 - Fortune Teller
+	Dà un Broken Heart per +5 di Luck
+77703 - Origami Shuriken
+	Dà un Broken Heart per +3 di Damage
+77704 - Origami Boat
+	Per ogni Broken Heart posseduto dà uno Stats Up generale
+77705 - Upside Down Deck of Card
+	Droppa una reverse card
+77706 - Constellation
+	Spawna un item tra i segni zodiacali e gli item del planetario
+77707 - Origami Swan
+	??? (Descrizione: It's Wonderful but it Suffers)
+77708 - Meteor
+	Una volta ogni tanto colpisce il player con un Holy Beam (da trovare un utilità)
+---------------------------------------------------------------------
+
+girlfriend -> attivo che ti da un broken heart ma ti da un famiglio
+upside down deck card -> deck card che ti droppa solo reverse card standard
+glyph -> rimuove un broken heart
+fiendish seed -> diventa origami swan
+seed -> rerolla un iten in una qualità più alta ma da un broken heart 
+SHAWTY'S LETTER -> attivo monouso, fa comparire un origamo
