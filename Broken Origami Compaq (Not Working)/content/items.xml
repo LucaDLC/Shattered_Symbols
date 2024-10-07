@@ -1,13 +1,15 @@
 <items gfxroot="gfx/items/" deathanm2="gfx/death_sacred_lantern.anm2" version="1">
         <passive  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the Angels's Light" quality="4"/>
+	<passive  id="77702" name="Fiendish Seed" gfx ="FiendishSeed.png" description="The dawn ..." quality="2"/>
+	<passive  id="77703" name="Paper Shuriken" gfx ="PaperShuriken.png" description="It's cut" quality="3" devilprice="1"/>
 </items>
 
 
 <items gfxroot="gfx/items/" deathanm2="gfx/death_fiendish_seed.anm2" version="1">
-        <passive  id="77702" name="Fiendish Seed" gfx ="FiendishSeed.png" description="The dawn ..." quality="2"/>
+        
 </items>
 
 
 <items gfxroot="gfx/items/" deathanm2="gfx/death_paper_shuriken.anm2" version="1">
-        <passive  id="77703" name="Paper Shuriken" gfx ="PaperShuriken.png" description="It's cut" quality="3" devilprice="1"/>
+        
 </items>
