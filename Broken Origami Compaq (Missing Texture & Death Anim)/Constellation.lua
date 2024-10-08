@@ -1,9 +1,9 @@
 local game = Game()
-local constellationId = Isaac.GetItemIdByName("Constellation")
+local ConstellationLocalID = Isaac.GetItemIdByName("Constellation")
 
 --EID
 if EID then
-    EID:addCollectible(constellationId, "{{Warning}} SINGLE USE {{Warning}}#Spawns a random item from planetarium pool or zodiac signs")
+    EID:addCollectible(ConstellationLocalID, "{{Warning}} SINGLE USE {{Warning}}#Spawns a random item from planetarium pool or zodiac signs")
 end
 
 -- Liste degli oggetti zodiacali e del planetario
@@ -69,7 +69,7 @@ function BrokenOrigami:OnGameStart()
     local Fortune_Teller_Table = {}
 end
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.onUseConstellation, constellationId)
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.onUseConstellation, ConstellationLocalID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.OnGameStart)
 
 

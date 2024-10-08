@@ -1,9 +1,9 @@
 local game = Game()
-local itemID = Isaac.GetItemIdByName("Upside Down Deck of Cards")
+local UpsideDownDeckofCardsLocalID = Isaac.GetItemIdByName("Upside Down Deck of Cards")
 
 --EID
 if EID then
-    EID:addCollectible(itemID, "{{Card}} Spawns 1 reverse card")
+    EID:addCollectible(UpsideDownDeckofCardsLocalID, "{{Card}} Spawns 1 reverse card")
 end
 
 -- Definisci la funzione per l'utilizzo dell'item
@@ -31,7 +31,7 @@ function BrokenOrigami:useUpsideDownDeckCard()
 end
 
 -- Associa la funzione all'item
-BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useUpsideDownDeckCard, itemID)
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useUpsideDownDeckCard, UpsideDownDeckofCardsLocalID)
 
 -- Imposta l'item con 6 cariche
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, function(_, player)

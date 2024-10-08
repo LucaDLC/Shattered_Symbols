@@ -1,9 +1,9 @@
 local game = Game()
-local itemID = Isaac.GetItemIdByName("Fortune Teller")
+local FortuneTellerLocalID = Isaac.GetItemIdByName("Fortune Teller")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(itemID, "{{ArrowUp}} Grants +5 Luck {{Luck}}#{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}#{{ColorGreen}}It's cumulative with other Fiendish Seed{{CR}}")
+    EID:addCollectible(FortuneTellerLocalID, "{{ArrowUp}} Grants +5 Luck {{Luck}}#{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}#{{ColorGreen}}It's cumulative with other Fiendish Seed{{CR}}")
 end
 
 -- Function to handle item pickup
@@ -18,9 +18,9 @@ function BrokenOrigami:onItemPickup(player)
         data.FortuneTellerPreviousCounter = 1
     end
     
-    if player:HasCollectible(itemID) then
+    if player:HasCollectible(FortuneTellerLocalID) then
         -- Increase the counter
-        data.FortuneTellerCounter = player:GetCollectibleNum(itemID)
+        data.FortuneTellerCounter = player:GetCollectibleNum(FortuneTellerLocalID)
         
         -- Apply the effect based on the number of items picked up
         if data.FortuneTellerCounter >= data.FortuneTellerPreviousCounter then

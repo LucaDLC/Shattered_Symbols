@@ -1,8 +1,8 @@
 local game = Game()
-local itemID = Isaac.GetItemIdByName("Origami Boat")
+local OrigamiBoatLocalID = Isaac.GetItemIdByName("Origami Boat")
 
 if EID then
-    EID:addCollectible(itemID, "Every broken heart {{BrokenHeart}} grants:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.3#{{ArrowUp}} Luck +0.2#{{ColorRed}}It's not cumulative with other Origami Boat{{CR}}")
+    EID:addCollectible(OrigamiBoatLocalID, "Every broken heart {{BrokenHeart}} grants:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.3#{{ArrowUp}} Luck +0.2#{{ColorRed}}It's not cumulative with other Origami Boat{{CR}}")
 end
 
 -- Valori base per l'aumento delle statistiche
@@ -22,7 +22,7 @@ local holdingItemforStats = false
 function BrokenOrigami:onItemPickup(player)
     local currentBrokenHearts = player:GetBrokenHearts()
     local player = Isaac.GetPlayer(0)
-    if player:HasCollectible(itemID) then
+    if player:HasCollectible(OrigamiBoatLocalID) then
         if currentBrokenHearts ~= brokenHeartsCount then
             local diff = currentBrokenHearts - brokenHeartsCount
 
@@ -37,7 +37,7 @@ function BrokenOrigami:onItemPickup(player)
             -- Aggiorna il conteggio di broken hearts
             brokenHeartsCount = currentBrokenHearts
         end
-    elseif not player:HasCollectible(itemID) and holdingItemforStats == true then
+    elseif not player:HasCollectible(OrigamiBoatLocalID) and holdingItemforStats == true then
         player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
         player:AddCacheFlags(CacheFlag.CACHE_SPEED)
         player:AddCacheFlags(CacheFlag.CACHE_RANGE)
@@ -50,7 +50,7 @@ end
 function BrokenOrigami:onEvaluateCache(player, cacheFlag)
     local data = player:GetData()
     local brokenHearts = player:GetBrokenHearts()
-    if (currentBrokenHearts ~= brokenHeartsCount) and player:HasCollectible(itemID) then
+    if (currentBrokenHearts ~= brokenHeartsCount) and player:HasCollectible(OrigamiBoatLocalID) then
         holdingItemforStats = true
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
             player.Damage = player.Damage + (brokenHearts * statMultiplier.damage)

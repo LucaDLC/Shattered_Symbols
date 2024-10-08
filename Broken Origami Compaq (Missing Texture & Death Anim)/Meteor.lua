@@ -1,10 +1,8 @@
 local game = Game()
-
--- Definisci l'oggetto Meteor
-local MeteorItemId = Isaac.GetItemIdByName("Meteor")
+local MeteorLocalID = Isaac.GetItemIdByName("Meteor")
 
 if EID then
-    EID:addCollectible(MeteorItemId, "{{Warning}} DANGER {{Warning}}#{{Warning}} YOU CAN PROBABLY HIT BY A METEOR {{Warning}}")
+    EID:addCollectible(MeteorLocalID, "{{Warning}} DANGER {{Warning}}#{{Warning}} YOU CAN PROBABLY HIT BY A METEOR {{Warning}}")
 end
 
 -- Funzione per attivare Crack of the Sky in una posizione casuale nella stanza
@@ -25,7 +23,7 @@ end
 -- Controlla se il giocatore ha l'oggetto Meteor e avvia il sistema randomico
 function BrokenOrigami:OnUpdate()
     local player = Isaac.GetPlayer(0)
-    local numberOfMeteors = player:GetCollectibleNum(MeteorItemId)
+    local numberOfMeteors = player:GetCollectibleNum(MeteorLocalID)
     
     if numberOfMeteors > 0 then
         -- Estrai un numero da 1 a 1024. La probabilità aumenta con il numero di meteore

@@ -1,8 +1,9 @@
-local itemID = Isaac.GetItemIdByName("Origami Shuriken")
+local game = Game()
+local OrigamiShurikenLocalID = Isaac.GetItemIdByName("Origami Shuriken")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(itemID, "{{ArrowUp}} Grants +3 Damage {{Damage}}#{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}}##{{ColorGreen}}It's cumulative with other Paper Shuriken{{CR}}")
+    EID:addCollectible(OrigamiShurikenLocalID, "{{ArrowUp}} Grants +3 Damage {{Damage}}#{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}}##{{ColorGreen}}It's cumulative with other Paper Shuriken{{CR}}")
 end
 
 -- Function to handle item pickup
@@ -18,9 +19,9 @@ function BrokenOrigami:onItemPickup(player)
     end
 
     -- Check if the player has picked up the item
-    if player:HasCollectible(itemID) then
+    if player:HasCollectible(OrigamiShurikenLocalID) then
         -- Increase the counter
-        data.OrigamiShurikenCounter = player:GetCollectibleNum(itemID)
+        data.OrigamiShurikenCounter = player:GetCollectibleNum(OrigamiShurikenLocalID)
         
         -- Apply the effect based on the number of items picked up
         if data.OrigamiShurikenCounter >= data.OrigamiShurikenPreviousCounter then
