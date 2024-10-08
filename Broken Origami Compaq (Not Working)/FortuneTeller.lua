@@ -1,5 +1,5 @@
 local game = Game()
-local itemID = Isaac.GetItemIdByName("Fiendish Seed")
+local itemID = Isaac.GetItemIdByName("Fortune Teller")
 
 -- EID (se usi EID per la descrizione)
 if EID then

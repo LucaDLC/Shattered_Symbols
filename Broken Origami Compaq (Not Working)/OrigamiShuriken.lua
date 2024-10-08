@@ -1,4 +1,4 @@
-local itemID = Isaac.GetItemIdByName("Paper Shuriken")
+local itemID = Isaac.GetItemIdByName("Origami Shuriken")
 
 -- EID (se usi EID per la descrizione)
 if EID then

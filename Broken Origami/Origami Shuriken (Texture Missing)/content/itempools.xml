@@ -19,6 +19,10 @@
         <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
+    <Pool Name="greedDevil">
+        <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+    </Pool>
+
     <Pool Name="curse">
         <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>

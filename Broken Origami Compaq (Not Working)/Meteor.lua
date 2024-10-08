@@ -1,4 +1,3 @@
-local MeteorMod = RegisterMod("Meteor", 1)
 local game = Game()
 
 -- Definisci l'oggetto Meteor
@@ -24,7 +23,7 @@ local function triggerCrackOfTheSky()
 end
 
 -- Controlla se il giocatore ha l'oggetto Meteor e avvia il sistema randomico
-function MeteorMod:OnUpdate()
+function BrokenOrigami:OnUpdate()
     local player = Isaac.GetPlayer(0)
     local numberOfMeteors = player:GetCollectibleNum(MeteorItemId)
     
@@ -39,6 +38,6 @@ function MeteorMod:OnUpdate()
 end
 
 -- Registra la funzione di aggiornamento
-MeteorMod:AddCallback(ModCallbacks.MC_POST_UPDATE, MeteorMod.OnUpdate)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_UPDATE, BrokenOrigami.OnUpdate)
 
 

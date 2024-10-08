@@ -3,7 +3,7 @@ local itemID = Isaac.GetItemIdByName("Sacred Lantern")
 
 --EID
 if EID then
-    EID:addCollectible(itemID, "Remove all your broken hearts {{BrokenHeart}} for the rest of the game#For every broken heart {{BrokenHeart}} removed or gain during the rest of the game you obtain:#{{HalfSoulHeart}} Half Soul Heart#{{ArrowUp}} Random Stats Up#{{ColorRed}}It's not cumulative with other Sacred Lanterns{{CR}}")
+    EID:addCollectible(itemID, "Remove all your broken hearts {{BrokenHeart}} for the rest of the game#For every broken heart {{BrokenHeart}} removed or gain during the rest of the game you obtain:#{{HalfSoulHeart}} Half Soul Heart#{{ColorRed}}It's not cumulative with other Sacred Lanterns{{CR}}")
 end
 
 -- Function to handle item pickup

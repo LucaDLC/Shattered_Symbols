@@ -1,8 +1,8 @@
 <AnimatedActor>
-	<Info CreatedBy="Unknown" CreatedOn="10.07.2024 01:52:02" Version="50" Fps="30"/>
+	<Info CreatedBy="Unknown" CreatedOn="22.07.2024 03:52:07" Version="50" Fps="30"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="Sacred_Lantern.png" Id="0"/>
+			<Spritesheet Path="Constellation.png" Id="0"/>
 		</Spritesheets>
 		<Layers>
 			<Layer Name="Items" Id="0" SpritesheetId="0"/>
