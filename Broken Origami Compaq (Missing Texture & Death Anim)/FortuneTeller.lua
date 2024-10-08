@@ -11,32 +11,32 @@ function BrokenOrigami:onItemPickup(player)
     -- Get the player's data table
     local data = player:GetData()
     
-    -- Initialize the BrokenOrigamiCounter if it doesn't exist
-    if not data.BrokenOrigamiCounter then
-        data.BrokenOrigamiCounter = 0
-        data.BrokenOrigamiRelative = 0
-        data.BrokenOrigamiPreviousCounter = 1
+    -- Initialize the FortuneTellerCounter if it doesn't exist
+    if not data.FortuneTellerCounter then
+        data.FortuneTellerCounter = 0
+        data.FortuneTellerRelative = 0
+        data.FortuneTellerPreviousCounter = 1
     end
     
     if player:HasCollectible(itemID) then
         -- Increase the counter
-        data.BrokenOrigamiCounter = player:GetCollectibleNum(itemID)
+        data.FortuneTellerCounter = player:GetCollectibleNum(itemID)
         
         -- Apply the effect based on the number of items picked up
-        if data.BrokenOrigamiCounter >= data.BrokenOrigamiPreviousCounter then
-            data.BrokenOrigamiPreviousCounter = data.BrokenOrigamiPreviousCounter + 1
-            data.BrokenOrigamiRelative = data.BrokenOrigamiRelative + 1
+        if data.FortuneTellerCounter >= data.FortuneTellerPreviousCounter then
+            data.FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter + 1
+            data.FortuneTellerRelative = data.FortuneTellerRelative + 1
             player:AddBrokenHearts(2) -- Add 1 broken heart
-            data.BrokenOrigamiLuckBoost = 5*data.BrokenOrigamiRelative -- Track the permanent damage boost
+            data.FortuneTellerLuckBoost = 5*data.FortuneTellerRelative -- Track the permanent damage boost
             player:AddCacheFlags(CacheFlag.CACHE_LUCK)
             player:EvaluateItems()
         end
     else
-        data.BrokenOrigamiCounter = 0
-        data.BrokenOrigamiPreviousCounter = 1
+        data.FortuneTellerCounter = 0
+        data.FortuneTellerPreviousCounter = 1
     end
-    if data.BrokenOrigamiRelative > data.BrokenOrigamiCounter then
-        data.BrokenOrigamiPreviousCounter = data.BrokenOrigamiCounter +1
+    if data.FortuneTellerRelative > data.FortuneTellerCounter then
+        data.FortuneTellerPreviousCounter = data.FortuneTellerCounter +1
     end
 end
 
@@ -44,8 +44,8 @@ end
 function BrokenOrigami:onEvaluateCache(player, cacheFlag)
     local data = player:GetData()
     if cacheFlag == CacheFlag.CACHE_LUCK then
-        if data.BrokenOrigamiLuckBoost then
-            player.Luck = player.Luck + data.BrokenOrigamiLuckBoost
+        if data.FortuneTellerLuckBoost then
+            player.Luck = player.Luck + data.FortuneTellerLuckBoost
         end
     end
 end

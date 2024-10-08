@@ -40,7 +40,7 @@ local planetarium_items = {
 local Fortune_Teller_Table = {}
 
 -- Funzione per gestire l'uso dell'oggetto "Fortune Teller"
-function BrokenOrigami:onUseBrokenOrigami(_, rng, player)
+function BrokenOrigami:onUseConstellation(_, rng, player)
     -- Svuota la tabella ogni volta che l'oggetto viene usato
     Fortune_Teller_Table = {}
     for _, v in pairs(zodiac_items) do
@@ -69,7 +69,7 @@ function BrokenOrigami:OnGameStart()
     local Fortune_Teller_Table = {}
 end
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.onUseBrokenOrigami, BrokenOrigamiId)
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.onUseConstellation, constellationId)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.OnGameStart)
 
 

@@ -10,33 +10,33 @@ function BrokenOrigami:onItemPickup(player)
     -- Get the player's data table
     local data = player:GetData()
     
-    -- Initialize the BrokenOrigamiCounter if it doesn't exist
-    if not data.BrokenOrigamiCounter then
-        data.BrokenOrigamiCounter = 0
-        data.BrokenOrigamiRelative = 0
-        data.BrokenOrigamiPreviousCounter = 1
+    -- Initialize the OrigamiShurikenCounter if it doesn't exist
+    if not data.OrigamiShurikenCounter then
+        data.OrigamiShurikenCounter = 0
+        data.OrigamiShurikenRelative = 0
+        data.OrigamiShurikenPreviousCounter = 1
     end
 
     -- Check if the player has picked up the item
     if player:HasCollectible(itemID) then
         -- Increase the counter
-        data.BrokenOrigamiCounter = player:GetCollectibleNum(itemID)
+        data.OrigamiShurikenCounter = player:GetCollectibleNum(itemID)
         
         -- Apply the effect based on the number of items picked up
-        if data.BrokenOrigamiCounter >= data.BrokenOrigamiPreviousCounter then
-            data.BrokenOrigamiPreviousCounter = data.BrokenOrigamiPreviousCounter + 1
-            data.BrokenOrigamiRelative = data.BrokenOrigamiRelative + 1
+        if data.OrigamiShurikenCounter >= data.OrigamiShurikenPreviousCounter then
+            data.OrigamiShurikenPreviousCounter = data.OrigamiShurikenPreviousCounter + 1
+            data.OrigamiShurikenRelative = data.OrigamiShurikenRelative + 1
             player:AddBrokenHearts(1) -- Add 1 broken heart
-            data.BrokenOrigamiDamageBoost = 3*data.BrokenOrigamiRelative -- Track the permanent damage boost
+            data.OrigamiShurikenDamageBoost = 3*data.OrigamiShurikenRelative -- Track the permanent damage boost
             player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
             player:EvaluateItems()
         end
     else
-        data.BrokenOrigamiCounter = 0
-        data.BrokenOrigamiPreviousCounter = 1
+        data.OrigamiShurikenCounter = 0
+        data.OrigamiShurikenPreviousCounter = 1
     end
-    if data.BrokenOrigamiRelative > data.BrokenOrigamiCounter then
-        data.BrokenOrigamiPreviousCounter = data.BrokenOrigamiCounter +1
+    if data.OrigamiShurikenRelative > data.OrigamiShurikenCounter then
+        data.OrigamiShurikenPreviousCounter = data.OrigamiShurikenCounter +1
     end
 end
 
@@ -44,8 +44,8 @@ end
 function BrokenOrigami:onEvaluateCache(player, cacheFlag)
     local data = player:GetData()
     if cacheFlag == CacheFlag.CACHE_DAMAGE then
-        if data.BrokenOrigamiDamageBoost then
-            player.Damage = player.Damage + data.BrokenOrigamiDamageBoost
+        if data.OrigamiShurikenDamageBoost then
+            player.Damage = player.Damage + data.OrigamiShurikenDamageBoost
         end
     end
 end
