@@ -1,3 +1,16 @@
+<items gfxroot="gfx/items/" version="1">
+        <passive  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the Angels's Light" quality="3"/>
+	<passive  id="77702" name="Fortune Teller" gfx ="FortuneTeller.png" description="This is not a game kid" quality="2"/>
+	<passive  id="77703" name="Origami Shuriken" gfx ="OrigamiShuriken.png" description="It's cut" quality="3" devilprice="1"/>
+	<passive  id="77704" name="Origami Boat" gfx ="OrigamiBoat.png" description="The wind is in favor" quality="3" devilprice="1"/>
+	<active  id="77705" name="Upside Down Deck of Cards" gfx ="Upside_Down_Deck_of_Cards.png" description="Ops..." quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
+	<active  id="77706" name="Constellation" gfx ="Constellation.png" description="Look the sky!" quality="3" maxcharges="0" chargetype="normal"/>
+	<passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Look the sky!!!" quality="0"/>
+</items>
+
+
+
+
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Sacred_Lantern.anm2" version="1">
         <passive  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the Angels's Light" quality="3"/>
 </items>
