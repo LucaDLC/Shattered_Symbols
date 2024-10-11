@@ -19,7 +19,7 @@ local brokenHeartsCount = 0
 local holdingItemforStats = false
 
 -- Funzione che aggiorna le statistiche del giocatore
-function BrokenOrigami:onItemPickup(player)
+function BrokenOrigami:useOrigamiBoat(player)
     local currentBrokenHearts = player:GetBrokenHearts()
     local player = Isaac.GetPlayer(0)
     if player:HasCollectible(OrigamiBoatLocalID) then
@@ -47,7 +47,7 @@ function BrokenOrigami:onItemPickup(player)
     end
 end
 
-function BrokenOrigami:onEvaluateCache(player, cacheFlag)
+function BrokenOrigami:onEvaluateCacheOrigamiBoat(player, cacheFlag)
     local data = player:GetData()
     local brokenHearts = player:GetBrokenHearts()
     if (currentBrokenHearts ~= brokenHeartsCount) and player:HasCollectible(OrigamiBoatLocalID) then
@@ -81,5 +81,5 @@ function BrokenOrigami:onEvaluateCache(player, cacheFlag)
     end
 end
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.onItemPickup)
-BrokenOrigami:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, BrokenOrigami.onEvaluateCache)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiBoat)
+BrokenOrigami:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, BrokenOrigami.onEvaluateCacheOrigamiBoat)

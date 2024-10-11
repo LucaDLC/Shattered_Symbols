@@ -34,13 +34,14 @@ local planetarium_items = {
     CollectibleType.COLLECTIBLE_MERCURIUS,
     CollectibleType.COLLECTIBLE_SOL,
     CollectibleType.COLLECTIBLE_SATURNUS,
-    CollectibleType.COLLECTIBLE_LUNA
+    CollectibleType.COLLECTIBLE_LUNA,
+    Isaac.GetItemIdByName("Meteor")
 }
 
 local Fortune_Teller_Table = {}
 
 -- Funzione per gestire l'uso dell'oggetto "Fortune Teller"
-function BrokenOrigami:onUseConstellation(_, rng, player)
+function BrokenOrigami:useConstellation(_, rng, player)
     -- Svuota la tabella ogni volta che l'oggetto viene usato
     Fortune_Teller_Table = {}
     for _, v in pairs(zodiac_items) do
@@ -65,11 +66,11 @@ function BrokenOrigami:onUseConstellation(_, rng, player)
 end
 
 -- Funzione di inizializzazione della mod
-function BrokenOrigami:OnGameStart()
+function BrokenOrigami:onGameStartConstellation()
     local Fortune_Teller_Table = {}
 end
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.onUseConstellation, ConstellationLocalID)
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.OnGameStart)
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useConstellation, ConstellationLocalID)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.onGameStartConstellation)
 
 

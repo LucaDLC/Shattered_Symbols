@@ -5,40 +5,42 @@ local game = Game()
 local MeteorItemId = Isaac.GetItemIdByName("Meteor")
 
 if EID then
-    EID:addCollectible(MeteorItemId, "{{Warning}} DANGER {{Warning}}#{{Warning}} YOU CAN PROBABLY HIT BY A METEOR {{Warning}}")
+    EID:addCollectible(MeteorItemId, "{{ArrowUp}} Remove 2 Broken Hearts {{BrokenHeart}}")
 end
 
--- Funzione per attivare Crack of the Sky in una posizione casuale nella stanza
-local function triggerCrackOfTheSky()
-    local room = game:GetRoom()  -- Ottieni la stanza attuale
-    local roomWidth = room:GetGridWidth() * 40  -- Dimensioni della stanza in base alla griglia (ogni cella è 40 pixel)
-    local roomHeight = room:GetGridHeight() * 40
-
-    -- Genera una posizione casuale all'interno della stanza
-    local randomX = math.random(room:GetTopLeftPos().X, room:GetBottomRightPos().X)
-    local randomY = math.random(room:GetTopLeftPos().Y, room:GetBottomRightPos().Y)
-    local randomPosition = Vector(randomX, randomY)
-
-    -- Crea l'effetto Crack of the Sky in quella posizione
-    Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.CRACK_THE_SKY, 0, randomPosition, Vector(0,0), nil)
-end
 
 -- Controlla se il giocatore ha l'oggetto Meteor e avvia il sistema randomico
 function MeteorMod:OnUpdate()
-    local player = Isaac.GetPlayer(0)
-    local numberOfMeteors = player:GetCollectibleNum(MeteorItemId)
+    local data = player:GetData()
     
-    if numberOfMeteors > 0 then
-        -- Estrai un numero da 1 a 1024. La probabilità aumenta con il numero di meteore
-        local randomValue = math.random(1, math.floor(1024 / numberOfMeteors))
+    -- Initialize the MeteorCounter if it doesn't exist
+    if not data.MeteorCounter then
+        data.MeteorCounter = 0
+        data.MeteorRelative = 0
+        data.MeteorPreviousCounter = 1
+    end
+
+    -- Check if the player has picked up the item
+    if player:HasCollectible(MeteorLocalID) then
+        -- Increase the counter
+        data.MeteorCounter = player:GetCollectibleNum(MeteorLocalID)
         
-        if randomValue == 1 then
-            triggerCrackOfTheSky()  -- Attiva il raggio in una posizione randomica nella stanza
+        -- Apply the effect based on the number of items picked up
+        if data.MeteorCounter >= data.MeteorPreviousCounter then
+            data.MeteorPreviousCounter = data.MeteorPreviousCounter + 1
+            data.MeteorRelative = data.MeteorRelative + 1
+            player:AddBrokenHearts(-2) -- Remove 2 broken heart
         end
+    else
+        data.MeteorCounter = 0
+        data.MeteorPreviousCounter = 1
+    end
+    if data.MeteorRelative > data.MeteorCounter then
+        data.MeteorPreviousCounter = data.MeteorCounter +1
     end
 end
 
 -- Registra la funzione di aggiornamento
-MeteorMod:AddCallback(ModCallbacks.MC_POST_UPDATE, MeteorMod.OnUpdate)
+MeteorMod:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, MeteorMod.OnUpdate)
 
 

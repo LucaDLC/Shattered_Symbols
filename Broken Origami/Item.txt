@@ -17,8 +17,6 @@
 ---------------------------------------------------------------------
 
 girlfriend -> attivo che ti da un broken heart ma ti da un famiglio
-upside down deck card -> deck card che ti droppa solo reverse card standard
 glyph -> rimuove un broken heart
-fiendish seed -> diventa origami swan
 seed -> rerolla un iten in una qualità più alta ma da un broken heart 
 SHAWTY'S LETTER -> attivo monouso, fa comparire un origamo

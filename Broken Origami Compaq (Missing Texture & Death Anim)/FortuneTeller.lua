@@ -7,7 +7,7 @@ if EID then
 end
 
 -- Function to handle item pickup
-function BrokenOrigami:onItemPickup(player)
+function BrokenOrigami:useFortuneTeller(player)
     -- Get the player's data table
     local data = player:GetData()
     
@@ -41,7 +41,7 @@ function BrokenOrigami:onItemPickup(player)
 end
 
 -- Function to handle cache update
-function BrokenOrigami:onEvaluateCache(player, cacheFlag)
+function BrokenOrigami:onEvaluateCacheFortuneTeller(player, cacheFlag)
     local data = player:GetData()
     if cacheFlag == CacheFlag.CACHE_LUCK then
         if data.FortuneTellerLuckBoost then
@@ -50,5 +50,5 @@ function BrokenOrigami:onEvaluateCache(player, cacheFlag)
     end
 end
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.onItemPickup)
-BrokenOrigami:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, BrokenOrigami.onEvaluateCache)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useFortuneTeller)
+BrokenOrigami:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, BrokenOrigami.onEvaluateCacheFortuneTeller)

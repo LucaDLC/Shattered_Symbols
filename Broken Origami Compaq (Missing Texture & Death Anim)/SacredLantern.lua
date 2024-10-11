@@ -7,7 +7,7 @@ if EID then
 end
 
 -- Function to handle item pickup
-function BrokenOrigami:onItemPickup(player)
+function BrokenOrigami:useSacredLantern(player)
     local player = Isaac.GetPlayer(0)
     if player:HasCollectible(SacredLanternLocalID) then
         local brokenHearts = player:GetBrokenHearts() -- Get number of broken hearts
@@ -19,4 +19,4 @@ function BrokenOrigami:onItemPickup(player)
 end
 
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.onItemPickup)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useSacredLantern)

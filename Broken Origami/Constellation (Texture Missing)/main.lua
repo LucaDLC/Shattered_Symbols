@@ -36,7 +36,8 @@ local planetarium_items = {
     CollectibleType.COLLECTIBLE_MERCURIUS,
     CollectibleType.COLLECTIBLE_SOL,
     CollectibleType.COLLECTIBLE_SATURNUS,
-    CollectibleType.COLLECTIBLE_LUNA
+    CollectibleType.COLLECTIBLE_LUNA,
+    Isaac.GetItemIdByName("Meteor")
 }
 
 local Fortune_Teller_Table = {}
