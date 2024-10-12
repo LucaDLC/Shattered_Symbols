@@ -6,6 +6,7 @@
 	<active  id="77705" name="Upside Down Deck of Cards" gfx ="Upside_Down_Deck_of_Cards.png" description="Ops..." quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
 	<active  id="77706" name="Constellation" gfx ="Constellation.png" description="Look the sky!" quality="3" maxcharges="0" chargetype="normal"/>
 	<passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Missed!" quality="2"/>
+	<active  id="77709" name="Shawty's Letter" gfx ="ShawtysLetter.png" description="This is not a good sign" quality="2" maxcharges="0" chargetype="normal"/>
 </items>
 
 
@@ -37,5 +38,9 @@
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Meteor.anm2" version="1">
         <passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Look the sky!!!" quality="0"/>
+</items>
+
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_Shawtys_Letter.anm2" version="1">
+        <passive  id="77709" name="Shawty's Letter" gfx ="ShawtysLetter.png" description="This is not a good sign" quality="2"/>
 </items>
 

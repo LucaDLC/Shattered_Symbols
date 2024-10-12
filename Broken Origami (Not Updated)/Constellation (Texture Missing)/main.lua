@@ -40,20 +40,20 @@ local planetarium_items = {
     Isaac.GetItemIdByName("Meteor")
 }
 
-local Fortune_Teller_Table = {}
+local Constellation_Table = {}
 
 -- Funzione per gestire l'uso dell'oggetto "Fortune Teller"
 function constellation:onUseconstellation(_, rng, player)
     -- Svuota la tabella ogni volta che l'oggetto viene usato
-    Fortune_Teller_Table = {}
+    Constellation_Table = {}
     for _, v in pairs(zodiac_items) do
-        table.insert(Fortune_Teller_Table, v)
+        table.insert(Constellation_Table, v)
     end
     for _, v in pairs(planetarium_items) do
-        table.insert(Fortune_Teller_Table, v)
+        table.insert(Constellation_Table, v)
     end
     -- Scegli un oggetto casuale dalla lista combinata
-    local selectedItem = Fortune_Teller_Table[rng:RandomInt(#Fortune_Teller_Table) + 1]
+    local selectedItem = Constellation_Table[rng:RandomInt(#Constellation_Table) + 1]
 
     -- Spawna l'oggetto scelto nella stanza
     local spawnPosition = game:GetRoom():FindFreePickupSpawnPosition(player.Position, 40, true)
@@ -69,7 +69,7 @@ end
 
 -- Funzione di inizializzazione della mod
 function constellation:OnGameStart()
-    local Fortune_Teller_Table = {}
+    local Constellation_Table = {}
 end
 
 constellation:AddCallback(ModCallbacks.MC_USE_ITEM, constellation.onUseconstellation, constellationId)

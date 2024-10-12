@@ -9,6 +9,7 @@
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedTreasure">
@@ -18,11 +19,13 @@
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="shop">
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedShop">
@@ -31,6 +34,7 @@
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="secret">
@@ -47,12 +51,16 @@
 	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedGoldenChest">
 	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="angel">

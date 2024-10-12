@@ -7,7 +7,8 @@ local Script = {
     'OrigamiBoat',
     'UpsideDownDeckofCard',
     'Constellation',
-    'Meteor'
+    'Meteor',
+    'ShawtysLetter'
 }
 
 for i = 1, #Script do
