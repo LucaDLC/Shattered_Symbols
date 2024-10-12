@@ -3,7 +3,7 @@ local FortuneTellerLocalID = Isaac.GetItemIdByName("Fortune Teller")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(FortuneTellerLocalID, "{{ArrowUp}} Grants +5 Luck {{Luck}}#{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}#{{ColorGreen}}It's cumulative with other Fiendish Seed{{CR}}")
+    EID:addCollectible(FortuneTellerLocalID, "{{ArrowUp}} Grants +5 Luck {{Luck}}#{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}")
 end
 
 -- Function to handle item pickup

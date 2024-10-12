@@ -3,7 +3,7 @@ local itemID = Isaac.GetItemIdByName("Origami Shuriken")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(itemID, "{{ArrowUp}} Grants +3 Damage {{Damage}}#{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}}##{{ColorGreen}}It's cumulative with other Paper Shuriken{{CR}}")
+    EID:addCollectible(itemID, "{{ArrowUp}} Grants +3 Damage {{Damage}}#{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}}")
 end
 
 -- Function to handle item pickup

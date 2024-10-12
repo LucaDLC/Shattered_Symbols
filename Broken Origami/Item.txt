@@ -9,14 +9,25 @@
 77705 - Upside Down Deck of Card
 	Droppa una reverse card
 77706 - Constellation
-	Spawna un item tra i segni zodiacali e gli item del planetario
-77707 - Origami Swan
-	??? (Descrizione: It's Wonderful but it Suffers)
+	Attivo onouso, spawna un item tra i segni zodiacali e gli item del planetario
 77708 - Meteor
-	Una volta ogni tanto colpisce il player con un Holy Beam (da trovare un utilità)
+	Rimuove 2 Broken Heart
+
 ---------------------------------------------------------------------
 
-girlfriend -> attivo che ti da un broken heart ma ti da un famiglio
-glyph -> rimuove un broken heart
-seed -> rerolla un iten in una qualità più alta ma da un broken heart 
-SHAWTY'S LETTER -> attivo monouso, fa comparire un origamo
+77707 - Origami Swan
+	??? (Descrizione: It's Wonderful but it Suffers)
+77709 - Shawty's Letter
+	Attivo monouso che spawna un item origami
+77710 - Girlfriend
+	Attivo che ti da un companion casuale al costo di un Broken Heart 
+77711 - Origami Hook
+	Ad ogni piano ti da un broken heart ma spawna un item di una pool tra secret/angel/devil
+
+88801 - Glyph
+	Rimuove un broken heart
+88802 - Seed 
+	Rerolla un iten in una qualità più alta ma da un broken heart 
+
+99901 - Symbiosis
+	Finche mantenuto toglie un broken heart
