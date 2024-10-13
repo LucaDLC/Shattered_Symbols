@@ -4,7 +4,7 @@ local TornHookExternalID = Isaac.GetItemIdByName("Torn Hook")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE, WORKS ONLY IF YOU HAVE TORN HOOK{{Warning}}#{{ArrowUp}} Remove Torn Hook and multiply all current stats x2.5")
+    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE, WORKS ONLY IF YOU HAVE TORN HOOK{{Warning}}#{{ArrowUp}} Remove Torn Hook and multiply all current stats x3")
 end
 
 -- Funzione per gestire l'uso dell'oggetto "Wriggling Shadow"
@@ -34,19 +34,19 @@ end
 function BrokenOrigami:onEvaluateCacheWrigglingShadow(player, cacheFlag)
     if player:HasCollectible(TornHookExternalID) and player:HasCollectible(WrigglingShadowLocalID) then
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
-            player.Damage = player.Damage * 2.5
+            player.Damage = player.Damage * 3
         elseif cacheFlag == CacheFlag.CACHE_SPEED then
-            player.MoveSpeed = player.MoveSpeed * 2.5
+            player.MoveSpeed = player.MoveSpeed * 3
         elseif cacheFlag == CacheFlag.CACHE_RANGE then
-            player.TearRange = player.TearRange * 2.5
+            player.TearRange = player.TearRange * 3
         elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
-            local newTears = (30.0 / (player.MaxFireDelay + 1)) * 2.5
+            local newTears = (30.0 / (player.MaxFireDelay + 1)) * 3
             player.MaxFireDelay = (30.0 / newTears) - 1
         elseif cacheFlag == CacheFlag.CACHE_LUCK then
             if player.Luck == 0 then
                 player.Luck = player.Luck + 1
             else
-                player.Luck = player.Luck * 2.5
+                player.Luck = player.Luck * 3
             end
         end
     end
