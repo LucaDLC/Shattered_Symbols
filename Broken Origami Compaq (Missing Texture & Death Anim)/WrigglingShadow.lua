@@ -4,7 +4,7 @@ local TornHookExternalID = Isaac.GetItemIdByName("Torn Hook")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE, WORKS ONLY IF YOU HAVE TORN HOOK{{Warning}}#{{ArrowUp}} Remove Torn Hook and multiply all current stats x3#{{ArrowUp}}If Luck is 0 you grant +2 Luck")
+    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}}#{{Warning}} WORKS ONLY IF YOU HAVE TORN HOOK {{Warning}}#{{ArrowUp}} Remove all Torn Hooks and multiply all current stats x3#{{ArrowUp}} Grant +2 Luck {{Luck}} if it is 0#{{ArrowUp}} Remove 1 Broken Heart {{BrokenHeart}}#{{ArrowUp}} Add 1 Heart {{Heart}}")
 end
 
 -- Funzione per gestire l'uso dell'oggetto "Wriggling Shadow"
@@ -16,6 +16,9 @@ function BrokenOrigami:useWrigglingShadow(_, rng, player)
         player:AddCacheFlags(CacheFlag.CACHE_RANGE)
         player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
         player:AddCacheFlags(CacheFlag.CACHE_LUCK)
+        player:AddBrokenHearts(-1)
+        player:AddMaxHearts(1)  
+        player:AddHearts(2)
         player:EvaluateItems()
         for i = 1, player:GetCollectibleNum(TornHookExternalID) do
             player:RemoveCollectible(TornHookExternalID)
