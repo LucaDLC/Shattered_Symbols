@@ -9,6 +9,7 @@ local Script = {
     'Constellation',
     'Meteor',
     'ShawtysLetter',
+    'Girlfriend',
     'TornHook',
     'WrigglingShadow'
 }

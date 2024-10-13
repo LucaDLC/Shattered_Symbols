@@ -2,6 +2,7 @@ local game = Game()
 local OrigamiBoatLocalID = Isaac.GetItemIdByName("Origami Boat")
 
 if EID then
+    EID:assignTransformation("collectible", OrigamiBoatLocalID, EID.TRANSFORMATION["ORIGAMI"])
     EID:addCollectible(OrigamiBoatLocalID, "Every broken heart {{BrokenHeart}} grants:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.3#{{ArrowUp}} Luck +0.2#{{ColorRed}}It's not cumulative with other Origami Boat{{CR}}")
 end
 

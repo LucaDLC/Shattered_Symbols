@@ -4,6 +4,7 @@ local WrigglingShadowExternalID = Isaac.GetItemIdByName("Wriggling Shadow")
 
 -- EID (se usi EID per la descrizione)
 if EID then
+    EID:assignTransformation("collectible", TornHookLocalID, EID.TRANSFORMATION["ORIGAMI"])
     EID:addCollectible(TornHookLocalID, "{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}} at every Floor#Every floor you have 12,5% of chance (+10% for each Torn Hook after first) of spawn Wriggling Shadow#If you have 5 of Luck {{Luck}} or higher you have 15% of chance (+12,5% for each Torn Hook after first)")
 end
 

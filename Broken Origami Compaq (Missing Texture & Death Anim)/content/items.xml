@@ -3,10 +3,11 @@
 	<passive  id="77702" name="Fortune Teller" gfx ="FortuneTeller.png" description="This is not a game kid" quality="2"/>
 	<passive  id="77703" name="Origami Shuriken" gfx ="OrigamiShuriken.png" description="It's cut" quality="3" devilprice="1"/>
 	<passive  id="77704" name="Origami Boat" gfx ="OrigamiBoat.png" description="The wind is in favor" quality="3" devilprice="1"/>
-	<active  id="77705" name="Upside Down Deck of Cards" gfx ="Upside_Down_Deck_of_Cards.png" description="Ops..." quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
+	<active  id="77705" name="Upside Down Deck of Cards" gfx ="UpsideDownDeckofCards.png" description="Ops..." quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
 	<active  id="77706" name="Constellation" gfx ="Constellation.png" description="Look the sky!" quality="3" maxcharges="0" chargetype="normal"/>
 	<passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Missed!" quality="2"/>
 	<active  id="77709" name="Shawty's Letter" gfx ="ShawtysLetter.png" description="This is not a good sign" quality="2" maxcharges="0" chargetype="normal"/>
+	<active  id="77710" name="Girlfriend" gfx ="Girlfriend.png" description="Like rabbits" quality="1" maxcharges="0" chargetype="normal"/>
 	<passive  id="77711" name="Torn Hook" gfx ="TornHook.png" description="Struggling won't help you" quality="0"/>
 	<active  id="77712" name="Wriggling Shadow" gfx ="WrigglingShadow.png" description="Surrender? Pff, noob thing" quality="4" maxcharges="0" chargetype="normal"/>
 </items>
@@ -31,7 +32,7 @@
 </items>
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_UpsideDownDeckofCards.anm2" version="1">
-        <active  id="77705" name="Upside Down Deck of Cards" gfx ="Upside_Down_Deck_of_Cards.png" description="Ops..." quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
+        <active  id="77705" name="Upside Down Deck of Cards" gfx ="UpsideDownDeckofCards.png" description="Ops..." quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
 </items>
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Constellation.anm2" version="1">
@@ -46,7 +47,11 @@
         <active  id="77709" name="Shawty's Letter" gfx ="ShawtysLetter.png" description="This is not a good sign" quality="2" maxcharges="0" chargetype="normal"/>
 </items>
 
-<items gfxroot="gfx/items/" deathanm2="gfx/Death_Broken_Hook.anm2" version="1">
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_Girlfriend.anm2" version="1">
+        <active  id="77710" name="Girlfriend" gfx ="Girlfriend.png" description="Like rabbits" quality="1" maxcharges="0" chargetype="normal"/>
+</items>
+
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_Torn_Hook.anm2" version="1">
         <passive  id="77711" name="Torn Hook" gfx ="TornHook.png" description="Struggling won't help you" quality="0"/>
 </items>
 

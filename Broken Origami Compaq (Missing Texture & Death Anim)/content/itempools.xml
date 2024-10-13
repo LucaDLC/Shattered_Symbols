@@ -11,6 +11,7 @@
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedTreasure">
@@ -22,12 +23,14 @@
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="shop">
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedShop">
@@ -37,6 +40,7 @@
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="secret">
@@ -56,6 +60,7 @@
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedGoldenChest">
@@ -65,6 +70,7 @@
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="angel">
