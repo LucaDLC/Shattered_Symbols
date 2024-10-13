@@ -1,1 +1,3 @@
-- Il firedelay della Boat e della Shadow sembrano sospetti !!!
+- Mancano Texture e Death animation
+- [PRIORITA'] Il Firedelay della Boat e della Shadow sembrano sospetti !!!
+- Trasformazione PAPER completamente non funzionante 
