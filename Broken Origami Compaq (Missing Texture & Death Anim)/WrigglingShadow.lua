@@ -17,7 +17,9 @@ function BrokenOrigami:useWrigglingShadow(_, rng, player)
         player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
         player:AddCacheFlags(CacheFlag.CACHE_LUCK)
         player:EvaluateItems()
-        player:RemoveCollectible(TornHookExternalID)
+        for i = 1, player:GetCollectibleNum(TornHookExternalID) do
+            player:RemoveCollectible(TornHookExternalID)
+        end
     end
 
     -- Oggetto Wriggling Shadow viene rimosso dopo l'uso

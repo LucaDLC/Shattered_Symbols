@@ -1,3 +1,3 @@
 - Quando il Torn Hook spawna la Wriggling Shadows la spawna sotto i piedi, da spostare in basso
-- La Wriggling Shadows dovrebbe rimuovere tutti i Torn Hook e bisogna aggiungere che aumenta uno slot di vita (non ancora programmato)
-- Il firedelay della boat e della Shadow sembrano sospetti
+- Per la Wriggling Shadows bisogna aggiungere che aumenta uno slot di vita (non ancora programmato)
+- Il firedelay della Boat e della Shadow sembrano sospetti !!!
