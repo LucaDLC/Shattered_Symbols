@@ -17,7 +17,7 @@ function BrokenOrigami:useWrigglingShadow(_, rng, player)
         player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
         player:AddCacheFlags(CacheFlag.CACHE_LUCK)
         player:AddBrokenHearts(-1)
-        player:AddMaxHearts(1)  
+        player:AddMaxHearts(2)  
         player:AddHearts(2)
         player:EvaluateItems()
         for i = 1, player:GetCollectibleNum(TornHookExternalID) do
