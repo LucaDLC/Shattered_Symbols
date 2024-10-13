@@ -8,7 +8,9 @@ local Script = {
     'UpsideDownDeckofCard',
     'Constellation',
     'Meteor',
-    'ShawtysLetter'
+    'ShawtysLetter',
+    'TornHook',
+    'WrigglingShadow'
 }
 
 for i = 1, #Script do
