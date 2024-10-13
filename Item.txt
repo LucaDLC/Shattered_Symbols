@@ -15,7 +15,7 @@
 77709 - Shawty's Letter
 	Attivo monouso che spawna un item origami
 77711 - Torn Hook
-	Ad ogni piano ti da un broken heart (Serve la toolbox per Attivare l'effetto)
+	Ad ogni piano ti da un broken heart 
 77712 - Wriggling Shadow
 	Rimuove il Torn Hook e da un boost up di statistiche e vita
 
@@ -31,6 +31,7 @@
 	Rimuove un broken heart
 88802 - Seed 
 	Rerolla un iten in una qualità più alta ma da un broken heart 
+
 
 99901 - Symbiosis
 	Finche mantenuto toglie un broken heart

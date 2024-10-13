@@ -1,3 +1,1 @@
-- Quando il Torn Hook spawna la Wriggling Shadows la spawna sotto i piedi, da spostare in basso
-- Per la Wriggling Shadows bisogna aggiungere che aumenta uno slot di vita (non ancora programmato)
 - Il firedelay della Boat e della Shadow sembrano sospetti !!!
