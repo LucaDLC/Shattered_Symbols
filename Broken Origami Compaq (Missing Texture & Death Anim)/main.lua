@@ -7,6 +7,7 @@ local Script = {
     'OrigamiBoat',
     'UpsideDownDeckofCard',
     'Constellation',
+    'OrigamiSwan',
     'Meteor',
     'ShawtysLetter',
     'Girlfriend',

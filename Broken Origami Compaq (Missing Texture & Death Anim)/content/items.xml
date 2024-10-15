@@ -5,6 +5,7 @@
 	<passive  id="77704" name="Origami Boat" gfx ="OrigamiBoat.png" description="The wind is in favor" quality="3" devilprice="1"/>
 	<active  id="77705" name="Upside Down Deck of Cards" gfx ="UpsideDownDeckofCards.png" description="Ops..." quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
 	<active  id="77706" name="Constellation" gfx ="Constellation.png" description="Look the sky!" quality="3" maxcharges="0" chargetype="normal"/>
+	<passive  id="77707" name="Origami Swan" gfx ="OrigamiSwan.png" description="It's Wonderful but it Suffers" quality="3" devilprice="1"/>
 	<passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Missed!" quality="2"/>
 	<active  id="77709" name="Shawty's Letter" gfx ="ShawtysLetter.png" description="This is not a good sign" quality="2" maxcharges="0" chargetype="normal"/>
 	<active  id="77710" name="Girlfriend" gfx ="Girlfriend.png" description="Like rabbits" quality="1" maxcharges="0" chargetype="normal"/>
@@ -37,6 +38,10 @@
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Constellation.anm2" version="1">
         <active  id="77706" name="Constellation" gfx ="Constellation.png" description="Look the sky!" quality="3" maxcharges="0" chargetype="normal"/>
+</items>
+
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_Origami_Swan.anm2" version="1">
+        <passive  id="77707" name="Origami Swan" gfx ="OrigamiSwan.png" description="It's Wonderful but it Suffers" quality="3" devilprice="1"/>
 </items>
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Meteor.anm2" version="1">

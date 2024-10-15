@@ -41,16 +41,19 @@
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="secret">
         <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     
     <Pool Name="greedSecret">
         <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="goldenChest">
@@ -84,25 +87,30 @@
     <Pool Name="devil">
         <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedDevil">
         <Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="curse">
         <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedCurse">
         <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="demonBagger">
         <Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
 

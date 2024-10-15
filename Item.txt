@@ -10,6 +10,8 @@
 	Droppa una reverse card
 77706 - Constellation
 	Attivo onouso, spawna un item tra i segni zodiacali e gli item del planetario
+77707 - Origami Swan
+	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
 77708 - Meteor
 	Rimuove 2 Broken Heart
 77709 - Shawty's Letter
@@ -22,10 +24,6 @@
 	Rimuove il Torn Hook e da un boost up di statistiche e vita
 
 ---------------------------------------------------------------------
-
-77707 - Origami Swan
-	??? (Descrizione: It's Wonderful but it Suffers)
-
 
 
 88801 - Glyph
