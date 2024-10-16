@@ -77,11 +77,11 @@
     </Pool>
 
     <Pool Name="angel">
-	<Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	
     </Pool>
 
     <Pool Name="greedAngel">
-        <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        
     </Pool>
 
     <Pool Name="devil">

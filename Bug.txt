@@ -1,4 +1,3 @@
 - Mancano Texture e Death animation
 - [PRIORITA'] Origami Swan funziona ma il fatto che richiami lo smelter non mi convince 
-- [PRIORITA'] Il Firedelay della Boat e della Shadow sembrano sospetti !!!
 - Trasformazione PAPER completamente non funzionante 

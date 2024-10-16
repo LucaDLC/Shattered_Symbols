@@ -1,3 +1,5 @@
+ITEM
+
 77701 - Sacred Lantern 
 	Rimuove i Broken Heart per il resto della partita, li sostituisce con Half Soul Heart
 77702 - Fortune Teller
@@ -21,16 +23,24 @@
 77711 - Torn Hook
 	Ad ogni piano ti da un broken heart 
 77712 - Wriggling Shadow
-	Rimuove il Torn Hook e da un boost up di statistiche e vita
+	Rimuove il Torn Hook e da un boost up x3 di statistiche, 1 vita e toglie 1 broken heart
 
 ---------------------------------------------------------------------
-
+CONSUMABILI
 
 88801 - Glyph
 	Rimuove un broken heart
 88802 - Seed 
-	Rerolla un iten in una qualità più alta ma da un broken heart 
+	Rerolla un item in una qualità più alta ma da un broken heart 
 
+---------------------------------------------------------------------
+TRINKET
 
 99901 - Symbiosis
 	Finche mantenuto toglie un broken heart
+
+---------------------------------------------------------------------
+TRASFORMAZIONI
+
+	- Paper
+	Rimuove 1 Broken Heart e da 1 Soul Heart
