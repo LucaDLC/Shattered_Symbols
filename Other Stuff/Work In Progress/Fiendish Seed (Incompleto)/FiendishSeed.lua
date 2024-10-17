@@ -1,21 +1,13 @@
-local fiendishSeed = RegisterMod("Fiendish Seed", 1)
-local fiendishSeedID = Isaac.GetItemIdByName("Fiendish Seed")
+local game = Game()
+local FiendishSeedLocalID = Isaac.GetItemIdByName("Fiendish Seed")
 
 if EID then
-    EID:addCollectible(fiendishSeedID, "Add 1 Broken Heart {{BrokenHeart}} and ", "Glyph")
+    EID:addCollectible(FiendishSeedLocalID, "{{ArrowUp}}Reroll all item in the room up to 1 quality #{{ArrowDown}}Give 3 Broken Heart {{BrokenHeart}}", "Glyph")
 end
 
--- Aggiunta della nuova runa Glyph
-local fiendishSeed = {
-    ID = fiendishSeedID,
-    Name = "Fiendish Seed",
-    Type = "Rune",
-    Description = "Feed me"
-}
-
 -- Callback per quando il giocatore usa una runa
-function fiendishSeed:onUseCard(cardID, player, useFlags)
-    if cardID == fiendishSeedID then
+function fiendishSeed:useFiendishSeed(cardID, player, useFlags)
+    if cardID == FiendishSeedLocalID then
         local tier0ItemPool = {}
         local tier1ItemPool = {}
         local tier2ItemPool = {}
@@ -98,13 +90,13 @@ function fiendishSeed:onUseCard(cardID, player, useFlags)
                 end 
             end
         end
-        player:AddBrokenHearts(1)
+        player:AddBrokenHearts(3)
     end
     
 end
 
 --Support function
-function table.contains(tbl, element)
+local function table.contains(tbl, element)
     for _, value in ipairs(tbl) do
         if value == element then
             return true
