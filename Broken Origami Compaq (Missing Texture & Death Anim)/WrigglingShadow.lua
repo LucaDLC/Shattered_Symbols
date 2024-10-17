@@ -4,7 +4,7 @@ local TornHookExternalID = Isaac.GetItemIdByName("Torn Hook")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Warning}} WORKS ONLY IF YOU HAVE TORN HOOK {{Warning}} #{{ArrowUp}} Remove all Torn Hooks and multiply all current stats x3 #{{ArrowUp}} Grant +2 Luck {{Luck}} if it is 0 #{{ArrowUp}} Remove 1 Broken Heart {{BrokenHeart}} #{{ArrowUp}} Add 1 Heart {{Heart}}")
+    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Warning}} WORKS ONLY IF YOU HAVE TORN HOOK #{{ArrowUp}} Remove all Torn Hooks and multiply all current stats x3 #{{ArrowUp}} Grant +2 Luck {{Luck}} if it is 0 #{{ArrowUp}} Remove 1 Broken Heart {{BrokenHeart}} #{{ArrowUp}} Add 1 Heart {{Heart}}")
 end
 
 -- Funzione per gestire l'uso dell'oggetto "Wriggling Shadow"

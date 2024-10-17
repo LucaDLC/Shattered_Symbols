@@ -2,7 +2,7 @@ local game = Game()
 local MeteorLocalID = Isaac.GetItemIdByName("Meteor")
 
 if EID then
-    EID:addCollectible(MeteorLocalID, "{{ArrowUp}} Remove 2 Broken Hearts {{BrokenHeart}}")
+    EID:addCollectible(MeteorLocalID, "{{ArrowUp}} Remove 2 Broken Hearts {{BrokenHeart}} #{{ArrowUp}} If you have 1 Broken Hearts {{BrokenHeart}} remove it and gain 1 Soul Heart {{SoulHeart}} #{{ArrowUp}} If you don't have Broken Hearts {{BrokenHeart}} gain 3 Soul Heart {{SoulHeart}}")
 end
 
 -- Controlla se il giocatore ha l'oggetto Meteor e avvia il sistema randomico
@@ -26,7 +26,14 @@ function BrokenOrigami:useMeteor(player)
         if data.MeteorCounter >= data.MeteorPreviousCounter then
             data.MeteorPreviousCounter = data.MeteorPreviousCounter + 1
             data.MeteorRelative = data.MeteorRelative + 1
-            player:AddBrokenHearts(-2) -- Remove 2 broken heart
+            if player:GetBrokenHearts() >= 2 then
+                player:AddBrokenHearts(-2) -- Remove 2 broken heart
+            elseif player:GetBrokenHearts() == 1 then
+                player:AddBrokenHearts(-1)
+                player:AddSoulHearts(2)
+            elseif player:GetBrokenHearts() == 0 then
+                player:AddSoulHearts(6)
+            end
         end
     else
         data.MeteorCounter = 0
