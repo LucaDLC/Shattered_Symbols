@@ -31,7 +31,7 @@ CONSUMABILI
 88801 - Glyph
 	Rimuove un broken heart
 88802 - Seed 
-	Rerolla un item in una qualità più alta ma da un broken heart 
+	Rerolla gli item sui piedistalli in una qualità più alta ma da 3 un broken heart 
 
 ---------------------------------------------------------------------
 TRINKET
