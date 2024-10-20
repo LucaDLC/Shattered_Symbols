@@ -37,19 +37,29 @@ end
 function BrokenOrigami:onEvaluateCacheWrigglingShadow(player, cacheFlag)
     if player:HasCollectible(TornHookExternalID) and player:HasCollectible(WrigglingShadowLocalID) then
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
-            player.Damage = player.Damage * 3
+            local DamageTemp = player.Damage
+            DamageTemp = DamageTemp * 2
+            player.Damage = player.Damage + DamageTemp
         elseif cacheFlag == CacheFlag.CACHE_SPEED then
-            player.MoveSpeed = player.MoveSpeed * 3
+            local SpeedTemp = player.MoveSpeed
+            SpeedTemp = SpeedTemp * 2
+            player.MoveSpeed = player.MoveSpeed + SpeedTemp
         elseif cacheFlag == CacheFlag.CACHE_RANGE then
-            player.TearRange = player.TearRange * 3
+            local RangeTemp = player.TearRange
+            RangeTemp = RangeTemp * 2
+            player.TearRange = player.TearRange + RangeTemp
         elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
-            local newTears = (30.0 / (player.MaxFireDelay + 1)) * 3
+            local TearsTemp = player.MaxFireDelay
+            TearsTemp = TearsTemp * 2
+            local newTears = (30.0 / (player.MaxFireDelay + 1)) + TearsTemp
             player.MaxFireDelay = (30.0 / newTears) - 1
         elseif cacheFlag == CacheFlag.CACHE_LUCK then
+            local LuckTemp = player.Luck
+            LuckTemp = LuckTemp * 2
             if player.Luck == 0 then
                 player.Luck = player.Luck + 2
             else
-                player.Luck = player.Luck * 3
+                player.Luck = player.Luck + LuckTemp
             end
         end
     end

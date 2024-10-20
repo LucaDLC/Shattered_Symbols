@@ -1,3 +1,3 @@
-- [PRIORITA'] Origami Boat e Wraggling Shadow hanno un problema con le stats (Wraggling Shadow potrebbe essere il problema da fixare)
+- [PRIORITA'] Origami Boat e Wraggling Shadow hanno un problema con le stats quando stanno assieme
 - Mancano Texture e Death animation
 - Trasformazione PAPER completamente non funzionante 
