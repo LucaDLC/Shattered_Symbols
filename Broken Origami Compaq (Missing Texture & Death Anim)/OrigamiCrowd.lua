@@ -77,6 +77,14 @@ function BrokenOrigami:onEvaluateCacheOrigamiCrowd(player, cacheFlag)
         end
     end
 end
+function BrokenOrigami:onGameStartOrigamiCrowd()
+    flagCounter.damage = 0
+    flagCounter.speed = 0
+    flagCounter.range = 0
+    flagCounter.tears = 0
+    flagCounter.luck = 0
+end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiCrowd)
 BrokenOrigami:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, BrokenOrigami.onEvaluateCacheOrigamiCrowd)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.onGameStartOrigamiCrowd)
