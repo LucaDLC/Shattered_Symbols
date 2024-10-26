@@ -6,7 +6,8 @@ local PaperSettings = {
         "Origami Boat", 
         "Origami Shuriken", 
         "Shawty's Letter", 
-        "Torn Hook"
+        "Torn Hook",
+        "Origami Crowd"
     }
 }
 

@@ -3,16 +3,16 @@ local OrigamiBoatLocalID = Isaac.GetItemIdByName("Origami Boat")
 
 if EID then
     EID:assignTransformation("collectible", OrigamiBoatLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiBoatLocalID, "Every broken heart {{BrokenHeart}} grants:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.3#{{ArrowUp}} Luck +0.2")
+    EID:addCollectible(OrigamiBoatLocalID, "Every broken heart {{BrokenHeart}} grants:#{{ArrowUp}} Damage +0.5#{{ArrowUp}} Speed +0.2#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.5#{{ArrowUp}} Luck +0.3")
 end
 
 -- Valori base per l'aumento delle statistiche
 local statMultiplier = {
-    damage = 0.3,  -- +0.3 Damage per ogni broken heart
-    speed = 0.1,   -- +0.1 Speed per ogni broken heart
+    damage = 0.5,  -- +0.5 Damage per ogni broken heart
+    speed = 0.2,   -- +0.2 Speed per ogni broken heart
     range = 20,    -- +0.5 Range per ogni broken heart
-    tears = 0.3,   -- +0.3 Fire Rate per ogni broken heart
-    luck = 0.2,    -- +0.2 Luck per ogni broken heart
+    tears = 0.5,   -- +0.5 Fire Rate per ogni broken heart
+    luck = 0.3,    -- +0.3 Luck per ogni broken heart
 }
 
 -- Variabile per tenere traccia del numero di broken hearts

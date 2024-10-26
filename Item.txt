@@ -24,9 +24,8 @@ ITEM
 	Ad ogni piano ti da un broken heart 
 77712 - Wriggling Shadow
 	Rimuove il Torn Hook e da un boost up x3 di statistiche, 1 vita e toglie 1 broken heart
-
 77713 - Origami Crowd
-	???
+	Aggiunge un mini bonus agli stats up per 1 broken heart
 
 ---------------------------------------------------------------------
 CONSUMABILI
