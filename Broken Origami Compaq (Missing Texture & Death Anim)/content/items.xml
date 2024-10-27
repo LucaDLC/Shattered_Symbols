@@ -11,7 +11,7 @@
 	<active  id="77710" name="Girlfriend" gfx ="Girlfriend.png" description="Like rabbits" quality="1" maxcharges="0" chargetype="normal"/>
 	<passive  id="77711" name="Torn Hook" gfx ="TornHook.png" description="Struggling won't help you" quality="0"/>
 	<active  id="77712" name="Wriggling Shadow" gfx ="WrigglingShadow.png" description="Surrender? Pff, noob thing" quality="4" maxcharges="0" chargetype="normal"/>
-	<passive  id="77713" name="Origami Crowd" gfx ="OrigamiCrowd.png" description="Somebody watching you" quality="2"/>
+	<passive  id="77713" name="Origami Crowd" gfx ="OrigamiCrowd.png" description="Somebody watching you" quality="3"/>
 
 </items>
 
@@ -67,5 +67,5 @@
 </items>
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Origami_Crowd.anm2" version="1">
-<passive  id="77713" name="Origami Crowd" gfx ="OrigamiCrowd.png" description="Somebody watching you" quality="2"/>
+<passive  id="77713" name="Origami Crowd" gfx ="OrigamiCrowd.png" description="Somebody watching you" quality="3"/>
 </items>
