@@ -1,9 +1,10 @@
 local game = Game()
 local OrigamiCrowdLocalID = Isaac.GetItemIdByName("Origami Crowd")
+local lastPassiveItemID = nil
 
 if EID then
     EID:assignTransformation("collectible", OrigamiCrowdLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiCrowdLocalID, "Every stats up increasing:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.3#{{ArrowUp}} Luck +0.2")
+    EID:addCollectible(OrigamiCrowdLocalID, "Increase every item stats up:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.3#{{ArrowUp}} Luck +0.2")
 end
 
 -- Valori base per l'aumento delle statistiche
@@ -45,6 +46,7 @@ function BrokenOrigami:useOrigamiCrowd(player)
             data.OrigamiCrowdPreviousCounter = data.OrigamiCrowdPreviousCounter + 1
             data.OrigamiCrowdRelative = data.OrigamiCrowdRelative + 1
             player:AddBrokenHearts(1) -- Add 1 broken heart
+            lastPassiveItemID = OrigamiCrowdLocalID
         end
     else
         data.OrigamiCrowdCounter = 0
@@ -57,7 +59,15 @@ end
 
 function BrokenOrigami:onEvaluateCacheOrigamiCrowd(player, cacheFlag)
     local data = player:GetData()
-    if player:HasCollectible(OrigamiCrowdLocalID) then
+    local itemConfig = Isaac.GetItemConfig():GetCollectible(collectibleID)
+
+    -- Controlla se l'oggetto raccolto è passivo
+    if itemConfig and itemConfig.Type ~= ItemType.ITEM_ACTIVE and not itemConfig == OrigamiCrowdLocalID then
+        -- Salva l'ID dell'ultimo oggetto passivo raccolto
+        lastPassiveItemID = collectibleID
+    end
+
+    if player:HasCollectible(OrigamiCrowdLocalID) and itemConfig then
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
             flagCounter.damage = flagCounter.damage + 1
             player.Damage = player.Damage + (flagCounter.damage * statMultiplier.damage)
@@ -77,13 +87,16 @@ function BrokenOrigami:onEvaluateCacheOrigamiCrowd(player, cacheFlag)
         end
     end
 end
+
 function BrokenOrigami:onGameStartOrigamiCrowd()
     flagCounter.damage = 0
     flagCounter.speed = 0
     flagCounter.range = 0
     flagCounter.tears = 0
     flagCounter.luck = 0
+    lastPassiveItemID = nil
 end
+
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiCrowd)
 BrokenOrigami:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, BrokenOrigami.onEvaluateCacheOrigamiCrowd)
