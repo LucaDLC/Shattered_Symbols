@@ -4,7 +4,7 @@ local chargeMemory = {}
 
 if EID then
     EID:assignTransformation("collectible", OrigamiCrowdLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiCrowdLocalID, "{{ArrowUp}} Duplicate all charge of active item #{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}")
+    EID:addCollectible(OrigamiCrowdLocalID, "{{ArrowUp}} Duplicate all charge gained of active item for the rest of the game #{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}")
 end
 
 
