@@ -44,7 +44,10 @@ function BrokenOrigami:useOrigamiCrowd(player)
                 
                 -- Se è stata aggiunta carica, raddoppiala
                 if chargeGained > 0 then
-                    player:SetActiveCharge(currentCharge + chargeGained, i)
+                    -- Calcola la nuova carica raddoppiata senza eccedere il limite massimo
+                    local maxCharge = Isaac.GetItemConfig():GetCollectible(activeItem).MaxCharges
+                    local doubledCharge = math.min(currentCharge + chargeGained, maxCharge)
+                    player:SetActiveCharge(doubledCharge, i)
                 end
                 
                 -- Aggiorna la carica memorizzata per il prossimo ciclo
