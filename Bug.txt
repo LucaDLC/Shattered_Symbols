@@ -1,4 +1,4 @@
 - [PRIORITA'] Origami Boat e Wraggling Shadow hanno un problema con le stats quando stanno assieme, La Shadow ha problemi con le stats in todo
-- Origami Crowd da problemi, carica al massimo sempre l'oggetto + 1 carica extra
+- Origami Crowd da problemi, eccede la carica massima anche se non ha l'item che glielo permette, per il resto funziona
 - Mancano Texture e Death animation
 - Trasformazione PAPER completamente non funzionante 

@@ -36,17 +36,19 @@ function BrokenOrigami:useOrigamiCrowd(player)
             if activeItem ~= 0 then
                 local currentCharge = player:GetActiveCharge(i)
                 
-                -- Retrieve the previous charge or set it to the current charge if first time
-                local previousCharge = chargeMemory[i] or currentCharge
-                chargeMemory[i] = currentCharge -- Update previous charge for the next cycle
+                -- Memorizza la carica iniziale se non esiste già
+                chargeMemory[i] = chargeMemory[i] or currentCharge
                 
-                -- Calculate the charge difference
-                local chargeGained = currentCharge - previousCharge
+                -- Calcola la carica aggiuntiva ottenuta dall'ultimo ciclo
+                local chargeGained = currentCharge - chargeMemory[i]
                 
-                -- Double only the new charge gained
+                -- Se è stata aggiunta carica, raddoppiala
                 if chargeGained > 0 then
-                    player:SetActiveCharge(currentCharge + chargeGained, i) -- Double new charge only
+                    player:SetActiveCharge(currentCharge + chargeGained, i)
                 end
+                
+                -- Aggiorna la carica memorizzata per il prossimo ciclo
+                chargeMemory[i] = player:GetActiveCharge(i)
             end
         end
 
