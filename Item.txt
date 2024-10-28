@@ -25,7 +25,7 @@ ITEM
 77712 - Wriggling Shadow
 	Rimuove il Torn Hook e da un boost up x3 di statistiche, 1 vita e toglie 1 broken heart
 77713 - Origami Crowd
-	raddoppia le cariche ottenute degli oggetti attivi per 2 broken heart
+	raddoppia le cariche ottenute degli oggetti attivi dà 2 broken heart
 
 ---------------------------------------------------------------------
 CONSUMABILI

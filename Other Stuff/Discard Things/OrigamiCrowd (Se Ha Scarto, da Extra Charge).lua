@@ -4,7 +4,7 @@ local chargeMemory = {}
 
 if EID then
     EID:assignTransformation("collectible", OrigamiCrowdLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiCrowdLocalID, "{{ArrowUp}} Duplicate all charge of active item #{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}")
+    EID:addCollectible(OrigamiCrowdLocalID, "Duplicate all charge of active item")
 end
 
 
@@ -44,9 +44,8 @@ function BrokenOrigami:useOrigamiCrowd(player)
                 
                 -- Se è stata aggiunta carica, raddoppiala
                 if chargeGained > 0 then
-                    -- Calcola la nuova carica raddoppiata senza eccedere il limite massimo
-                    local maxCharge = Isaac.GetItemConfig():GetCollectible(activeItem).MaxCharges
-                    local doubledCharge = math.min(currentCharge + chargeGained, maxCharge)
+                    -- Calcola la nuova carica senza limitazioni
+                    local doubledCharge = currentCharge + chargeGained
                     player:SetActiveCharge(doubledCharge, i)
                 end
                 
