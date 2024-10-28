@@ -1,4 +1,3 @@
 - [PRIORITA'] Origami Boat e Wraggling Shadow hanno un problema con le stats quando stanno assieme, La Shadow ha problemi con le stats in todo
-- Origami Crowd manca solo sinergia con the battery e il beggar di quando c'è la ricarica extra
 - Mancano Texture e Death animation
 - Trasformazione PAPER completamente non funzionante 
