@@ -1,33 +1,33 @@
 local game = Game()
-local OrigamiCrowdLocalID = Isaac.GetItemIdByName("Origami Crowd")
+local OrigamiCrowLocalID = Isaac.GetItemIdByName("Origami Crow")
 local chargeMemory = {}
 
 if EID then
-    EID:assignTransformation("collectible", OrigamiCrowdLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiCrowdLocalID, "Duplicate all charge of active item")
+    EID:assignTransformation("collectible", OrigamiCrowLocalID, EID.TRANSFORMATION["ORIGAMI"])
+    EID:addCollectible(OrigamiCrowLocalID, "Duplicate all charge of active item")
 end
 
 
-function BrokenOrigami:useOrigamiCrowd(player)
+function BrokenOrigami:useOrigamiCrow(player)
     -- Get the player's data table
     local data = player:GetData()
     
-    -- Initialize the OrigamiCrowdCounter if it doesn't exist
-    if not data.OrigamiCrowdCounter then
-        data.OrigamiCrowdCounter = 0
-        data.OrigamiCrowdRelative = 0
-        data.OrigamiCrowdPreviousCounter = 1
+    -- Initialize the OrigamiCrowCounter if it doesn't exist
+    if not data.OrigamiCrowCounter then
+        data.OrigamiCrowCounter = 0
+        data.OrigamiCrowRelative = 0
+        data.OrigamiCrowPreviousCounter = 1
     end
 
     -- Check if the player has picked up the item
-    if player:HasCollectible(OrigamiCrowdLocalID) then
+    if player:HasCollectible(OrigamiCrowLocalID) then
         -- Increase the counter
-        data.OrigamiCrowdCounter = player:GetCollectibleNum(OrigamiCrowdLocalID)
+        data.OrigamiCrowCounter = player:GetCollectibleNum(OrigamiCrowLocalID)
         
         -- Apply the effect based on the number of items picked up
-        if data.OrigamiCrowdCounter >= data.OrigamiCrowdPreviousCounter then
-            data.OrigamiCrowdPreviousCounter = data.OrigamiCrowdPreviousCounter + 1
-            data.OrigamiCrowdRelative = data.OrigamiCrowdRelative + 1
+        if data.OrigamiCrowCounter >= data.OrigamiCrowPreviousCounter then
+            data.OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter + 1
+            data.OrigamiCrowRelative = data.OrigamiCrowRelative + 1
             player:AddBrokenHearts(2) -- Add 2 broken heart
         end
 
@@ -55,14 +55,14 @@ function BrokenOrigami:useOrigamiCrowd(player)
         end
 
     else
-        data.OrigamiCrowdCounter = 0
-        data.OrigamiCrowdPreviousCounter = 1
+        data.OrigamiCrowCounter = 0
+        data.OrigamiCrowPreviousCounter = 1
     end
-    if data.OrigamiCrowdRelative > data.OrigamiCrowdCounter then
-        data.OrigamiCrowdPreviousCounter = data.OrigamiCrowdCounter +1
+    if data.OrigamiCrowRelative > data.OrigamiCrowCounter then
+        data.OrigamiCrowPreviousCounter = data.OrigamiCrowCounter +1
     end
 end
 
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiCrowd)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiCrow)
 

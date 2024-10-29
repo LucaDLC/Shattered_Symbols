@@ -13,7 +13,7 @@ local Script = {
     'Girlfriend',
     'TornHook',
     'WrigglingShadow',
-    'OrigamiCrowd'
+    'OrigamiCrow'
 }
 
 for i = 1, #Script do

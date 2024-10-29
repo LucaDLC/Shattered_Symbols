@@ -12,7 +12,7 @@
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Crowd" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedTreasure">
@@ -25,7 +25,7 @@
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Crowd" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="shop">
@@ -44,7 +44,7 @@
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Crowd" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="secret">
@@ -117,7 +117,7 @@
     </Pool>
 
     <Pool Name="craneGame">
-	<Item Name="Origami Crowd" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
 </ItemPools>
