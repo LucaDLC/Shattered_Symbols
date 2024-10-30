@@ -1,6 +1,6 @@
 BrokenOrigami = RegisterMod("Broken Origami", 1)
 
-local Script = {
+local ItemScript = {
     'SacredLantern',
     'FortuneTeller',
     'OrigamiShuriken',
@@ -16,6 +16,6 @@ local Script = {
     'OrigamiCrow'
 }
 
-for i = 1, #Script do
-	require (Script[i])
+for i = 1, #ItemScript do
+	require (ItemScript[i])
 end
