@@ -25,10 +25,10 @@ ITEM
 77712 - Wriggling Shadow
 	Rimuove il Torn Hook e da un boost up x3 di statistiche, 1 vita e toglie 1 broken heart
 77713 - Origami Crow
-	raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e dà 2 broken heart
-77714 - Origami Nightingale
-	???
-77715 - Origami Kolibri
+	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e dà 2 broken heart
+77714 - Origami Kolibri
+	Cura di mezzo cuore dopo 32 lacrime andate a segno che si dimezza per ogni Kolibri, da 1 broken heart
+77715 - Origami Nightingale
 	???
 
 ---------------------------------------------------------------------
@@ -43,7 +43,7 @@ CONSUMABILI
 TRINKET
 
 99901 - Symbiosis
-	Finche mantenuto toglie un broken heart
+	???
 
 ---------------------------------------------------------------------
 TRASFORMAZIONI
