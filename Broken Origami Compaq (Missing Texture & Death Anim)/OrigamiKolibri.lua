@@ -5,7 +5,7 @@ local kolibriTearsCount = 0
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", OrigamiKolibriLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiKolibriLocalID, "#{{ArrowUp}} After 64 hits, heal half heart {{HalfHeart}} #{{ArrowUp}} Halve the number of hits for each Origami Kolibri #{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}}")
+    EID:addCollectible(OrigamiKolibriLocalID, "#{{ArrowUp}} After 64 hits, heal half heart {{HalfHeart}} #{{ArrowUp}} Halve the number of hits for each Origami Kolibri #{{ArrowUp}} +0.2 Speed {{Speed}} #{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}}")
 end
 
 function BrokenOrigami:useOrigamiKolibri(player)
@@ -29,7 +29,10 @@ function BrokenOrigami:useOrigamiKolibri(player)
             data.OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter + 1
             data.OrigamiKolibriRelative = data.OrigamiKolibriRelative + 1
             kolibriTearsCount = 0
+            data.OrigamiKolibriSpeedBoost = 0.2*data.OrigamiKolibriRelative
             player:AddBrokenHearts(1)
+            player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+            player:EvaluateItems()
         end
     else
         data.OrigamiKolibriCounter = 0
@@ -57,5 +60,15 @@ function BrokenOrigami:onTearDamageOrigamiKolibri(entity, damageAmount, damageFl
     end
 end
 
+function BrokenOrigami:onEvaluateCacheOrigamiKolibri(player, cacheFlag)
+    local data = player:GetData()
+    if cacheFlag == CacheFlag.CACHE_SPEED then
+        if data.OrigamiKolibriSpeedBoost then
+            player.MoveSpeed = player.MoveSpeed + data.OrigamiKolibriSpeedBoost
+        end
+    end
+end
+
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiKolibri)
 BrokenOrigami:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, BrokenOrigami.onTearDamageOrigamiKolibri)
+BrokenOrigami:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, BrokenOrigami.onEvaluateCacheOrigamiKolibri)
