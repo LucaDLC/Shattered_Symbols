@@ -15,7 +15,7 @@ ITEM
 77707 - Origami Swan
 	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
 77708 - Meteor
-	Rimuove 2 Broken Heart
+	Rimuove 2 Broken Heart oppure rimuove 1 broken heart e da 1 soul heart oppure da 3 soul heart
 77709 - Shawty's Letter
 	Attivo monouso che spawna un item origami
 77710 - Girlfriend
