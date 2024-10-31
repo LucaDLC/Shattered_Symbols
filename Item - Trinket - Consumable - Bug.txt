@@ -1,35 +1,35 @@
 ITEM
 
-77701 - Sacred Lantern 
+77701 - Sacred Lantern [3]
 	Rimuove i Broken Heart per il resto della partita, li sostituisce con Half Soul Heart
-77702 - Fortune Teller
+77702 - Fortune Teller [2]
 	Dà due Broken Heart per +5 di Luck
-77703 - Origami Shuriken
+77703 - Origami Shuriken [3]
 	Dà un Broken Heart per +3 di Damage
-77704 - Origami Boat
+77704 - Origami Boat [3]
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
-77705 - Upside Down Deck of Card
+77705 - Upside Down Deck of Card [2]
 	Droppa una reverse card
-77706 - Constellation
-	Attivo onouso, spawna un item tra i segni zodiacali e gli item del planetario
-77707 - Origami Swan
+77706 - Constellation [3]
+	Attivo monouso, spawna un item tra i segni zodiacali e gli item del planetario
+77707 - Origami Swan [3]
 	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
-77708 - Meteor
+77708 - Meteor [2]
 	Rimuove 2 Broken Heart oppure rimuove 1 broken heart e da 1 soul heart oppure da 3 soul heart
-77709 - Shawty's Letter
+77709 - Shawty's Letter [2]
 	Attivo monouso che spawna un item origami
-77710 - Girlfriend
+77710 - Girlfriend [1]
 	Attivo che ti da un companion casuale al costo di un Broken Heart 
-77711 - Torn Hook
+77711 - Torn Hook [0]
 	Ad ogni piano ti da un broken heart 
-77712 - Wriggling Shadow
+77712 - Wriggling Shadow [4]
 	Rimuove il Torn Hook e da un boost up x3 di statistiche, 1 vita e toglie 1 broken heart
-77713 - Origami Crow
+77713 - Origami Crow [3]
 	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e dà 2 broken heart
-77714 - Origami Kolibri
+77714 - Origami Kolibri [2]
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Kolibri, da 1 broken heart
-77715 - Origami Nightingale
-	???
+77715 - Origami Nightingale [3]
+	Da l'1% di possibilità di spawnare un Death Certificate all'inizio di ogni piano, la percentuale aumenta per ogni punto fortuna (se sei Jacob e Esau non tainted i punti valgono doppio), da 1 broken heart
 
 ---------------------------------------------------------------------
 CONSUMABILI
@@ -49,4 +49,16 @@ TRINKET
 TRASFORMAZIONI
 
 	- Paper
-	Rimuove 1 Broken Heart e da 1 Soul Heart
+	Rimuove 1 Broken Heart e da 2 Black Heart
+
+
+
+
+====================================================================
+--------------------------------------------------------------------
+====================================================================
+BUG
+
+	- [PRIORITA'] Origami Boat e Wraggling Shadow hanno un problema con le stats quando stanno assieme, La Shadow ha problemi con le stats in todo
+	- Mancano Texture e Death animation
+	- Trasformazione PAPER completamente non funzionante
