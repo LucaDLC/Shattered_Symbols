@@ -23,13 +23,13 @@ ITEM
 77711 - Torn Hook [0]
 	Ad ogni piano ti da un broken heart 
 77712 - Wriggling Shadow [4]
-	Rimuove il Torn Hook e da un boost up x3 di statistiche, 1 vita e toglie 1 broken heart
+	Rimuove i Torn Hook e da 2 Death Certificate, 1 vita e toglie 1 broken heart
 77713 - Origami Crow [3]
 	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e dà 2 broken heart
 77714 - Origami Kolibri [2]
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Kolibri, da 1 broken heart
 77715 - Origami Nightingale [3]
-	Da l'1% di possibilità di spawnare un Death Certificate all'inizio di ogni piano, la percentuale aumenta per ogni punto fortuna (se sei Jacob e Esau non tainted i punti valgono doppio), da 1 broken heart
+	Da l'1% di possibilità di ???? , la percentuale aumenta per ogni punto fortuna (se sei Jacob e Esau non tainted i punti valgono doppio), da X broken heart
 
 ---------------------------------------------------------------------
 CONSUMABILI
