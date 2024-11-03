@@ -62,6 +62,8 @@ TRASFORMAZIONI
 BUG
 
 	- [PRIORITA'] Esau (quello rosso) da problemi con quasi tutti i problemi, Jacob parrebbe non dar problemi
+		- SOLUZIONE Player(1) risolve la situazione, ora è da controllare l'entità player di Boat e Swan, Hook è da controllare perché controlla solo player(0), fare attenzione a fare il controllo 
+
 	- Mancano Texture e Death animation
 	- Trasformazione PAPER completamente non funzionante
 
