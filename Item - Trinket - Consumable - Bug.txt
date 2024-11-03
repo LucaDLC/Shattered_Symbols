@@ -62,7 +62,8 @@ TRASFORMAZIONI
 BUG
 
 	- [PRIORITA'] Esau (quello rosso) da problemi con quasi tutti i problemi, Jacob parrebbe non dar problemi
-		- SOLUZIONE Player(1) risolve la situazione, ora è da controllare l'entità player di Boat e Swan, Hook è da controllare perché controlla solo player(0), fare attenzione a fare il controllo 
+		- SOLUZIONE Player(1) risolve la situazione, ora è da controllare l'entità player di Kolibri e Hook è da controllare perché controlla solo player(0), fare attenzione a fare il controllo
+		- SOLUZIONE Gli item con variabili globali come Crow, Boat e Kolibri vanno gestite perchè altrimenti si ommano gli effetti in Co-Op 
 
 	- Mancano Texture e Death animation
 	- Trasformazione PAPER completamente non funzionante
