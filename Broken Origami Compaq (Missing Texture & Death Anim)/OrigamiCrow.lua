@@ -1,6 +1,6 @@
 local game = Game()
 local OrigamiCrowLocalID = Isaac.GetItemIdByName("Origami Crow")
-local chargeMemory = {}
+
 
 if EID then
     EID:assignTransformation("collectible", OrigamiCrowLocalID, EID.TRANSFORMATION["ORIGAMI"])
@@ -11,6 +11,7 @@ end
 function BrokenOrigami:useOrigamiCrow(player)
     -- Get the player's data table
     local data = player:GetData()
+    if not data.chargeMemory then data.chargeMemory = {} end
     
     -- Initialize the OrigamiCrowCounter if it doesn't exist
     if not data.OrigamiCrowCounter then
@@ -37,10 +38,12 @@ function BrokenOrigami:useOrigamiCrow(player)
                 local currentCharge = player:GetActiveCharge(i)
                 
                 -- Memorizza la carica iniziale se non esiste già
-                chargeMemory[i] = chargeMemory[i] or currentCharge
+                if data.chargeMemory[i] == nil then
+                    data.chargeMemory[i] = currentCharge
+                end
                 
                 -- Calcola la carica aggiuntiva ottenuta dall'ultimo ciclo
-                local chargeGained = currentCharge - chargeMemory[i]
+                local chargeGained = currentCharge - data.chargeMemory[i]
                 
                 -- Se è stata aggiunta carica, raddoppiala
                 if chargeGained > 0 then
@@ -51,7 +54,10 @@ function BrokenOrigami:useOrigamiCrow(player)
                 end
                 
                 -- Aggiorna la carica memorizzata per il prossimo ciclo
-                chargeMemory[i] = player:GetActiveCharge(i)
+                data.chargeMemory[i] = player:GetActiveCharge(i)
+            else
+                -- Resetta la memoria se lo slot non contiene oggetti
+                data.chargeMemory[i] = nil
             end
         end
 

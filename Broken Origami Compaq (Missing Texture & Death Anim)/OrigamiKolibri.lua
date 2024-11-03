@@ -1,6 +1,6 @@
 local game = Game()
 local OrigamiKolibriLocalID = Isaac.GetItemIdByName("Origami Kolibri")
-local kolibriTearsCount = 0
+
 
 -- EID (se usi EID per la descrizione)
 if EID then
@@ -11,6 +11,7 @@ end
 function BrokenOrigami:useOrigamiKolibri(player)
     -- Get the player's data table
     local data = player:GetData()
+    if not data.kolibriTearsCount then data.kolibriTearsCount = 0 end
     
     -- Initialize the OrigamiKolibriCounter if it doesn't exist
     if not data.OrigamiKolibriCounter then
@@ -28,7 +29,7 @@ function BrokenOrigami:useOrigamiKolibri(player)
         if data.OrigamiKolibriCounter >= data.OrigamiKolibriPreviousCounter then
             data.OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter + 1
             data.OrigamiKolibriRelative = data.OrigamiKolibriRelative + 1
-            kolibriTearsCount = 0
+            data.kolibriTearsCount = 0
             data.OrigamiKolibriSpeedBoost = 0.2*data.OrigamiKolibriRelative
             player:AddBrokenHearts(1)
             player:AddCacheFlags(CacheFlag.CACHE_SPEED)
@@ -45,14 +46,15 @@ end
 
 function BrokenOrigami:onTearDamageOrigamiKolibri(entity, damageAmount, damageFlags, source, countdownFrames)
     local player = Isaac.GetPlayer(0)
+    local data = player:GetData()
     if entity:IsEnemy() and player:HasCollectible(OrigamiKolibriLocalID) and source.Type == EntityType.ENTITY_TEAR then
-        kolibriTearsCount = kolibriTearsCount + 1
+        data.kolibriTearsCount = data.kolibriTearsCount + 1
         local OrigamiKolibrisCounter = player:GetCollectibleNum(OrigamiKolibriLocalID)
         if OrigamiKolibrisCounter > 7 then
             OrigamiKolibrisCounter = 7
         end
-        if kolibriTearsCount >= (128 / 2^OrigamiKolibrisCounter) then
-            kolibriTearsCount = 0
+        if data.kolibriTearsCount >= (128 / 2^OrigamiKolibrisCounter) then
+            data.kolibriTearsCount = 0
             if not (player:GetHearts() >= player:GetMaxHearts()) then
                 player:AddHearts(1)  -- cura di mezzo cuore
                 Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.HEART, 0, player.Position + Vector(0, -75), Vector(0,0), player)

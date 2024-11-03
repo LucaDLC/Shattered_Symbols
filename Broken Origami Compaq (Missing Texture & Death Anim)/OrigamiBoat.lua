@@ -15,16 +15,15 @@ local statMultiplier = {
     luck = 0.3,    -- +0.3 Luck per ogni broken heart
 }
 
--- Variabile per tenere traccia del numero di broken hearts
-local brokenHeartsCount = 0
-local holdingItemforStats = false
-
 -- Funzione che aggiorna le statistiche del giocatore
 function BrokenOrigami:useOrigamiBoat(player)
+    local data = player:GetData()
+    if not data.brokenHeartsCount then data.brokenHeartsCount = 0 end
+    if not data.holdingItemforStats then data.holdingItemforStats = false end
     local currentBrokenHearts = player:GetBrokenHearts()
     if player:HasCollectible(OrigamiBoatLocalID) then
-        if currentBrokenHearts ~= brokenHeartsCount then
-            local diff = currentBrokenHearts - brokenHeartsCount
+        if currentBrokenHearts ~= data.brokenHeartsCount then
+            local diff = currentBrokenHearts - data.brokenHeartsCount
 
             -- Aumenta o riduci le stats in base alla differenza di broken hearts
             player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
@@ -35,9 +34,9 @@ function BrokenOrigami:useOrigamiBoat(player)
             player:EvaluateItems()
 
             -- Aggiorna il conteggio di broken hearts
-            brokenHeartsCount = currentBrokenHearts
+            data.brokenHeartsCount = currentBrokenHearts
         end
-    elseif not player:HasCollectible(OrigamiBoatLocalID) and holdingItemforStats == true then
+    elseif not player:HasCollectible(OrigamiBoatLocalID) and data.holdingItemforStats == true then
         player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
         player:AddCacheFlags(CacheFlag.CACHE_SPEED)
         player:AddCacheFlags(CacheFlag.CACHE_RANGE)
@@ -50,8 +49,8 @@ end
 function BrokenOrigami:onEvaluateCacheOrigamiBoat(player, cacheFlag)
     local data = player:GetData()
     local brokenHearts = player:GetBrokenHearts()
-    if (currentBrokenHearts ~= brokenHeartsCount) and player:HasCollectible(OrigamiBoatLocalID) then
-        holdingItemforStats = true
+    if (currentBrokenHearts ~= data.brokenHeartsCount) and player:HasCollectible(OrigamiBoatLocalID) then
+        data.holdingItemforStats = true
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
             player.Damage = player.Damage + (brokenHearts * statMultiplier.damage)
         elseif cacheFlag == CacheFlag.CACHE_SPEED then
@@ -64,8 +63,8 @@ function BrokenOrigami:onEvaluateCacheOrigamiBoat(player, cacheFlag)
         elseif cacheFlag == CacheFlag.CACHE_LUCK then
             player.Luck = player.Luck + (brokenHearts * statMultiplier.luck)
         end
-    elseif holdingItemforStats == true then
-        holdingItemforStats = false
+    elseif data.holdingItemforStats == true then
+        data.holdingItemforStats = false
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
             player.Damage = player.Damage + (0 * statMultiplier.damage)
         elseif cacheFlag == CacheFlag.CACHE_SPEED then
