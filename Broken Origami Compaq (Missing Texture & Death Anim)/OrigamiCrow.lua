@@ -4,7 +4,7 @@ local OrigamiCrowLocalID = Isaac.GetItemIdByName("Origami Crow")
 
 if EID then
     EID:assignTransformation("collectible", OrigamiCrowLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Duplicate all charges gained of active item for the rest of the game #{{ArrowDown}} Does not duplicate extra charges #{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}")
+    EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Duplicate all charges gained of active item for the rest of the game #{{ArrowUp}} Charge all active items #{{ArrowDown}} Does not duplicate extra charges #{{ArrowDown}} Gives 2 Broken Hearts {{BrokenHeart}}")
 end
 
 
@@ -29,7 +29,7 @@ function BrokenOrigami:useOrigamiCrow(player)
         if data.OrigamiCrowCounter >= data.OrigamiCrowPreviousCounter then
             data.OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter + 1
             data.OrigamiCrowRelative = data.OrigamiCrowRelative + 1
-            player:AddBrokenHearts(2) -- Add 2 broken heart
+            player:AddBrokenHearts(3) -- Add 3 broken heart
         end
 
         for i = 0, 3 do -- Check all active item slots
