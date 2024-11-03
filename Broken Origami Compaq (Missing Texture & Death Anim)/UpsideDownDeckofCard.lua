@@ -7,8 +7,7 @@ if EID then
 end
 
 -- Definisci la funzione per l'utilizzo dell'item
-function BrokenOrigami:useUpsideDownDeckCard()
-    local player = Isaac.GetPlayer(0)
+function BrokenOrigami:useUpsideDownDeckCard(_, rng, player)
     local reverseCards = {
         Card.CARD_REVERSE_FOOL, Card.CARD_REVERSE_MAGICIAN, Card.CARD_REVERSE_HIGH_PRIESTESS,
         Card.CARD_REVERSE_EMPRESS, Card.CARD_REVERSE_EMPEROR, Card.CARD_REVERSE_HIEROPHANT,
@@ -33,7 +32,3 @@ end
 -- Associa la funzione all'item
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useUpsideDownDeckCard, UpsideDownDeckofCardsLocalID)
 
--- Imposta l'item con 6 cariche
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, function(_, player)
-    player:SetActiveCharge(6, ActiveSlot.SLOT_PRIMARY)
-end)
