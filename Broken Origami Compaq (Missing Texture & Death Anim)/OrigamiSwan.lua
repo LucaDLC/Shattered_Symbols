@@ -7,8 +7,7 @@ if EID then
 end
 
 
-function BrokenOrigami:useOrigamiSwan()
-    local player = Isaac.GetPlayer(0)
+function BrokenOrigami:useOrigamiSwan(player)
     local data = player:GetData()
     
     -- Initialize the OrigamiSwanCounter if it doesn't exist

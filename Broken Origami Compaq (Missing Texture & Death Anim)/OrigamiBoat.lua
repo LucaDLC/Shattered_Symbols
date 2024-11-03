@@ -22,7 +22,6 @@ local holdingItemforStats = false
 -- Funzione che aggiorna le statistiche del giocatore
 function BrokenOrigami:useOrigamiBoat(player)
     local currentBrokenHearts = player:GetBrokenHearts()
-    local player = Isaac.GetPlayer(0)
     if player:HasCollectible(OrigamiBoatLocalID) then
         if currentBrokenHearts ~= brokenHeartsCount then
             local diff = currentBrokenHearts - brokenHeartsCount
