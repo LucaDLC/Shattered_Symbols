@@ -14,7 +14,6 @@ local ItemScript = {
     'TornHook',
     'WrigglingShadow',
     'OrigamiCrow',
-    
     'OrigamiKolibri'
 }
 
