@@ -1,7 +1,7 @@
 ITEM
 
 77701 - Sacred Lantern [3]
-	Rimuove i Broken Heart per il resto della partita, li sostituisce con Half Soul Heart
+	Rimuove i Broken Heart, li sostituisce con Half Soul Heart 
 77702 - Fortune Teller [2]
 	Dà due Broken Heart per +5 di Luck
 77703 - Origami Shuriken [3]
@@ -69,5 +69,9 @@ COSE MANCANTI
 	- Mancano Texture e Death animation
 	- Trasformazione PAPER completamente non funzionante
 
+---------------------------------------------------------------------
+BILANCIAMENTI
 
+	- Sacred Lantern 
+		Se non hai broken heart aumentare la probabilità del patto angelico per il piano del 30%
 

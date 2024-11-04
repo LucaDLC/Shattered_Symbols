@@ -11,7 +11,11 @@ end
 local Origami_items = {
     Isaac.GetItemIdByName("Fortune Teller"),
     Isaac.GetItemIdByName("Origami Shuriken"),
-    Isaac.GetItemIdByName("Origami Boat")
+    Isaac.GetItemIdByName("Origami Boat"),
+    Isaac.GetItemIdByName("Origami Swan"),
+    Isaac.GetItemIdByName("Torn Hook"),
+    Isaac.GetItemIdByName("Origami Crow"),
+    Isaac.GetItemIdByName("Origami Kolibri")
 }
 
 local Shawty_Table = {}
