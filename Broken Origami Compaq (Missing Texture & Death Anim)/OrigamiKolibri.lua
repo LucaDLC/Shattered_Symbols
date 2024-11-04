@@ -1,6 +1,6 @@
+
 local game = Game()
 local OrigamiKolibriLocalID = Isaac.GetItemIdByName("Origami Kolibri")
-
 
 -- EID (se usi EID per la descrizione)
 if EID then
@@ -45,20 +45,22 @@ function BrokenOrigami:useOrigamiKolibri(player)
 end
 
 function BrokenOrigami:onTearDamageOrigamiKolibri(entity, damageAmount, damageFlags, source, countdownFrames)
-    local player = Isaac.GetPlayer(0)
-    local data = player:GetData()
-    if entity:IsEnemy() and player:HasCollectible(OrigamiKolibriLocalID) and source.Type == EntityType.ENTITY_TEAR then
-        data.kolibriTearsCount = data.kolibriTearsCount + 1
-        local OrigamiKolibrisCounter = player:GetCollectibleNum(OrigamiKolibriLocalID)
-        if OrigamiKolibrisCounter > 7 then
-            OrigamiKolibrisCounter = 7
-        end
-        if data.kolibriTearsCount >= (128 / 2^OrigamiKolibrisCounter) then
-            data.kolibriTearsCount = 0
-            if not (player:GetHearts() >= player:GetMaxHearts()) then
-                player:AddHearts(1)  -- cura di mezzo cuore
-                Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.HEART, 0, player.Position + Vector(0, -75), Vector(0,0), player)
-                SFXManager():Play(SoundEffect.SOUND_VAMP_GULP)
+    for playerIndex = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(playerIndex)
+        local data = player:GetData()
+        if entity:IsEnemy() and player:HasCollectible(OrigamiKolibriLocalID) and source.Type == EntityType.ENTITY_TEAR then
+            data.kolibriTearsCount = data.kolibriTearsCount + 1
+            data.OrigamiKolibrisCounter = player:GetCollectibleNum(OrigamiKolibriLocalID)
+            if data.OrigamiKolibrisCounter > 7 then
+                data.OrigamiKolibrisCounter = 7
+            end
+            if data.kolibriTearsCount >= (128 / 2^data.OrigamiKolibrisCounter) then
+                data.kolibriTearsCount = 0
+                if not (player:GetHearts() >= player:GetMaxHearts()) then
+                    player:AddHearts(1)  -- cura di mezzo cuore
+                    Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.HEART, 0, player.Position + Vector(0, -75), Vector(0,0), player)
+                    SFXManager():Play(SoundEffect.SOUND_VAMP_GULP)
+                end
             end
         end
     end
