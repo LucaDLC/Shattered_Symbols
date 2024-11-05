@@ -77,4 +77,6 @@ BILANCIAMENTI
 		Se non hai broken heart garantisce il patto angelico nel piano corrente
 	-Girlfriend
 		Aggiungere Spectral Tears alle Wisp dei 2 The Lost
+	-Item Pool
+		Rivisitare Item Pool
 
