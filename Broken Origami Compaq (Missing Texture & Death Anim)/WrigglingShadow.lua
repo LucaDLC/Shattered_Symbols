@@ -9,7 +9,7 @@ end
 
 -- Funzione per gestire l'uso dell'oggetto "Wriggling Shadow"
 function BrokenOrigami:useWrigglingShadow(_, rng, player)
-    if player:HasCollectible(TornHookExternalID) then
+    if player:HasCollectible(TornHookExternalID) and player:HasCollectible(WrigglingShadowLocalID) then
         -- Rimuove 1 Broken Heart e aggiunge 2 Heart
         player:AddBrokenHearts(-1)
         player:AddMaxHearts(2)
