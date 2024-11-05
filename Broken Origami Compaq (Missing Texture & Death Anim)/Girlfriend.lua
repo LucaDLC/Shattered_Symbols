@@ -28,11 +28,9 @@ function BrokenOrigami:useGirlfriend(_, rng, player)
         local familiarID = familiars[rng:RandomInt(#familiars) + 1]
         
         if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B then
-            player:AddWisp(GirlfriendLocalID, player.Position)
-            player:AddWisp(GirlfriendLocalID, player.Position)
-            player:AddWisp(GirlfriendLocalID, player.Position)
-            player:AddWisp(GirlfriendLocalID, player.Position)
-            player:AddWisp(GirlfriendLocalID, player.Position)
+            for i = 1, 5 do
+                player:AddWisp(GirlfriendLocalID, player.Position)
+            end
             if playerType == PlayerType.PLAYER_THELOST_B then
                 player:AddWisp(GirlfriendLocalID, player.Position)
                 player:AddWisp(GirlfriendLocalID, player.Position)
