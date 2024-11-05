@@ -28,7 +28,7 @@ function BrokenOrigami:useGirlfriend(_, rng, player)
         
         local slotRemoved = false
 
-        if player:GetHearts() >= 2 and not slotRemoved then
+        if player:GetMaxHearts() >= 2 and not slotRemoved then
             player:AddMaxHearts(-2)  -- Rimuove mezzo cuore rosso
             slotRemoved = true
         end
