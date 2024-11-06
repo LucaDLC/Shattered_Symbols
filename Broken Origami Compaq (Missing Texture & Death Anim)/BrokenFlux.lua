@@ -50,13 +50,17 @@ function BrokenOrigami:useBrokenFlux(_, rng, player)
     if player:HasCollectible(BrokenFluxLocalID) then
         local randomLocation = math.random() * 100
         if randomLocation <= 40 then
-            player:Teleport(-1, RoomType.ROOM_ULTRASECRET)
+            player:AnimateTeleport(true)
+            --player:Teleport(0, RoomType.ROOM_ULTRASECRET)
         elseif randomLocation <= 65 then
-            player:Teleport(-1, RoomType.ROOM_DEVIL)
+            player:AnimateTeleport(true)
+            --player:Teleport(0, RoomType.ROOM_DEVIL)
         elseif randomLocation <= 85 then
-            player:Teleport(-1, RoomType.ROOM_ANGEL)
+            player:AnimateTeleport(true)
+            --player:Teleport(0, RoomType.ROOM_ANGEL)
         else
-            player:Teleport(-1, RoomType.ROOM_PLANETARIUM)
+            player:AnimateTeleport(true)
+            --player:Teleport(0, RoomType.ROOM_PLANETARIUM)
         end
         data.BrokenFluxCharge = 0
     end
