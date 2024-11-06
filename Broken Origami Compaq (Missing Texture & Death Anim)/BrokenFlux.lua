@@ -11,9 +11,9 @@ function BrokenOrigami:havingBrokenFlux(player)
     -- Get the player's data table
     local data = player:GetData()
     if not data.BrokenFluxPreviousBrokenHearts then data.BrokenFluxPreviousBrokenHearts = -1 end
+    if not data.BrokenFluxCharge then data.BrokenFluxCharge = 0 end
 
     if player:HasCollectible(BrokenFluxLocalID) then
-        if not data.BrokenFluxCharge then data.BrokenFluxCharge = 0 end
 
         for i = 0, 3 do -- Check all active item slots
             local activeItem = player:GetActiveItem(i)
@@ -37,8 +37,6 @@ function BrokenOrigami:havingBrokenFlux(player)
                 end
                 
                 data.BrokenFluxPreviousBrokenHearts = currentBrokenHearts
-            else
-                data.BrokenFluxPreviousBrokenHearts = -1
             end
         end
 
@@ -48,6 +46,7 @@ function BrokenOrigami:havingBrokenFlux(player)
 end
 
 function BrokenOrigami:useBrokenFlux(_, rng, player)
+    local data = player:GetData()
     if player:HasCollectible(BrokenFluxLocalID) then
         local randomLocation = math.random() * 100
         if randomLocation <= 40 then
