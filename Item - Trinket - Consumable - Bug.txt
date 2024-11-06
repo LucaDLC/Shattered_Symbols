@@ -31,7 +31,9 @@ ITEM
 
 
 77715 - Origami Nightingale [3]
-	Da l'1% di possibilità di ???? , la percentuale aumenta per ogni punto fortuna (se sei Jacob e Esau non tainted i punti valgono doppio), da X broken heart
+	Da il 10% di possibilità di aprire una Red Room casuale una volta completata una stanza, la percentuale aumenta per ogni punto fortuna (se sei Jacob e Esau non tainted i punti valgono doppio) senza limite, da 1 broken heart
+77716 - Broken Flux [3]
+	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta al 40% nella Ultra Secret Red. 25% Devil Room, 20% Angel Room, 15% Palnetarium
 
 ---------------------------------------------------------------------
 CONSUMABILI
