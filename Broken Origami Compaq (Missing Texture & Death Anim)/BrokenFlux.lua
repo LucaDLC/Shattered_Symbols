@@ -3,7 +3,7 @@ local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
 
 if EID then
     EID:assignTransformation("collectible", BrokenFluxLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(BrokenFluxLocalID, "Teleport in one of these different location: #{{UltraSecretRoom}} Ultra Secret Room at 40% chance #{{DevilRoom}} Devil Room at 25% chance #{{AngelRoom}} Angel Room at 20% chance #{{Planetarium}} Planetarium at 15% chance #{{BrokenHeart}} For charging the item you must gain Broken Heart when you hold it, every Broken Heart is equal to one charge #{{ArrowUp}} All Broken Flux of a player share charges ")
+    EID:addCollectible(BrokenFluxLocalID, "Teleport in one of these different location: #{{UltraSecretRoom}} Ultra Secret Room at 40% chance #{{DevilRoom}} Devil Room at 25% chance #{{AngelRoom}} Angel Room at 20% chance #{{Planetarium}} Planetarium at 15% chance #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowUp}} All Broken Flux of a player share charges ")
 end
 
 
