@@ -1,6 +1,5 @@
 local game = Game()
 local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
-local  = 0
 
 if EID then
     EID:assignTransformation("collectible", BrokenFluxLocalID, EID.TRANSFORMATION["ORIGAMI"])
