@@ -1,5 +1,5 @@
 <items gfxroot="gfx/items/" version="1">
-        <passive  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the light beyond the shadow" quality="3" devilprice="2"/>
+        <active  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the light beyond the shadow" quality="3" devilprice="2" maxcharges="0" chargetype="normal"/>
 	<passive  id="77702" name="Fortune Teller" gfx ="FortuneTeller.png" description="This is not a game kid" quality="2"/>
 	<passive  id="77703" name="Origami Shuriken" gfx ="OrigamiShuriken.png" description="It's cut" quality="3" devilprice="1"/>
 	<passive  id="77704" name="Origami Boat" gfx ="OrigamiBoat.png" description="Hi Georgie..." quality="3" devilprice="1"/>
@@ -21,7 +21,7 @@
 
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Sacred_Lantern.anm2" version="1">
-        <passive  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the light beyond the shadow" quality="3" devilprice="2"/>
+        <active  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the light beyond the shadow" quality="3" devilprice="2" maxcharges="0" chargetype="normal"/>
 </items>
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Fortune_Teller.anm2" version="1">
