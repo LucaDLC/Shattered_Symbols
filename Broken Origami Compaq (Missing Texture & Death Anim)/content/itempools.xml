@@ -34,6 +34,7 @@
 	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedShop">
@@ -48,6 +49,8 @@
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
     </Pool>
 
     <Pool Name="secret">
@@ -121,10 +124,12 @@
     <Pool Name="demonBagger">
         <Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="craneGame">
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
 </ItemPools>

@@ -14,7 +14,8 @@ local ItemScript = {
     'TornHook',
     'WrigglingShadow',
     'OrigamiCrow',
-    'OrigamiKolibri'
+    'OrigamiKolibri',
+    'BrokenFlux'
 }
 
 for i = 1, #ItemScript do
