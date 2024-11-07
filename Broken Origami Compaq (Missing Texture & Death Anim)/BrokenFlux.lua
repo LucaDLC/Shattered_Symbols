@@ -3,7 +3,7 @@ local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
 
 if EID then
     EID:assignTransformation("collectible", BrokenFluxLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(BrokenFluxLocalID, "Teleport in one of these different location: #{{UltraSecretRoom}} Ultra Secret Room at 40% chance #{{DevilRoom}} Devil Room at 25% chance #{{AngelRoom}} Angel Room at 20% chance #{{Planetarium}} Planetarium at 15% chance #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowUp}} All Broken Flux of a player share charges ")
+    EID:addCollectible(BrokenFluxLocalID, "{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowUp}} All Broken Flux of a player share charges ")
 end
 
 
@@ -28,12 +28,18 @@ function BrokenOrigami:havingBrokenFlux(player)
 
                 
                 if currentBrokenHearts > data.BrokenFluxPreviousBrokenHearts and player:HasCollectible(BrokenFluxLocalID) and data.BrokenFluxCharge < 4 then
-                    data.BrokenFluxCharge = data.BrokenFluxCharge + 1
-                    player:AddBrokenHearts(-1)
+                    for Diff = 1, (currentBrokenHearts - data.BrokenFluxPreviousBrokenHearts) do
+                        if data.BrokenFluxCharge < 4 then
+                            data.BrokenFluxCharge = data.BrokenFluxCharge + 1
+                            player:AddBrokenHearts(-1)
+                        end
+                    end
                 end
 
                 if player:HasCollectible(BrokenFluxLocalID) and data.BrokenFluxCharge <= 4 then
-                    player:SetActiveCharge(data.BrokenFluxCharge, i)
+                    for Diff = 1, (currentBrokenHearts - data.BrokenFluxPreviousBrokenHearts) do
+                        player:SetActiveCharge(data.BrokenFluxCharge, i)
+                    end
                 end
                 
                 data.BrokenFluxPreviousBrokenHearts = currentBrokenHearts
@@ -48,19 +54,10 @@ end
 function BrokenOrigami:useBrokenFlux(_, rng, player)
     local data = player:GetData()
     if player:HasCollectible(BrokenFluxLocalID) then
-        local randomLocation = math.random() * 100
-        if randomLocation <= 40 then
-            player:AnimateTeleport(true)
-            --player:Teleport(0, RoomType.ROOM_ULTRASECRET)
-        elseif randomLocation <= 65 then
-            player:AnimateTeleport(true)
-            --player:Teleport(0, RoomType.ROOM_DEVIL)
-        elseif randomLocation <= 85 then
-            player:AnimateTeleport(true)
-            --player:Teleport(0, RoomType.ROOM_ANGEL)
-        else
-            player:AnimateTeleport(true)
-            --player:Teleport(0, RoomType.ROOM_PLANETARIUM)
+
+        local targetRoomIndex = getRoomIndexByType(RoomType.ROOM_ULTRASECRET)
+        if targetRoomIndex then
+            game:StartRoomTransition(targetRoomIndex, -1, RoomTransitionAnim.TELEPORT)
         end
         data.BrokenFluxCharge = 0
     end
@@ -70,6 +67,17 @@ function BrokenOrigami:useBrokenFlux(_, rng, player)
         Remove = true,
         ShowAnim = true
     }
+end
+
+function getRoomIndexByType(roomType)
+    local rooms = game:GetLevel():GetRooms()
+    for i = 0, rooms.Size - 1 do
+        local roomDesc = rooms:Get(i)
+        if roomDesc and roomDesc.Data and roomDesc.Data.Type == roomType then
+            return roomDesc.SafeGridIndex -- Restituisce l'indice sicuro per il teletrasporto
+        end
+    end
+    return nil
 end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.havingBrokenFlux)
