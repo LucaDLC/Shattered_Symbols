@@ -63,7 +63,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- [IMPORTANTE] Uscendo e rientrando dalla partita gli item danno problemi
+	- [IMPORTANTE] Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 	- Controllare bene le variabili non data. che potrebbero creare problemi con più player() e allo stesso tempo bisogna capire dove usarle
 	- Dare nomi variabili specifici e non generiche e migliorare i commenti
 
