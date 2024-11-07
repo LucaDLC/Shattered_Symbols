@@ -11,20 +11,17 @@ end
 function BrokenOrigami:useOrigamiShuriken(player)
     -- Get the player's data table
     local data = player:GetData()
-    
-    -- Initialize the OrigamiShurikenCounter if it doesn't exist
-    if not data.OrigamiShurikenCounter then data.OrigamiShurikenCounter = 0 end
+    local OrigamiShurikenCounter = player:GetCollectibleNum(OrigamiShurikenLocalID)
+
     if not data.OrigamiShurikenRelative then data.OrigamiShurikenRelative = 0 end
     if not data.OrigamiShurikenPreviousCounter then data.OrigamiShurikenPreviousCounter = 1 end
     if not data.OrigamiShurikenDamageBoost then data.OrigamiShurikenDamageBoost = 0 end
 
     -- Check if the player has picked up the item
     if player:HasCollectible(OrigamiShurikenLocalID) then
-        -- Increase the counter
-        data.OrigamiShurikenCounter = player:GetCollectibleNum(OrigamiShurikenLocalID)
         
         -- Apply the effect based on the number of items picked up
-        if data.OrigamiShurikenCounter >= data.OrigamiShurikenPreviousCounter then
+        if OrigamiShurikenCounter >= data.OrigamiShurikenPreviousCounter then
             data.OrigamiShurikenPreviousCounter = data.OrigamiShurikenPreviousCounter + 1
             data.OrigamiShurikenRelative = data.OrigamiShurikenRelative + 1
             player:AddBrokenHearts(1) -- Add 1 broken heart
@@ -33,11 +30,11 @@ function BrokenOrigami:useOrigamiShuriken(player)
             player:EvaluateItems()
         end
     else
-        data.OrigamiShurikenCounter = 0
+        OrigamiShurikenCounter = 0
         data.OrigamiShurikenPreviousCounter = 1
     end
-    if data.OrigamiShurikenRelative > data.OrigamiShurikenCounter then
-        data.OrigamiShurikenPreviousCounter = data.OrigamiShurikenCounter +1
+    if data.OrigamiShurikenRelative > OrigamiShurikenCounter then
+        data.OrigamiShurikenPreviousCounter = OrigamiShurikenCounter +1
     end
 end
 
