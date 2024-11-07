@@ -1,7 +1,7 @@
 BrokenOrigami = RegisterMod("Broken Origami", 1)
 
---local JsonSaveFile = require("json")
---local AllPlayerDataToSave = {}
+local JsonSaveFile = require("json")
+local AllPlayerDataToSave = {}
 local ItemScript = {
     'SacredLantern',
     'FortuneTeller',
@@ -25,23 +25,23 @@ for Load = 1, #ItemScript do
 end
 
 
---function BrokenOrigami:SavePlayerData()
---    local player = Isaac.GetPlayer(0)
---    AllPlayerDataToSave = player:GetData()
---    BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave)) 
---end
+function BrokenOrigami:SavePlayerData()
+    local player = Isaac.GetPlayer(0)
+    AllPlayerDataToSave = player:GetData()
+    BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave)) 
+end
 
 
---function BrokenOrigami:LoadPlayerData()
---    if BrokenOrigami:HasData() then
---        local player = Isaac.GetPlayer(0)
---        AllPlayerDataToSave = JsonSaveFile.decode(BrokenOrigami:LoadData())
---        
---        for key, value in pairs(AllPlayerDataToSave) do
---            player:GetData()[key] = value
---        end
---    end
---end
+function BrokenOrigami:LoadPlayerData()
+    if BrokenOrigami:HasData() then
+        local player = Isaac.GetPlayer(0)
+        AllPlayerDataToSave = JsonSaveFile.decode(BrokenOrigami:LoadData())
+        
+        for key, value in pairs(AllPlayerDataToSave) do
+            player:GetData()[key] = value
+        end
+    end
+end
 
 function BrokenOrigami:ExecuteConsoleCommand(_, Command)
     if Command == "Launch" then 
