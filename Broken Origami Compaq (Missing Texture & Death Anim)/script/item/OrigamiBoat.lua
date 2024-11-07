@@ -18,8 +18,10 @@ local statMultiplier = {
 -- Funzione che aggiorna le statistiche del giocatore
 function BrokenOrigami:useOrigamiBoat(player)
     local data = player:GetData()
+
     if not data.brokenHeartsCount then data.brokenHeartsCount = 0 end
     if not data.holdingItemforStats then data.holdingItemforStats = false end
+    
     local currentBrokenHearts = player:GetBrokenHearts()
     if player:HasCollectible(OrigamiBoatLocalID) then
         if currentBrokenHearts ~= data.brokenHeartsCount then

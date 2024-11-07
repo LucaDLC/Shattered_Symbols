@@ -12,13 +12,11 @@ function BrokenOrigami:useOrigamiKolibri(player)
     -- Get the player's data table
     local data = player:GetData()
     if not data.kolibriTearsCount then data.kolibriTearsCount = 0 end
-    
-    -- Initialize the OrigamiKolibriCounter if it doesn't exist
-    if not data.OrigamiKolibriCounter then
-        data.OrigamiKolibriCounter = 0
-        data.OrigamiKolibriRelative = 0
-        data.OrigamiKolibriPreviousCounter = 1
-    end
+    if not data.OrigamiKolibriCounter then data.OrigamiKolibriCounter = 0 end
+    if not data.OrigamiKolibriRelative then data.OrigamiKolibriRelative = 0 end
+    if not data.OrigamiKolibriPreviousCounter then data.OrigamiKolibriPreviousCounter = 1 end
+    if not data.OrigamiKolibriSpeedBoost then data.OrigamiKolibriSpeedBoost = 0 end
+    if not data.OrigamiKolibriLimit then data.OrigamiKolibriLimit = 0 end
 
     -- Check if the player has picked up the item
     if player:HasCollectible(OrigamiKolibriLocalID) then
@@ -50,11 +48,11 @@ function BrokenOrigami:onTearDamageOrigamiKolibri(entity, damageAmount, damageFl
         local data = player:GetData()
         if entity:IsEnemy() and player:HasCollectible(OrigamiKolibriLocalID) and source.Type == EntityType.ENTITY_TEAR then
             data.kolibriTearsCount = data.kolibriTearsCount + 1
-            data.OrigamiKolibrisCounter = player:GetCollectibleNum(OrigamiKolibriLocalID)
-            if data.OrigamiKolibrisCounter > 7 then
-                data.OrigamiKolibrisCounter = 7
+            data.OrigamiKolibriLimit = player:GetCollectibleNum(OrigamiKolibriLocalID)
+            if data.OrigamiKolibriLimit > 7 then
+                data.OrigamiKolibriLimit = 7
             end
-            if data.kolibriTearsCount >= (128 / 2^data.OrigamiKolibrisCounter) then
+            if data.kolibriTearsCount >= (128 / 2^data.OrigamiKolibriLimit) then
                 data.kolibriTearsCount = 0
                 if not (player:GetHearts() >= player:GetMaxHearts()) then
                     player:AddHearts(1)  -- cura di mezzo cuore

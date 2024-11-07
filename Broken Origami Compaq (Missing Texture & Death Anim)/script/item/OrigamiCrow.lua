@@ -12,13 +12,9 @@ function BrokenOrigami:useOrigamiCrow(player)
     -- Get the player's data table
     local data = player:GetData()
     if not data.chargeMemory then data.chargeMemory = {} end
-    
-    -- Initialize the OrigamiCrowCounter if it doesn't exist
-    if not data.OrigamiCrowCounter then
-        data.OrigamiCrowCounter = 0
-        data.OrigamiCrowRelative = 0
-        data.OrigamiCrowPreviousCounter = 1
-    end
+    if not data.OrigamiCrowCounter then data.OrigamiCrowCounter = 0 end
+    if not data.OrigamiCrowRelative then data.OrigamiCrowRelative = 0 end
+    if not data.OrigamiCrowPreviousCounter then data.OrigamiCrowPreviousCounter = 1 end
 
     -- Check if the player has picked up the item
     if player:HasCollectible(OrigamiCrowLocalID) then

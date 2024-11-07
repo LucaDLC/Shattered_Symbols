@@ -13,11 +13,10 @@ function BrokenOrigami:useFortuneTeller(player)
     local data = player:GetData()
     
     -- Initialize the FortuneTellerCounter if it doesn't exist
-    if not data.FortuneTellerCounter then
-        data.FortuneTellerCounter = 0
-        data.FortuneTellerRelative = 0
-        data.FortuneTellerPreviousCounter = 1
-    end
+    if not data.FortuneTellerCounter then data.FortuneTellerCounter = 0 end
+    if not data.FortuneTellerRelative then data.FortuneTellerRelative = 0 end
+    if not data.FortuneTellerPreviousCounter then data.FortuneTellerPreviousCounter = 1 end
+    if not data.FortuneTellerLuckBoost then data.FortuneTellerLuckBoost = 0 end
     
     if player:HasCollectible(FortuneTellerLocalID) then
         -- Increase the counter

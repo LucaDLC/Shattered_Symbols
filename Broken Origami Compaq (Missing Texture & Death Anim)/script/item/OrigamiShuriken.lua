@@ -13,11 +13,10 @@ function BrokenOrigami:useOrigamiShuriken(player)
     local data = player:GetData()
     
     -- Initialize the OrigamiShurikenCounter if it doesn't exist
-    if not data.OrigamiShurikenCounter then
-        data.OrigamiShurikenCounter = 0
-        data.OrigamiShurikenRelative = 0
-        data.OrigamiShurikenPreviousCounter = 1
-    end
+    if not data.OrigamiShurikenCounter then data.OrigamiShurikenCounter = 0 end
+    if not data.OrigamiShurikenRelative then data.OrigamiShurikenRelative = 0 end
+    if not data.OrigamiShurikenPreviousCounter then data.OrigamiShurikenPreviousCounter = 1 end
+    if not data.OrigamiShurikenDamageBoost then data.OrigamiShurikenDamageBoost = 0 end
 
     -- Check if the player has picked up the item
     if player:HasCollectible(OrigamiShurikenLocalID) then
