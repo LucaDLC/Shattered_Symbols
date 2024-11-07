@@ -50,6 +50,11 @@ function BrokenOrigami:ExecuteConsoleCommand(_, Command)
         end
         print("Broken Origami: Scripts Launched")
     end
+    if Command == "Script" then 
+        for Load = 1, #ItemScript do
+            print(ItemScript[Load])
+        end
+    end
 end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, BrokenOrigami.SavePlayerData)
