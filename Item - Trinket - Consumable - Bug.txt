@@ -28,8 +28,8 @@ ITEM
 	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 3 broken heart
 77714 - Origami Kolibri [2]
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Kolibri, da 1 broken heart
-77715 - Broken Flux [3]
-	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta al 40% nella Ultra Secret Red. 25% Devil Room, 20% Angel Room, 15% Palnetarium
+77715 - Broken Flux [2]
+	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
 
 
 77716 - Origami Nightingale [3]
