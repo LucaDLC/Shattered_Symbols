@@ -11,11 +11,9 @@ function BrokenOrigami:useOrigamiSwan(player)
     local data = player:GetData()
     
     -- Initialize the OrigamiSwanCounter if it doesn't exist
-    if not data.OrigamiSwanCounter then
-        data.OrigamiSwanCounter = 0
-        data.OrigamiSwanRelative = 0
-        data.OrigamiSwanPreviousCounter = 1
-    end
+    if not data.OrigamiSwanCounter then data.OrigamiSwanCounter = 0 end
+    if not data.OrigamiSwanRelative then data.OrigamiSwanRelative = 0 end
+    if not data.OrigamiSwanPreviousCounter then data.OrigamiSwanPreviousCounter = 1 end
 
     if player:HasCollectible(OrigamiSwanLocalID) then
         data.OrigamiSwanCounter = player:GetCollectibleNum(OrigamiSwanLocalID)

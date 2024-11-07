@@ -11,11 +11,9 @@ function BrokenOrigami:useMeteor(player)
     local data = player:GetData()
     
     -- Initialize the MeteorCounter if it doesn't exist
-    if not data.MeteorCounter then
-        data.MeteorCounter = 0
-        data.MeteorRelative = 0
-        data.MeteorPreviousCounter = 1
-    end
+    if not data.MeteorCounter then data.MeteorCounter = 0 end
+    if not data.MeteorRelative then data.MeteorRelative = 0 end
+    if not data.MeteorPreviousCounter then data.MeteorPreviousCounter = 1 end
 
     -- Check if the player has picked up the item
     if player:HasCollectible(MeteorLocalID) then
