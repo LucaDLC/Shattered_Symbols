@@ -9,19 +9,16 @@ end
 function BrokenOrigami:useMeteor(player)
     -- Get the player's data table
     local data = player:GetData()
+    local MeteorCounter = player:GetCollectibleNum(MeteorLocalID)
     
-    -- Initialize the MeteorCounter if it doesn't exist
-    if not data.MeteorCounter then data.MeteorCounter = 0 end
     if not data.MeteorRelative then data.MeteorRelative = 0 end
     if not data.MeteorPreviousCounter then data.MeteorPreviousCounter = 1 end
 
     -- Check if the player has picked up the item
     if player:HasCollectible(MeteorLocalID) then
-        -- Increase the counter
-        data.MeteorCounter = player:GetCollectibleNum(MeteorLocalID)
         
         -- Apply the effect based on the number of items picked up
-        if data.MeteorCounter >= data.MeteorPreviousCounter then
+        if MeteorCounter >= data.MeteorPreviousCounter then
             data.MeteorPreviousCounter = data.MeteorPreviousCounter + 1
             data.MeteorRelative = data.MeteorRelative + 1
             if player:GetBrokenHearts() >= 2 then
@@ -34,11 +31,11 @@ function BrokenOrigami:useMeteor(player)
             end
         end
     else
-        data.MeteorCounter = 0
+        MeteorCounter = 0
         data.MeteorPreviousCounter = 1
     end
-    if data.MeteorRelative > data.MeteorCounter then
-        data.MeteorPreviousCounter = data.MeteorCounter +1
+    if data.MeteorRelative > MeteorCounter then
+        data.MeteorPreviousCounter = MeteorCounter +1
     end
 end
 

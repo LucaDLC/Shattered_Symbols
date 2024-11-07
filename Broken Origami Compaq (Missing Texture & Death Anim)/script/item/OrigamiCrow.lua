@@ -11,18 +11,17 @@ end
 function BrokenOrigami:useOrigamiCrow(player)
     -- Get the player's data table
     local data = player:GetData()
+    local OrigamiCrowCounter = player:GetCollectibleNum(OrigamiCrowLocalID)
+
     if not data.chargeMemory then data.chargeMemory = {} end
-    if not data.OrigamiCrowCounter then data.OrigamiCrowCounter = 0 end
     if not data.OrigamiCrowRelative then data.OrigamiCrowRelative = 0 end
     if not data.OrigamiCrowPreviousCounter then data.OrigamiCrowPreviousCounter = 1 end
 
     -- Check if the player has picked up the item
-    if player:HasCollectible(OrigamiCrowLocalID) then
-        -- Increase the counter
-        data.OrigamiCrowCounter = player:GetCollectibleNum(OrigamiCrowLocalID)
+    if player:HasCollectible(OrigamiCrowLocalID) then      
         
         -- Apply the effect based on the number of items picked up
-        if data.OrigamiCrowCounter >= data.OrigamiCrowPreviousCounter then
+        if OrigamiCrowCounter >= data.OrigamiCrowPreviousCounter then
             data.OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter + 1
             data.OrigamiCrowRelative = data.OrigamiCrowRelative + 1
             player:AddBrokenHearts(3) -- Add 3 broken heart
@@ -58,11 +57,11 @@ function BrokenOrigami:useOrigamiCrow(player)
         end
 
     else
-        data.OrigamiCrowCounter = 0
+        OrigamiCrowCounter = 0
         data.OrigamiCrowPreviousCounter = 1
     end
-    if data.OrigamiCrowRelative > data.OrigamiCrowCounter then
-        data.OrigamiCrowPreviousCounter = data.OrigamiCrowCounter +1
+    if data.OrigamiCrowRelative > OrigamiCrowCounter then
+        data.OrigamiCrowPreviousCounter = OrigamiCrowCounter +1
     end
 end
 

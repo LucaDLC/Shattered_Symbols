@@ -11,19 +11,16 @@ end
 function BrokenOrigami:useFortuneTeller(player)
     -- Get the player's data table
     local data = player:GetData()
+    local FortuneTellerCounter = player:GetCollectibleNum(FortuneTellerLocalID)
     
-    -- Initialize the FortuneTellerCounter if it doesn't exist
-    if not data.FortuneTellerCounter then data.FortuneTellerCounter = 0 end
     if not data.FortuneTellerRelative then data.FortuneTellerRelative = 0 end
     if not data.FortuneTellerPreviousCounter then data.FortuneTellerPreviousCounter = 1 end
     if not data.FortuneTellerLuckBoost then data.FortuneTellerLuckBoost = 0 end
     
     if player:HasCollectible(FortuneTellerLocalID) then
-        -- Increase the counter
-        data.FortuneTellerCounter = player:GetCollectibleNum(FortuneTellerLocalID)
         
         -- Apply the effect based on the number of items picked up
-        if data.FortuneTellerCounter >= data.FortuneTellerPreviousCounter then
+        if FortuneTellerCounter >= data.FortuneTellerPreviousCounter then
             data.FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter + 1
             data.FortuneTellerRelative = data.FortuneTellerRelative + 1
             player:AddBrokenHearts(2) -- Add 2 broken heart
@@ -32,11 +29,11 @@ function BrokenOrigami:useFortuneTeller(player)
             player:EvaluateItems()
         end
     else
-        data.FortuneTellerCounter = 0
+        FortuneTellerCounter = 0
         data.FortuneTellerPreviousCounter = 1
     end
-    if data.FortuneTellerRelative > data.FortuneTellerCounter then
-        data.FortuneTellerPreviousCounter = data.FortuneTellerCounter +1
+    if data.FortuneTellerRelative > FortuneTellerCounter then
+        data.FortuneTellerPreviousCounter = FortuneTellerCounter +1
     end
 end
 

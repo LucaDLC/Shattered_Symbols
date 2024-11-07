@@ -11,8 +11,9 @@ end
 function BrokenOrigami:useOrigamiKolibri(player)
     -- Get the player's data table
     local data = player:GetData()
+    local OrigamiKolibriCounter = player:GetCollectibleNum(OrigamiKolibriLocalID)
+
     if not data.kolibriTearsCount then data.kolibriTearsCount = 0 end
-    if not data.OrigamiKolibriCounter then data.OrigamiKolibriCounter = 0 end
     if not data.OrigamiKolibriRelative then data.OrigamiKolibriRelative = 0 end
     if not data.OrigamiKolibriPreviousCounter then data.OrigamiKolibriPreviousCounter = 1 end
     if not data.OrigamiKolibriSpeedBoost then data.OrigamiKolibriSpeedBoost = 0 end
@@ -20,11 +21,9 @@ function BrokenOrigami:useOrigamiKolibri(player)
 
     -- Check if the player has picked up the item
     if player:HasCollectible(OrigamiKolibriLocalID) then
-        -- Increase the counter
-        data.OrigamiKolibriCounter = player:GetCollectibleNum(OrigamiKolibriLocalID)
         
         -- Apply the effect based on the number of items picked up
-        if data.OrigamiKolibriCounter >= data.OrigamiKolibriPreviousCounter then
+        if OrigamiKolibriCounter >= data.OrigamiKolibriPreviousCounter then
             data.OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter + 1
             data.OrigamiKolibriRelative = data.OrigamiKolibriRelative + 1
             data.kolibriTearsCount = 0
@@ -34,11 +33,11 @@ function BrokenOrigami:useOrigamiKolibri(player)
             player:EvaluateItems()
         end
     else
-        data.OrigamiKolibriCounter = 0
+        OrigamiKolibriCounter = 0
         data.OrigamiKolibriPreviousCounter = 1
     end
-    if data.OrigamiKolibriRelative > data.OrigamiKolibriCounter then
-        data.OrigamiKolibriPreviousCounter = data.OrigamiKolibriCounter +1
+    if data.OrigamiKolibriRelative > OrigamiKolibriCounter then
+        data.OrigamiKolibriPreviousCounter = OrigamiKolibriCounter +1
     end
 end
 

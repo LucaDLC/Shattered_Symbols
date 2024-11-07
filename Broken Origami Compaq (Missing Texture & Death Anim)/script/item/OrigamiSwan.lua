@@ -9,31 +9,29 @@ end
 
 function BrokenOrigami:useOrigamiSwan(player)
     local data = player:GetData()
-    
-    -- Initialize the OrigamiSwanCounter if it doesn't exist
-    if not data.OrigamiSwanCounter then data.OrigamiSwanCounter = 0 end
+    local OrigamiSwanCounter = player:GetCollectibleNum(OrigamiSwanLocalID) 
+
     if not data.OrigamiSwanRelative then data.OrigamiSwanRelative = 0 end
     if not data.OrigamiSwanPreviousCounter then data.OrigamiSwanPreviousCounter = 1 end
 
     if player:HasCollectible(OrigamiSwanLocalID) then
-        data.OrigamiSwanCounter = player:GetCollectibleNum(OrigamiSwanLocalID)
         for i = 0, 1 do  -- Controlla entrambi gli slot dei trinket
             local trinketID = player:GetTrinket(i)
             if trinketID ~= 0 then  -- Se c'è un trinket nello slot
                 player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, false, false, false, false)  -- Effetto Smelter senza usarlo direttamente
             end
         end
-        if data.OrigamiSwanCounter >= data.OrigamiSwanPreviousCounter then
+        if OrigamiSwanCounter >= data.OrigamiSwanPreviousCounter then
             data.OrigamiSwanPreviousCounter = data.OrigamiSwanPreviousCounter + 1
             data.OrigamiSwanRelative = data.OrigamiSwanRelative + 1
             player:AddBrokenHearts(2)
         end
     else
-        data.OrigamiSwanCounter = 0
+        OrigamiSwanCounter = 0
         data.OrigamiSwanPreviousCounter = 1
     end
-    if data.OrigamiSwanRelative > data.OrigamiSwanCounter then
-        data.OrigamiSwanPreviousCounter = data.OrigamiSwanCounter +1
+    if data.OrigamiSwanRelative > OrigamiSwanCounter then
+        data.OrigamiSwanPreviousCounter = OrigamiSwanCounter +1
     end
 end
 
