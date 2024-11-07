@@ -63,7 +63,6 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- Broken Flux non teletrasporta
 	- [IMPORTANTE] Uscendo e rientrando dalla partita gli item danno problemi
 	- Controllare bene le variabili non data. che potrebbero creare problemi con più player() e allo stesso tempo bisogna capire dove usarle
 	- Dare nomi variabili specifici e non generiche e migliorare i commenti
