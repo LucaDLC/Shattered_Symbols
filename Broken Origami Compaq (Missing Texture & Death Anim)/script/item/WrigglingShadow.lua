@@ -37,4 +37,9 @@ function BrokenOrigami:useWrigglingShadow(_, rng, player)
     }
 end
 
+function BrokenOrigami:removeWrigglingShadowFromPool()
+    Game():GetItemPool():RemoveCollectible(WrigglingShadowLocalID)
+end
+
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useWrigglingShadow, WrigglingShadowLocalID)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.removeWrigglingShadowFromPool)
