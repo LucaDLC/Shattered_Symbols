@@ -37,9 +37,7 @@ function BrokenOrigami:havingBrokenFlux(player)
                 end
 
                 if player:HasCollectible(BrokenFluxLocalID) and data.BrokenFluxCharge <= 4 then
-                    for Diff = 1, (currentBrokenHearts - data.BrokenFluxPreviousBrokenHearts) do
-                        player:SetActiveCharge(data.BrokenFluxCharge, i)
-                    end
+                    player:SetActiveCharge(data.BrokenFluxCharge, i)
                 end
                 
                 data.BrokenFluxPreviousBrokenHearts = currentBrokenHearts
