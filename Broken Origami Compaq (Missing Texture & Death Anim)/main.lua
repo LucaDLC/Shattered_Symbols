@@ -21,7 +21,7 @@ local ItemScript = {
 }
 
 for Load = 1, #ItemScript do
-	require("script." .. ItemScript[Load])
+	require("script.item." .. ItemScript[Load])
 end
 
 
@@ -46,13 +46,13 @@ end
 function BrokenOrigami:ExecuteConsoleCommand(_, Command)
     if Command == "Launch" then 
         for Load = 1, #ItemScript do
-            require("script." .. ItemScript[Load])
+            require("script.item." .. ItemScript[Load])
         end
         print("Broken Origami: Scripts Launched")
     end
     if Command == "Script" then 
         for Load = 1, #ItemScript do
-            print("script." .. ItemScript[Load])
+            print("script.item." .. ItemScript[Load])
         end
     end
 end
