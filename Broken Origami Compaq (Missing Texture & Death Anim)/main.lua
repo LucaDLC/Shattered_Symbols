@@ -1,5 +1,7 @@
 BrokenOrigami = RegisterMod("Broken Origami", 1)
 
+local JsonSaveFile = require("json")
+local AllPlayerDataToSave = {}
 local ItemScript = {
     'SacredLantern',
     'FortuneTeller',
@@ -18,34 +20,40 @@ local ItemScript = {
     'BrokenFlux'
 }
 
-for i = 1, #ItemScript do
-	require (ItemScript[i])
+for Load = 1, #ItemScript do
+	require (ItemScript[Load])
 end
 
-local JsonSaveFile = require("json")
-local AllPlayerDataToSave = {}
 
 function BrokenOrigami:SavePlayerData()
     local player = Isaac.GetPlayer(0)
-    AllPlayerDataToSave = player:GetData() -- Recupera tutte le variabili salvate in GetData
-    BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave)) -- Salva i dati in JSON
+    AllPlayerDataToSave = player:GetData()
+    BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave)) 
 end
 
--- Funzione per caricare tutte le variabili del player
+
 function BrokenOrigami:LoadPlayerData()
     if BrokenOrigami:HasData() then
         local player = Isaac.GetPlayer(0)
         AllPlayerDataToSave = JsonSaveFile.decode(BrokenOrigami:LoadData())
         
-        -- Ripristina tutte le variabili salvate su GetData del player
         for key, value in pairs(AllPlayerDataToSave) do
             player:GetData()[key] = value
         end
     end
 end
 
--- Callback per salvare i dati all’uscita
+function BrokenOrigami:ExecuteConsoleCommand(_, Command)
+    if Command == "Launch" then 
+        for Load = 1, #ItemScript do
+            require (ItemScript[Load])
+        end
+        print("Broken Origami: Scripts Launched")
+    end
+end
+
 BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, BrokenOrigami.SavePlayerData)
 
--- Callback per caricare i dati all'inizio del gioco
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, BrokenOrigami.LoadPlayerData)
+
+BrokenOrigami:AddCallback(ModCallbacks.MC_EXECUTE_CMD,BrokenOrigami.ExecuteConsoleCommand)
