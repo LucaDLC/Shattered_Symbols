@@ -35,11 +35,11 @@ function BrokenOrigami:SavePlayerData()
         OrigamiSwanPreviousCounter = data.OrigamiSwanPreviousCounter or 1,
         OrigamiShurikenRelative = data.OrigamiShurikenRelative or 0,
         OrigamiShurikenPreviousCounter = data.OrigamiShurikenPreviousCounter or 1,
-        OrigamiShurikenDamageBoost = data.OrigamiShurikenDamageBoost or 0,
+        --OrigamiShurikenDamageBoost = data.OrigamiShurikenDamageBoost or 0,
         OrigamiKolibriRelative = data.OrigamiKolibriRelative or 0,
         OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter or 1,
         kolibriTearsCount = data.kolibriTearsCount or 0,
-        OrigamiKolibriSpeedBoost = data.OrigamiKolibriSpeedBoost or 0,
+        --OrigamiKolibriSpeedBoost = data.OrigamiKolibriSpeedBoost or 0,
         OrigamiKolibriLimit = data.OrigamiKolibriLimit or 0,
         chargeMemory = data.chargeMemory or {},
         OrigamiCrowRelative = data.OrigamiCrowRelative or 0,
@@ -50,7 +50,7 @@ function BrokenOrigami:SavePlayerData()
         MeteorPreviousCounter = data.MeteorPreviousCounter or 1,
         FortuneTellerRelative = data.FortuneTellerRelative or 0,
         FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter or 1,
-        FortuneTellerLuckBoost = data.FortuneTellerLuckBoost or 0,
+        --FortuneTellerLuckBoost = data.FortuneTellerLuckBoost or 0,
         BrokenFluxPreviousBrokenHearts = data.BrokenFluxPreviousBrokenHearts or -1,
         BrokenFluxCharge = data.BrokenFluxCharge or 0
     }
@@ -75,11 +75,11 @@ function BrokenOrigami:LoadPlayerData(isSave)
         data.OrigamiSwanPreviousCounter = AllPlayerDataToSave.OrigamiSwanPreviousCounter or 1
         data.OrigamiShurikenRelative = AllPlayerDataToSave.OrigamiShurikenRelative or 0
         data.OrigamiShurikenPreviousCounter = AllPlayerDataToSave.OrigamiShurikenPreviousCounter or 1
-        data.OrigamiShurikenDamageBoost = AllPlayerDataToSave.OrigamiShurikenDamageBoost or 0
+        --data.OrigamiShurikenDamageBoost = AllPlayerDataToSave.OrigamiShurikenDamageBoost or 0
         data.OrigamiKolibriRelative = AllPlayerDataToSave.OrigamiKolibriRelative or 0
         data.OrigamiKolibriPreviousCounter = AllPlayerDataToSave.OrigamiKolibriPreviousCounter or 1
         data.kolibriTearsCount = AllPlayerDataToSave.kolibriTearsCount or 0
-        data.OrigamiKolibriSpeedBoost = AllPlayerDataToSave.OrigamiKolibriSpeedBoost or 0
+        --data.OrigamiKolibriSpeedBoost = AllPlayerDataToSave.OrigamiKolibriSpeedBoost or 0
         data.OrigamiKolibriLimit = AllPlayerDataToSave.OrigamiKolibriLimit or 0
         data.chargeMemory = AllPlayerDataToSave.chargeMemory or {}
         data.OrigamiCrowRelative = AllPlayerDataToSave.OrigamiCrowRelative or 0
@@ -90,7 +90,7 @@ function BrokenOrigami:LoadPlayerData(isSave)
         data.MeteorPreviousCounter = AllPlayerDataToSave.MeteorPreviousCounter or 1
         data.FortuneTellerRelative = AllPlayerDataToSave.FortuneTellerRelative or 0
         data.FortuneTellerPreviousCounter = AllPlayerDataToSave.FortuneTellerPreviousCounter or 1
-        data.FortuneTellerLuckBoost = AllPlayerDataToSave.FortuneTellerLuckBoost or 0
+        --data.FortuneTellerLuckBoost = AllPlayerDataToSave.FortuneTellerLuckBoost or 0
         data.BrokenFluxPreviousBrokenHearts = AllPlayerDataToSave.BrokenFluxPreviousBrokenHearts or -1
         data.BrokenFluxCharge = AllPlayerDataToSave.BrokenFluxCharge or 0
     end
