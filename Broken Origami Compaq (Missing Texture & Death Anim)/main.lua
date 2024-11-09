@@ -62,11 +62,11 @@ function BrokenOrigami:SavePlayerData()
 end
 
 -- Funzione di caricamento dei dati
-function BrokenOrigami:LoadPlayerData(isSave)
+function BrokenOrigami:LoadPlayerData()
     local player = Isaac.GetPlayer(0)
     local data = player:GetData()
 
-    if BrokenOrigami:HasData() then
+    if BrokenOrigami:HasData() and (Game():GetFrameCount() > 0) then
         -- Carica i dati solo se sono presenti nel file
         AllPlayerDataToSave = JsonSaveFile.decode(BrokenOrigami:LoadData())
 
@@ -99,7 +99,7 @@ function BrokenOrigami:LoadPlayerData(isSave)
     BrokenOrigami:RemoveData()
 end
 
-function BrokenOrigami:EraseDataOnNewGameOrEnd()
+function BrokenOrigami:EraseDataOnEnd()
     BrokenOrigami:RemoveData()
 end
 
@@ -119,9 +119,9 @@ end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_EXECUTE_CMD,BrokenOrigami.ExecuteConsoleCommand)
 
---BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, BrokenOrigami.SavePlayerData)
+BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, BrokenOrigami.SavePlayerData)
 
---BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, BrokenOrigami.LoadPlayerData)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, BrokenOrigami.LoadPlayerData)
 
---BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_END, BrokenOrigami.EraseDataOnNewGameOrEnd)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_END, BrokenOrigami.EraseDataOnEnd)
 
