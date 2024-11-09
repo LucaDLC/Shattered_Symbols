@@ -25,6 +25,8 @@ for Load = 1, #ItemScript do
 end
 
 
+
+
 function BrokenOrigami:SavePlayerData()
     local player = Isaac.GetPlayer(0)
     local data = player:GetData()
@@ -56,21 +58,18 @@ function BrokenOrigami:SavePlayerData()
     }
 
     BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave))
-    
     AllPlayerDataToSave = {}
 
 end
 
--- Funzione di caricamento dei dati
 function BrokenOrigami:LoadPlayerData()
     local player = Isaac.GetPlayer(0)
     local data = player:GetData()
 
     if BrokenOrigami:HasData() and (Game():GetFrameCount() > 0) then
-        -- Carica i dati solo se sono presenti nel file
+
         AllPlayerDataToSave = JsonSaveFile.decode(BrokenOrigami:LoadData())
 
-        -- Assegna le variabili salvate al giocatore
         data.OrigamiSwanRelative = AllPlayerDataToSave.OrigamiSwanRelative or 0
         data.OrigamiSwanPreviousCounter = AllPlayerDataToSave.OrigamiSwanPreviousCounter or 1
         data.OrigamiShurikenRelative = AllPlayerDataToSave.OrigamiShurikenRelative or 0
@@ -97,6 +96,7 @@ function BrokenOrigami:LoadPlayerData()
 
     AllPlayerDataToSave = {}
     BrokenOrigami:RemoveData()
+    
 end
 
 function BrokenOrigami:EraseDataOnEnd()
