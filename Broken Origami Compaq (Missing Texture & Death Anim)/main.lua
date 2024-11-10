@@ -17,7 +17,8 @@ local ItemScript = {
     'WrigglingShadow',
     'OrigamiCrow',
     'OrigamiKolibri',
-    'BrokenFlux'
+    'BrokenFlux',
+    'OrigamiNightingale'
 }
 
 for Load = 1, #ItemScript do
@@ -53,7 +54,9 @@ function BrokenOrigami:SavePlayerData()
         FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter or 1,
         FortuneTellerLuckBoost = data.FortuneTellerLuckBoost or 0,
         BrokenFluxPreviousBrokenHearts = data.BrokenFluxPreviousBrokenHearts or -1,
-        BrokenFluxCharge = data.BrokenFluxCharge or 0
+        BrokenFluxCharge = data.BrokenFluxCharge or 0,
+        OrigamiNightingaleRelative = data.OrigamiNightingaleRelative or 0,
+        OrigamiNightingalePreviousCounter = data.OrigamiNightingalePreviousCounter or 1
     }
 
     BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave))
@@ -91,6 +94,8 @@ function BrokenOrigami:LoadPlayerData()
         data.FortuneTellerLuckBoost = AllPlayerDataToSave.FortuneTellerLuckBoost or 0
         data.BrokenFluxPreviousBrokenHearts = AllPlayerDataToSave.BrokenFluxPreviousBrokenHearts or -1
         data.BrokenFluxCharge = AllPlayerDataToSave.BrokenFluxCharge or 0
+        data.OrigamiNightingaleRelative = AllPlayerDataToSave.OrigamiNightingaleRelative or 0
+        data.OrigamiNightingalePreviousCounter = AllPlayerDataToSave.OrigamiNightingalePreviousCounter or 1
 
     else
         BrokenOrigami:RemoveData()
