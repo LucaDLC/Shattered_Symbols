@@ -13,7 +13,7 @@ function BrokenOrigami:useOrigamiKolibri(player)
     local data = player:GetData()
     local OrigamiKolibriCounter = player:GetCollectibleNum(OrigamiKolibriLocalID)
 
-    if not data.kolibriTearsCount then data.kolibriTearsCount = 0 end
+    if not data.OrigamiKolibriTearsCount then data.OrigamiKolibriTearsCount = 0 end
     if not data.OrigamiKolibriRelative then data.OrigamiKolibriRelative = 0 end
     if not data.OrigamiKolibriPreviousCounter then data.OrigamiKolibriPreviousCounter = 1 end
     if not data.OrigamiKolibriSpeedBoost then data.OrigamiKolibriSpeedBoost = 0 end
@@ -26,7 +26,7 @@ function BrokenOrigami:useOrigamiKolibri(player)
         if OrigamiKolibriCounter >= data.OrigamiKolibriPreviousCounter then
             data.OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter + 1
             data.OrigamiKolibriRelative = data.OrigamiKolibriRelative + 1
-            data.kolibriTearsCount = 0
+            data.OrigamiKolibriTearsCount = 0
             data.OrigamiKolibriSpeedBoost = 0.2*data.OrigamiKolibriRelative
             player:AddBrokenHearts(1)
             player:AddCacheFlags(CacheFlag.CACHE_SPEED)
@@ -46,13 +46,13 @@ function BrokenOrigami:onTearDamageOrigamiKolibri(entity, damageAmount, damageFl
         local player = Isaac.GetPlayer(playerIndex)
         local data = player:GetData()
         if entity:IsEnemy() and player:HasCollectible(OrigamiKolibriLocalID) and source.Type == EntityType.ENTITY_TEAR then
-            data.kolibriTearsCount = data.kolibriTearsCount + 1
+            data.OrigamiKolibriTearsCount = data.OrigamiKolibriTearsCount + 1
             data.OrigamiKolibriLimit = player:GetCollectibleNum(OrigamiKolibriLocalID)
             if data.OrigamiKolibriLimit > 7 then
                 data.OrigamiKolibriLimit = 7
             end
-            if data.kolibriTearsCount >= (128 / 2^data.OrigamiKolibriLimit) then
-                data.kolibriTearsCount = 0
+            if data.OrigamiKolibriTearsCount >= (128 / 2^data.OrigamiKolibriLimit) then
+                data.OrigamiKolibriTearsCount = 0
                 if not (player:GetHearts() >= player:GetMaxHearts()) then
                     player:AddHearts(1)  -- cura di mezzo cuore
                     Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.HEART, 0, player.Position + Vector(0, -75), Vector(0,0), player)

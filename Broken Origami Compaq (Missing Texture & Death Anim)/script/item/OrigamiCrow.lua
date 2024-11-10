@@ -13,7 +13,7 @@ function BrokenOrigami:useOrigamiCrow(player)
     local data = player:GetData()
     local OrigamiCrowCounter = player:GetCollectibleNum(OrigamiCrowLocalID)
 
-    if not data.chargeMemory then data.chargeMemory = {} end
+    if not data.OrigamiCrowChargeMemory then data.OrigamiCrowChargeMemory = {} end
     if not data.OrigamiCrowRelative then data.OrigamiCrowRelative = 0 end
     if not data.OrigamiCrowPreviousCounter then data.OrigamiCrowPreviousCounter = 1 end
 
@@ -33,12 +33,12 @@ function BrokenOrigami:useOrigamiCrow(player)
                 local currentCharge = player:GetActiveCharge(i)
                 
                 -- Memorizza la carica iniziale se non esiste già
-                if data.chargeMemory[i] == nil then
-                    data.chargeMemory[i] = currentCharge
+                if data.OrigamiCrowChargeMemory[i] == nil then
+                    data.OrigamiCrowChargeMemory[i] = currentCharge
                 end
                 
                 -- Calcola la carica aggiuntiva ottenuta dall'ultimo ciclo
-                local chargeGained = currentCharge - data.chargeMemory[i]
+                local chargeGained = currentCharge - data.OrigamiCrowChargeMemory[i]
                 
                 -- Se è stata aggiunta carica, raddoppiala
                 if chargeGained > 0 then
@@ -49,10 +49,10 @@ function BrokenOrigami:useOrigamiCrow(player)
                 end
                 
                 -- Aggiorna la carica memorizzata per il prossimo ciclo
-                data.chargeMemory[i] = player:GetActiveCharge(i)
+                data.OrigamiCrowChargeMemory[i] = player:GetActiveCharge(i)
             else
                 -- Resetta la memoria se lo slot non contiene oggetti
-                data.chargeMemory[i] = nil
+                data.OrigamiCrowChargeMemory[i] = nil
             end
         end
 
