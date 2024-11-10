@@ -30,7 +30,6 @@ end
 function BrokenOrigami:SavePlayerData()
     local player = Isaac.GetPlayer(0)
     local data = player:GetData()
-    BrokenOrigami:RemoveData()
 
     AllPlayerDataToSave = {
         OrigamiSwanRelative = data.OrigamiSwanRelative or 0,
@@ -92,15 +91,13 @@ function BrokenOrigami:LoadPlayerData()
         data.FortuneTellerLuckBoost = AllPlayerDataToSave.FortuneTellerLuckBoost or 0
         data.BrokenFluxPreviousBrokenHearts = AllPlayerDataToSave.BrokenFluxPreviousBrokenHearts or -1
         data.BrokenFluxCharge = AllPlayerDataToSave.BrokenFluxCharge or 0
+
+    else
+        BrokenOrigami:RemoveData()
     end
 
     AllPlayerDataToSave = {}
-    BrokenOrigami:RemoveData()
     
-end
-
-function BrokenOrigami:EraseDataOnEnd()
-    BrokenOrigami:RemoveData()
 end
 
 function BrokenOrigami:ExecuteConsoleCommand(_, Command)
@@ -123,5 +120,4 @@ BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, BrokenOrigami.SavePlaye
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, BrokenOrigami.LoadPlayerData)
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_END, BrokenOrigami.EraseDataOnEnd)
 
