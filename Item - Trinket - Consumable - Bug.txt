@@ -30,10 +30,14 @@ ITEM
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Kolibri, da 1 broken heart
 77715 - Broken Flux [2]
 	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
-
-
 77716 - Origami Nightingale [3]
-	Da il 10% di possibilità di aprire una Red Room casuale una volta completata una stanza, la percentuale aumenta per ogni punto fortuna (se sei Jacob e Esau non tainted i punti valgono doppio) senza limite, da 1 broken heart
+	Da il 10% di possibilità di aprire una Red Room casuale una volta completata una stanza, la percentuale aumenta per ogni punto fortuna 
+	(se sei Jacob e Esau non tainted i punti valgono doppio) senza limite, da 1 broken heart
+
+
+77717 - Broken Box [2]
+	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 10 monete, 1 bomba e 1 chiave (sempre se presenti altrimenti sottrae il possibile) 
+	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
 
 ---------------------------------------------------------------------
 CONSUMABILI
