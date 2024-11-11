@@ -63,9 +63,10 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- [IMPORTANTE] Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main) e ricominciando una nuova partita non svuota il salvataggio e mi tiene anche quelli delle partite precedenti
-	- Controllare bene le variabili non data. che potrebbero creare problemi con più player() e allo stesso tempo bisogna capire dove usarle
-	- Dare nomi variabili specifici e non generiche e migliorare i commenti
+	- [IMPORTANTE] Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
+	- Nightingale apre delle i am an error room che non dovrebbe aprire e non so se controlla tutte le posizioni delle stanze grandi oltre che deve fare shuffle dell'array delle posizioni
+	- Controllare bene le variabili tra nomi e data.
+	- Migliorare i commenti
 
 ---------------------------------------------------------------------
 COSE MANCANTI

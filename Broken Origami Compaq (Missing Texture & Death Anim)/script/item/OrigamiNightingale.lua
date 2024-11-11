@@ -47,7 +47,15 @@ function BrokenOrigami:onRoomClearOrigamiNightingale()
             if LuckIncreaseRedDoor > 90 then LuckIncreaseRedDoor = 90 end
 
             if math.random(100) <= (10 + LuckIncreaseRedDoor) then
-                print("DA INSERIRE FUNZIONE CHE APRA LA PORTA PER LA RED ROOM CASUALE NELLA STANZA CORRENTE")
+                local level = game:GetLevel()
+                local currentRoomDesc = level:GetCurrentRoomDesc()
+                local directions = {Direction.LEFT, Direction.RIGHT, Direction.UP, Direction.DOWN}
+
+                for _, direction in ipairs(directions) do
+                    if level:MakeRedRoomDoor(currentRoomDesc.SafeGridIndex, direction) then
+                        break
+                    end
+                end
             end
         end
     end
