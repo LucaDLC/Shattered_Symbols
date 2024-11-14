@@ -11,12 +11,14 @@ end
 -- Funzione per gestire l'uso dell'oggetto "Wriggling Shadow"
 function BrokenOrigami:useBrokenBox(_, rng, player)
 
-        if not data.BrokenBoxHeartFlag then data.BrokenBoxHeartFlag = false,
-        if not data.BrokenBoxItemFlag then data.BrokenBoxItemFlag = nil,
-        if not data.BrokenBoxMoneyFlag then data.BrokenBoxMoneyFlag = 0,
-        if not data.BrokenBoxBombFlag then data.BrokenBoxBombFlag = 0,
-        if not data.BrokenBoxKeyFlag then data.BrokenBoxKeyFlag = 0,
-        if not data.BrokenBoxStatus then data.BrokenBoxStatus = false
+    local SetterData = Isaac.GetPlayer(0)
+    local data = SetterData:GetData()
+    if not data.BrokenBoxHeartFlag then data.BrokenBoxHeartFlag = false end
+    if not data.BrokenBoxItemFlag then data.BrokenBoxItemFlag = nil end
+    if not data.BrokenBoxMoneyFlag then data.BrokenBoxMoneyFlag = 0 end
+    if not data.BrokenBoxBombFlag then data.BrokenBoxBombFlag = 0 end
+    if not data.BrokenBoxKeyFlag then data.BrokenBoxKeyFlag = 0 end
+    if not data.BrokenBoxStatus then data.BrokenBoxStatus = false end
 
     if player:HasCollectible(BrokenBoxLocalID) and not data.BrokenBoxStatus then
 
