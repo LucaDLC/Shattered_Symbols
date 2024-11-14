@@ -33,8 +33,6 @@ ITEM
 77716 - Origami Nightingale [3]
 	Da il 10% di possibilità di aprire una Red Room casuale una volta completata una stanza, la percentuale aumenta per ogni punto fortuna 
 	(se sei Jacob e Esau non tainted i punti valgono doppio) senza limite, da 1 broken heart
-
-
 77717 - Broken Box [2]
 	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 10 monete, 1 bomba e 1 chiave (sempre se presenti altrimenti sottrae il possibile) 
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
@@ -69,7 +67,7 @@ BUG
 	
 	- [IMPORTANTE] Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 	- Nightingale apre delle i am an error room che non dovrebbe aprire e non so se controlla tutte le posizioni delle stanze grandi oltre che deve fare shuffle dell'array delle posizioni
-	- Broken Box è incompleta
+	- Broken Box funziona solo con gli oggetti di TBOI, non va con gli oggetti moddati
 	- Controllare bene le variabili tra nomi e data.
 	- Migliorare i commenti
 
