@@ -1,34 +1,40 @@
 local game = Game()
 local BrokenBoxLocalID = Isaac.GetItemIdByName("Broken Box")
 
-
 -- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(BrokenBoxLocalID, "{{Warning}} SINGLE USE {{Warning}} #If empty, the box takes up to maximum of: #{{BrokenHeart}} 1 Broken Heart #{{Collectible}} 1 Item #{{Coin}} 10 Coins #{{Bomb}} 1 Bomb #{{Key}} 1 Key #If full, the box gives you everything it took before")
 end
 
-
--- Funzione per gestire l'uso dell'oggetto "Wriggling Shadow"
+-- Funzione per gestire l'uso dell'oggetto "Broken Box"
 function BrokenOrigami:useBrokenBox(_, rng, player)
-
     local SetterData = Isaac.GetPlayer(0)
     local data = SetterData:GetData()
-    if not data.BrokenBoxHeartFlag then data.BrokenBoxHeartFlag = false end
-    if not data.BrokenBoxItemFlag then data.BrokenBoxItemFlag = nil end
-    if not data.BrokenBoxMoneyFlag then data.BrokenBoxMoneyFlag = 0 end
-    if not data.BrokenBoxBombFlag then data.BrokenBoxBombFlag = 0 end
-    if not data.BrokenBoxKeyFlag then data.BrokenBoxKeyFlag = 0 end
-    if not data.BrokenBoxStatus then data.BrokenBoxStatus = false end
+    
+    -- Inizializza i flag se non già impostati
+    if data.BrokenBoxHeartFlag == nil then data.BrokenBoxHeartFlag = false end
+    if data.BrokenBoxItemFlag == nil then data.BrokenBoxItemFlag = nil end
+    if data.BrokenBoxMoneyFlag == nil then data.BrokenBoxMoneyFlag = 0 end
+    if data.BrokenBoxBombFlag == nil then data.BrokenBoxBombFlag = 0 end
+    if data.BrokenBoxKeyFlag == nil then data.BrokenBoxKeyFlag = 0 end
+    if data.BrokenBoxStatus == nil then data.BrokenBoxStatus = false end
 
+    -- Se l'oggetto è usato la prima volta (vuoto)
     if player:HasCollectible(BrokenBoxLocalID) and not data.BrokenBoxStatus then
-
         if player:GetBrokenHearts() > 0 then
             player:AddBrokenHearts(-1)
             data.BrokenBoxHeartFlag = true
         end
 
-        if #player:GetCollectibles() > 0 then
-            data.BrokenBoxItemFlag = player:GetCollectibles()[rng:RandomInt(#player:GetCollectibles()) + 1]
+        local collectibles = {}
+        for i = 1, CollectibleType.NUM_COLLECTIBLES - 1 do
+            if player:HasCollectible(i) then
+                table.insert(collectibles, i)
+            end
+        end
+
+        if #collectibles > 0 then
+            data.BrokenBoxItemFlag = collectibles[rng:RandomInt(#collectibles) + 1]
             player:RemoveCollectible(data.BrokenBoxItemFlag)
         end
 
@@ -41,9 +47,10 @@ function BrokenOrigami:useBrokenBox(_, rng, player)
         data.BrokenBoxKeyFlag = math.min(player:GetNumKeys(), 1)
         player:AddKeys(-data.BrokenBoxKeyFlag)
 
-       
-    else if player:HasCollectible(BrokenBoxLocalID) and data.BrokenBoxStatus then
+        data.BrokenBoxStatus = true  -- Imposta lo stato a pieno
 
+    -- Se l'oggetto è usato di nuovo (pieno)
+    elseif player:HasCollectible(BrokenBoxLocalID) and data.BrokenBoxStatus then
         if data.BrokenBoxHeartFlag then
             player:AddBrokenHearts(1)
             data.BrokenBoxHeartFlag = false
@@ -68,9 +75,11 @@ function BrokenOrigami:useBrokenBox(_, rng, player)
             player:AddKeys(data.BrokenBoxKeyFlag)
             data.BrokenBoxKeyFlag = 0
         end
-        
+
+        data.BrokenBoxStatus = false  -- Reimposta lo stato a vuoto
     end
 
+    -- Ritorna per rimuovere e scaricare l'oggetto
     return {
         Discharge = true,
         Remove = true,

@@ -18,7 +18,8 @@ local ItemScript = {
     'OrigamiCrow',
     'OrigamiKolibri',
     'BrokenFlux',
-    'OrigamiNightingale'
+    'OrigamiNightingale',
+    'BrokenBox'
 }
 
 for Load = 1, #ItemScript do
@@ -56,7 +57,13 @@ function BrokenOrigami:SavePlayerData()
         BrokenFluxPreviousBrokenHearts = data.BrokenFluxPreviousBrokenHearts or -1,
         BrokenFluxCharge = data.BrokenFluxCharge or 0,
         OrigamiNightingaleRelative = data.OrigamiNightingaleRelative or 0,
-        OrigamiNightingalePreviousCounter = data.OrigamiNightingalePreviousCounter or 1
+        OrigamiNightingalePreviousCounter = data.OrigamiNightingalePreviousCounter or 1,
+        BrokenBoxHeartFlag = data.BrokenBoxHeartFlag or false,
+        BrokenBoxItemFlag = data.BrokenBoxItemFlag or nil,
+        BrokenBoxMoneyFlag = data.BrokenBoxMoneyFlag or 0,
+        BrokenBoxBombFlag = data.BrokenBoxBombFlag or 0,
+        BrokenBoxKeyFlag = data.BrokenBoxKeyFlag or 0,
+        BrokenBoxStatus = data.BrokenBoxStatus or false,
     }
 
     BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave))
@@ -96,7 +103,24 @@ function BrokenOrigami:LoadPlayerData()
         data.BrokenFluxCharge = AllPlayerDataToSave.BrokenFluxCharge or 0
         data.OrigamiNightingaleRelative = AllPlayerDataToSave.OrigamiNightingaleRelative or 0
         data.OrigamiNightingalePreviousCounter = AllPlayerDataToSave.OrigamiNightingalePreviousCounter or 1
+        data.BrokenBoxHeartFlag = AllPlayerDataToSave.BrokenBoxHeartFlag or false
+        data.BrokenBoxItemFlag = AllPlayerDataToSave.BrokenBoxItemFlag or nil
+        data.BrokenBoxMoneyFlag = AllPlayerDataToSave.BrokenBoxMoneyFlag or 0
+        data.BrokenBoxBombFlag = AllPlayerDataToSave.BrokenBoxBombFlag or 0
+        data.BrokenBoxKeyFlag = AllPlayerDataToSave.BrokenBoxKeyFlag or 0
+        data.BrokenBoxStatus = AllPlayerDataToSave.BrokenBoxStatus or false
 
+    elseif BrokenOrigami:HasData() and (Game():GetFrameCount() == 0) then
+        
+        AllPlayerDataToSave = JsonSaveFile.decode(BrokenOrigami:LoadData())
+
+        data.BrokenBoxHeartFlag = AllPlayerDataToSave.BrokenBoxHeartFlag or false
+        data.BrokenBoxItemFlag = AllPlayerDataToSave.BrokenBoxItemFlag or nil
+        data.BrokenBoxMoneyFlag = AllPlayerDataToSave.BrokenBoxMoneyFlag or 0
+        data.BrokenBoxBombFlag = AllPlayerDataToSave.BrokenBoxBombFlag or 0
+        data.BrokenBoxKeyFlag = AllPlayerDataToSave.BrokenBoxKeyFlag or 0
+        data.BrokenBoxStatus = AllPlayerDataToSave.BrokenBoxStatus or false
+        
     else
         BrokenOrigami:RemoveData()
     end

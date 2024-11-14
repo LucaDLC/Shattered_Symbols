@@ -15,6 +15,8 @@
 	<passive  id="77714" name="Origami Kolibri" gfx ="OrigamiKolibri.png" description="Gulp!" quality="2"/>
 	<active  id="77715" name="Broken Flux" gfx ="BrokenFlux.png" description="Feel the pain" quality="2" maxcharges="4" chargetype="special" initcharge ="0"/>
 	<passive  id="77716" name="Origami Nightingale" gfx ="OrigamiNightingale.png" description="How burn a Nightingale" quality="2"/>
+	<active  id="77717" name="Broken Box" gfx ="BrokenBox.png" description="No one can discover the secrets inside" quality="2" maxcharges="0" chargetype="normal"/>
+
 	
 
 </items>
@@ -85,3 +87,8 @@
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Origami_Nightingale.anm2" version="1">
 	<passive  id="77716" name="Origami Nightingale" gfx ="OrigamiNightingale.png" description="How burn a Nightingale" quality="2"/>
 </items>
+
+<items gfxroot="gfx/items/" deathanm2="gfx/Death_Broken_Box.anm2" version="1">
+	<active  id="77717" name="Broken Box" gfx ="BrokenBox.png" description="No one can discover the secrets inside" quality="2" maxcharges="0" chargetype="normal"/>
+</items>
+
