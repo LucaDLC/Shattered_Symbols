@@ -27,7 +27,7 @@ function BrokenOrigami:useBrokenBox(_, rng, player)
         end
 
         local collectibles = {}
-        for i = 1, CollectibleType.NUM_COLLECTIBLES - 1 do
+        for i = 1, Isaac.GetItemConfig():GetCollectibles().Size - 1 do
             if player:HasCollectible(i) then
                 table.insert(collectibles, i)
             end

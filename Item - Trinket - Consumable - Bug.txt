@@ -37,6 +37,10 @@ ITEM
 	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 10 monete, 1 bomba e 1 chiave (sempre se presenti altrimenti sottrae il possibile) 
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
 
+
+77718 - ???
+	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro
+
 ---------------------------------------------------------------------
 CONSUMABILI
 
@@ -65,17 +69,16 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- [IMPORTANTE] Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
-	- Nightingale apre delle i am an error room che non dovrebbe aprire e non so se controlla tutte le posizioni delle stanze grandi oltre che deve fare shuffle dell'array delle posizioni
-	- Broken Box funziona solo con gli oggetti di TBOI, non va con gli oggetti moddati
-	- Controllare bene le variabili tra i nomi delle local e le variabili data.
-	- Migliorare i commenti
+	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
+	- Nightingale apre delle i am an error room che non dovrebbe aprire e non so se controlla tutte le posizioni delle stanze grandi oltre che deve fare shuffle dell'array delle posizioni	
 
 ---------------------------------------------------------------------
-COSE MANCANTI
+COSE MANCANTI E DA RIGUARDARE
 
 	- Mancano Texture e Death animation
 	- Trasformazione PAPER completamente non funzionante
+	- Controllare bene le variabili tra i nomi delle local e le variabili data.
+	- Migliorare i commenti
 
 ---------------------------------------------------------------------
 BILANCIAMENTI
