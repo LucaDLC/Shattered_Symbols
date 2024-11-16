@@ -68,7 +68,7 @@ BUG
 	- [IMPORTANTE] Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 	- Nightingale apre delle i am an error room che non dovrebbe aprire e non so se controlla tutte le posizioni delle stanze grandi oltre che deve fare shuffle dell'array delle posizioni
 	- Broken Box funziona solo con gli oggetti di TBOI, non va con gli oggetti moddati
-	- Controllare bene le variabili tra nomi e data.
+	- Controllare bene le variabili tra i nomi delle local e le variabili data.
 	- Migliorare i commenti
 
 ---------------------------------------------------------------------
