@@ -141,6 +141,16 @@ function BrokenOrigami:ExecuteConsoleCommand(_, Command)
             print("script.item." .. ItemScript[Load])
         end
     end
+    if Command == "Erase" then
+        local room = Game():GetRoom()
+        if room:GetType() == RoomType.ROOM_NULL then
+            BrokenOrigami:RemoveData()
+            print("Data Erased")
+        else
+            print("For using this command, you must be not in game")
+        end
+    end
+
 end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_EXECUTE_CMD,BrokenOrigami.ExecuteConsoleCommand)
