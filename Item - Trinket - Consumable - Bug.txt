@@ -71,8 +71,7 @@ BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 	- Nightingale apre delle i am an error room che non dovrebbe aprire e non so se controlla tutte le posizioni delle stanze grandi oltre che deve fare shuffle dell'array delle posizioni	
-	- Broken Box non funziona sempre, non capisco il perché
-	- Vengono creati degli item inesistenti nella pool (vedi item in stats)
+	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
