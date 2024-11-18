@@ -28,7 +28,7 @@ function BrokenOrigami:useBrokenBox(_, rng, player)
 
         local collectibles = {}
         for i = 1, Isaac.GetItemConfig():GetCollectibles().Size - 1 do
-            if player:HasCollectible(i) then
+            if player:HasCollectible(i) and i ~= BrokenBoxLocalID then
                 table.insert(collectibles, i)
             end
         end
@@ -38,6 +38,8 @@ function BrokenOrigami:useBrokenBox(_, rng, player)
             player:RemoveCollectible(data.BrokenBoxItemFlag)
         end
 
+        collectibles = {}
+        
         data.BrokenBoxMoneyFlag = math.min(player:GetNumCoins(), 10)
         player:AddCoins(-data.BrokenBoxMoneyFlag)
 
