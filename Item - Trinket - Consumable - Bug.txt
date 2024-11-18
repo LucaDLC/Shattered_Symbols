@@ -85,6 +85,7 @@ COSE MANCANTI E DA RIGUARDARE
 ---------------------------------------------------------------------
 BILANCIAMENTI
 
-	-Item Pool
-		Rivisitare Item Pool
+	- Rivisitare Item Pool
+	- Rivedere bene i tag degli Item
+	- Vedere se gli item con i personaggi non danno problemi
 
