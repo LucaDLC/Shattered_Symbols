@@ -47,6 +47,8 @@ CONSUMABILI
 88801 - Glyph
 	Rimuove un broken heart
 88802 - Seed [TEXTURE FINISHED]
+	Converte i tuoi soul heart in black heart
+88803 - Sacred Dice Shard
 	Rerolla gli item sui piedistalli in una qualità più alta ma da 3 un broken heart 
 
 ---------------------------------------------------------------------
