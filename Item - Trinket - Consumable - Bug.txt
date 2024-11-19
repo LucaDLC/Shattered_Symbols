@@ -54,8 +54,8 @@ CONSUMABILI
 ---------------------------------------------------------------------
 TRINKET
 
-99901 - Tea Grounds
-	???
+99901 - Tea Grounds / Tea Bag
+	Aumenta le probabilità del patto (angelico/satanico) in base alla luck del giocatore (Jacob & Esau non tainted valgono doppio)
 
 ---------------------------------------------------------------------
 TRASFORMAZIONI
