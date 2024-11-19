@@ -25,7 +25,7 @@ ITEM
 77712 - Wriggling Shadow [4]
 	Rimuove i Torn Hook e da 2 Death Certificate, 1 vita e toglie 1 broken heart
 77713 - Origami Crow [3]
-	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 2 broken heart
+	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 3 broken heart
 77714 - Origami Kolibri [2]
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Kolibri, da 1 broken heart
 77715 - Broken Flux [2]
