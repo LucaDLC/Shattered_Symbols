@@ -3,7 +3,7 @@ local BrokenBoxLocalID = Isaac.GetItemIdByName("Broken Box")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(BrokenBoxLocalID, "{{Warning}} SINGLE USE {{Warning}} #If empty, the box takes up to maximum of: #{{BrokenHeart}} 1 Broken Heart #{{Collectible}} 1 Item #{{Coin}} 10 Coins #{{Bomb}} 1 Bomb #{{Key}} 1 Key #If full, the box gives you everything it took before")
+    EID:addCollectible(BrokenBoxLocalID, "{{Warning}} SINGLE USE {{Warning}} #If empty, the box takes up to maximum of: #{{BrokenHeart}} 1 Broken Heart #{{Collectible}} 1 Item #{{Coin}} 10 Coins #{{Bomb}} 1 Bomb #{{Key}} 1 Key #If full, the box gives you everything it took before #{{ArrowDown}} If you don't have nothing to take, the box vanish and it's considered like empty")
 end
 
 -- Funzione per gestire l'uso dell'oggetto "Broken Box"
