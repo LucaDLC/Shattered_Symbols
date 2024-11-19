@@ -24,7 +24,7 @@ function BrokenOrigami:useOrigamiCrow(player)
         if OrigamiCrowCounter >= data.OrigamiCrowPreviousCounter then
             data.OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter + 1
             data.OrigamiCrowRelative = data.OrigamiCrowRelative + 1
-            player:AddBrokenHearts(3) -- Add 3 broken heart
+            player:AddBrokenHearts(2) -- Add 2 broken heart
         end
 
         for i = 0, 3 do -- Check all active item slots
