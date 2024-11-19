@@ -49,7 +49,11 @@ function BrokenOrigami:useBrokenBox(_, rng, player)
         data.BrokenBoxKeyFlag = math.min(player:GetNumKeys(), 1)
         player:AddKeys(-data.BrokenBoxKeyFlag)
 
-        data.BrokenBoxStatus = true  -- Imposta lo stato a pieno
+        if data.BrokenBoxItemFlag ~= nil or data.BrokenBoxMoneyFlag > 0 or data.BrokenBoxBombFlag > 0 or data.BrokenBoxKeyFlag > 0 then
+            data.BrokenBoxStatus = true  -- Imposta lo stato a pieno
+        else
+            data.BrokenBoxStatus = false
+        end
 
     -- Se l'oggetto è usato di nuovo (pieno)
     elseif player:HasCollectible(BrokenBoxLocalID) and data.BrokenBoxStatus then

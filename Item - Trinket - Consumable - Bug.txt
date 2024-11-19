@@ -38,7 +38,7 @@ ITEM
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
 
 
-77718 - ???
+77718 - Torn Jacket [2]
 	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro
 
 ---------------------------------------------------------------------
