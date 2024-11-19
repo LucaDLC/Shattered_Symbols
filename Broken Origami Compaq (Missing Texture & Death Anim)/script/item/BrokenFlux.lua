@@ -2,7 +2,7 @@ local game = Game()
 local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
 
 if EID then
-    EID:addCollectible(BrokenFluxLocalID, "{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowUp}} All Broken Flux of a player share charges ")
+    EID:addCollectible(BrokenFluxLocalID, "{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowUp}} All Broken Flux of a player share charges during the game ")
 end
 
 
