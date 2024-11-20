@@ -70,7 +70,6 @@ TRASFORMAZIONI
 BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
-	- Nightingale probabilmente non funziona (non ancora testato)	
 	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
 
 ---------------------------------------------------------------------

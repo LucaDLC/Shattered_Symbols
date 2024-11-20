@@ -14,6 +14,7 @@
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Nightingale" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
@@ -30,6 +31,7 @@
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Nightingale" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="shop">
@@ -82,6 +84,7 @@
 	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedGoldenChest">
@@ -94,6 +97,7 @@
 	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="angel">
@@ -121,6 +125,7 @@
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedCurse">
@@ -128,12 +133,14 @@
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="demonBagger">
         <Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="craneGame">
