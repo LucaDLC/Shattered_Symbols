@@ -31,16 +31,11 @@ ITEM
 77715 - Broken Flux [2]
 	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
 77716 - Origami Nightingale [3]
-	Da il 10% di possibilità di aprire una Red Room casuale una volta completata una stanza, la percentuale aumenta per ogni punto fortuna 
-	(se sei Jacob e Esau non tainted i punti valgono doppio) senza limite, da 1 broken heart
+	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro
 77717 - Broken Box [2]
 	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 10 monete, 1 bomba e 1 chiave (sempre se presenti altrimenti sottrae il possibile) 
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
-
-
-77718 - Torn Jacket [2]
-	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro
-
+	
 ---------------------------------------------------------------------
 CONSUMABILI
 
@@ -72,7 +67,7 @@ TRASFORMAZIONI
 BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
-	- Nightingale apre delle i am an error room che non dovrebbe aprire e non so se controlla tutte le posizioni delle stanze grandi oltre che deve fare shuffle dell'array delle posizioni	
+	- Nightingale probabilmente non funziona (non ancora testato)	
 	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
 
 ---------------------------------------------------------------------

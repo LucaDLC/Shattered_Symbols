@@ -4,7 +4,7 @@ local OrigamiNightingaleLocalID = Isaac.GetItemIdByName("Origami Nightingale")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", OrigamiNightingaleLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiNightingaleLocalID, "#{{BrokenHeart}} Gives 1 Broken Hearts")
+    EID:addCollectible(OrigamiNightingaleLocalID, "{{Room}} After clearing a Room have 10% to open a Red Room #{{Luck}} Every Luck point increase of +1% the chance #{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}}")
 end
 
 -- Function to handle item pickup
@@ -25,7 +25,6 @@ function BrokenOrigami:useOrigamiNightingale(player)
             data.OrigamiNightingaleRelative = data.OrigamiNightingaleRelative + 1
             player:AddBrokenHearts(1) -- Add 1 broken heart 
         end
-        toPocket(player, data)
     else
         OrigamiNightingaleCounter = 0
         data.OrigamiNightingalePreviousCounter = 1
@@ -35,16 +34,33 @@ function BrokenOrigami:useOrigamiNightingale(player)
     end
 end
 
--- Funzione per assegnare l'attivo al pocket slot
-local function toPocket(player, data)
-    local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
-    local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
+function BrokenOrigami:onRoomClearOrigamiNightingale()
+    for playerIndex = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(playerIndex)
+        if player:HasCollectible(OrigamiNightingaleLocalID) then
+            local LuckIncreaseRedDoor = player.Luck
+            -- Se è Jacob e Esau non tainted, raddoppia il Luck
+            if player:GetPlayerType() == PlayerType.PLAYER_JACOB or player:GetPlayerType() == PlayerType.PLAYER_ESAU then
+                LuckIncreaseRedDoor = LuckIncreaseRedDoor * 2
+            end
 
-    if activeItem ~= 0 and pocketItem == 0 then
-        player:SetPocketActiveItem(activeItem, ActiveSlot.SLOT_POCKET)
-        player:RemoveCollectible(activeItem, true, ActiveSlot.SLOT_PRIMARY)
+            if LuckIncreaseRedDoor > 90 then LuckIncreaseRedDoor = 90 end
+
+            if math.random(100) <= (10 + LuckIncreaseRedDoor) then
+                local level = game:GetLevel()
+                local currentRoomDesc = level:GetCurrentRoomDesc()
+                local directions = {Direction.LEFT, Direction.RIGHT, Direction.UP, Direction.DOWN}
+
+                for _, direction in ipairs(directions) do
+                    if level:MakeRedRoomDoor(currentRoomDesc.SafeGridIndex, direction) then
+                        break
+                    end
+                end
+            end
+        end
     end
-
 end
 
+
+BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD, BrokenOrigami.onRoomClearOrigamiNightingale)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiNightingale)
