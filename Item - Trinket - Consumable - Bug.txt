@@ -35,7 +35,6 @@ ITEM
 77717 - Broken Box [2]
 	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 10 monete, 1 bomba e 1 chiave (sempre se presenti altrimenti sottrae il possibile) 
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
-
 77718 - Midnight Bite [2]
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
 	
@@ -70,6 +69,7 @@ TRASFORMAZIONI
 BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
+	- Midnight Bite non funziona!
 	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
 
 ---------------------------------------------------------------------

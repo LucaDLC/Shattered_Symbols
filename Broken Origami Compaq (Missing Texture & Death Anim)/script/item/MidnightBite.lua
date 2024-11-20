@@ -10,25 +10,28 @@ end
 function BrokenOrigami:useMidnightBite(player)
     
     if player:HasCollectible(MidnightBiteLocalID) then
-
-        for i = 0, player:GetMaxHearts() // 2 - 1 do
-            if player:GetHeartContainerType(i) == HeartContainerType.HEART_CONTAINER then
-                player:SetHeartContainerType(i, HeartContainerType.HEART_ROTTEN)
+        local currentHeart = player:GetHearts()
+        local heartContainers = player:GetMaxHearts()
+        
+        -- Se ci sono cuori rossi, procedi
+        if heartContainers > 0 then
+            -- Rimuovi i cuori rossi e aggiungi cuori marci
+            for i = 1, heartContainers do
+                player:AddHearts(-1)  -- Rimuove un cuore rosso
+                player:AddHearts(1, HeartSubType.HEART_ROTTEN)
             end
         end
-        
     end
 end
 
 function BrokenOrigami:ConvertDroppedRedHearts(_, entity)
-    if entity.Variant == PickupVariant.PICKUP_HEART then
-        local heart = entity:ToPickup()
-        if heart and (heart.SubType == HeartSubType.HEART_FULL or heart.SubType == HeartSubType.HEART_HALF or heart.SubType == HeartSubType.HEART_DOUBLEPACK) then
-            heart:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, HeartSubType.HEART_ROTTEN, true, false, false)
-        end
+    local heart = entity:ToPickup()
+    if heart and (heart.SubType == HeartSubType.HEART_FULL or heart.SubType == HeartSubType.HEART_HALF or heart.SubType == HeartSubType.HEART_DOUBLEPACK) then
+        heart:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, HeartSubType.HEART_ROTTEN, true, false, false)
     end
+    
 end
 
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_ENTITY_SPAWN, BrokenOrigamiConvertDroppedRedHearts, EntityType.ENTITY_PICKUP)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, BrokenOrigami.ConvertDroppedRedHearts, PickupVariant.PICKUP_HEART)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useMidnightBite)
