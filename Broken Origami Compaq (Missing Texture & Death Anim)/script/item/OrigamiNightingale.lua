@@ -4,7 +4,18 @@ local OrigamiNightingaleLocalID = Isaac.GetItemIdByName("Origami Nightingale")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", OrigamiNightingaleLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiNightingaleLocalID, "#{{BrokenHeart}} Gives 1 Broken Hearts")
+    EID:addCollectible(OrigamiNightingaleLocalID, "{{ArrowUp}} Move primary active item to pocket item if you don't have one or if previous pocket item disappear #{{ArrowUp}} If you don't have active item, first one that you take become the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts")
+end
+
+local function toPocket(player)
+    local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
+    local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
+
+    if activeItem ~= 0 and pocketItem == 0 then
+        player:SetPocketActiveItem(activeItem, ActiveSlot.SLOT_POCKET)
+        player:RemoveCollectible(activeItem, true, ActiveSlot.SLOT_PRIMARY)
+    end
+
 end
 
 -- Function to handle item pickup
@@ -23,9 +34,9 @@ function BrokenOrigami:useOrigamiNightingale(player)
         if OrigamiNightingaleCounter >= data.OrigamiNightingalePreviousCounter then
             data.OrigamiNightingalePreviousCounter = data.OrigamiNightingalePreviousCounter + 1
             data.OrigamiNightingaleRelative = data.OrigamiNightingaleRelative + 1
-            player:AddBrokenHearts(1) -- Add 1 broken heart 
+            player:AddBrokenHearts(2) -- Add 1 broken heart 
         end
-        toPocket(player, data)
+        toPocket(player)
     else
         OrigamiNightingaleCounter = 0
         data.OrigamiNightingalePreviousCounter = 1
@@ -33,18 +44,6 @@ function BrokenOrigami:useOrigamiNightingale(player)
     if data.OrigamiNightingaleRelative > OrigamiNightingaleCounter then
         data.OrigamiNightingalePreviousCounter = OrigamiNightingaleCounter +1
     end
-end
-
--- Funzione per assegnare l'attivo al pocket slot
-local function toPocket(player, data)
-    local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
-    local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
-
-    if activeItem ~= 0 and pocketItem == 0 then
-        player:SetPocketActiveItem(activeItem, ActiveSlot.SLOT_POCKET)
-        player:RemoveCollectible(activeItem, true, ActiveSlot.SLOT_PRIMARY)
-    end
-
 end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiNightingale)

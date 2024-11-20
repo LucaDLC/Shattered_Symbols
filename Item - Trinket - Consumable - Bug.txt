@@ -31,7 +31,7 @@ ITEM
 77715 - Broken Flux [2]
 	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
 77716 - Origami Nightingale [3]
-	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro
+	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro, da 2 broken heart
 77717 - Broken Box [2]
 	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 10 monete, 1 bomba e 1 chiave (sempre se presenti altrimenti sottrae il possibile) 
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
