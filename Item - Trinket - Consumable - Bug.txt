@@ -37,9 +37,7 @@ ITEM
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
 77718 - Midnight Bite [3]
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
-
-
-77719 - Extra Deck
+77719 - Extra Deck of Card [2]
 	Droppa una carta speciale
 	
 ---------------------------------------------------------------------
