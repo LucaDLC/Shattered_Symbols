@@ -1,3 +1,0 @@
-<items gfxroot="gfx/items/" deathanm2="gfx/Death_Meteor.anm2" version="1">
-        <passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Missed!" quality="2"/>
-</items>
