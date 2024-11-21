@@ -129,6 +129,7 @@
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedCurse">
@@ -137,6 +138,7 @@
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="demonBagger">
