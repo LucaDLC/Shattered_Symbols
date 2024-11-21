@@ -16,7 +16,7 @@
 	<active  id="77715" name="Broken Flux" gfx ="BrokenFlux.png" description="Feel the pain" quality="2" maxcharges="4" chargetype="special" initcharge ="0"/>
 	<passive  id="77716" name="Origami Nightingale" gfx ="OrigamiNightingale.png" description="How burn a Nightingale" quality="2"/>
 	<active  id="77717" name="Broken Box" gfx ="BrokenBox.png" description="No one can discover the secrets inside" quality="2" maxcharges="0" chargetype="normal"/>
-	<passive  id="77718" name="Midnight Bite" gfx ="MidnightBite.png" description="Zombie undercover" quality="2"/>
+	<passive  id="77718" name="Midnight Bite" gfx ="MidnightBite.png" description="Zombie undercover" quality="3"/>
 
 </items>
 
@@ -92,6 +92,6 @@
 </items>
 
 <items gfxroot="gfx/items/" deathanm2="gfx/Death_Midnight_Bite.anm2" version="1">
-	<passive  id="77718" name="Midnight Bite" gfx ="MidnightBite.png" description="Zombie undercover" quality="2"/>
+	<passive  id="77718" name="Midnight Bite" gfx ="MidnightBite.png" description="Zombie undercover" quality="3"/>
 </items>
 
