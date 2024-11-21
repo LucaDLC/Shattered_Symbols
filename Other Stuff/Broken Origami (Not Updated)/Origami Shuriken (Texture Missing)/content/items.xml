@@ -1,3 +1,0 @@
-<items gfxroot="gfx/items/" deathanm2="gfx/Death_Origami_Shuriken.anm2" version="1">
-        <passive  id="77703" name="Origami Shuriken" gfx ="OrigamiShuriken.png" description="It's cut" quality="3" devilprice="1"/>
-</items>

@@ -1,3 +1,0 @@
-<items gfxroot="gfx/items/" deathanm2="gfx/Death_Origami_Boat.anm2" version="1">
-        <passive  id="77704" name="Origami Boat" gfx ="OrigamiBoat.png" description="The wind is in favor" quality="3" devilprice="1"/>
-</items>
