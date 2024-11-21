@@ -21,7 +21,8 @@ local ItemScript = {
     'OrigamiNightingale',
     'BrokenBox',
     'MidnightBite',
-    'ExtraDeckofCard'
+    'ExtraDeckofCard',
+    'AncientHook'
 }
 
 for Load = 1, #ItemScript do
@@ -66,6 +67,7 @@ function BrokenOrigami:SavePlayerData()
         BrokenBoxBombFlag = data.BrokenBoxBombFlag or 0,
         BrokenBoxKeyFlag = data.BrokenBoxKeyFlag or 0,
         BrokenBoxStatus = data.BrokenBoxStatus or false,
+        AncientHookCounter= data.AncientHookCounter or 0,
     }
 
     BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave))
@@ -111,6 +113,7 @@ function BrokenOrigami:LoadPlayerData()
         data.BrokenBoxBombFlag = AllPlayerDataToSave.BrokenBoxBombFlag or 0
         data.BrokenBoxKeyFlag = AllPlayerDataToSave.BrokenBoxKeyFlag or 0
         data.BrokenBoxStatus = AllPlayerDataToSave.BrokenBoxStatus or false
+        data.AncientHookCounter = AllPlayerDataToSave.AncientHookCounter or 0
 
     elseif BrokenOrigami:HasData() and (Game():GetFrameCount() == 0) then
         
