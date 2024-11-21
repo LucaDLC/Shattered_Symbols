@@ -10,16 +10,13 @@ end
 function BrokenOrigami:useMidnightBite(player)
     
     if player:HasCollectible(MidnightBiteLocalID) then
-        local currentHeart = player:GetRedHearts()
-        local heartContainers = player:GetMaxHearts()
+        local currentHeart = player:GetHearts()
+        local currentRottenHeart = player:GetRottenHearts()
         
         -- Se ci sono cuori rossi, procedi
-        if currentHeart > 0 then
-            -- Rimuovi i cuori rossi e aggiungi cuori marci
-            for i = 1, heartContainers do
-                player:AddHearts(-1)  -- Rimuove un cuore rosso
-                player:AddRottenHearts(1)
-            end
+        if currentHeart ~= currentRottenHeart then
+            player:AddHearts(-1)  -- Rimuove un cuore rosso
+            player:AddRottenHearts(1)
         end
     end
 end
