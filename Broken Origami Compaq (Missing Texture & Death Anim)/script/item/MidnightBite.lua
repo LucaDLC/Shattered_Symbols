@@ -3,7 +3,7 @@ local MidnightBiteLocalID = Isaac.GetItemIdByName("Midnight Bite")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(MidnightBiteLocalID, "nothing")
+    EID:addCollectible(MidnightBiteLocalID, "{{RottenHeart}} Relpace all Red Heart with Rotten Heart during the rest of the game #{{HalfHeart}} Every Half Heart in the Slots count as Rotten Heart meanwhile all types of spawned Heart become a single Rotten Heart")
 end
 
 -- Function to handle item pickup

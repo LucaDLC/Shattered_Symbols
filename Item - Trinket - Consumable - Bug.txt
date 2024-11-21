@@ -73,7 +73,6 @@ TRASFORMAZIONI
 BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
-	- Midnight Bite non funziona!
 	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
 
 ---------------------------------------------------------------------
