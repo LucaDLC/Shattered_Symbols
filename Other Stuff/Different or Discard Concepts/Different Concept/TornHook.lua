@@ -15,7 +15,7 @@ function BrokenOrigami:onTornHook()
             local TornHooksCounter = player:GetCollectibleNum(TornHookLocalID)
             player:AddBrokenHearts(1*TornHooksCounter)
             local TornHookChance = 0
-            TornHookChance = 0.20 + ((TornHooksCounter - 1) * 0.10)
+            TornHookChance = 0.15 + ((TornHooksCounter - 1) * 0.10)
             if player:GetPlayerType() == PlayerType.PLAYER_JACOB or player:GetPlayerType() == PlayerType.PLAYER_ESAU then
                 TornHookChance = TornHookChance + 0.05
             end
