@@ -24,8 +24,8 @@ function BrokenOrigami:onAncientHook()
         if not data.AncientHookCounter then data.AncientHookCounter = 0 end
 
         if player:HasCollectible(AncientHookLocalID) then
-            local AncientHooksCounter = player:GetCollectibleNum(AncientHookLocalID)
-            player:AddBrokenHearts(1*AncientHooksCounter)
+            local AncientHooksNum = player:GetCollectibleNum(AncientHookLocalID)
+            player:AddBrokenHearts(1*AncientHooksNum)
             data.AncientHookCounter = data.AncientHookCounter + (1 * player:GetCollectibleNum(AncientHookLocalID))
             player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
             player:AddCacheFlags(CacheFlag.CACHE_SPEED)
@@ -39,7 +39,8 @@ end
 
 function BrokenOrigami:onEvaluateCacheAncientHook(player, cacheFlag)
     local data = player:GetData()
-    if player:HasCollectible(AncientHookLocalID) then
+    if not data.AncientHookCounter then data.AncientHookCounter = 0 end
+    if player:HasCollectible(AncientHookLocalID) or data.AncientHookCounter > 0 then
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
             player.Damage = player.Damage + (data.AncientHookCounter * statMultiplier.damage)
         elseif cacheFlag == CacheFlag.CACHE_SPEED then
