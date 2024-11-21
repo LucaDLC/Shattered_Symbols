@@ -39,7 +39,7 @@ ITEM
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
 77719 - Extra Deck of Card [2]
 	Droppa una carta speciale
-77720 - Ancient Hook [3]
+77720 - Ancient Hook [1]
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale importante
 	
 ---------------------------------------------------------------------
