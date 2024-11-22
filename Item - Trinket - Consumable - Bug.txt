@@ -74,6 +74,7 @@ BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
+	- Da controllare la nuova Torn Hook e Wriggling Shadow e aggiungere ai 2 Hooks che hanno una probabilità di rimuoversi da soli in base alla luck del giocatore (se 0 o inferiore non si toglie)
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
