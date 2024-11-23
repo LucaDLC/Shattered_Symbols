@@ -5,7 +5,7 @@ local AncientHookLocalID = Isaac.GetItemIdByName("Ancient Hook")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", AncientHookLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts at every Floor #At every floor grants:#{{ArrowUp}} Damage +0.7#{{ArrowUp}} Speed +0.2#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.7#{{ArrowUp}} Luck +0.5")
+    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts at every Floor #At every floor grants:#{{ArrowUp}} Damage +0.7#{{ArrowUp}} Speed +0.2#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.7#{{ArrowUp}} Luck +0.5 #{{Luck}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
 end
 
 local statMultiplier = {
@@ -24,15 +24,22 @@ function BrokenOrigami:onAncientHook()
         if not data.AncientHookCounter then data.AncientHookCounter = 0 end
 
         if player:HasCollectible(AncientHookLocalID) then
-            local AncientHooksNum = player:GetCollectibleNum(AncientHookLocalID)
-            player:AddBrokenHearts(1*AncientHooksNum)
-            data.AncientHookCounter = data.AncientHookCounter + (1 * player:GetCollectibleNum(AncientHookLocalID))
-            player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
-            player:AddCacheFlags(CacheFlag.CACHE_SPEED)
-            player:AddCacheFlags(CacheFlag.CACHE_RANGE)
-            player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
-            player:AddCacheFlags(CacheFlag.CACHE_LUCK)
-            player:EvaluateItems()
+            local luck = math.max(player.Luck, 0)
+            if math.random(1, 100) <= luck then
+                for i = 1, player:GetCollectibleNum(AncientHookLocalID) do
+                    player:RemoveCollectible(AncientHookLocalID)
+                end
+            else
+                local AncientHooksNum = player:GetCollectibleNum(AncientHookLocalID)
+                player:AddBrokenHearts(1*AncientHooksNum)
+                data.AncientHookCounter = data.AncientHookCounter + (1 * player:GetCollectibleNum(AncientHookLocalID))
+                player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
+                player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+                player:AddCacheFlags(CacheFlag.CACHE_RANGE)
+                player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
+                player:AddCacheFlags(CacheFlag.CACHE_LUCK)
+                player:EvaluateItems()
+            end
         end
     end
 end
