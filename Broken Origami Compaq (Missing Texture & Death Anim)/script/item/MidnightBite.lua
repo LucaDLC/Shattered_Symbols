@@ -29,7 +29,7 @@ function BrokenOrigami:ConvertDroppedRedHearts(entity)
     local heart = entity:ToPickup()
     
     -- Controlla che l'entità sia valida e sia un pickup del tipo cuore
-    if heart and heart.Variant == PickupVariant.PICKUP_HEART then
+    if heart and heart.Variant == PickupVariant.PICKUP_HEART and player:HasCollectible(MidnightBiteLocalID) then
         -- Verifica se il tipo di cuore è tra quelli da trasformare
         if heart.SubType == HeartSubType.HEART_FULL or 
            heart.SubType == HeartSubType.HEART_HALF or 
