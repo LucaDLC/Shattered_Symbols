@@ -23,7 +23,7 @@ function BrokenOrigami:useFortuneTeller(player)
         if FortuneTellerCounter >= data.FortuneTellerPreviousCounter then
             data.FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter + 1
             data.FortuneTellerRelative = data.FortuneTellerRelative + 1
-            player:AddBrokenHearts(2) -- Add 2 broken heart
+            player:AddBrokenHearts(1) -- Add 1 broken heart
             data.FortuneTellerLuckBoost = 5*data.FortuneTellerRelative -- Track the permanent damage boost
             player:AddCacheFlags(CacheFlag.CACHE_LUCK)
             player:EvaluateItems()
