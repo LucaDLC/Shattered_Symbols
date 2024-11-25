@@ -9,7 +9,7 @@ ITEM
 77704 - Origami Boat [3]
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
 77705 - Upside Down Deck of Card [2]
-	Droppa una reverse card
+	Droppa una reverse card (da agiungere che viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale)
 77706 - Constellation [3]
 	Attivo monouso, spawna un item tra i segni zodiacali e gli item del planetario
 77707 - Origami Swan [3]
@@ -38,9 +38,13 @@ ITEM
 77718 - Midnight Bite [3]
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
 77719 - Extra Deck of Card [2]
-	Droppa una carta speciale
+	Droppa una carta speciale (da agiungere che viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale)
 77720 - Ancient Hook [0]
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale importante, per ogni punto luck hai la possibilità che si rimuova
+
+
+77721 - Geoid [2]
+	Attivo che droppa una runa casuale (contemplando anche quelle delle mod) con 5 cariche
 	
 ---------------------------------------------------------------------
 CONSUMABILI
