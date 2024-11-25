@@ -3,7 +3,7 @@ local UpsideDownDeckofCardsLocalID = Isaac.GetItemIdByName("Upside Down Deck of 
 
 --EID
 if EID then
-    EID:addCollectible(UpsideDownDeckofCardsLocalID, "{{Card}} Spawns 1 reverse card")
+    EID:addCollectible(UpsideDownDeckofCardsLocalID, "{{Card}} Spawns 1 reverse card #{{Collectible85}} After use it goes back to being the Deck of Cards")
 end
 
 -- Definisci la funzione per l'utilizzo dell'item
@@ -29,6 +29,11 @@ function BrokenOrigami:useUpsideDownDeckCard(_, rng, player)
     }
 end
 
+function BrokenOrigami:removeUpsideDownDeckofCardsFromPool()
+    Game():GetItemPool():RemoveCollectible(UpsideDownDeckofCardsLocalID)
+end
+
 -- Associa la funzione all'item
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useUpsideDownDeckCard, UpsideDownDeckofCardsLocalID)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.removeUpsideDownDeckofCardsFromPool)
 

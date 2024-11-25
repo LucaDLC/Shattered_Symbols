@@ -3,7 +3,7 @@ local ExtraDeckLocalID = Isaac.GetItemIdByName("Extra Deck of Cards")
 
 -- EID
 if EID then
-    EID:addCollectible(ExtraDeckLocalID, "{{RedCard}} Spawns 1 special card")
+    EID:addCollectible(ExtraDeckLocalID, "{{RedCard}} Spawns 1 special card #{{Collectible85}} After use it goes back to being the Deck of Cards")
 end
 
 -- Lista delle carte speciali con dorso rosso
@@ -29,5 +29,10 @@ function BrokenOrigami:useExtraDeck(_, rng, player)
     }
 end
 
+function BrokenOrigami:removeExtraDeckFromPool()
+    Game():GetItemPool():RemoveCollectible(ExtraDeckLocalID)
+end
+
 -- Associa la funzione all'item
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useExtraDeck, ExtraDeckLocalID)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.removeExtraDeckFromPool)

@@ -13,7 +13,7 @@ ITEM
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
 
 77705 - Upside Down Deck of Card [2]
-	Droppa una reverse card (da agiungere che viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale)
+	Droppa una reverse card, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale
 
 77706 - Constellation [3]
 	Attivo monouso, spawna un item tra i segni zodiacali, gli item del planetario e la meteor
@@ -31,7 +31,7 @@ ITEM
 	Attivo che ti da un companion casuale al costo di un Broken Heart 
 
 77711 - Torn Hook [0] 
-	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate (+5% per Jacob e Esau non tainted e +10% per ogni altro Torn Hook), per ogni punto luck hai la possibilità che si rimuova (da aggiungere tainted Lazarus)
+	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate (+5% per Jacob e Esau non tainted, +10% per ogni altro Torn Hook), per ogni punto luck hai la possibilità che si rimuova 
 
 77712 - Wriggling Shadow [2]
 	Rimuove gli Torn Hook e ti toglie 1 broken heart e 1 cuore full per hook rimosso 
@@ -56,7 +56,7 @@ ITEM
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
 
 77719 - Extra Deck of Card [2]
-	Droppa una carta speciale (da agiungere che viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale)
+	Droppa una carta speciale, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale
 
 77720 - Ancient Hook [0]
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale importante, per ogni punto luck hai la possibilità che si rimuova
@@ -111,7 +111,9 @@ BUG
 
 	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
 
-	- Gli hooks devono essere condivisi da tainted Lazarus con la sua seconda forma (usando il tag XML) e deve essere gestito l'effetto
+	- Gli hooks devono essere funzionare con tainted Lazarus con la sua seconda forma se per esempio si cambia piano con la forma che non ha gli hooks, alla versione con gli hooks devono applicarsi gli effetti (non so se lo fa)
+
+	- Da sistemare i 2 Deck of Card speciali, non hanno la parte di codice che fa tramutare il Deck of Card normale in quelli speciali e loro non si tramutano a loro volta nel Deck of Card Normale
 
 
 ---------------------------------------------------------------------
@@ -119,7 +121,7 @@ COSE MANCANTI E DA RIGUARDARE
 
 	- Mancano Texture e Death animation
 
-	- Trasformazione PAPER completamente non funzionante
+	- Trasformazioni completamente non funzionanti
 
 	- Controllare bene le variabili tra i nomi delle local e le variabili data.
 
