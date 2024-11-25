@@ -21,7 +21,7 @@ ITEM
 77710 - Girlfriend [2]
 	Attivo che ti da un companion casuale al costo di un Broken Heart 
 77711 - Torn Hook [0] 
-	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate (+5% per Jacob e Esau non tainted e +10% per ogni altro Torn Hook)
+	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate (+5% per Jacob e Esau non tainted e +10% per ogni altro Torn Hook), per ogni punto luck hai la possibilità che si rimuova
 77712 - Wriggling Shadow [2]
 	Rimuove gli Torn Hook e ti toglie 1 broken heart e 1 cuore full per hook rimosso 
 77713 - Origami Crow [3]
@@ -40,7 +40,7 @@ ITEM
 77719 - Extra Deck of Card [2]
 	Droppa una carta speciale
 77720 - Ancient Hook [0]
-	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale importante
+	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale importante, per ogni punto luck hai la possibilità che si rimuova
 	
 ---------------------------------------------------------------------
 CONSUMABILI
@@ -74,7 +74,7 @@ BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
-	- Da controllare la nuova Torn Hook e Wriggling Shadow e aggiungere ai 2 Hooks che hanno una probabilità di rimuoversi da soli in base alla luck del giocatore (se 0 o inferiore non si toglie)
+	- Gli hooks devono essere condivisi da tainted Lazarus con la sua seconda forma (usando il tag XML) e deve essere gestito l'effetto
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
