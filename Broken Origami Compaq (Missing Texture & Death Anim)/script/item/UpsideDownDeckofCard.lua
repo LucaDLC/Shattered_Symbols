@@ -22,6 +22,13 @@ function BrokenOrigami:useUpsideDownDeckCard(_, rng, player)
     -- Droppa una carta casuale dal pool delle carte reverse
     local card = reverseCards[math.random(#reverseCards)]
     player:AddCard(card)
+    for i = 0, 3 do
+        local activeItem = player:GetActiveItem(i)
+        if activeItem == UpsideDownDeckofCardsLocalID then
+            player:RemoveCollectible(UpsideDownDeckofCardsLocalID, false, i)
+            player:AddCollectible(DeckofCardID, 0, false, i)
+        end
+    end
     return {
         Discharge = true,
         Remove = false,
@@ -33,7 +40,20 @@ function BrokenOrigami:removeUpsideDownDeckofCardsFromPool()
     Game():GetItemPool():RemoveCollectible(UpsideDownDeckofCardsLocalID)
 end
 
+function BrokenOrigami:mutateUpsideDownDeck(_, rng, player)
+    if rng:RandomFloat() > 0.925 then
+        for i = 0, 3 do
+            local activeItem = player:GetActiveItem(i)
+            if activeItem == DeckofCardID then
+                player:RemoveCollectible(DeckofCardID, false, i)
+                player:AddCollectible(UpsideDownDeckofCardsLocalID, 0, false, i)
+            end
+        end
+    end
+end
+
 -- Associa la funzione all'item
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useUpsideDownDeckCard, UpsideDownDeckofCardsLocalID)
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.mutateUpsideDownDeck, DeckofCardID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.removeUpsideDownDeckofCardsFromPool)
 
