@@ -5,7 +5,6 @@
     </Pool>
 
     <Pool Name="treasure">
-        <Item Name="Upside Down Deck of Cards" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -15,12 +14,10 @@
 	<Item Name="Origami Nightingale" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Extra Deck of Cards" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
     <Pool Name="greedTreasure">
-        <Item Name="Upside Down Deck of Cards" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -33,7 +30,6 @@
 	<Item Name="Origami Nightingale" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Extra Deck of Cards" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="shop">
@@ -48,7 +44,6 @@
     </Pool>
 
     <Pool Name="greedShop">
-        <Item Name="Upside Down Deck of Cards" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -61,7 +56,6 @@
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Extra Deck of Cards" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
@@ -152,7 +146,6 @@
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Nightingale" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Extra Deck of Cards" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
 </ItemPools>

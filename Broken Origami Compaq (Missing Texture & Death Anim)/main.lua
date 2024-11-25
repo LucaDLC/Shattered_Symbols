@@ -30,8 +30,6 @@ for Load = 1, #ItemScript do
 end
 
 
-
-
 function BrokenOrigami:SavePlayerData()
     local player = Isaac.GetPlayer(0)
     local data = player:GetData()
