@@ -184,15 +184,12 @@ BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, BrokenOrigami.LoadPl
 
 --------------------- Deck of Card ---------------------
 
-if EID then
-    EID:addDescriptionModifier("MutableDeckofCard", isDeckofCard, mutableDeckofCard)
-end
-
 local function isDeckofCard(descObj)
     if descObj.ObjType == 5 and descObj.ObjVariant == 100 and descObj.ObjSubType == 85 then return true end
 end
+
 local function mutableDeckofCard(descObj)
- EID:appendToDescription(descObj, "#After use have 7.5% chance to mutate into Extra Deck and 7.5% chance to mutate into Upside Down Deck")
+ EID:appendToDescription(descObj, "#After use it, have 7.5% chance to mutate into Extra Deck and 7.5% chance to mutate into Upside Down Deck")
     return descObj
 end
 
@@ -215,6 +212,11 @@ function BrokenOrigami:mutateDeck(_, rng, player)
             end
         end
     end
+end
+
+
+if EID then
+    EID:addDescriptionModifier("MutableDeckofCard", isDeckofCard, mutableDeckofCard)
 end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.mutateDeck, DeckofCardID)
