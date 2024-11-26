@@ -42,7 +42,8 @@ function BrokenOrigami:removeExtraDeckFromPool()
 end
 
 function BrokenOrigami:mutateExtraDeck(_, rng, player)
-    if rng:RandomFloat() < 0.075 then
+    local mutateValue = rng:RandomFloat()
+    if mutateValue < 0.075 then
         for i = 0, 3 do
             local activeItem = player:GetActiveItem(i)
             if activeItem == DeckofCardID then

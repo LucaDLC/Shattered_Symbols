@@ -1,5 +1,13 @@
 BrokenOrigami = RegisterMod("Broken Origami", 1)
 
+---------------------------------------------------------
+--/////////////////////////////////////////////////////--
+----------------------Settings---------------------------
+--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--
+---------------------------------------------------------
+
+--------------------- Load Mod ---------------------
+
 local JsonSaveFile = require("json")
 local AllPlayerDataToSave = {}
 local ItemScript = {
@@ -29,6 +37,7 @@ for Load = 1, #ItemScript do
     require("script.item." .. ItemScript[Load])
 end
 
+--------------------- Save Datas ---------------------
 
 function BrokenOrigami:SavePlayerData()
     local player = Isaac.GetPlayer(0)
@@ -72,6 +81,8 @@ function BrokenOrigami:SavePlayerData()
     AllPlayerDataToSave = {}
 
 end
+
+--------------------- Load Saves ---------------------
 
 function BrokenOrigami:LoadPlayerData()
     local player = Isaac.GetPlayer(0)
@@ -132,7 +143,9 @@ function BrokenOrigami:LoadPlayerData()
     
 end
 
-function BrokenOrigami:ExecuteConsoleCommand(_, Command)
+--------------------- Console Command ---------------------
+
+function BrokenOrigami:ExecuteConsoleCommand(_, Command) 
     if Command == "Launch" then 
         for Load = 1, #ItemScript do
             require("script.item." .. ItemScript[Load])
@@ -161,5 +174,50 @@ BrokenOrigami:AddCallback(ModCallbacks.MC_EXECUTE_CMD,BrokenOrigami.ExecuteConso
 BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_GAME_EXIT, BrokenOrigami.SavePlayerData)
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, BrokenOrigami.LoadPlayerData)
+
+
+---------------------------------------------------------
+--/////////////////////////////////////////////////////--
+--------------------Integrations-------------------------
+--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--
+---------------------------------------------------------
+
+--------------------- Deck of Card ---------------------
+
+if EID then
+    EID:addDescriptionModifier("MutableDeckofCard", isDeckofCard, mutableDeckofCard)
+end
+
+local function isDeckofCard(descObj)
+    if descObj.ObjType == 5 and descObj.ObjVariant == 100 and descObj.ObjSubType == 85 then return true end
+end
+local function mutableDeckofCard(descObj)
+ EID:appendToDescription(descObj, "#After use have 7.5% chance to mutate into Extra Deck and 7.5% chance to mutate into Upside Down Deck")
+    return descObj
+end
+
+function BrokenOrigami:mutateDeck(_, rng, player)
+    local mutateValue = rng:RandomFloat()
+    if mutateValue < 0.075 then
+        for i = 0, 3 do
+            local activeItem = player:GetActiveItem(i)
+            if activeItem == DeckofCardID then
+                player:RemoveCollectible(DeckofCardID, false, i)
+                player:AddCollectible(ExtraDeckLocalID, 0, false, i)
+            end
+        end
+    elseif mutateValue > 0.925 then
+        for i = 0, 3 do
+            local activeItem = player:GetActiveItem(i)
+            if activeItem == DeckofCardID then
+                player:RemoveCollectible(DeckofCardID, false, i)
+                player:AddCollectible(UpsideDownDeckofCardsLocalID, 0, false, i)
+            end
+        end
+    end
+end
+
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.mutateDeck, DeckofCardID)
+
 
 
