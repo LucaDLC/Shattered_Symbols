@@ -31,7 +31,7 @@ ITEM
 	Attivo che ti da un companion casuale al costo di un Broken Heart 
 
 77711 - Torn Hook [0] 
-	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate (+5% per Jacob e Esau non tainted, +10% per ogni altro Torn Hook), per ogni punto luck hai la possibilità che si rimuova 
+	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate, per ogni punto luck hai la possibilità che si rimuova 
 
 77712 - Wriggling Shadow [2]
 	Rimuove gli Torn Hook e ti toglie 1 broken heart e 1 cuore full per hook rimosso 
@@ -111,7 +111,7 @@ BUG
 
 	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
 
-	- Gli hooks devono essere funzionare con tainted Lazarus con la sua seconda forma se per esempio si cambia piano con la forma che non ha gli hooks, alla versione con gli hooks devono applicarsi gli effetti (non so se lo fa)
+	- Gli hooks devono essere testati con ainted Lazarus e controllare Torn Hooks se funziona ancora dopo le modifiche
 
 	- Da sistemare i 2 Deck of Card speciali, non hanno la parte di codice che fa tramutare il Deck of Card normale in quelli speciali e loro non si tramutano a loro volta nel Deck of Card Normale
 
