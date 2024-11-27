@@ -109,8 +109,6 @@ BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 
-	- Vengono creati degli item inesistenti nella item list (vedi item in stats)
-
 	- Gli hooks devono essere testati con ainted Lazarus e controllare Torn Hooks se funziona ancora dopo le modifiche
 
 	- Da sistemare i 2 Deck of Card speciali, non hanno la parte di codice che fa tramutare il Deck of Card normale in quelli speciali e loro non si tramutano a loro volta nel Deck of Card Normale

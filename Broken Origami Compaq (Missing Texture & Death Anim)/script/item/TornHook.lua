@@ -5,7 +5,7 @@ local TornHookLocalID = Isaac.GetItemIdByName("Torn Hook")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", TornHookLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(TornHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts at every Floor #Every floor you have 15% of chance for each Torn Hook of spawn Death Certificate #Jacob and Esau have their own percent #{{Luck}} You have same Chance as Luck to remove Torn Hooks on each floor, at the floor when Torn Hooks removed the effects not activate")
+    EID:addCollectible(TornHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts at every Floor #Every floor you have 15% of chance for each Torn Hook of spawn Death Certificate #{{Luck}} You have same Chance as Luck to remove Torn Hooks on each floor, at the floor when Torn Hooks removed the effects not activate")
 end
 
 function BrokenOrigami:onTornHook()

@@ -1,5 +1,6 @@
 local game = Game()
 local UpsideDownDeckofCardsLocalID = Isaac.GetItemIdByName("Upside Down Deck of Cards")
+local DeckofCardID = Isaac.GetItemIdByName("Deck of Cards")
 
 --EID
 if EID then
