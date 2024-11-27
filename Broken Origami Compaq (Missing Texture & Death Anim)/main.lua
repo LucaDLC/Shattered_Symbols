@@ -196,19 +196,21 @@ end
 function BrokenOrigami:mutateDeck(_, rng, player)
     local mutateValue = rng:RandomFloat()
     if mutateValue < 0.075 then
+        local ExtraDeckID = Isaac.GetItemIdByName("Extra Deck of Cards")
         for i = 0, 3 do
             local activeItem = player:GetActiveItem(i)
             if activeItem == DeckofCardID then
                 player:RemoveCollectible(DeckofCardID, false, i)
-                player:AddCollectible(ExtraDeckLocalID, 0, false, i)
+                player:AddCollectible(ExtraDeckID, 0, false, i)
             end
         end
     elseif mutateValue > 0.925 then
+        local UpsideDownDeckofCardsID = Isaac.GetItemIdByName("Upside Down Deck of Cards")
         for i = 0, 3 do
             local activeItem = player:GetActiveItem(i)
             if activeItem == DeckofCardID then
                 player:RemoveCollectible(DeckofCardID, false, i)
-                player:AddCollectible(UpsideDownDeckofCardsLocalID, 0, false, i)
+                player:AddCollectible(UpsideDownDeckofCardsID, 0, false, i)
             end
         end
     end
