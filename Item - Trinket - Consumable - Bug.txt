@@ -12,19 +12,19 @@ ITEM
 77704 - Origami Boat [3]
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
 
-77705 - Upside Down Deck of Card [2]
+77705 - Upside Down Deck of Card [2] [TEXTURE FINISHED]
 	Droppa una reverse card, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale
 
-77706 - Constellation [3]
+77706 - Constellation [3] [TEXTURE FINISHED]
 	Attivo monouso, spawna un item tra i segni zodiacali, gli item del planetario e la meteor
 
 77707 - Origami Swan [3]
 	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
 
-77708 - Meteor [1]
+77708 - Meteor [1] [TEXTURE FINISHED]
 	Rimuove 2 Broken Heart oppure rimuove 1 broken heart e da 1 black heart oppure da 3 black heart
 
-77709 - Shawty's Letter [2]
+77709 - Shawty's Letter [2] [TEXTURE FINISHED]
 	Attivo monouso che spawna un item origami
 
 77710 - Girlfriend [2]
