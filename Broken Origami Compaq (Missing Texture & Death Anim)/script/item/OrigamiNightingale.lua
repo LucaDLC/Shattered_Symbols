@@ -4,7 +4,7 @@ local OrigamiNightingaleLocalID = Isaac.GetItemIdByName("Origami Nightingale")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", OrigamiNightingaleLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiNightingaleLocalID, "{{ArrowUp}} Move primary active item to pocket item if you don't have one or if previous pocket item disappear #{{ArrowUp}} If you don't have active item, first one that you take become the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts #{{Warning}} If you take item that give you pocket item, this one overwrite your pocket item that you have moved before")
+    EID:addCollectible(OrigamiNightingaleLocalID, "{{ArrowUp}} Move primary active item to pocket item if you don't have one or if previous pocket item disappear #{{ArrowUp}} If you don't have active item, first one that you take become the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts which does not replace Heart #{{Warning}} If you take item that give you pocket item, this one overwrite your pocket item that you have moved before")
 end
 
 local function toPocket(player)

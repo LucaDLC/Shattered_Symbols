@@ -5,7 +5,7 @@ local AncientHookLocalID = Isaac.GetItemIdByName("Ancient Hook")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", AncientHookLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts at every Floor #At every floor grants:#{{ArrowUp}} Damage +0.7#{{ArrowUp}} Speed +0.2#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.7#{{ArrowUp}} Luck +0.5 #{{Luck}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
+    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart at every Floor #At every floor grants:#{{ArrowUp}} Damage +0.7#{{ArrowUp}} Speed +0.2#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.7#{{ArrowUp}} Luck +0.5 #{{Luck}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
 end
 
 local statMultiplier = {

@@ -5,7 +5,7 @@ local OrigamiKolibriLocalID = Isaac.GetItemIdByName("Origami Kolibri")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", OrigamiKolibriLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiKolibriLocalID, "#{{ArrowUp}} After 64 hits, heal half heart {{HalfHeart}} #{{ArrowUp}} Halve the number of hits for each Origami Kolibri #{{ArrowUp}} +0.2 Speed {{Speed}} #{{ArrowDown}} Gives 1 Broken Hearts {{BrokenHeart}}")
+    EID:addCollectible(OrigamiKolibriLocalID, "#{{ArrowUp}} After 64 hits, heal half heart {{HalfHeart}} #{{ArrowUp}} Halve the number of hits for each Origami Kolibri #{{ArrowUp}} +0.2 Speed {{Speed}} #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 
 function BrokenOrigami:useOrigamiKolibri(player)
