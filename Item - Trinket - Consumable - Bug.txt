@@ -66,6 +66,8 @@ ITEM
 
 77721 - Geoid [2]
 	Attivo che droppa una runa casuale (contemplando anche quelle delle mod) con 5 cariche
+77722 - Runic Altar [2]
+	Attivo con 3 cariche che si ricarica quando viene usata una runa, quando viene usato attiva i 3 effetti delle rune usate per caricarlo
 	
 ---------------------------------------------------------------------
 CONSUMABILI
@@ -77,7 +79,7 @@ CONSUMABILI
 	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
 
 88803 - Hex
-	Runa che uccide tutti i nemici nella stanza e riduce la vita residua dei boss del 75% ma lascia il giocatore con 1 slot cuore pieno, tutti gli altri slot diventano Broken Heart 
+	??? 
 	
 
 ---------------------------------------------------------------------
