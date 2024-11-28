@@ -1,5 +1,6 @@
 local game = Game()
 local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
+local OrigamiCrowExternalID = Isaac.GetItemIdByName("Origami Crow")
 
 if EID then
     EID:addCollectible(BrokenFluxLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowDown}} If the absorbed Broken Hearts have replaced Heart, these are not returned #{{ArrowUp}} Broken Flux share charges with all Broken Flux of the same player during the game ")
@@ -30,12 +31,18 @@ function BrokenOrigami:havingBrokenFlux(player)
                     for Diff = 1, (currentBrokenHearts - data.BrokenFluxPreviousBrokenHearts) do
                         if data.BrokenFluxCharge < 4 then
                             data.BrokenFluxCharge = data.BrokenFluxCharge + 1
+                            if player:HasCollectible(OrigamiCrowExternalID) then
+                                data.BrokenFluxCharge = data.BrokenFluxCharge + 1
+                            end
                             player:AddBrokenHearts(-1)
                         end
                     end
                 end
 
-                if player:HasCollectible(BrokenFluxLocalID) and data.BrokenFluxCharge <= 4 then
+                if player:HasCollectible(BrokenFluxLocalID) then
+                    if data.BrokenFluxCharge > 4 then
+                        data.BrokenFluxCharge = 4
+                    end
                     player:SetActiveCharge(data.BrokenFluxCharge, i)
                 end
                 
