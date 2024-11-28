@@ -28,14 +28,17 @@ end
 function BrokenOrigami:ConvertDroppedRedHearts(entity)
     local heart = entity:ToPickup()
     
-    -- Controlla che l'entità sia valida e sia un pickup del tipo cuore
-    if heart and heart.Variant == PickupVariant.PICKUP_HEART and player:HasCollectible(MidnightBiteLocalID) then
-        -- Verifica se il tipo di cuore è tra quelli da trasformare
-        if heart.SubType == HeartSubType.HEART_FULL or 
-           heart.SubType == HeartSubType.HEART_HALF or 
-           heart.SubType == HeartSubType.HEART_DOUBLEPACK then
-            -- Trasforma il cuore in un Rotten Heart
-            heart:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, HeartSubType.HEART_ROTTEN, true, false, false)
+    for playerIndex = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(playerIndex)
+        -- Controlla che l'entità sia valida e sia un pickup del tipo cuore
+        if heart and heart.Variant == PickupVariant.PICKUP_HEART and player:HasCollectible(MidnightBiteLocalID) then
+            -- Verifica se il tipo di cuore è tra quelli da trasformare
+            if heart.SubType == HeartSubType.HEART_FULL or 
+               heart.SubType == HeartSubType.HEART_HALF or 
+               heart.SubType == HeartSubType.HEART_DOUBLEPACK then
+                -- Trasforma il cuore in un Rotten Heart
+                heart:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, HeartSubType.HEART_ROTTEN, true, false, false)
+            end
         end
     end
 end
