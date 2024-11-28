@@ -3,7 +3,7 @@ local GirlfriendLocalID = Isaac.GetItemIdByName("Girlfriend")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(GirlfriendLocalID, "{{ArrowUp}} Give a random familiar #{{ArrowDown}} Give 1 Broken Heart {{BrokenHeart}} that replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} Give 5 Whisp then item disappear #{{Player31}} Give 7 Whisp then item disappear")
+    EID:addCollectible(GirlfriendLocalID, "{{ArrowUp}} Give a random familiar #{{ArrowDown}} Give 1 Broken Heart {{BrokenHeart}} which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} Give 5 Whisp then item disappear #{{Player31}} Give 7 Whisp then item disappear")
 end
 
 local familiars = {}
