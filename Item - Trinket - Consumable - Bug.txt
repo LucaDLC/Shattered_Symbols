@@ -83,8 +83,8 @@ CONSUMABILI
 88802 - Sacred Dice Shard
 	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
 
-88803 - Hex
-	??? 
+88803 - Hex Crystal
+	???
 	
 
 ---------------------------------------------------------------------
