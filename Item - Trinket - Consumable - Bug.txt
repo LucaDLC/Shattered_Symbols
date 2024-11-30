@@ -27,7 +27,7 @@ ITEM
 77709 - Shawty's Letter [2] [TEXTURE FINISHED]
 	Attivo monouso che spawna un item origami
 
-77710 - Girlfriend [1]
+77710 - Girlfriend [2]
 	Attivo che ti da un companion casuale al costo di un Broken Heart 
 
 77711 - Torn Hook [0] 
