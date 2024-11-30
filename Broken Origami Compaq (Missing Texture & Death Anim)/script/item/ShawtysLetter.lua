@@ -51,7 +51,7 @@ end
 function BrokenOrigami:ShawtyWispInit(wisp)
 	if  wisp.Player and wisp.Player:HasCollectible(ShawtysLetterLocalID) then
 		if wisp.SubType == ShawtysLetterLocalID then
-			wisp.SubType = 39
+			wisp.SubType = 642
 		end
 	end
 end
