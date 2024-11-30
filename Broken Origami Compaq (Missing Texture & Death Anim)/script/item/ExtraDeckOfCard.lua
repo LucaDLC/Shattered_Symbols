@@ -55,7 +55,15 @@ function BrokenOrigami:mutateExtraDeck(_, rng, player)
 end
 
 
--- Associa la funzione all'item
+function BrokenOrigami:ExtraWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(ExtraDeckLocalID) then
+		if wisp.SubType == ExtraDeckLocalID then
+			wisp.SubType = 85
+		end
+	end
+end
+
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.ExtraWispInit, FamiliarVariant.WISP)
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useExtraDeck, ExtraDeckLocalID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.mutateExtraDeck, DeckofCardID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.removeExtraDeckFromPool)

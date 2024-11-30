@@ -75,6 +75,15 @@ function BrokenOrigami:useGirlfriend(_, rng, player)
     }
 end
 
+function BrokenOrigami:GirlfriendWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(GirlfriendLocalID) then
+		if wisp.SubType == GirlfriendLocalID then
+			wisp.SubType = 720
+		end
+	end
+end
+
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useGirlfriend, GirlfriendLocalID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, onGameStartGirlfriend)
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.GirlfriendWispInit, FamiliarVariant.WISP)

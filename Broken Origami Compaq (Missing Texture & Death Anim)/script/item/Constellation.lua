@@ -70,6 +70,15 @@ function BrokenOrigami:onGameStartConstellation()
     local Constellation_Table = {}
 end
 
+function BrokenOrigami:ConstellationWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(ConstellationLocalID) then
+		if wisp.SubType == ConstellationLocalID then
+			wisp.SubType = 158
+		end
+	end
+end
+
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.ConstellationWispInit, FamiliarVariant.WISP)
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useConstellation, ConstellationLocalID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.onGameStartConstellation)
 

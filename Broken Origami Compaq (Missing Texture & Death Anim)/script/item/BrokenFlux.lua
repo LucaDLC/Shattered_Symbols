@@ -84,6 +84,15 @@ function getRoomIndexByType(roomType)
     return nil
 end
 
+function BrokenOrigami:FluxWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(BrokenFluxLocalID) then
+		if wisp.SubType == BrokenFluxLocalID then
+			wisp.SubType = 580
+		end
+	end
+end
+
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.FluxWispInit, FamiliarVariant.WISP)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.havingBrokenFlux)
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useBrokenFlux, BrokenFluxLocalID)
 

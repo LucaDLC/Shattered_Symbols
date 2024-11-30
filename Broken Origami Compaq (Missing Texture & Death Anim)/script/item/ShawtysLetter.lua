@@ -48,6 +48,20 @@ function BrokenOrigami:onGameStartShawtysLetter()
     local Shawty_Table = {}
 end
 
+function BrokenOrigami:ShawtyWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(ShawtysLetterLocalID) then
+		if wisp.SubType == ShawtysLetterLocalID then
+            local wispVar = rng:RandomFloat()
+            if wispVar < 0.5 then
+			    wisp.SubType = 39
+            else
+                wisp.SubType = 642
+            end
+		end
+	end
+end
+
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.ShawtyWispInit, FamiliarVariant.WISP)
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useShawtysLetter, ShawtysLetterLocalID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.onGameStartShawtysLetter)
 

@@ -27,7 +27,7 @@ ITEM
 77709 - Shawty's Letter [2] [TEXTURE FINISHED]
 	Attivo monouso che spawna un item origami
 
-77710 - Girlfriend [2]
+77710 - Girlfriend [1]
 	Attivo che ti da un companion casuale al costo di un Broken Heart 
 
 77711 - Torn Hook [0] 
@@ -117,8 +117,9 @@ BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 
-	- Gli hooks devono essere testati con ainted Lazarus 
+	- Gli hooks devono essere testati con tainted Lazarus 
 
+	- Nightingale è buggato con book of virtues
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
