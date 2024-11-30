@@ -61,11 +61,12 @@ ITEM
 77720 - Ancient Hook [0]
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale importante, per ogni punto luck hai la possibilità che si rimuova
 
-
-
-
-77721 - Geoid [2]
+77721 - Runic Geode [2]
 	Attivo che droppa una runa casuale (contemplando anche quelle delle mod) con 5 cariche
+
+
+
+
 
 77722 - Runic Altar [2]
 	Attivo con 3 cariche che si ricarica quando viene usata una runa, quando viene usato attiva i 3 effetti delle rune usate per caricarlo

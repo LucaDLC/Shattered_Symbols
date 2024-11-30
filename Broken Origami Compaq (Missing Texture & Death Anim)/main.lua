@@ -30,7 +30,8 @@ local ItemScript = {
     'BrokenBox',
     'MidnightBite',
     'ExtraDeckofCard',
-    'AncientHook'
+    'AncientHook',
+    'RunicGeode'
 }
 
 for Load = 1, #ItemScript do
