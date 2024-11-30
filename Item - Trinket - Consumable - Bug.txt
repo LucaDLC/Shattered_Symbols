@@ -71,8 +71,8 @@ ITEM
 
 
 
-77723 - Forbidden Soul [?]
-	???
+77723 - Forbidden Soul [2]
+	Sostituisce al 33% le Treasure Room in Red Treasure Room e hai il 33% di aprire una Red Room dopo aver pulito una stanza
 
 
 ---------------------------------------------------------------------
