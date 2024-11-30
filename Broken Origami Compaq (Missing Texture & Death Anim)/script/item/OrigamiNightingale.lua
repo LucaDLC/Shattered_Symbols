@@ -11,7 +11,7 @@ local function toPocket(player)
     local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
     local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
 
-    if activeItem ~= 0 and pocketItem == 0 then
+    if activeItem ~= 0 and pocketItem == 0 and activeItem ~= CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES then
         player:SetPocketActiveItem(activeItem, ActiveSlot.SLOT_POCKET)
         player:RemoveCollectible(activeItem, true, ActiveSlot.SLOT_PRIMARY)
     end
