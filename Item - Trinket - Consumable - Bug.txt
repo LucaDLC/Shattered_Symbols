@@ -119,16 +119,12 @@ BUG
 
 	- Gli hooks devono essere testati con tainted Lazarus 
 
-	- Nightingale è buggato con book of virtues
-
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
 
 	- Mancano Texture e Death animation
 
 	- Trasformazioni completamente non funzionanti
-
-	- Controllare bene le variabili tra i nomi delle local e le variabili data.
 
 	- Migliorare i commenti
 
@@ -140,10 +136,8 @@ COSE MANCANTI E DA RIGUARDARE
 ---------------------------------------------------------------------
 BILANCIAMENTI
 
-	- Rivisitare Item Pool
+	- Rivisitare Item Pool 
 
 	- Rivedere bene i tag degli Item
-
-	- Vedere se gli item con i personaggi non danno problemi
 
 
