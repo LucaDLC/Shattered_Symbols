@@ -31,7 +31,8 @@ local ItemScript = {
     'MidnightBite',
     'ExtraDeckofCard',
     'AncientHook',
-    'RunicGeode'
+    'RunicGeode',
+    'RunicAltar'
 }
 
 for Load = 1, #ItemScript do
@@ -75,7 +76,8 @@ function BrokenOrigami:SavePlayerData()
         BrokenBoxBombFlag = data.BrokenBoxBombFlag or 0,
         BrokenBoxKeyFlag = data.BrokenBoxKeyFlag or 0,
         BrokenBoxStatus = data.BrokenBoxStatus or false,
-        AncientHookCounter= data.AncientHookCounter or 0,
+        AncientHookCounter = data.AncientHookCounter or 0,
+        RunicAltarEffects = data.RunicAltarEffects or {},
     }
 
     BrokenOrigami:SaveData(JsonSaveFile.encode(AllPlayerDataToSave))
@@ -124,6 +126,7 @@ function BrokenOrigami:LoadPlayerData()
         data.BrokenBoxKeyFlag = AllPlayerDataToSave.BrokenBoxKeyFlag or 0
         data.BrokenBoxStatus = AllPlayerDataToSave.BrokenBoxStatus or false
         data.AncientHookCounter = AllPlayerDataToSave.AncientHookCounter or 0
+        data.RunicAltarEffects = AllPlayerDataToSave.RunicAltarEffects or {}
 
     elseif BrokenOrigami:HasData() and (Game():GetFrameCount() == 0) then
         
