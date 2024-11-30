@@ -62,7 +62,7 @@ ITEM
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale importante, per ogni punto luck hai la possibilità che si rimuova
 
 77721 - Runic Geode [2]
-	Attivo che droppa una runa casuale (contemplando anche quelle delle mod) con 5 cariche
+	Attivo che droppa una runa casuale (contemplando anche quelle delle mod) con 6 cariche
 
 
 
