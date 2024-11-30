@@ -51,12 +51,7 @@ end
 function BrokenOrigami:ShawtyWispInit(wisp)
 	if  wisp.Player and wisp.Player:HasCollectible(ShawtysLetterLocalID) then
 		if wisp.SubType == ShawtysLetterLocalID then
-            local wispVar = rng:RandomFloat()
-            if wispVar < 0.5 then
-			    wisp.SubType = 39
-            else
-                wisp.SubType = 642
-            end
+			wisp.SubType = 39
 		end
 	end
 end

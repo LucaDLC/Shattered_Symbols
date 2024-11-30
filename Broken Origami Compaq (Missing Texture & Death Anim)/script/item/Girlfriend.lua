@@ -78,7 +78,7 @@ end
 function BrokenOrigami:GirlfriendWispInit(wisp)
 	if  wisp.Player and wisp.Player:HasCollectible(GirlfriendLocalID) then
 		if wisp.SubType == GirlfriendLocalID then
-			wisp.SubType = 720
+			wisp.SubType = 642
 		end
 	end
 end
