@@ -29,5 +29,13 @@ function BrokenOrigami:useSacredLantern(_, rng, player)
     
 end
 
+function BrokenOrigami:LanternWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(SacredLanternLocalID) then
+		if wisp.SubType == SacredLanternLocalID then
+			wisp.SubType = 160
+		end
+	end
+end
 
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.LanternWispInit, FamiliarVariant.WISP)
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useSacredLantern, SacredLanternLocalID)

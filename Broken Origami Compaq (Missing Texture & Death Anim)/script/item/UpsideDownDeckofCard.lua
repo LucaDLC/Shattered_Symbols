@@ -54,7 +54,15 @@ function BrokenOrigami:mutateUpsideDownDeck(_, rng, player)
     end
 end
 
--- Associa la funzione all'item
+function BrokenOrigami:UpsideDownWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(UpsideDownDeckofCardsLocalID) then
+		if wisp.SubType == UpsideDownDeckofCardsLocalID then
+			wisp.SubType = 85
+		end
+	end
+end
+
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.UpsideDownWispInit, FamiliarVariant.WISP)
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useUpsideDownDeckCard, UpsideDownDeckofCardsLocalID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.mutateUpsideDownDeck, DeckofCardID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.removeUpsideDownDeckofCardsFromPool)

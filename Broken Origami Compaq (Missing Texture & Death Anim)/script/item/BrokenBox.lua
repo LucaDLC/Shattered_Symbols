@@ -93,4 +93,14 @@ function BrokenOrigami:useBrokenBox(_, rng, player)
     }
 end
 
+function BrokenOrigami:BoxWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(BrokenBoxLocalID) then
+		if wisp.SubType == BrokenBoxLocalID then
+			wisp.SubType = 719
+		end
+	end
+end
+
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useBrokenBox, BrokenBoxLocalID)
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.BoxWispInit, FamiliarVariant.WISP)
+
