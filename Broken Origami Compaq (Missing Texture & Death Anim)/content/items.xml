@@ -21,5 +21,7 @@
 	<active  id="77719" name="Extra Deck of Cards" gfx ="ExtraDeckofCards.png" description="Special evocation" quality="2" maxcharges="5" chargetype="normal" devilprice="2"/>
 	<passive  id="77720" name="Ancient Hook" gfx ="AncientHook.png" description="a CuRsE¿" quality="0" devilprice="1" tags="lazarusshared"/>
 	<active  id="77721" name="Runic Geode" gfx ="RunicGeode.png" description="Feel the magic power" quality="2" maxcharges="6" chargetype="normal" devilprice="1"/>
+	<active  id="77722" name="Runic Altar" gfx ="RunicAltar.png" description="Magic whispers" quality="2" maxcharges="3" chargetype="special" initcharge ="0" devilprice="1"/>
+
 
 </items>
