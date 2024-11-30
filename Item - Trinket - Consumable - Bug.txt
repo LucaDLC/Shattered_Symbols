@@ -134,6 +134,8 @@ COSE MANCANTI E DA RIGUARDARE
 
 	- Controllare gli item per i personaggi che sono molteplici e hanno pool differenti
 
+	- Mancano le descrizioni con il Book of Virtues
+
 
 ---------------------------------------------------------------------
 BILANCIAMENTI
