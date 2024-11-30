@@ -2,10 +2,10 @@ local game = Game()
 local RunicAltarLocalID = Isaac.GetItemIdByName("Runic Altar")
 
 if EID then
-    EID:addCollectible(RunicAltarLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowDown}} If the absorbed Broken Hearts have replaced Heart, these are not returned #{{ArrowUp}} Runic Altar share charges with all Runic Altar of the same player during the game ")
+    EID:addCollectible(RunicAltarLocalID, "{{Rune}} When you hold the item, after using Rune or Soul Stone, the item charging #{{Rune}} At the Use, repeat effects of absorbed runes used to charging it")
 end
 
-local funcion IsRune(card)
+local function IsRune(card)
     local cardType = Isaac.GetItemConfig():GetCard(card)
     return cardType and cardType.CardType == ItemConfig.CARDTYPE_RUNE
 end
@@ -23,7 +23,7 @@ function BrokenOrigami:havingRunicAltar(card, player, flags)
 
             if activeItem ~= 0 and activeItem == RunicAltarLocalID then
                 player:SetActiveCharge(#data.RunicAltarEffects, i)
-                end
+                
             end
         end
 

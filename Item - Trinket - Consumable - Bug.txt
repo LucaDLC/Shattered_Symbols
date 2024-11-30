@@ -64,12 +64,12 @@ ITEM
 77721 - Runic Geode [2]
 	Attivo che droppa una runa casuale (contemplando anche quelle delle mod) con 6 cariche
 
-
-
-
-
 77722 - Runic Altar [2]
 	Attivo con 3 cariche che si ricarica quando viene usata una runa, quando viene usato attiva i 3 effetti delle rune usate per caricarlo
+
+
+
+
 
 77723 - Forbidden Soul [?]
 	???
