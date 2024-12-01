@@ -1,7 +1,7 @@
 ITEM
 
 77701 - Sacred Lantern [3] [TEXTURE FINISHED]
-	Rimuove i Broken Heart, li sostituisce con Half Soul Heart 
+	Rimuove i Broken Heart, li sostituisce con un Soul Heart 
 
 77702 - Fortune Teller [2]
 	Dà un Broken Heart per +5 di Luck
@@ -72,10 +72,10 @@ ITEM
 
 
 77723 - Forbidden Soul [3]
-	Ottieni un golden heart per il tuo ultimo slot cuore se possibile ad ogni stanza, come un Holy Mantle, e gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti, da 1 broken heart
+	Ottieni un golden heart per il tuo ultimo slot cuore se possibile ad ogni stanza, come un Holy Mantle, e gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti
 
 77724 - Forbidden Mind [3]
-	Hai il 25% di possibilità di spawnare una Red Room dopo aver pulito una stanza e sostituisce al 40% le Treasure Room in Red Treasure Room, da 1 broken heart
+	Hai il 25% di possibilità di spawnare una Red Room dopo aver pulito una stanza e sostituisce al 40% le Treasure Room in Red Treasure Room
 
 77725 - Forbidden Body [2]
 	??? 
@@ -143,6 +143,6 @@ BILANCIAMENTI
 
 	- Rivisitare Item Pool 
 
-	- [FATTO FINO A 77722]Rivedere bene i tag degli Item
+	- Rivedere bene i tag degli Item
 
 
