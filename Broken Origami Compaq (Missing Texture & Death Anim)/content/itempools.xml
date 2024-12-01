@@ -9,9 +9,9 @@
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Nightingale" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -26,10 +26,10 @@
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Nightingale" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -41,8 +41,8 @@
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -57,10 +57,10 @@
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -89,8 +89,8 @@
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
@@ -102,8 +102,8 @@
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Girlfriend" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
@@ -158,9 +158,9 @@
     </Pool>
 
     <Pool Name="craneGame">
-	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Nightingale" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
 </ItemPools>

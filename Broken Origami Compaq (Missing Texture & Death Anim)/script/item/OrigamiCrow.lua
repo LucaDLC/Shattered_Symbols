@@ -1,61 +1,42 @@
 local game = Game()
 local OrigamiCrowLocalID = Isaac.GetItemIdByName("Origami Crow")
 
-
+-- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", OrigamiCrowLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Duplicate all charges gained of active item for the rest of the game #{{ArrowUp}} Charge all active items #{{ArrowDown}} Does not duplicate extra charges #{{ArrowDown}} Gives 3 Broken Hearts which does not replace Heart{{BrokenHeart}}")
+    EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Move primary active item to pocket item if you don't have one or if previous pocket item disappear #{{ArrowUp}} If you don't have active item, first one that you take become the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts which does not replace Heart #{{Warning}} If you take item that give you pocket item, this one overwrite your pocket item that you have moved before")
 end
 
+local function toPocket(player)
+    local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
+    local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
 
+    if activeItem ~= 0 and pocketItem == 0 and activeItem ~= CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES then
+        player:SetPocketActiveItem(activeItem, ActiveSlot.SLOT_POCKET)
+        player:RemoveCollectible(activeItem, true, ActiveSlot.SLOT_PRIMARY)
+    end
+
+end
+
+-- Function to handle item pickup
 function BrokenOrigami:useOrigamiCrow(player)
     -- Get the player's data table
     local data = player:GetData()
     local OrigamiCrowCounter = player:GetCollectibleNum(OrigamiCrowLocalID)
 
-    if not data.OrigamiCrowChargeMemory then data.OrigamiCrowChargeMemory = {} end
     if not data.OrigamiCrowRelative then data.OrigamiCrowRelative = 0 end
     if not data.OrigamiCrowPreviousCounter then data.OrigamiCrowPreviousCounter = 1 end
 
     -- Check if the player has picked up the item
-    if player:HasCollectible(OrigamiCrowLocalID) then      
+    if player:HasCollectible(OrigamiCrowLocalID) then
         
         -- Apply the effect based on the number of items picked up
         if OrigamiCrowCounter >= data.OrigamiCrowPreviousCounter then
             data.OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter + 1
             data.OrigamiCrowRelative = data.OrigamiCrowRelative + 1
-            player:AddBrokenHearts(3) -- Add 3 broken heart
+            player:AddBrokenHearts(2) -- Add 1 broken heart 
         end
-
-        for i = 0, 3 do -- Check all active item slots
-            local activeItem = player:GetActiveItem(i)
-            if activeItem ~= 0 then
-                local currentCharge = player:GetActiveCharge(i)
-                
-                -- Memorizza la carica iniziale se non esiste già
-                if data.OrigamiCrowChargeMemory[i] == nil then
-                    data.OrigamiCrowChargeMemory[i] = currentCharge
-                end
-                
-                -- Calcola la carica aggiuntiva ottenuta dall'ultimo ciclo
-                local chargeGained = currentCharge - data.OrigamiCrowChargeMemory[i]
-                
-                -- Se è stata aggiunta carica, raddoppiala
-                if chargeGained > 0 then
-                    -- Calcola la nuova carica raddoppiata senza eccedere il limite massimo
-                    local maxCharge = Isaac.GetItemConfig():GetCollectible(activeItem).MaxCharges
-                    local doubledCharge = math.min(currentCharge + chargeGained, maxCharge)
-                    player:SetActiveCharge(doubledCharge, i)
-                end
-                
-                -- Aggiorna la carica memorizzata per il prossimo ciclo
-                data.OrigamiCrowChargeMemory[i] = player:GetActiveCharge(i)
-            else
-                -- Resetta la memoria se lo slot non contiene oggetti
-                data.OrigamiCrowChargeMemory[i] = nil
-            end
-        end
-
+        toPocket(player)
     else
         OrigamiCrowCounter = 0
         data.OrigamiCrowPreviousCounter = 1
@@ -65,6 +46,4 @@ function BrokenOrigami:useOrigamiCrow(player)
     end
 end
 
-
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiCrow)
-

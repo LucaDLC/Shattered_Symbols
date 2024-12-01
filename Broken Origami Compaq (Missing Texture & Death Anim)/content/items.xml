@@ -9,13 +9,13 @@
 	<passive  id="77707" name="Origami Swan" gfx ="OrigamiSwan.png" description="It's Wonderful but it suffers" quality="3" devilprice="1"/>
 	<passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Missed!" quality="1" devilprice="1"/>
 	<active  id="77709" name="Shawty's Letter" gfx ="ShawtysLetter.png" description="This is not a good sign" quality="2" maxcharges="0" chargetype="normal" devilprice="1"/>
-	<active  id="77710" name="Girlfriend" gfx ="Girlfriend.png" description="Rabbits" quality="2" maxcharges="0" chargetype="normal" devilprice="1"/>
+	<active  id="77710" name="Shawty's Essence" gfx ="ShawtysEssence.png" description="Intoxicating" quality="2" maxcharges="0" chargetype="normal" devilprice="1"/>
 	<passive  id="77711" name="Torn Hook" gfx ="TornHook.png" description="Struggling won't help you" quality="0" devilprice="1" tags="lazarusshared"/>
 	<active  id="77712" name="Wriggling Shadow" gfx ="WrigglingShadow.png" description="Surrender? Pff, noob thing" quality="2" maxcharges="0" chargetype="normal"/>
-	<passive  id="77713" name="Origami Crow" gfx ="OrigamiCrow.png" description="Somebody watching you" quality="3" devilprice="1"/>
-	<passive  id="77714" name="Origami Kolibri" gfx ="OrigamiKolibri.png" description="Slurm!" quality="2" devilprice="1"/>
+	<passive  id="77713" name="Origami Kolibri" gfx ="OrigamiKolibri.png" description="Slurm!" quality="3" devilprice="1"/>
+	<passive  id="77714" name="Origami Bat" gfx ="OrigamiBat.png" description="Go away" quality="2" devilprice="1"/>
 	<active  id="77715" name="Broken Flux" gfx ="BrokenFlux.png" description="Feel the pain" quality="2" maxcharges="4" chargetype="special" initcharge ="0" devilprice="1" tags="nogreed"/>
-	<passive  id="77716" name="Origami Nightingale" gfx ="OrigamiNightingale.png" description="How burn a Nightingale" quality="3" devilprice="1"/>
+	<passive  id="77716" name="Origami Crow" gfx ="OrigamiCrow.png" description="Somebody watching you" quality="3" devilprice="1"/>
 	<active  id="77717" name="Broken Box" gfx ="BrokenBox.png" description="No one can discover the secrets inside" quality="2" maxcharges="0" chargetype="normal" devilprice="1"/>
 	<passive  id="77718" name="Midnight Bite" gfx ="MidnightBite.png" description="Zombie undercover" quality="3" devilprice="2"/>
 	<active  id="77719" name="Extra Deck of Cards" gfx ="ExtraDeckofCards.png" description="Special evocation" quality="2" maxcharges="5" chargetype="normal" devilprice="2"/>
