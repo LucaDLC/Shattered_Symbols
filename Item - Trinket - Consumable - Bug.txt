@@ -123,7 +123,7 @@ BUG
 
 	- Gli hooks devono essere testati con tainted Lazarus 
 
-	- Forbidden Mind non funziona
+	- Forbidden Mind e Forbidden Body non funzionano
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
