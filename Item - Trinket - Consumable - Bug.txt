@@ -71,9 +71,14 @@ ITEM
 
 
 
-77723 - Forbidden Soul [2]
-	Sostituisce al 33% le Treasure Room in Red Treasure Room e hai il 33% di aprire una Red Room dopo aver pulito una stanza
+77723 - Forbidden Soul [3]
+	Ottieni un golden heart per il tuo ultimo slot cuore ad ogni stanza, come un Holy Mantle, da 1 broken heart
 
+77724 - Forbidden Mind [3]
+	Hai il 20% di possibilità di spawnare una Red Room dopo aver pulito una stanza e Sostituisce al 40% le Treasure Room in Red Treasure Room, da 1 broken heart
+
+77725 - Forbidden Body [3]
+	Gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti, da 1 broken heart
 
 ---------------------------------------------------------------------
 CONSUMABILI
