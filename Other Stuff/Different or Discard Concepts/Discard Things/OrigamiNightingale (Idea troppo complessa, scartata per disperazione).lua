@@ -49,10 +49,10 @@ function BrokenOrigami:onRoomClearOrigamiNightingale()
             if math.random(100) <= (10 + LuckIncreaseRedDoor) then
                 local level = game:GetLevel()
                 local currentRoomDesc = level:GetCurrentRoomDesc()
-                local directions = {Direction.LEFT, Direction.RIGHT, Direction.UP, Direction.DOWN}
+                local directions = {Direction.LEFT, Direction.RIGHT, Direction.UP, Direction.DOWN} --non prende tutte le possibili porte 
 
-                for _, direction in ipairs(directions) do
-                    if level:MakeRedRoomDoor(currentRoomDesc.SafeGridIndex, direction) then
+                for _, direction in ipairs(directions) do --Non controlla per far si che ruoti posizione e ne prenda un altra non vuota o con altre porte se la direzione scelta non va bene
+                    if level:MakeRedRoomDoor(currentRoomDesc.SafeGridIndex, direction) then  --apre delle I_AM_AN_ERROR Room
                         break
                     end
                 end
