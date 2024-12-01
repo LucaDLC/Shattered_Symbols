@@ -27,7 +27,7 @@ ITEM
 77709 - Shawty's Letter [2] [TEXTURE FINISHED]
 	Attivo monouso che spawna un item origami
 
-77710 - Girlfriend [2]
+77710 - Shawty's Essence [2]
 	Attivo che ti da un companion casuale al costo di un Broken Heart 
 
 77711 - Torn Hook [0] 
@@ -36,16 +36,16 @@ ITEM
 77712 - Wriggling Shadow [2]
 	Rimuove gli Torn Hook e ti toglie 1 broken heart e da 1 cuore full per hook rimosso, se non hai hook te ne da uno
 
-77713 - Origami Crow [3]
+77713 - Origami Kolibri [3]
 	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 3 broken heart
 
-77714 - Origami Kolibri [2]
+77714 - Origami Bat [2]
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Kolibri, da 1 broken heart
 
 77715 - Broken Flux [2]
 	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
 
-77716 - Origami Nightingale [3]
+77716 - Origami Crow [3]
 	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro, da 2 broken heart
 
 77717 - Broken Box [2]
@@ -77,7 +77,7 @@ ITEM
 77724 - Forbidden Mind [3]
 	Hai il 25% di possibilità di spawnare una Red Room dopo aver pulito una stanza e sostituisce al 40% le Treasure Room in Red Treasure Room, da 1 broken heart
 
-77725 - Forbidden Body [3]
+77725 - Forbidden Body [2]
 	??? 
 
 ---------------------------------------------------------------------
@@ -143,6 +143,6 @@ BILANCIAMENTI
 
 	- Rivisitare Item Pool 
 
-	- Rivedere bene i tag degli Item
+	- [FATTO FINO A 77722]Rivedere bene i tag degli Item
 
 

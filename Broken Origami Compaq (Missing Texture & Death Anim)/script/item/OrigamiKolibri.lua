@@ -1,37 +1,61 @@
-
 local game = Game()
 local OrigamiKolibriLocalID = Isaac.GetItemIdByName("Origami Kolibri")
 
--- EID (se usi EID per la descrizione)
+
 if EID then
     EID:assignTransformation("collectible", OrigamiKolibriLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiKolibriLocalID, "#{{ArrowUp}} After 64 hits, heal half heart {{HalfHeart}} #{{ArrowUp}} Halve the number of hits for each Origami Kolibri #{{ArrowUp}} +0.2 Speed {{Speed}} #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
+    EID:addCollectible(OrigamiKolibriLocalID, "{{ArrowUp}} Duplicate all charges gained of active item for the rest of the game #{{ArrowUp}} Charge all active items #{{ArrowDown}} Does not duplicate extra charges #{{ArrowDown}} Gives 3 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
+
 
 function BrokenOrigami:useOrigamiKolibri(player)
     -- Get the player's data table
     local data = player:GetData()
     local OrigamiKolibriCounter = player:GetCollectibleNum(OrigamiKolibriLocalID)
 
-    if not data.OrigamiKolibriTearsCount then data.OrigamiKolibriTearsCount = 0 end
+    if not data.OrigamiKolibriChargeMemory then data.OrigamiKolibriChargeMemory = {} end
     if not data.OrigamiKolibriRelative then data.OrigamiKolibriRelative = 0 end
     if not data.OrigamiKolibriPreviousCounter then data.OrigamiKolibriPreviousCounter = 1 end
-    if not data.OrigamiKolibriSpeedBoost then data.OrigamiKolibriSpeedBoost = 0 end
-    if not data.OrigamiKolibriLimit then data.OrigamiKolibriLimit = 0 end
 
     -- Check if the player has picked up the item
-    if player:HasCollectible(OrigamiKolibriLocalID) then
+    if player:HasCollectible(OrigamiKolibriLocalID) then      
         
         -- Apply the effect based on the number of items picked up
         if OrigamiKolibriCounter >= data.OrigamiKolibriPreviousCounter then
             data.OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter + 1
             data.OrigamiKolibriRelative = data.OrigamiKolibriRelative + 1
-            data.OrigamiKolibriTearsCount = 0
-            data.OrigamiKolibriSpeedBoost = 0.2*data.OrigamiKolibriRelative
-            player:AddBrokenHearts(1)
-            player:AddCacheFlags(CacheFlag.CACHE_SPEED)
-            player:EvaluateItems()
+            player:AddBrokenHearts(3) -- Add 3 broken heart
         end
+
+        for i = 0, 3 do -- Check all active item slots
+            local activeItem = player:GetActiveItem(i)
+            if activeItem ~= 0 then
+                local currentCharge = player:GetActiveCharge(i)
+                
+                -- Memorizza la carica iniziale se non esiste già
+                if data.OrigamiKolibriChargeMemory[i] == nil then
+                    data.OrigamiKolibriChargeMemory[i] = currentCharge
+                end
+                
+                -- Calcola la carica aggiuntiva ottenuta dall'ultimo ciclo
+                local chargeGained = currentCharge - data.OrigamiKolibriChargeMemory[i]
+                
+                -- Se è stata aggiunta carica, raddoppiala
+                if chargeGained > 0 then
+                    -- Calcola la nuova carica raddoppiata senza eccedere il limite massimo
+                    local maxCharge = Isaac.GetItemConfig():GetCollectible(activeItem).MaxCharges
+                    local doubledCharge = math.min(currentCharge + chargeGained, maxCharge)
+                    player:SetActiveCharge(doubledCharge, i)
+                end
+                
+                -- Aggiorna la carica memorizzata per il prossimo ciclo
+                data.OrigamiKolibriChargeMemory[i] = player:GetActiveCharge(i)
+            else
+                -- Resetta la memoria se lo slot non contiene oggetti
+                data.OrigamiKolibriChargeMemory[i] = nil
+            end
+        end
+
     else
         OrigamiKolibriCounter = 0
         data.OrigamiKolibriPreviousCounter = 1
@@ -41,37 +65,6 @@ function BrokenOrigami:useOrigamiKolibri(player)
     end
 end
 
-function BrokenOrigami:onTearDamageOrigamiKolibri(entity, damageAmount, damageFlags, source, countdownFrames)
-    for playerIndex = 0, game:GetNumPlayers() - 1 do
-        local player = Isaac.GetPlayer(playerIndex)
-        local data = player:GetData()
-        if entity:IsEnemy() and player:HasCollectible(OrigamiKolibriLocalID) and source.Type == EntityType.ENTITY_TEAR then
-            data.OrigamiKolibriTearsCount = data.OrigamiKolibriTearsCount + 1
-            data.OrigamiKolibriLimit = player:GetCollectibleNum(OrigamiKolibriLocalID)
-            if data.OrigamiKolibriLimit > 7 then
-                data.OrigamiKolibriLimit = 7
-            end
-            if data.OrigamiKolibriTearsCount >= (128 / 2^data.OrigamiKolibriLimit) then
-                data.OrigamiKolibriTearsCount = 0
-                if not (player:GetHearts() >= player:GetMaxHearts()) then
-                    player:AddHearts(1)  -- cura di mezzo cuore
-                    Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.HEART, 0, player.Position + Vector(0, -75), Vector(0,0), player)
-                    SFXManager():Play(SoundEffect.SOUND_VAMP_GULP)
-                end
-            end
-        end
-    end
-end
-
-function BrokenOrigami:onEvaluateCacheOrigamiKolibri(player, cacheFlag)
-    local data = player:GetData()
-    if cacheFlag == CacheFlag.CACHE_SPEED then
-        if data.OrigamiKolibriSpeedBoost then
-            player.MoveSpeed = player.MoveSpeed + data.OrigamiKolibriSpeedBoost
-        end
-    end
-end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useOrigamiKolibri)
-BrokenOrigami:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, BrokenOrigami.onTearDamageOrigamiKolibri)
-BrokenOrigami:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, BrokenOrigami.onEvaluateCacheOrigamiKolibri)
+

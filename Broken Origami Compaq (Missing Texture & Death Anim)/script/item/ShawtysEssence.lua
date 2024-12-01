@@ -1,14 +1,14 @@
 local game = Game()
-local GirlfriendLocalID = Isaac.GetItemIdByName("Girlfriend")
+local ShawtysEssenceLocalID = Isaac.GetItemIdByName("Shawty's Essence")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(GirlfriendLocalID, "{{ArrowUp}} Give a random familiar #{{ArrowDown}} Give 1 Broken Heart {{BrokenHeart}} which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} Give 5 Whisp then item disappear #{{Player31}} Give 7 Whisp then item disappear")
+    EID:addCollectible(ShawtysEssenceLocalID, "{{ArrowUp}} Give a random familiar #{{ArrowDown}} Give 1 Broken Heart {{BrokenHeart}} which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} Give 5 Whisp then item disappear #{{Player31}} Give 7 Whisp then item disappear")
 end
 
 local familiars = {}
 
-local function onGameStartGirlfriend()
+local function onGameStartShawtysEssence()
     for i = 1, Isaac.GetItemConfig():GetCollectibles().Size do
         local itemConfig = Isaac.GetItemConfig():GetCollectible(i)
         if itemConfig and itemConfig.Type == ItemType.ITEM_FAMILIAR then
@@ -22,18 +22,18 @@ local function onGameStartGirlfriend()
     end
 end
 
-function BrokenOrigami:useGirlfriend(_, rng, player)
+function BrokenOrigami:useShawtysEssence(_, rng, player)
     local playerType = player:GetPlayerType()
-    if player:HasCollectible(GirlfriendLocalID) then
+    if player:HasCollectible(ShawtysEssenceLocalID) then
         local familiarID = familiars[rng:RandomInt(#familiars) + 1]
         
         if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B then
             for i = 1, 5 do
-                player:AddWisp(GirlfriendLocalID, player.Position)
+                player:AddWisp(ShawtysEssenceLocalID, player.Position)
             end
             if playerType == PlayerType.PLAYER_THELOST_B then
-                player:AddWisp(GirlfriendLocalID, player.Position)
-                player:AddWisp(GirlfriendLocalID, player.Position)
+                player:AddWisp(ShawtysEssenceLocalID, player.Position)
+                player:AddWisp(ShawtysEssenceLocalID, player.Position)
             end  
             return {
                 Discharge = true,
@@ -75,15 +75,15 @@ function BrokenOrigami:useGirlfriend(_, rng, player)
     }
 end
 
-function BrokenOrigami:GirlfriendWispInit(wisp)
-	if  wisp.Player and wisp.Player:HasCollectible(GirlfriendLocalID) then
-		if wisp.SubType == GirlfriendLocalID then
+function BrokenOrigami:ShawtysEssenceWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(ShawtysEssenceLocalID) then
+		if wisp.SubType == ShawtysEssenceLocalID then
 			wisp.SubType = 642
 		end
 	end
 end
 
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useGirlfriend, GirlfriendLocalID)
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, onGameStartGirlfriend)
-BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.GirlfriendWispInit, FamiliarVariant.WISP)
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_ITEM, BrokenOrigami.useShawtysEssence, ShawtysEssenceLocalID)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, onGameStartShawtysEssence)
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.ShawtysEssenceWispInit, FamiliarVariant.WISP)
