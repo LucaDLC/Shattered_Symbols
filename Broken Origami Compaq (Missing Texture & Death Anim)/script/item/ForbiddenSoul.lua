@@ -11,18 +11,14 @@ end
 function BrokenOrigami:useForbidenSoul()
     for i = 0, Game():GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(i)
-        if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B and player:HasCollectible(ForbiddenSoulLocalID) then
+        local playerType = player:GetPlayerType()
+        if (playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B) and player:HasCollectible(ForbiddenSoulLocalID) then
             local level = game:GetLevel()
             local room = level:GetCurrentRoom()
 
-            if room:IsFirstVisit() then
+            if room:IsFirstVisit() and player:HasCollectible(ForbiddenSoulLocalID) then
                 local wisp = player:AddWisp(ForbiddenSoulLocalID, player.Position)
-                if wisp.SubType == ForbiddenSoulLocalID then
-                    wisp.SubType = 719
-                end
             end
-        end
-
         elseif player:GetGoldenHearts() < 1 and player:HasCollectible(ForbiddenSoulLocalID) then
             player:AddGoldenHearts(1)
         end
@@ -40,7 +36,14 @@ function BrokenOrigami:passiveForbidenSoul(pickup, collider)
     end
 end
 
-
+function BrokenOrigami:BoxWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(ForbiddenSoulLocalID) then
+		if wisp.SubType == ForbiddenSoulLocalID then
+			wisp.SubType = 555
+		end
+	end
+end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, BrokenOrigami.passiveForbidenSoul)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, BrokenOrigami.useForbidenSoul)
+BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.BoxWispInit, FamiliarVariant.WISP)
