@@ -13,29 +13,34 @@ local function RemoveBrokenHearts(player, amount)
 end
 
 -- Callback per applicare il golden heart all'inizio di ogni stanza
-function BrokenOrigami:OnDevilDeal(player)
-    if not player:HasCollectible(forbiddenBodyItemID) then
-        return
-    end
+local function HandleDevilDeal(player)
+    local room = game:GetRoom()
 
-    local level = Game():GetLevel()
-    local devilDealRoom = level:GetRoomByIdx(GridRooms.ROOM_DEVIL_IDX, 0)
-
-    if devilDealRoom and devilDealRoom:IsDevilRoom() then
-        for _, entity in pairs(Isaac.GetRoomEntities()) do
+    -- Controlla se è una Devil Room
+    if room:GetType() == RoomType.ROOM_DEVIL then
+        for _, entity in ipairs(Isaac.GetRoomEntities()) do
             if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE then
-                local itemCost = entity:ToPickup().Price
-                if itemCost <= player:GetBrokenHearts() then
-                    RemoveBrokenHearts(player, itemCost)
-                    entity:ToPickup().Price = 0
-                elseif itemCost > player:GetBrokenHearts()  then
-                    RemoveBrokenHearts(player, itemCost)
-                    entity:ToPickup().Price = (itemCost - player:GetBrokenHearts())
+                local pickup = entity:ToPickup()
+                local itemCost = pickup.Price
+
+                -- Verifica se l'oggetto ha un costo in cuori rossi
+                if itemCost > 0 and player:HasCollectible(ForbiddenBodyLocalID) then
+                    local brokenHearts = player:GetBrokenHearts()
+
+                    if brokenHearts >= itemCost then
+                        -- Usa solo Broken Hearts
+                        player:AddBrokenHearts(-itemCost)
+                        pickup.Price = 0
+                    elseif brokenHearts > 0 then
+                        -- Usa i Broken Hearts rimanenti e sottrai il resto dai cuori normali
+                        player:AddBrokenHearts(-brokenHearts)
+                        pickup.Price = itemCost - brokenHearts
+                    end
                 end
             end
         end
     end
 end
 
--- Registrare il callback
+
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_UPDATE, BrokenOrigami.OnDevilDeal)
