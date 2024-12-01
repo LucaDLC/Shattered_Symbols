@@ -122,6 +122,7 @@
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedDevil">
@@ -130,6 +131,7 @@
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="curse">
