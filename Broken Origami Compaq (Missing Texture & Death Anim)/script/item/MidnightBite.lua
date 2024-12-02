@@ -25,7 +25,7 @@ function BrokenOrigami:useMidnightBite(player)
     end
 end
 
-function BrokenOrigami:ConvertDroppedRedHearts(entity)
+function BrokenOrigami:ConvertDroppedRedHeartsMidnightBite(entity)
     local heart = entity:ToPickup()
     
     for playerIndex = 0, game:GetNumPlayers() - 1 do
@@ -45,5 +45,5 @@ end
 
 
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, BrokenOrigami.ConvertDroppedRedHearts, PickupVariant.PICKUP_HEART)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, BrokenOrigami.ConvertDroppedRedHeartsMidnightBite, PickupVariant.PICKUP_HEART)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, BrokenOrigami.useMidnightBite)

@@ -1,13 +1,13 @@
 local game = Game()
-local FiendishSeedLocalID = Isaac.GetItemIdByName("Fiendish Seed")
+local SacredDiceShardLocalID = Isaac.GetItemIdByName("Sacred Dice Shard")
 
 if EID then
-    EID:addCollectible(FiendishSeedLocalID, "{{ArrowUp}}Reroll all item in the room up to 1 quality #{{ArrowDown}}Give 3 Broken Heart {{BrokenHeart}}", "Glyph")
+    EID:addCard(SacredDiceShardLocalID, "{{Collectible105}} Reroll all item in the room up to 1 quality #{{BrokenHeart}} Give 2 Broken Heart")
 end
 
 -- Callback per quando il giocatore usa una runa
-function fiendishSeed:useFiendishSeed(cardID, player, useFlags)
-    if cardID == FiendishSeedLocalID then
+function SacredDiceShard:useSacredDiceShard(cardID, player, useFlags)
+    if cardID == SacredDiceShardLocalID then
         local tier0ItemPool = {}
         local tier1ItemPool = {}
         local tier2ItemPool = {}
@@ -105,19 +105,19 @@ local function table.contains(tbl, element)
     return false
 end
 
-function fiendishSeed:AddItemToList(pickup)
+function SacredDiceShard:AddItemToList(pickup)
     if pickup.Type == EntityType.ENTITY_PICKUP and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE and pickup.SubType ~= 0 and pickup.SubType ~= 668 then
     local itemID = pickup.SubType
     table.insert(collectedItems, itemID)
     end
 end
 
-function fiendishSeed:ClearList()
+function SacredDiceShard:ClearList()
     collectedItems = {}
 end
 
 
 
-fiendishSeed:AddCallback(ModCallbacks.MC_USE_CARD, fiendishSeed.onUseCard)
-fiendishSeed:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, fiendishSeed.AddItemToList)
-fiendishSeed:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, fiendishSeed.ClearList)
+SacredDiceShard:AddCallback(ModCallbacks.MC_USE_CARD, SacredDiceShard.onUseCard)
+SacredDiceShard:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, SacredDiceShard.AddItemToList)
+SacredDiceShard:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, SacredDiceShard.ClearList)
