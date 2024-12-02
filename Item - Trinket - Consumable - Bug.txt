@@ -98,7 +98,7 @@ TRINKET
 99901 - Tea Grounds / Tea Bag
 	Aumenta le probabilità del patto (angelico/satanico) in base alla luck del giocatore (Jacob & Esau non tainted e Tainted Lazarus valgono doppio)
 
-99902 - Seed [TEXTURE FINISHED]
+99902 - Fiendish Seed [TEXTURE FINISHED]
 	Converte i soul heart droppati in black heart
 
 ---------------------------------------------------------------------
