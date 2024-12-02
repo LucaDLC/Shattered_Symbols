@@ -125,12 +125,15 @@ BUG
 
 	- Forbidden Mind e Forbidden Body non funzionano
 
+
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
 
 	- Mancano Texture e Death animation
 
-	- Trasformazioni completamente non funzionanti
+	- Trasformazioni non funzionanti
+
+	- Trinket e Consimabili non funzionanti
 
 	- Migliorare i commenti
 
