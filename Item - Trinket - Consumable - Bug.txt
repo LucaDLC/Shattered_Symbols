@@ -1,7 +1,7 @@
 ITEM
 
-77701 - Sacred Lantern [3] [TEXTURE FINISHED]
-	Rimuove i Broken Heart, li sostituisce con un Soul Heart 
+77701 - Sacred Lantern [2] [TEXTURE FINISHED]
+	Rimuove i Broken Heart, li sostituisce con un Half Soul Heart per ogni Broken Heart
 
 77702 - Fortune Teller [2]
 	Dà un Broken Heart per +5 di Luck
