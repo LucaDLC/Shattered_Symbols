@@ -1,0 +1,12 @@
+<pocketitems>
+
+	<!-- Runes -->
+
+	<rune type="rune" pickup="99901" name="Glyph" description="Arcane" hud="Glyph" mimiccharge="10" />
+	<rune type="rune" pickup="99902" name="Hex Crystal" description="Enchant" hud="Hex Crystal" mimiccharge="8"/>
+
+	<!--Cards-->
+
+	<card type="object" pickup="99903" name="Sacred Dice Shard" description="Impossible to fix it" hud="Sacred Dice Shard" mimiccharge="15"/>
+
+</pocketitems>

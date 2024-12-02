@@ -73,9 +73,6 @@ ITEM
 77724 - Forbidden Mind [3]
 	Hai il 25% di possibilità di spawnare una Red Room dopo aver pulito una stanza e sostituisce al 40% le Treasure Room in Red Treasure Room
 
-
-
-
 77725 - Forbidden Body [3]
 	Puoi comprare i patti satanici con i broken heart se li possiedi 
 
@@ -85,11 +82,11 @@ CONSUMABILI
 88801 - Glyph
 	Runa che rimuove un broken heart
 
-88802 - Sacred Dice Shard
-	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
-
-88803 - Hex Crystal
+88802 - Hex Crystal
 	???
+
+88803 - Sacred Dice Shard
+	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
 	
 
 ---------------------------------------------------------------------
@@ -133,7 +130,7 @@ COSE MANCANTI E DA RIGUARDARE
 
 	- Trasformazioni non funzionanti
 
-	- Trinket e Consimabili non funzionanti
+	- Trinket e Consimabili non funzionanti (glyph funziona ma mancano le interazioni)
 
 	- Migliorare i commenti
 

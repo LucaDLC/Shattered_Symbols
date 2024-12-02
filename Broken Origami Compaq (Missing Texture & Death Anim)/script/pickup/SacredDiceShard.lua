@@ -1,12 +1,12 @@
 local game = Game()
-local SacredDiceShardLocalID = Isaac.GetItemIdByName("Sacred Dice Shard")
+local SacredDiceShardLocalID = Isaac.GetCardIdByName("Sacred Dice Shard")
 
 if EID then
     EID:addCard(SacredDiceShardLocalID, "{{Collectible105}} Reroll all item in the room up to 1 quality #{{BrokenHeart}} Give 2 Broken Heart")
 end
 
 -- Callback per quando il giocatore usa una runa
-function SacredDiceShard:useSacredDiceShard(cardID, player, useFlags)
+function BrokenOrigami:useSacredDiceShard(cardID, player, useFlags)
     if cardID == SacredDiceShardLocalID then
         local tier0ItemPool = {}
         local tier1ItemPool = {}
@@ -105,19 +105,19 @@ local function table.contains(tbl, element)
     return false
 end
 
-function SacredDiceShard:AddItemToList(pickup)
+function BrokenOrigami:AddItemToList(pickup)
     if pickup.Type == EntityType.ENTITY_PICKUP and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE and pickup.SubType ~= 0 and pickup.SubType ~= 668 then
     local itemID = pickup.SubType
     table.insert(collectedItems, itemID)
     end
 end
 
-function SacredDiceShard:ClearList()
+function BrokenOrigami:ClearList()
     collectedItems = {}
 end
 
 
 
-SacredDiceShard:AddCallback(ModCallbacks.MC_USE_CARD, SacredDiceShard.onUseCard)
-SacredDiceShard:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, SacredDiceShard.AddItemToList)
-SacredDiceShard:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, SacredDiceShard.ClearList)
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_CARD, BrokenOrigami.onUseCard)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, BrokenOrigami.AddItemToList)
+BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.ClearList)

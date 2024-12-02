@@ -37,11 +37,27 @@ local ItemScript = {
     'ForbiddenMind',
     'ForbiddenBody'
 }
+local TrinketScript = {
+    'FiendishSeed'
+}
+local PocketItemScript = {
+    'Glyph',
+    --'HexCrystal',
+    'SacredDiceShard'
+}
 
-for Load = 1, #ItemScript do
-    require("script.item." .. ItemScript[Load])
+
+for LoadItem = 1, #ItemScript do
+    require("script.item." .. ItemScript[LoadItem])
 end
 
+for LoadTrinket = 1, #TrinketScript do
+    require("script.trinket." .. TrinketScript[LoadTrinket])
+end
+
+for LoadPocket = 1, #PocketItemScript do
+    require("script.pickup." .. PocketItemScript[LoadPocket])
+end
 --------------------- Save Datas ---------------------
 
 function BrokenOrigami:SavePlayerData()

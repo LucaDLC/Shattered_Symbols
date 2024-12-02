@@ -1,5 +1,5 @@
 local game = Game()
-local GlyphLocalID = Isaac.GetItemIdByName("Glyph")
+local GlyphLocalID = Isaac.GetCardIdByName("Glyph")
 
 if EID then
     EID:addCard(GlyphLocalID, "{{Collectible105}} Reroll all item in the room up to 1 quality #{{BrokenHeart}} Give 2 Broken Heart")
