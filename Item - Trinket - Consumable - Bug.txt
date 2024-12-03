@@ -126,13 +126,11 @@ BUG
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
 
-	- Mancano Texture e Death animation
+	- Mancano Texture, Death animation e Pillcard
 
 	- Trasformazioni non funzionanti
 
 	- Trinket non funzionanti
-
-	- glyph funziona ma mancano le interazioni con giantbook
 
 	- Migliorare i commenti
 

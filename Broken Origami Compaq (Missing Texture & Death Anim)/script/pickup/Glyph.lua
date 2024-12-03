@@ -6,7 +6,9 @@ if EID then
 end
 
 function BrokenOrigami:UseGlyph(card, player, useFlags)
-
+    if REPENTOGON then
+		ItemOverlay.Show(Isaac.GetGiantBookIdByName("Glyph"), 0 , player)
+    end
     if player:GetBrokenHearts() > 0 then
         player:AddBrokenHearts(-1)  
     end
