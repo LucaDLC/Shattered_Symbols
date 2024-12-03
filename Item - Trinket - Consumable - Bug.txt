@@ -130,7 +130,9 @@ COSE MANCANTI E DA RIGUARDARE
 
 	- Trasformazioni non funzionanti
 
-	- Trinket e Consimabili non funzionanti (glyph funziona ma mancano le interazioni)
+	- Trinket non funzionanti
+
+	- glyph funziona ma mancano le interazioni con giantbook
 
 	- Migliorare i commenti
 

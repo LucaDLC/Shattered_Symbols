@@ -1,8 +1,22 @@
 local game = Game()
 local SacredDiceShardLocalID = Isaac.GetCardIdByName("Sacred Dice Shard")
+local collectedItems = {}
+local itemIgnoreList = {
+    238, 239, 550, 551, 626, 627, 668
+}
 
 if EID then
     EID:addCard(SacredDiceShardLocalID, "{{Collectible105}} Reroll all item in the room up to 1 quality #{{BrokenHeart}} Give 2 Broken Heart")
+end
+
+--Support function
+local function tablecontains(tbl, element)
+    for _, value in ipairs(tbl) do
+        if value == element then
+            return true
+        end
+    end
+    return false
 end
 
 -- Callback per quando il giocatore usa una runa
@@ -18,19 +32,19 @@ function BrokenOrigami:useSacredDiceShard(cardID, player, useFlags)
 
         for i = 1, #Isaac.GetItemConfig():GetCollectibles() do
             local itemConfig = Isaac.GetItemConfig():GetCollectible(i)
-            if itemConfig and itemConfig.Quality == 0 and not table.contains(collectedItems, itemConfig.ID) and not table.contains(itemIgnoreList, itemConfig.ID) then
+            if itemConfig and itemConfig.Quality == 0 and not tablecontains(collectedItems, itemConfig.ID) and not tablecontains(itemIgnoreList, itemConfig.ID) then
                 table.insert(tier0ItemPool, i)
             end
-            if itemConfig and itemConfig.Quality == 1 and not table.contains(collectedItems, itemConfig.ID) and not table.contains(itemIgnoreList, itemConfig.ID) then
+            if itemConfig and itemConfig.Quality == 1 and not tablecontains(collectedItems, itemConfig.ID) and not tablecontains(itemIgnoreList, itemConfig.ID) then
                 table.insert(tier1ItemPool, i)
             end
-            if itemConfig and itemConfig.Quality == 2 and not table.contains(collectedItems, itemConfig.ID) and not table.contains(itemIgnoreList, itemConfig.ID) then
+            if itemConfig and itemConfig.Quality == 2 and not tablecontains(collectedItems, itemConfig.ID) and not tablecontains(itemIgnoreList, itemConfig.ID) then
                 table.insert(tier2ItemPool, i)
             end
-            if itemConfig and itemConfig.Quality == 3 and not table.contains(collectedItems, itemConfig.ID) and not table.contains(itemIgnoreList, itemConfig.ID) then
+            if itemConfig and itemConfig.Quality == 3 and not tablecontains(collectedItems, itemConfig.ID) and not tablecontains(itemIgnoreList, itemConfig.ID) then
                 table.insert(tier3ItemPool, i)
             end
-            if itemConfig and itemConfig.Quality == 4 and not table.contains(collectedItems, itemConfig.ID) and not table.contains(itemIgnoreList, itemConfig.ID) then
+            if itemConfig and itemConfig.Quality == 4 and not tablecontains(collectedItems, itemConfig.ID) and not tablecontains(itemIgnoreList, itemConfig.ID) then
                 table.insert(tier4ItemPool, i)
             end    
         end
@@ -90,19 +104,9 @@ function BrokenOrigami:useSacredDiceShard(cardID, player, useFlags)
                 end 
             end
         end
-        player:AddBrokenHearts(3)
+        player:AddBrokenHearts(2)
     end
     
-end
-
---Support function
-local function table.contains(tbl, element)
-    for _, value in ipairs(tbl) do
-        if value == element then
-            return true
-        end
-    end
-    return false
 end
 
 function BrokenOrigami:AddItemToList(pickup)
@@ -118,6 +122,6 @@ end
 
 
 
-BrokenOrigami:AddCallback(ModCallbacks.MC_USE_CARD, BrokenOrigami.onUseCard)
+BrokenOrigami:AddCallback(ModCallbacks.MC_USE_CARD, BrokenOrigami.useSacredDiceShard, SacredDiceShardLocalID)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, BrokenOrigami.AddItemToList)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, BrokenOrigami.ClearList)
