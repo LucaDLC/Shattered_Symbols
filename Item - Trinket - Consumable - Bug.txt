@@ -122,6 +122,8 @@ BUG
 
 	- Forbidden Mind e Forbidden Body non funzionano
 
+	- Trinket non funzionanti
+
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
@@ -129,8 +131,6 @@ COSE MANCANTI E DA RIGUARDARE
 	- Mancano Texture, Death animation e Pillcard
 
 	- Trasformazioni non funzionanti
-
-	- Trinket non funzionanti
 
 	- Migliorare i commenti
 
