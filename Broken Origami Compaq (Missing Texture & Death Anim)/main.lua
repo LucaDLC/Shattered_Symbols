@@ -38,6 +38,7 @@ local ItemScript = {
     'ForbiddenBody'
 }
 local TrinketScript = {
+    --'Tea Bag',
     'FiendishSeed'
 }
 local PocketItemScript = {
