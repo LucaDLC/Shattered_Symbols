@@ -37,23 +37,17 @@ local ItemScript = {
     'ForbiddenMind',
     'ForbiddenBody'
 }
-local TrinketScript = {
-    --'Tea Bag',
-    'FiendishSeed'
-}
 local PocketItemScript = {
     'Glyph',
     --'HexCrystal',
-    'SacredDiceShard'
+    'SacredDiceShard',
+    'FiendishSeed',
+    'TeaBag'
 }
 
 
 for LoadItem = 1, #ItemScript do
     require("script.item." .. ItemScript[LoadItem])
-end
-
-for LoadTrinket = 1, #TrinketScript do
-    require("script.trinket." .. TrinketScript[LoadTrinket])
 end
 
 for LoadPocket = 1, #PocketItemScript do
