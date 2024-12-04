@@ -1,6 +1,4 @@
 <items gfxroot="gfx/items/" version="1">
-	
-	<!--Items-->
 
         <active  id="77701" name="Sacred Lantern" gfx ="SacredLantern.png" description="Reveals the light beyond the shadow" quality="2" devilprice="2" maxcharges="0" chargetype="normal" devilprice="2"/>
 	<passive  id="77702" name="Fortune Teller" gfx ="FortuneTeller.png" description="This is not a game kid" quality="2" devilprice="1" tags="offensive"/>
@@ -27,9 +25,5 @@
 	<passive  id="77723" name="Forbidden Soul" gfx ="ForbiddenSoul.png" description="The forgotten ancient soul" quality="3" devilprice="2" tags="angel nokeeper"/>
 	<passive  id="77724" name="Forbidden Mind" gfx ="ForbiddenMind.png" description="The forgotten ancient mind" quality="3" devilprice="2" tags="angel"/>
 	<passive  id="77725" name="Forbidden Body" gfx ="ForbiddenBody.png" description="The forgotten ancient body" quality="3" devilprice="2" tags="angel"/>
-
-	<!--Trinkets-->
-
-	<trinket  id="88801" name="Fiendish Seed" gfx ="FiendishSeed.png" description="Evil inside" quality="1"/>
 
 </items>

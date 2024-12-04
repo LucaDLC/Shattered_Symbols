@@ -1,12 +1,14 @@
 <pocketitems>
 
-	<!-- Runes -->
+	<!--Runes-->
 
-	<rune type="rune" pickup="99901" name="Glyph" description="Arcane" hud="Glyph" mimiccharge="10" />
-	<rune type="rune" pickup="99902" name="Hex Crystal" description="Enchant" hud="Hex Crystal" mimiccharge="8"/>
+	<rune type="rune" pickup="99901" name="Glyph" description="Arcane" hud="Glyph" mimiccharge="6" />
+	<rune type="rune" pickup="99902" name="Hex Crystal" description="Enchant" hud="Hex Crystal" mimiccharge="6"/>
 
 	<!--Cards-->
 
-	<card type="object" pickup="99903" name="Sacred Dice Shard" description="Impossible to fix it" hud="Sacred Dice Shard" mimiccharge="15"/>
+	<card type="object" pickup="99903" name="Sacred Dice Shard" description="No longer relaunchable" hud="Sacred Dice Shard" mimiccharge="5"/>
+	<card type="object" pickup="99904" name="Fiendish Seed" description="Through darkness" hud="Fiendish Seed" mimiccharge="4"/>
+	<card type="object" pickup="99905" name="Tea Bag" description="Future" hud="Tea Bag" mimiccharge="7"/>
 
 </pocketitems>
