@@ -123,7 +123,7 @@ BUG
 
 	- Forbidden Mind e Forbidden Body non funzionano
 
-	- Trinket non funzionanti
+	- Tea Bag non funziona
 
 
 ---------------------------------------------------------------------
