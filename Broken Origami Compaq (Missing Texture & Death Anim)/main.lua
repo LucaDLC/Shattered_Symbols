@@ -39,7 +39,7 @@ local ItemScript = {
 }
 local PocketItemScript = {
     'Glyph',
-    --'HexCrystal',
+    'HexCrystal',
     'SacredDiceShard',
     'FiendishSeed',
     'TeaBag'
