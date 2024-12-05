@@ -2,7 +2,7 @@ local game = Game()
 local HexCrystalLocalID = Isaac.GetCardIdByName("Hex Crystal")
 
 if EID then
-    EID:addCard(HexCrystalLocalID, "Adds effects at the enemy in the room: #{{Slow}} Slow #{{Confusion}} Confusion #{{Burning}} Burning #{{BleedingOut}} BleedingOut #{{Fear}} Fear #{{Weakness}} Weakness")
+    EID:addCard(HexCrystalLocalID, "Adds effects at the enemy in the room: #{{Slow}} Slow for 5 seconds #{{Confusion}} Confusion for 5 seconds #{{Burning}} Burning for 5 seconds #{{BleedingOut}} Bleeding Out permanently #{{Weakness}} Weakness permanently")
 end
 
 -- Callback per quando il giocatore usa una runa
@@ -22,17 +22,13 @@ function BrokenOrigami:useHexCrystal(card, player, useFlags)
             entity:AddBurn(EntityRef(player), 150, player.Damage)
 
             -- Applica lo stato BleedingOut
-            if entity:ToNPC() then
-                entity:ToNPC():AddEntityFlags(EntityFlag.FLAG_BLEED_OUT)
-            end
+            entity:AddEntityFlags(EntityFlag.FLAG_BLEED_OUT)
 
             -- Applica lo stato Weakness
             entity:AddEntityFlags(EntityFlag.FLAG_WEAKNESS)
-
-            -- Applica lo stato Fear
-            entity:AddFear(EntityRef(player), 150)
         end
     end
+    player:AddBrokenHearts(1)
 end
 
 BrokenOrigami:AddCallback(ModCallbacks.MC_USE_CARD, BrokenOrigami.useHexCrystal, HexCrystalLocalID)
