@@ -6,6 +6,14 @@ BrokenOrigami = RegisterMod("Broken Origami", 1)
 --\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\--
 ---------------------------------------------------------
 
+if not REPENTOGON then
+    print("")
+    print("!                  ERROR                   !")
+    print("!    BROKEN ORIGAMI REQUIRED REPENTOGON    !")
+    print("! FOLLOW REPENTOGON INSTALLATION GUIDELINE !")
+    print("")
+end
+
 --------------------- Load Mod ---------------------
 
 local JsonSaveFile = require("json")

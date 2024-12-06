@@ -80,10 +80,10 @@ ITEM
 CONSUMABILI
 
 88801 - Glyph
-	Runa che rimuove un broken heart
+	Runa che rimuove un broken heart, da confusion ai nemici per 5 secondi
 
 88802 - Hex Crystal
-	Applica diversi effetti (confusion, burn e slow per 5 secondi, weakness e bleeding permanentemente) ai nemici per un broken heart
+	Applica weakness e bleeding ai nemici per un broken heart
 
 88803 - Sacred Dice Shard
 	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
