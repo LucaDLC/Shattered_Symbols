@@ -88,8 +88,8 @@ CONSUMABILI
 88803 - Sacred Dice Shard
 	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
 
-88804 - Tea Grounds / Tea Bag
-	Aumenta le probabilità del patto (angelico/satanico) in base alla luck del giocatore (Jacob & Esau non tainted valgono doppio)
+88804 - Tea Bag
+	Converte le chance del patto satanico nel patto angelico senza ripristinare i patti angelici qualora fosse stato preso un patto satanico
 
 88805 - Fiendish Seed [TEXTURE FINISHED]
 	Converte i soul heart in black heart
@@ -122,8 +122,6 @@ BUG
 	- Gli hooks devono essere testati con tainted Lazarus 
 
 	- Forbidden Mind e Forbidden Body non funzionano
-
-	- Tea Bag non funziona
 
 
 ---------------------------------------------------------------------
