@@ -3,7 +3,7 @@ local ShawtysEssenceLocalID = Isaac.GetItemIdByName("Shawty's Essence")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ShawtysEssenceLocalID, "{{ArrowUp}} Give a random familiar #{{ArrowDown}} Give 1 Broken Heart {{BrokenHeart}} which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} Give 5 Whisp then item disappear #{{Player31}} Give 7 Whisp then item disappear")
+    EID:addCollectible(ShawtysEssenceLocalID, "{{ArrowUp}} Give a random familiar #{{ArrowDown}} Give 1 Broken Heart {{BrokenHeart}} which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} {{Player31}} Give 5 Whisp then item disappear")
 end
 
 local familiars = {}
@@ -30,11 +30,7 @@ function BrokenOrigami:useShawtysEssence(_, rng, player)
         if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B then
             for i = 1, 5 do
                 player:AddWisp(ShawtysEssenceLocalID, player.Position)
-            end
-            if playerType == PlayerType.PLAYER_THELOST_B then
-                player:AddWisp(ShawtysEssenceLocalID, player.Position)
-                player:AddWisp(ShawtysEssenceLocalID, player.Position)
-            end  
+            end 
             return {
                 Discharge = true,
                 Remove = true,
