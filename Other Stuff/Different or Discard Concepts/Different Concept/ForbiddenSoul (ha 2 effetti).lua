@@ -3,7 +3,7 @@ local ForbiddenSoulLocalID = Isaac.GetItemIdByName("Forbidden Soul")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(ForbiddenSoulLocalID, "{{GoldenHeart}} Grant every room a Golden Heart if you don't have one #{{Player10}} {{Player31}} Give 1 wisp with 15% chance to inflicting Midas'Touch {{Collectible202}} effect every first visit in a room")
+    EID:addCollectible(ForbiddenSoulLocalID, "{{GoldenHeart}} Grant every room a Golden Heart if you don't have one #{{EthernalHeart}} Half Eternal Heart count as 2 and can remove 1 Broken Heart")
 end
 
 
@@ -25,6 +25,17 @@ function BrokenOrigami:useForbidenSoul()
     end
 end
 
+-- Callback per gestire la raccolta di half Eternal Heart
+function BrokenOrigami:passiveForbidenSoul(pickup, collider)
+    if collider:ToPlayer() then
+        local player = collider:ToPlayer()
+        if pickup.Variant == PickupVariant.PICKUP_HEART and pickup.SubType == HeartSubType.HEART_ETERNAL and player:HasCollectible(ForbiddenSoulLocalID) then
+            player:AddBrokenHearts(-1) -- Rimuovi un broken heart
+            player:AddEternalHearts(1) -- Aggiungi un altro half Eternal Heart
+        end
+    end
+end
+
 function BrokenOrigami:BoxWispInit(wisp)
 	if  wisp.Player and wisp.Player:HasCollectible(ForbiddenSoulLocalID) then
 		if wisp.SubType == ForbiddenSoulLocalID then
@@ -33,5 +44,6 @@ function BrokenOrigami:BoxWispInit(wisp)
 	end
 end
 
+BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, BrokenOrigami.passiveForbidenSoul)
 BrokenOrigami:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, BrokenOrigami.useForbidenSoul)
 BrokenOrigami:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, BrokenOrigami.BoxWispInit, FamiliarVariant.WISP)

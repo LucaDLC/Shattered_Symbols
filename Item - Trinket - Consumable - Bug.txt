@@ -68,13 +68,13 @@ ITEM
 	Attivo con 3 cariche che si ricarica quando viene usata una runa, quando viene usato attiva i 3 effetti delle rune usate per caricarlo
 
 77723 - Forbidden Soul [3]
-	Ottieni un golden heart per il tuo ultimo slot cuore se possibile ad ogni stanza, come un Holy Mantle, e gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti
+	Ottieni un golden heart per il tuo ultimo slot cuore se possibile ad ogni stanza, come un Holy Mantle
 
 77724 - Forbidden Mind [3]
 	Hai il 25% di possibilità di spawnare una Red Room dopo aver pulito una stanza e sostituisce al 40% le Treasure Room in Red Treasure Room
 
 77725 - Forbidden Body [3]
-	Puoi comprare i patti satanici con i broken heart se li possiedi 
+	Gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti 
 
 ---------------------------------------------------------------------
 CONSUMABILI
