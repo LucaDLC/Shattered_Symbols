@@ -3,40 +3,18 @@ local ForbiddenBodyLocalID = Isaac.GetItemIdByName("Forbidden Body")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(ForbiddenBodyLocalID, "Allows purchasing Devil Deal items with Broken Hearts if available. If not enough Broken Hearts are present, the remaining cost is paid with normal health.")
+    EID:addCollectible(ForbiddenBodyLocalID, "{{EthernalHeart}} Half Eternal Heart count as 2 and can remove 1 Broken Heart")
 end
 
--- Funzione per cambiare la valuta nella Devil Room
-function BrokenOrigami:HandleForbiddenBody()
-    local player = Isaac.GetPlayer(0)
-    local level = game:GetLevel()
-    local room = level:GetCurrentRoom()
-
-    -- Controlla se siamo nella Devil Room
-    if room:GetType() == RoomType.ROOM_DEVIL and player:HasCollectible(ForbiddenBodyLocalID) then
-        for i, entity in ipairs(Isaac.GetRoomEntities()) do
-            if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE then
-                local pickup = entity:ToPickup()
-                local itemCost = room:GetDevilPrice(pickup.SubType)
-
-                if itemCost > 0 then
-                    local brokenHearts = player:GetBrokenHearts()
-
-                    if brokenHearts >= itemCost then
-                        -- Imposta il costo a Broken Hearts
-                        room:SetDevilPrice(pickup.SubType, 0)
-                        pickup.Price = PickupPrice.PRICE_SPIKES
-                    elseif brokenHearts > 0 then
-                        -- Usa tutti i Broken Hearts disponibili e aggiungi il resto come normale
-                        local remainingCost = itemCost - brokenHearts
-                        room:SetDevilPrice(pickup.SubType, remainingCost)
-                        pickup.Price = PickupPrice.PRICE_HEALTH
-                    end
-                end
-            end
+function BrokenOrigami:useForbidenBody(pickup, collider)
+    if collider:ToPlayer() then
+        local player = collider:ToPlayer()
+        if pickup.Variant == PickupVariant.PICKUP_HEART and pickup.SubType == HeartSubType.HEART_ETERNAL and player:HasCollectible(ForbiddenSoulLocalID) then
+            player:AddBrokenHearts(-1) -- Rimuovi un broken heart
+            player:AddEternalHearts(1) -- Aggiungi un altro half Eternal Heart
         end
     end
 end
 
 -- Registra il callback per verificare l'ingresso nella Devil Room
-BrokenOrigami:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, BrokenOrigami.HandleForbiddenBody)
+BrokenOrigami:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, BrokenOrigami.useForbidenBody)
