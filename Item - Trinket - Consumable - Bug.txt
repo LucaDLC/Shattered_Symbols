@@ -109,7 +109,7 @@ TRASFORMAZIONI
 	Ottieni Homing Tears
 
 	- Clairvoyant (3 oggetti delle carte)
-	Ottieni il potere del Dream Catcher di sapere cosa c'è nel piano successivo (non da il mezzo soul heart ad ogni piano)
+	Ottieni il potere del Dream Catcher di sapere cosa c'è nel piano successivo 
 
 
 ====================================================================
@@ -121,7 +121,7 @@ BUG
 
 	- Gli hooks devono essere testati con tainted Lazarus 
 
-	- Forbidden Mind e Forbidden Body non funzionano
+	- Forbidden Mind non funziona
 
 
 ---------------------------------------------------------------------
