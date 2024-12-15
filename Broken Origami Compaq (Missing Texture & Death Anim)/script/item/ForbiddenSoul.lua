@@ -3,7 +3,7 @@ local ForbiddenSoulLocalID = Isaac.GetItemIdByName("Forbidden Soul")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(ForbiddenSoulLocalID, "{{GoldenHeart}} Grant every room a Golden Heart if you don't have one #{{Player10}} {{Player31}} Give 1 wisp with 15% chance to inflicting Midas'Touch {{Collectible202}} effect every first visit in a room")
+    EID:addCollectible(ForbiddenSoulLocalID, "{{GoldenHeart}} Grant every room a Golden Heart if you don't have one #{{Player10}} {{Player31}} Give 1 Wisp with 15% chance to inflicting Midas'Touch {{Collectible202}} effect every first visit in a room")
 end
 
 
