@@ -9,7 +9,7 @@ end
 function BrokenOrigami:useForbidenBody(pickup, collider)
     if collider:ToPlayer() then
         local player = collider:ToPlayer()
-        if pickup.Variant == PickupVariant.PICKUP_HEART and pickup.SubType == HeartSubType.HEART_ETERNAL and player:HasCollectible(ForbiddenSoulLocalID) then
+        if pickup.Variant == PickupVariant.PICKUP_HEART and pickup.SubType == HeartSubType.HEART_ETERNAL and player:HasCollectible(ForbiddenBodyLocalID) then
             player:AddBrokenHearts(-1) -- Rimuovi un broken heart
             player:AddEternalHearts(1) -- Aggiungi un altro half Eternal Heart
         end
