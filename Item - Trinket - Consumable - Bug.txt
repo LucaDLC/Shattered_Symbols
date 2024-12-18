@@ -7,7 +7,7 @@ ITEM
 	Dà un Broken Heart per +5 di Luck
 
 77703 - Origami Shuriken [3]
-	Dà un Broken Heart per +3 di Damage
+	Dà un Broken Heart per +3 di Damage clean
 
 77704 - Origami Boat [3]
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
@@ -144,8 +144,6 @@ BILANCIAMENTI
 	- Rivisitare Item Pool 
 
 	- Rivedere bene i tag degli Item
-
-	- Girlfriend da due locuste blu ai the lost e 2 wisp con l'effetto già presente
 
 	- Swan è troppo simile allo Smelter e Gulp!, da rendere più interessante
 
