@@ -137,6 +137,8 @@ COSE MANCANTI E DA RIGUARDARE
 
 	- Mancano le descrizioni con il Book of Virtues
 
+	- Nuovo nome per la mod: Shattered Symbols
+
 
 ---------------------------------------------------------------------
 BILANCIAMENTI
