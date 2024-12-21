@@ -1,0 +1,85 @@
+local game = Game()
+local ConstellationLocalID = Isaac.GetItemIdByName("Constellation")
+
+--EID
+if EID then
+    EID:addCollectible(ConstellationLocalID, "{{Warning}} SINGLE USE {{Warning}}#Spawns a random item from planetarium pool or zodiac signs")
+end
+
+-- Liste degli oggetti zodiacali e del planetario
+local zodiac_items = {
+    CollectibleType.COLLECTIBLE_ARIES,
+    CollectibleType.COLLECTIBLE_TAURUS,
+    CollectibleType.COLLECTIBLE_GEMINI,
+    CollectibleType.COLLECTIBLE_CANCER,
+    CollectibleType.COLLECTIBLE_LEO,
+    CollectibleType.COLLECTIBLE_VIRGO,
+    CollectibleType.COLLECTIBLE_LIBRA,
+    CollectibleType.COLLECTIBLE_SCORPIO,
+    CollectibleType.COLLECTIBLE_SAGITTARIUS,
+    CollectibleType.COLLECTIBLE_CAPRICORN,
+    CollectibleType.COLLECTIBLE_AQUARIUS,
+    CollectibleType.COLLECTIBLE_PISCES,
+    CollectibleType.COLLECTIBLE_ZODIAC
+}
+
+local planetarium_items = {
+    CollectibleType.COLLECTIBLE_NEPTUNUS,
+    CollectibleType.COLLECTIBLE_TERRA,
+    CollectibleType.COLLECTIBLE_URANUS,
+    CollectibleType.COLLECTIBLE_VENUS,
+    CollectibleType.COLLECTIBLE_MARS,
+    CollectibleType.COLLECTIBLE_JUPITER,
+    CollectibleType.COLLECTIBLE_PLUTO,
+    CollectibleType.COLLECTIBLE_MERCURIUS,
+    CollectibleType.COLLECTIBLE_SOL,
+    CollectibleType.COLLECTIBLE_SATURNUS,
+    CollectibleType.COLLECTIBLE_LUNA,
+    Isaac.GetItemIdByName("Meteor")
+}
+
+local Constellation_Table = {}
+
+-- Funzione per gestire l'uso dell'oggetto "Fortune Teller"
+function ShatteredSymbols:useConstellation(_, rng, player)
+    -- Svuota la tabella ogni volta che l'oggetto viene usato
+    Constellation_Table = {}
+    for _, v in pairs(zodiac_items) do
+        table.insert(Constellation_Table, v)
+    end
+    for _, v in pairs(planetarium_items) do
+        table.insert(Constellation_Table, v)
+    end
+    -- Scegli un oggetto casuale dalla lista combinata
+    local selectedItem = Constellation_Table[rng:RandomInt(#Constellation_Table) + 1]
+
+    -- Spawna l'oggetto scelto nella stanza
+    local spawnPosition = game:GetRoom():FindFreePickupSpawnPosition(player.Position, 40, true)
+    Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, selectedItem, spawnPosition, Vector(0, 0), nil)
+    
+
+    return {
+        Discharge = true,
+        Remove = true,
+        ShowAnim = true
+    }
+end
+
+-- Funzione di inizializzazione della mod
+function ShatteredSymbols:onGameStartConstellation()
+    local Constellation_Table = {}
+end
+
+function ShatteredSymbols:ConstellationWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(ConstellationLocalID) then
+		if wisp.SubType == ConstellationLocalID then
+			wisp.SubType = 158
+		end
+	end
+end
+
+ShatteredSymbols:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, ShatteredSymbols.ConstellationWispInit, FamiliarVariant.WISP)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_USE_ITEM, ShatteredSymbols.useConstellation, ConstellationLocalID)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, ShatteredSymbols.onGameStartConstellation)
+
+

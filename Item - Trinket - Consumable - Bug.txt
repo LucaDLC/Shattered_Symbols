@@ -119,8 +119,6 @@ BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 
-	- Gli hooks devono essere testati con tainted Lazarus 
-
 	- Forbidden Mind non funziona
 
 
@@ -131,13 +129,13 @@ COSE MANCANTI E DA RIGUARDARE
 
 	- Trasformazioni non funzionanti
 
+	- Gli hooks devono essere testati con tainted Lazarus 
+
 	- Migliorare i commenti
 
 	- Controllare gli item per i personaggi che sono molteplici e hanno pool differenti
 
 	- Mancano le descrizioni con il Book of Virtues
-
-	- Nuovo nome per la mod: Shattered Symbols
 
 
 ---------------------------------------------------------------------
