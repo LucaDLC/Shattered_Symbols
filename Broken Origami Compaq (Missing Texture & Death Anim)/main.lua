@@ -8,7 +8,7 @@ BrokenOrigami = RegisterMod("Broken Origami", 1)
 
 if not REPENTOGON then
     print("")
-    print("!                  ERROR                   !")
+    print("!                 WARNING                  !")
     print("!    BROKEN ORIGAMI REQUIRED REPENTOGON    !")
     print("! FOLLOW REPENTOGON INSTALLATION GUIDELINE !")
     print("")
