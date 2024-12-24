@@ -71,7 +71,7 @@ ITEM
 	Ottieni un golden heart per il tuo ultimo slot cuore se possibile ad ogni stanza, come un Holy Mantle
 
 77724 - Forbidden Mind [3]
-	Hai il 25% di possibilità di spawnare una Red Room dopo aver pulito una stanza e sostituisce al 40% le Treasure Room in Red Treasure Room
+	Hai il 25% di possibilità di spawnare una Red Room dopo aver pulito una stanza 
 
 77725 - Forbidden Body [3]
 	Gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti 
@@ -118,8 +118,6 @@ TRASFORMAZIONI
 BUG
 	
 	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
-
-	- Forbidden Mind non funziona
 
 
 ---------------------------------------------------------------------
