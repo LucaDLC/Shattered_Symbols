@@ -117,7 +117,6 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- Uscendo e rientrando dalla partita solo il player(0) salva le variabili (vedi Main)
 
 	- Broken Box dovrebbe fare un controllo che l'item che restituisce esista ancora altrimenti dia un oggetto casuale
 
