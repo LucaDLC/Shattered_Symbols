@@ -7,6 +7,9 @@ end
 
 -- Callback per quando il giocatore usa una runa
 function ShatteredSymbols:useHexCrystal(card, player, useFlags)
+    if REPENTOGON then
+		ItemOverlay.Show(Isaac.GetGiantBookIdByName("Hex"), 0 , player)
+    end
     local room = game:GetRoom()
     local entities = Isaac.GetRoomEntities()
 
