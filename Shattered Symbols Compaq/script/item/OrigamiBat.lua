@@ -5,7 +5,7 @@ local OrigamiBatLocalID = Isaac.GetItemIdByName("Origami Bat")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", OrigamiBatLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(OrigamiBatLocalID, "#{{ArrowUp}} After 64 hits, heal half heart {{HalfHeart}} #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{ArrowUp}} +0.2 Speed {{Speed}} #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
+    EID:addCollectible(OrigamiBatLocalID, "#{{ArrowUp}} After 64 hits, heal half heart {{HalfHeart}} #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{ArrowUp}} +0.1 Speed {{Speed}} #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 
 function ShatteredSymbols:useOrigamiBat(player)
@@ -27,7 +27,7 @@ function ShatteredSymbols:useOrigamiBat(player)
             data.OrigamiBatPreviousCounter = data.OrigamiBatPreviousCounter + 1
             data.OrigamiBatRelative = data.OrigamiBatRelative + 1
             data.OrigamiBatTearsCount = 0
-            data.OrigamiBatSpeedBoost = 0.2*data.OrigamiBatRelative
+            data.OrigamiBatSpeedBoost = 0.1*data.OrigamiBatRelative
             player:AddBrokenHearts(1)
             player:AddCacheFlags(CacheFlag.CACHE_SPEED)
             player:EvaluateItems()
@@ -53,7 +53,7 @@ function ShatteredSymbols:onTearDamageOrigamiBat(entity, damageAmount, damageFla
             end
             if data.OrigamiBatTearsCount >= (128 / 2^data.OrigamiBatLimit) then
                 data.OrigamiBatTearsCount = 0
-                if not (player:GetHearts() >= player:GetMaxHearts()) then
+                if not (player:GetHearts() >= player:GetEffectiveMaxHearts()) then
                     player:AddHearts(1)  -- cura di mezzo cuore
                     Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.HEART, 0, player.Position + Vector(0, -75), Vector(0,0), player)
                     SFXManager():Play(SoundEffect.SOUND_VAMP_GULP)

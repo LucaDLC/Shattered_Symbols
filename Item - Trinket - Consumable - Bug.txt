@@ -120,8 +120,6 @@ BUG
 
 	- Broken Box dovrebbe fare un controllo che l'item che restituisce esista ancora altrimenti dia un oggetto casuale
 
-	- Origami Bat non cura i bone heart 
-
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
