@@ -233,13 +233,13 @@ local function isDeckofCard(descObj)
 end
 
 local function mutableDeckofCard(descObj)
- EID:appendToDescription(descObj, "#After use it, have 7.5% chance to mutate into Extra Deck and 7.5% chance to mutate into Upside Down Deck")
+ EID:appendToDescription(descObj, "#After use it, have 5% chance to mutate into Extra Deck and 5% chance to mutate into Upside Down Deck")
     return descObj
 end
 
 function ShatteredSymbols:mutateDeck(_, rng, player)
     local mutateValue = rng:RandomFloat()
-    if mutateValue < 0.075 then
+    if mutateValue < 0.05 then
         local ExtraDeckID = Isaac.GetItemIdByName("Extra Deck of Cards")
         for i = 0, 3 do
             local activeItem = player:GetActiveItem(i)
@@ -248,7 +248,7 @@ function ShatteredSymbols:mutateDeck(_, rng, player)
                 player:AddCollectible(ExtraDeckID, 0, false, i)
             end
         end
-    elseif mutateValue > 0.925 then
+    elseif mutateValue > 0.95 then
         local UpsideDownDeckofCardsID = Isaac.GetItemIdByName("Upside Down Deck of Cards")
         for i = 0, 3 do
             local activeItem = player:GetActiveItem(i)
