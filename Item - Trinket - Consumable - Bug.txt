@@ -76,6 +76,8 @@ ITEM
 77725 - Forbidden Body [3]
 	Gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti 
 
+77726 - Ivory Onyx [?]
+	???
 ---------------------------------------------------------------------
 CONSUMABILI
 
