@@ -79,13 +79,13 @@ ITEM
 
 
 77726 - Jade & Ivory Mask [3]
-	???
+	Ad ogni piano hai il 30% che un oggetto preso in precedenza da qualità 0 a 3 venga sostituito con un oggetto di qualità superiore 
 
-77727 - Pyrite [2]
-	Le monete nere e d'argento diventano golden penny
+77727 - Pyrite [1]
+	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
 
 77728 - Onyx [2]
-	???
+	Ad ogni piano, acquisisce un effetto causale di un item passivo 
 ---------------------------------------------------------------------
 CONSUMABILI
 
@@ -93,7 +93,7 @@ CONSUMABILI
 	Runa che rimuove un broken heart, da confusion ai nemici per 5 secondi
 
 88802 - Hex Crystal
-	Applica weakness e bleeding ai nemici per un broken heart
+	Applica weakness e bleeding ai nemici nella stanza per un broken heart
 
 88803 - Sacred Dice Shard
 	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
