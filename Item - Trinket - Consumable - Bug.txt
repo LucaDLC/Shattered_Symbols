@@ -76,13 +76,15 @@ ITEM
 77725 - Forbidden Body [3]
 	Gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti 
 
-77726 - Onyx [2]
+
+
+77726 - Jade & Ivory Mask [3]
 	???
 
-77727 - Jade & Ivory Mask [?]
-	???
+77727 - Pyrite [2]
+	Le monete nere e d'argento diventano golden penny
 
-77728 - Pyrite [?]
+77728 - Onyx [2]
 	???
 ---------------------------------------------------------------------
 CONSUMABILI
