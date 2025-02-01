@@ -16,7 +16,9 @@
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
+	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	
     </Pool>
 
     <Pool Name="greedTreasure">
@@ -34,6 +36,7 @@
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
@@ -48,6 +51,7 @@
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
@@ -74,12 +78,15 @@
         <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     
     <Pool Name="greedSecret">
         <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="goldenChest">
@@ -93,6 +100,7 @@
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedGoldenChest">
@@ -106,6 +114,7 @@
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="angel">
@@ -142,6 +151,7 @@
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
@@ -153,6 +163,7 @@
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 

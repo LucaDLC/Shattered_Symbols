@@ -26,5 +26,8 @@
 	<passive  id="77724" name="Forbidden Mind" gfx ="ForbiddenMind.png" description="The forgotten ancient mind" quality="3" devilprice="2" tags="angel nokeeper"/>
 	<passive  id="77725" name="Forbidden Body" gfx ="ForbiddenBody.png" description="The forgotten ancient body" quality="3" devilprice="2" tags="angel"/>
 	<passive  id="77726" name="Jade & Ivory Mask" gfx ="JadeIvoryMask.png" description="Status" quality="3" devilprice="2"/>
+	<passive  id="77727" name="Pyrite" gfx ="Pyrite.png" description="You, fool!" quality="1" devilprice="1"/>
+
+
 
 </items>
