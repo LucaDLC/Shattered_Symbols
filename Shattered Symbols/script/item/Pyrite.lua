@@ -13,7 +13,7 @@ function ShatteredSymbols:OnPickupInitPyrite(entity)
         for i = 0, game:GetNumPlayers() - 1 do
             local player = Isaac.GetPlayer(i)  
             if player:HasCollectible(PyriteLocalID) then
-                entity.SubType = CoinSubType.COIN_GOLDEN_PENNY
+                entity.SubType = 8
             end
         end
     end
