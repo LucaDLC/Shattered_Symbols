@@ -8,13 +8,14 @@ if EID then
 end
 
 function ShatteredSymbols:OnPickupInitPyrite(entity)
- 
-    if entity.Variant == PickupVariant.PICKUP_COIN then
-        for i = 0, game:GetNumPlayers() - 1 do
-            local player = Isaac.GetPlayer(i)  
-            if player:HasCollectible(PyriteLocalID) then
-                entity.SubType = 8
-            end
+    local coin = entity:ToPickup()
+    
+    for playerIndex = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(playerIndex)
+        
+        if coin and coin.Variant == PickupVariant.PICKUP_COIN and player:HasCollectible(PyriteLocalID) then
+            coin:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_GOLDEN, true, false, false)
+            
         end
     end
 end
