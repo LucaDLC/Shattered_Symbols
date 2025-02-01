@@ -20,15 +20,13 @@ function ShatteredSymbols:OnPickupInitPyrite(entity)
 end
 
 function ShatteredSymbols:OnNewLevelPyrite()
-    if player:HasCollectible(PyriteLocalID) then
-        for i = 0, game:GetNumPlayers() - 1 do
-            local player = Isaac.GetPlayer(i)
-            local currentCoins = player:GetNumCoins()
-            if currentCoins ~= 0 then
-                player:AddCoins(-currentCoins)
-            end
+    for i = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(i)
+        local currentCoins = player:GetNumCoins()
+        if currentCoins ~= 0 and player:HasCollectible(PyriteLocalID) then
+            player:AddCoins(-currentCoins)
         end
-    end 
+    end
 end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, ShatteredSymbols.OnPickupInitPyrite, PickupVariant.PICKUP_COIN)
