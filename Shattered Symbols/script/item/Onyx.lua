@@ -4,7 +4,7 @@ local OnyxLocalID = Isaac.GetItemIdByName("Onyx")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(OnyxLocalID, "{{Coin}} All coins turn into Golden Pennies #{{ArrowDown}} Your coins reset to 0 at the start of each floor")
+    EID:addCollectible(OnyxLocalID, "{{Collectible}} On each floor, it mutates into a different collectible effect")
 end
 
 local function GetRandomPassiveItem()
