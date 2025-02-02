@@ -130,7 +130,7 @@ BUG
 
 	- Broken Box dovrebbe fare un controllo che l'item che restituisce esista ancora altrimenti dia un oggetto casuale (probabilmente automaticamente se lo aggiusta ma va confermata)
 
-	- Onyx altamente probabile che non funzioni
+	- Onyx non funziona
 
 
 ---------------------------------------------------------------------
