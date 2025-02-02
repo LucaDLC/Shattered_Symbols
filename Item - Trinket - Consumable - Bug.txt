@@ -34,13 +34,13 @@ ITEM
 	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate, per ogni punto luck hai la possibilità che si rimuova 
 
 77712 - Wriggling Shadow [2]
-	Rimuove gli Torn Hook e ti toglie 1 broken heart e da 1 cuore full per hook rimosso, se non hai hook te ne da uno
+	Rimuove gli Hooks e ti toglie 1 broken heart e da 1 cuore full per hook rimosso, se non hai hook te ne da uno
 
 77713 - Origami Kolibri [3]
 	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 3 broken heart
 
 77714 - Origami Bat [2]
-	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Kolibri, da 1 broken heart
+	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Bat, da 1 broken heart
 
 77715 - Broken Flux [2]
 	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
