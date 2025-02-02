@@ -1,4 +1,3 @@
-
 local game = Game()
 local OnyxLocalID = Isaac.GetItemIdByName("Onyx")
 
@@ -9,17 +8,15 @@ end
 
 local function GetRandomPassiveItem()
     local passiveItems = {}
-    for i = 1, Isaac.GetItemConfig():GetCollectibles().Size do
-        local item = itemConfig:GetCollectible(i)
-        if item and not item:HasTags(ItemConfig.TAG_QUEST) and item.Type == ItemType.ITEM_PASSIVE then
-            table.insert(passiveItems, i)
+    for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
+        local config = Isaac.GetItemConfig():GetCollectible(id)
+        if config and config.Type == ItemType.ITEM_PASSIVE 
+        and not config:HasTags(ItemConfig.TAG_QUEST)
+        and id ~= OnyxLocalID then 
+            table.insert(passiveItems, id)
         end
     end
-    if #passiveItems > 0 then
-        return passiveItems[math.random(#passiveItems)]
-    else
-    return nil
-    end
+    if #passiveItems >0 then return passiveItems[math.random(#passiveItems)] else return nil end
 end
 
 -- Callback chiamato ad ogni nuovo piano: controlla tutti i giocatori e, se hanno Onyx, applica il nuovo effetto
@@ -27,31 +24,45 @@ function ShatteredSymbols:OnNewLevelOnyx()
     for pl = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(pl)
         local data = player:GetData()
-        if not data.OnyxItemID then data.OnyxItemID = nil end
-        if player:HasCollectible(onyxItemID) then
-
-            local newItem = GetRandomPassiveItem()
-            if newItem then
-                data.OnyxItemID = newItem
-                player:AddCollectible(newItem, 0, false)  --GetCollectibleEffect()
-                showEffectTimer = 120
+        if not data.OnyxItemEffectID then data.OnyxItemEffectID = nil end
+        if player:HasCollectible(OnyxLocalID) then
+            local newItemID = GetRandomPassiveItem()
+            if newItemID then
+                if OnyxItemEffectID == nil then
+                    data.OnyxItemEffectID = newItemID
+                    player:AddCollectibleEffect(newItemID, false, 1)
+                else
+                    player:RemoveCollectibleEffect(data.OnyxItemEffectID)
+                    data.OnyxItemEffectID = newItemID
+                    player:AddCollectibleEffect(newItemID, false, 1)
+                end
             end
         end
     end
 end
 
 function ShatteredSymbols:OnRenderOnyx()
-    for pl = 0, game:GetNumPlayers() - 1 do
-        local player = Isaac.GetPlayer(pl)
+    for p = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(p)
         local data = player:GetData()
-        if data.OnyxItemID and showEffectTimer > 0 then
-            showEffectTimer = showEffectTimer - 1
-            local pos = Vector(Isaac.GetScreenWidth() / 2, Isaac.GetScreenHeight() / 4)
+        
+        if data.OnyxDisplayTimer and data.OnyxDisplayTimer > 0 then
+            -- Calcola posizione
+            local screenCenter = Vector(Isaac.GetScreenWidth()/2, Isaac.GetScreenHeight()/4)
+            
+            -- Mostra sprite
             local sprite = Sprite()
-            sprite:Load("gfx/ui/itemportrait.anm2", true)
-            sprite:SetFrame("Idle", 0)
-            sprite:Render(pos, Vector(0,0), Vector(0,0))
-            Isaac.RenderText("Onyx: " .. Isaac.GetItemConfig():GetCollectible(data.OnyxItemID).Name, pos.X - 40, pos.Y + 20, 1, 1, 1, 1)
+            sprite:Load("gfx/005.100_collectible.tex", true)
+            sprite:ReplaceSpritesheet(0, "gfx/items/collectibles_"..data.OnyxDisplayItem..".png")
+            sprite:LoadGraphics()
+            sprite:Play("Idle", true)
+            sprite:Render(screenCenter, Vector.Zero, Vector.Zero)
+            
+            -- Mostra nome
+            local itemName = Isaac.GetItemConfig():GetCollectible(data.OnyxDisplayItem).Name
+            Isaac.RenderText("Onyx Effect: "..itemName, screenCenter.X - 60, screenCenter.Y + 40, 1, 1, 1, 1)
+            
+            data.OnyxDisplayTimer = data.OnyxDisplayTimer - 1
         end
     end
 end
