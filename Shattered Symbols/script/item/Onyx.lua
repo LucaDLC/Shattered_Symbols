@@ -1,7 +1,6 @@
 
 local game = Game()
 local OnyxLocalID = Isaac.GetItemIdByName("Onyx")
-local showEffectTimer = 120
 
 -- EID (se usi EID per la descrizione)
 if EID then
@@ -27,14 +26,14 @@ end
 function ShatteredSymbols:OnNewLevelOnyx()
     for pl = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(pl)
+        local data = player:GetData()
+        if not data.OnyxItemID then data.OnyxItemID = nil end
         if player:HasCollectible(onyxItemID) then
-            local data = player:GetData()
-            if not data.OnyxItemID then data.OnyxItemID = nil end
 
             local newItem = GetRandomPassiveItem()
             if newItem then
                 data.OnyxItemID = newItem
-                player:AddCollectible(newItem, 0, false)
+                player:AddCollectible(newItem, 0, false)  --GetCollectibleEffect()
                 showEffectTimer = 120
             end
         end
