@@ -45,7 +45,8 @@ local ItemScript = {
     'ForbiddenMind',
     'ForbiddenBody',
     'JadeIvoryMask',
-    'Pyrite'
+    'Pyrite',
+    'Onyx'
 }
 local PocketItemScript = {
     'Glyph',
