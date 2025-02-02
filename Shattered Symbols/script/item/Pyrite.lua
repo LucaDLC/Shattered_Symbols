@@ -13,7 +13,7 @@ function ShatteredSymbols:OnPickupInitPyrite(entity)
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         
-        if coin and coin.Variant == PickupVariant.PICKUP_COIN and player:HasCollectible(PyriteLocalID) then
+        if coin and coin.Variant == PickupVariant.PICKUP_COIN and player:HasCollectible(PyriteLocalID) and coin.SubType ~= CoinSubType.COIN_GOLDEN then
             coin:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, CoinSubType.COIN_GOLDEN, true, false, false)
             
         end

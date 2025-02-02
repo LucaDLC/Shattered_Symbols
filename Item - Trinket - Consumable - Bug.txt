@@ -79,10 +79,10 @@ ITEM
 77726 - Jade & Ivory Mask [3]
 	Ad ogni piano hai il 40% che un oggetto preso in precedenza da qualità 0 a 3 venga sostituito con un oggetto di qualità superiore 
 
-
-
 77727 - Pyrite [1]
 	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
+
+
 
 77728 - Onyx [2]
 	Ad ogni piano, acquisisce un effetto causale di un item passivo 
@@ -129,8 +129,6 @@ BUG
 	
 
 	- Broken Box dovrebbe fare un controllo che l'item che restituisce esista ancora altrimenti dia un oggetto casuale (probabilmente automaticamente se lo aggiusta ma va confermata)
-
-	- Pyrite funziona ma fa andare in C STACK OVERFLOW diversi oggetti di mod tra i quali anche alcuni di Shattered Symbol
 
 
 ---------------------------------------------------------------------
