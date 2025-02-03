@@ -82,8 +82,6 @@ ITEM
 77727 - Pyrite [1]
 	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
 
-
-
 77728 - Onyx [2]
 	Ad ogni piano, acquisisce un effetto causale di un item passivo 
 ---------------------------------------------------------------------
@@ -129,8 +127,6 @@ BUG
 	
 
 	- Broken Box dovrebbe fare un controllo che l'item che restituisce esista ancora altrimenti dia un oggetto casuale (probabilmente automaticamente se lo aggiusta ma va confermata)
-
-	- Onyx non funziona
 
 
 ---------------------------------------------------------------------
