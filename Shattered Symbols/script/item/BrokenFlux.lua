@@ -27,9 +27,9 @@ function ShatteredSymbols:havingBrokenFlux(player)
                 end
 
                 
-                if currentBrokenHearts > data.BrokenFluxPreviousBrokenHearts and player:HasCollectible(BrokenFluxLocalID) and data.BrokenFluxCharge < 3 then
+                if currentBrokenHearts > data.BrokenFluxPreviousBrokenHearts and player:HasCollectible(BrokenFluxLocalID) and data.BrokenFluxCharge < 4 then
                     for Diff = 1, (currentBrokenHearts - data.BrokenFluxPreviousBrokenHearts) do
-                        if data.BrokenFluxCharge < 3 then
+                        if data.BrokenFluxCharge < 4 then
                             data.BrokenFluxCharge = data.BrokenFluxCharge + 1
                             if player:HasCollectible(OrigamiCrowExternalID) then
                                 data.BrokenFluxCharge = data.BrokenFluxCharge + 1
@@ -40,8 +40,8 @@ function ShatteredSymbols:havingBrokenFlux(player)
                 end
 
                 if player:HasCollectible(BrokenFluxLocalID) then
-                    if data.BrokenFluxCharge > 3 then
-                        data.BrokenFluxCharge = 3
+                    if data.BrokenFluxCharge > 4 then
+                        data.BrokenFluxCharge = 4
                     end
                     player:SetActiveCharge(data.BrokenFluxCharge, i)
                 end
