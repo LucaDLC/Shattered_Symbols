@@ -128,6 +128,10 @@ BUG
 
 	- Broken Box e Onyx dovrebbe fare un controllo che l'item che restituisce esista ancora altrimenti dia un oggetto casuale (probabilmente automaticamente se lo aggiusta ma va confermata)
 
+	- Swan vorrei rimuovere UseActiveItem e internare la logica nell'oggetto
+
+	- Torn Hook vorrei trovare il modo di teletrasportare direttamente dentro la stanza del Death Certificate e rimuovere lo spawn 
+
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
@@ -151,7 +155,5 @@ BILANCIAMENTI
 	- Rivisitare Item Pool 
 
 	- Rivedere bene i tag degli Item
-
-	- Swan è troppo simile allo Smelter e Gulp!, da rendere più interessante
 
 
