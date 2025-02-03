@@ -40,6 +40,9 @@ function ShatteredSymbols:OnNewLevelOnyx()
                 end
             end
         else 
+            if data.OnyxItemEffectID ~= nil and player:HasCollectible(data.OnyxItemEffectID) then  
+                player:RemoveCollectible(data.OnyxItemEffectID)
+            end
             data.OnyxItemEffectID = nil
         end
     end

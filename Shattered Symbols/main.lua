@@ -101,6 +101,7 @@ function ShatteredSymbols:SavePlayerData()
             OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter or 1,
             AncientHookCounter = data.AncientHookCounter or 0,
             RunicAltarEffects = data.RunicAltarEffects or {},
+            OnyxItemEffectID = data.OnyxItemEffectID or nil,
         }
 
         -- Specifiche per il giocatore 0
@@ -158,6 +159,7 @@ function ShatteredSymbols:LoadPlayerData()
             data.OrigamiCrowPreviousCounter = playerDataToLoad.OrigamiCrowPreviousCounter or 1
             data.AncientHookCounter = playerDataToLoad.AncientHookCounter or 0
             data.RunicAltarEffects = playerDataToLoad.RunicAltarEffects or {}
+            data.OnyxItemEffectID = playerDataToLoad.OnyxItemEffectID or nil
 
             -- Specifiche per il giocatore 0
             if i == 0 then
