@@ -53,6 +53,9 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
     local tier4ItemPool = {}
     local data = player:GetData()
     if player:HasCollectible(UnstableGlyphLocalID) then
+        if REPENTOGON then
+            ItemOverlay.Show(Isaac.GetGiantBookIdByName("Glyph"), 0 , player)
+        end
         if itemConfig and itemConfig.Quality == 4 and not tablecontains(collectedItems, itemConfig.ID) and not tablecontains(itemIgnoreList, itemConfig.ID) then
             table.insert(tier4ItemPool, i)
         end
