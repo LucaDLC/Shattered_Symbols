@@ -87,7 +87,7 @@ ITEM
 
 
 
-77729 - Unstable Glyph [4]
+77729 - Unstable Glyph [3]
 	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama, si carica con gli half eternal heart, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
 	
 ---------------------------------------------------------------------

@@ -2,7 +2,7 @@ local game = Game()
 local UnstableGlyphLocalID = Isaac.GetItemIdByName("Unstable Glyph")
 
 if EID then
-    EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Reroll all items in the room into quality 4 items #{{Collectible483}} Make same explosion with same effects of Mama Mega! #{{EthernalHeart}} When you hold the item, after gaining Half Eternal Heart, the item remove it for charging, every Half Eternal Heart is equal to one charge #{{ArrowUp}} Unstable Glyph share charges with all Unstable Glyph of all players during the current game and next matches")
+    EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Reroll all items in the room into quality 4 items #{{Collectible483}} Make same explosion with same effects of Mama Mega! #{{EthernalHeart}} When you hold the item, after collect Half Eternal Heart, the item remove it and replace it with a Broken Heart for charging, every Half Eternal Heart is equal to one charge #{{ArrowUp}} Unstable Glyph share charges with all Unstable Glyph of all players during the current game and next matches")
 end
 
 local function tablecontains(tbl, element)
@@ -20,6 +20,8 @@ function ShatteredSymbols:havingUnstableGlyph(pickup, collider)
     if not data.UnstableGlyphCharge then data.UnstableGlyphCharge = 0 end
     
     if pickup.Variant == PickupVariant.PICKUP_HEART and pickup.SubType == HeartSubType.HEART_ETERNAL then
+        local playerCollider = collider:ToPlayer()
+        playerCollider:AddBrokenHearts(1)
         for playerIndex = 0, game:GetNumPlayers() - 1 do
             local player = Isaac.GetPlayer(playerIndex)
             if player:HasCollectible(UnstableGlyphLocalID) then
