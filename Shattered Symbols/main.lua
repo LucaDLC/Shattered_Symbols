@@ -46,7 +46,8 @@ local ItemScript = {
     'ForbiddenBody',
     'JadeIvoryMask',
     'Pyrite',
-    'Onyx'
+    'Onyx',
+    'UnstableGlyph'
 }
 local PocketItemScript = {
     'Glyph',
@@ -112,6 +113,7 @@ function ShatteredSymbols:SavePlayerData()
             playerDataToSave.BrokenBoxBombFlag = data.BrokenBoxBombFlag or 0
             playerDataToSave.BrokenBoxKeyFlag = data.BrokenBoxKeyFlag or 0
             playerDataToSave.BrokenBoxStatus = data.BrokenBoxStatus or false
+            playerDataToSave.UnstableGlyphCharge = data.UnstableGlyphCharge or 0
         end
 
         table.insert(allPlayersData, playerDataToSave)
@@ -169,6 +171,7 @@ function ShatteredSymbols:LoadPlayerData()
                 data.BrokenBoxBombFlag = playerDataToLoad.BrokenBoxBombFlag or 0
                 data.BrokenBoxKeyFlag = playerDataToLoad.BrokenBoxKeyFlag or 0
                 data.BrokenBoxStatus = playerDataToLoad.BrokenBoxStatus or false
+                data.UnstableGlyphCharge = playerDataToLoad.UnstableGlyphCharge or 0
             end
         end
 
@@ -185,6 +188,7 @@ function ShatteredSymbols:LoadPlayerData()
         data.BrokenBoxBombFlag = playerDataToLoad.BrokenBoxBombFlag or 0
         data.BrokenBoxKeyFlag = playerDataToLoad.BrokenBoxKeyFlag or 0
         data.BrokenBoxStatus = playerDataToLoad.BrokenBoxStatus or false
+        data.UnstableGlyphCharge = playerDataToLoad.UnstableGlyphCharge or 0
 
     else
         ShatteredSymbols:RemoveData()
