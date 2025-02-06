@@ -3,14 +3,14 @@ local ForbiddenMindLocalID = Isaac.GetItemIdByName("Forbidden Mind")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(ForbiddenMindLocalID, "{{Room}} After clearing a Room have 25% to open Red Rooms around it")
+    EID:addCollectible(ForbiddenMindLocalID, "{{Room}} After clearing a Room have 33% to open Red Rooms around it")
 end
 
 function ShatteredSymbols:onRoomClearForbiddenMind()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         if player:HasCollectible(ForbiddenMindLocalID) then
-            if math.random(100) <= 25 then 
+            if math.random(100) <= 33 then 
                 local level = game:GetLevel()
                 local currentRoom = level:GetCurrentRoomIndex()
                 for i = 0, DoorSlot.NUM_DOOR_SLOTS - 1 do
