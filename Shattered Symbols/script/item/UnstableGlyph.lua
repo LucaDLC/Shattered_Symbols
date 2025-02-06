@@ -21,7 +21,6 @@ function ShatteredSymbols:havingUnstableGlyph(pickup, collider)
     
     if pickup.Variant == PickupVariant.PICKUP_HEART and pickup.SubType == HeartSubType.HEART_ETERNAL then
         local playerCollider = collider:ToPlayer()
-        playerCollider:AddBrokenHearts(1)
         for playerIndex = 0, game:GetNumPlayers() - 1 do
             local player = Isaac.GetPlayer(playerIndex)
             if player:HasCollectible(UnstableGlyphLocalID) then
@@ -32,15 +31,16 @@ function ShatteredSymbols:havingUnstableGlyph(pickup, collider)
                     if activeItem ~= 0 and activeItem == UnstableGlyphLocalID then
                         if data.UnstableGlyphCharge < 7 then
                             data.UnstableGlyphCharge = data.UnstableGlyphCharge + 1
-                            player:AddEternalHearts(-1)
+                            playerCollider:AddBrokenHearts(1)
+                            playerCollider:AddEternalHearts(-1)
                         end
 
-                        if player:HasCollectible(UnstableGlyphLocalID) then
-                            if data.UnstableGlyphCharge > 7 then
-                                data.UnstableGlyphCharge = 7
-                            end
-                            player:SetActiveCharge(data.UnstableGlyphCharge, i)
+                        if data.UnstableGlyphCharge > 7 then
+                            data.UnstableGlyphCharge = 7
                         end
+                        
+                        player:SetActiveCharge(data.UnstableGlyphCharge, i)
+                        
                     end
                 end
             end
@@ -51,7 +51,8 @@ end
 
 function ShatteredSymbols:useUnstableGlyph(_, rng, player)
     local tier4ItemPool = {}
-    local data = player:GetData()
+    local SetterData = Isaac.GetPlayer(0)
+    local data = SetterData:GetData()
     if player:HasCollectible(UnstableGlyphLocalID) then
         if REPENTOGON then
             ItemOverlay.Show(Isaac.GetGiantBookIdByName("Glyph"), 0 , player)
