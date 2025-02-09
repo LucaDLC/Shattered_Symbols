@@ -52,7 +52,7 @@ ITEM
 	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 10 monete, 1 bomba e 1 chiave (sempre se presenti altrimenti sottrae il possibile) 
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
 
-77718 - Midnight Bite [3]
+77718 - Midnight Bite [2]
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
 
 77719 - Extra Deck of Card [2]

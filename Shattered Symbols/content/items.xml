@@ -17,7 +17,7 @@
 	<active  id="77715" name="Broken Flux" gfx ="BrokenFlux.png" description="Feel the pain everywhere" quality="2" maxcharges="3" chargetype="special" initcharge ="0" devilprice="1" tags="nogreed offensive"/>
 	<passive  id="77716" name="Origami Crow" gfx ="OrigamiCrow.png" description="Somebody watching you" quality="3" devilprice="1" tags="offensive"/>
 	<active  id="77717" name="Broken Box" gfx ="BrokenBox.png" description="No one can discover the secrets inside" quality="2" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
-	<passive  id="77718" name="Midnight Bite" gfx ="MidnightBite.png" description="Zombie undercover" quality="3" devilprice="2"/>
+	<passive  id="77718" name="Midnight Bite" gfx ="MidnightBite.png" description="Zombie undercover" quality="2" devilprice="2"/>
 	<active  id="77719" name="Extra Deck of Cards" gfx ="ExtraDeckofCards.png" description="Special evocation" quality="2" maxcharges="5" chargetype="normal" devilprice="2"/>
 	<passive  id="77720" name="Ancient Hook" gfx ="AncientHook.png" description="a CuRsE¿" quality="0" devilprice="1" tags="lazarusshared offensive"/>
 	<active  id="77721" name="Runic Geode" gfx ="RunicGeode.png" description="Feel the magic power" quality="2" maxcharges="6" chargetype="normal" devilprice="1" tags="offensive"/>
