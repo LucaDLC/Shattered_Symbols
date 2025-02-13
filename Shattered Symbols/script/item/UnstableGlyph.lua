@@ -17,7 +17,7 @@ end
 function ShatteredSymbols:passiveUnstableGlyph(pickup, collider)
     local SetterData = Isaac.GetPlayer(0)
     local data = SetterData:GetData()
-    if pickup.Variant == PickupVariant.PICKUP_HEART and pickup.SubType == HeartSubType.HEART_ETERNAL then
+    if pickup.Variant == PickupVariant.PICKUP_HEART and pickup.SubType == HeartSubType.HEART_ETERNAL and data.UnstableGlyphCharge < 7 then
         local haveUnstable = false
         for playerIndex = 0, game:GetNumPlayers() - 1 do
             local player = Isaac.GetPlayer(playerIndex)
@@ -65,22 +65,26 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
             ItemOverlay.Show(Isaac.GetGiantBookIdByName("Glyph"), 0 , player)
         end
 
-        --Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.EXPLOSION_LARGE, 0, isaacPos, Vector.Zero, nil)
-        --SFXManager():Play(SoundEffect.SOUND_MAMA_MEGA_BOOM)
-
-        if itemConfig and itemConfig.Quality == 4 and not tablecontains(collectedItems, itemConfig.ID) and not tablecontains(itemIgnoreList, itemConfig.ID) then
-            table.insert(tier4ItemPool, i)
-        end
+        Isaac.Spawn(EntityType.ENTITY_EFFECT, MamaMegaEffectVariant, 0, isaacPos, Vector.Zero, nil)
+        SFXManager():Play(SoundEffect.SOUND_MAMA_MEGA_BOOM)
 
         local entities = Isaac.GetRoomEntities();
+
+        for i = 1, #Isaac.GetItemConfig():GetCollectibles() do
+            local itemConfig = Isaac.GetItemConfig():GetCollectible(i)
+            if itemConfig and itemConfig.Quality == 4 and not tablecontains(collectedItems, itemConfig.ID) and not tablecontains(itemIgnoreList, itemConfig.ID) then
+                table.insert(tier4ItemPool, i)
+            end    
+        end
 
         for _, entity in ipairs(entities) do
             if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE and entity.SubType ~= 0 and entity.SubType ~= 668 then
 
                 local currentItemQuality = Isaac.GetItemConfig():GetCollectible(entity.SubType)
                 local randomCollectibleID = 0
-                if currentItemQuality and currentItemQuality.Quality == 4 then
-                    if #tier4ItemPool ~= 0 then
+                if currentItemQuality and currentItemQuality.Quality <= 4 then
+                    if #tier4ItemPool == 0 then
+                    else
                         local randomIndex = math.random(#tier4ItemPool)
                         randomCollectibleID = tier4ItemPool[randomIndex]
                         table.remove(tier4ItemPool, randomIndex)
@@ -94,7 +98,6 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
                     entity:ToPickup():Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, randomCollectibleID, true)
                     Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, -1, entity.Position, entity.Velocity, nil)
                 end 
-
             end
         end
         
