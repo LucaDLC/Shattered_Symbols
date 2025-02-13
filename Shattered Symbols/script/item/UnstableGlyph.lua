@@ -69,8 +69,8 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
             ItemOverlay.Show(Isaac.GetGiantBookIdByName("Glyph"), 0 , player)
         end
 
-        --Isaac.Spawn(EntityType.ENTITY_EFFECT, MamaMegaEffectVariant, 0, isaacPos, Vector.Zero, nil)
-        --SFXManager():Play(SoundEffect.SOUND_MAMA_MEGA_BOOM)
+        Isaac.Spawn(EntityType.ENTITY_EFFECT, MamaMegaEffectVariant, 0, player.Position, Vector.Zero, nil)
+        SFXManager():Play(SoundEffect.SOUND_MAMA_MEGA_BOOM)
 
         local entities = Isaac.GetRoomEntities();
 
