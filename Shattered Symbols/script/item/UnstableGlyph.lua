@@ -1,5 +1,9 @@
 local game = Game()
 local UnstableGlyphLocalID = Isaac.GetItemIdByName("Unstable Glyph")
+local collectedItems = {}
+local itemIgnoreList = {
+    238, 239, 550, 551, 626, 627, 668
+}
 
 if EID then
     EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Reroll all items in the room into quality 4 items #{{Collectible483}} Make same explosion with same effects of Mama Mega! #{{EthernalHeart}} When you hold the item, after collect Half Eternal Heart, the item remove it and replace it with a Broken Heart for charging, every Half Eternal Heart is equal to one charge #{{ArrowUp}} Unstable Glyph share charges with all Unstable Glyph of all players during the current game and next matches")
@@ -65,8 +69,8 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
             ItemOverlay.Show(Isaac.GetGiantBookIdByName("Glyph"), 0 , player)
         end
 
-        Isaac.Spawn(EntityType.ENTITY_EFFECT, MamaMegaEffectVariant, 0, isaacPos, Vector.Zero, nil)
-        SFXManager():Play(SoundEffect.SOUND_MAMA_MEGA_BOOM)
+        --Isaac.Spawn(EntityType.ENTITY_EFFECT, MamaMegaEffectVariant, 0, isaacPos, Vector.Zero, nil)
+        --SFXManager():Play(SoundEffect.SOUND_MAMA_MEGA_BOOM)
 
         local entities = Isaac.GetRoomEntities();
 
@@ -112,7 +116,7 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
 end
 
 
-function ShatteredSymbols:FluxWispInit(wisp)
+function ShatteredSymbols:GlyphWispInit(wisp)
 	if  wisp.Player and wisp.Player:HasCollectible(UnstableGlyphLocalID) then
 		if wisp.SubType == UnstableGlyphLocalID then
 			wisp.SubType = 263
@@ -131,7 +135,7 @@ function ShatteredSymbols:ClearListUnstableGlyph()
     collectedItems = {}
 end
 
-ShatteredSymbols:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, ShatteredSymbols.FluxWispInit, FamiliarVariant.WISP)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, ShatteredSymbols.GlyphWispInit, FamiliarVariant.WISP)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.havingUnstableGlyph)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, ShatteredSymbols.passiveUnstableGlyph)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_USE_ITEM, ShatteredSymbols.useUnstableGlyph, UnstableGlyphLocalID)

@@ -138,7 +138,7 @@ BUG
 
 	- Torn Hook vorrei trovare il modo di teletrasportare direttamente dentro la stanza del Death Certificate e rimuovere lo spawn 
 
-	- Unstable Glyph non funziona
+	- Unstable Glyph funziona ma manca l'effetto di mama mega e non mi toglie il primo eternal heart
 
 
 ---------------------------------------------------------------------
