@@ -6,7 +6,7 @@ local itemIgnoreList = {
 }
 
 if EID then
-    EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Reroll all items in the room into quality 4 items and triggers an explosion #{{EthernalHeart}} When you hold the item, after collect Half Eternal Heart, the item add a Broken Heart and charging itself to one charge #{{ArrowUp}} Unstable Glyph share charges with all Unstable Glyph of all players during the current game and next matches")
+    EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Reroll all items in the room into quality 4 items and triggers an explosion #{{EthernalHeart}} When you hold the item, after collect Half Eternal Heart, the item add 2 Broken Hearts and charging itself to one charge #{{ArrowUp}} Unstable Glyph share charges with all Unstable Glyph of all players during the current game and next matches")
 end
 
 local function tablecontains(tbl, element)
@@ -32,7 +32,7 @@ function ShatteredSymbols:passiveUnstableGlyph(pickup, collider)
         if haveUnstable then
             local playerCollider = collider:ToPlayer()
             data.UnstableGlyphCharge = data.UnstableGlyphCharge + 1
-            playerCollider:AddBrokenHearts(1)
+            playerCollider:AddBrokenHearts(2)
         end
     end
 end
