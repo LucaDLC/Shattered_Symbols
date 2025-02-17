@@ -3,7 +3,7 @@ local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
 local OrigamiCrowExternalID = Isaac.GetItemIdByName("Origami Crow")
 
 if EID then
-    EID:addCollectible(BrokenFluxLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowDown}} If the absorbed Broken Hearts have replaced Heart, these are not returned")
+    EID:addCollectible(BrokenFluxLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowDown}} If the absorbed Broken Hearts have replaced Hearts, these are not returned")
 end
 
 function ShatteredSymbols:havingBrokenFlux(player)
