@@ -7,7 +7,7 @@
 	<active  id="77705" name="Upside Down Deck of Cards" gfx ="UpsideDownDeckofCards.png" description="Ops..." quality="2" maxcharges="5" chargetype="normal" devilprice="1"/>
 	<active  id="77706" name="Constellation" gfx ="Constellation.png" description="Look the sky!" quality="3" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
 	<passive  id="77707" name="Origami Swan" gfx ="OrigamiSwan.png" description="It's Wonderful but it suffers" quality="3" devilprice="1" tags="offensive"/>
-	<passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Missed!" quality="1" devilprice="1"/>
+	<passive  id="77708" name="Meteor" gfx ="Meteor.png" description="Missed!" quality="0" devilprice="1"/>
 	<active  id="77709" name="Shawty's Letter" gfx ="ShawtysLetter.png" description="This is not a good sign" quality="2" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
 	<active  id="77710" name="Shawty's Essence" gfx ="ShawtysEssence.png" description="Intoxicating" quality="2" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
 	<passive  id="77711" name="Torn Hook" gfx ="TornHook.png" description="Struggling won't help you" quality="0" devilprice="1" tags="lazarusshared offensive"/>
