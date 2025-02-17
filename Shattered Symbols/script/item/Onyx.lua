@@ -24,26 +24,41 @@ function ShatteredSymbols:OnNewLevelOnyx()
     for pl = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(pl)
         local data = player:GetData()
-        if not data.OnyxItemEffectID then data.OnyxItemEffectID = nil end
+        if not data.OnyxItemEffectID then data.OnyxItemEffectID = {} end
         if player:HasCollectible(OnyxLocalID) then
-            local newItemID = GetRandomPassiveItem()
-            if newItemID then
-                if data.OnyxItemEffectID ~= nil and not player:HasCollectible(data.OnyxItemEffectID) then  
-                    player:RemoveCollectible(OnyxLocalID)
-                    data.OnyxItemEffectID = nil
+            for i = #data.OnyxItemEffectID, 1, -1 do
+                local effectID = data.OnyxItemEffectID[i]
+                if player:HasCollectible(effectID) then
+                    player:RemoveCollectible(effectID)
+                    local newEffect = GetRandomPassiveItem()
+                    data.OnyxItemEffectID[i] = newEffect
+                    player:AddCollectible(newEffect)
                 else
-                    if data.OnyxItemEffectID ~= nil then  
-                        player:RemoveCollectible(data.OnyxItemEffectID)
-                    end
-                    data.OnyxItemEffectID = newItemID
-                    player:AddCollectible(data.OnyxItemEffectID)
+                    table.remove(data.OnyxItemEffectID, i)
                 end
             end
-        else 
-            if data.OnyxItemEffectID ~= nil and player:HasCollectible(data.OnyxItemEffectID) then  
-                player:RemoveCollectible(data.OnyxItemEffectID)
+            -- Aggiungiamo un nuovo effetto per ogni Onyx raccolto
+            for i = 1, player:GetCollectibleNum(OnyxLocalID) do
+                local newEffect = GetRandomPassiveItem()
+                table.insert(data.OnyxItemEffectID, newEffect)
+                player:AddCollectible(newEffect)
             end
-            data.OnyxItemEffectID = nil
+            -- Rimuoviamo tutte le copie di Onyx dalla collezione del giocatore
+            while player:HasCollectible(OnyxLocalID) do
+                player:RemoveCollectible(OnyxLocalID)
+            end
+        elseif #data.OnyxItemEffectID > 0 then
+            for i = #data.OnyxItemEffectID, 1, -1 do
+                local effectID = data.OnyxItemEffectID[i]
+                if player:HasCollectible(effectID) then
+                    player:RemoveCollectible(effectID)
+                    local newEffect = GetRandomPassiveItem()
+                    data.OnyxItemEffectID[i] = newEffect
+                    player:AddCollectible(newEffect)
+                else
+                    table.remove(data.OnyxItemEffectID, i)
+                end
+            end
         end
     end
 end
