@@ -97,7 +97,6 @@ function ShatteredSymbols:SavePlayerData()
             FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter or 1,
             FortuneTellerLuckBoost = data.FortuneTellerLuckBoost or 0,
             BrokenFluxPreviousBrokenHearts = data.BrokenFluxPreviousBrokenHearts or -1,
-            BrokenFluxCharge = data.BrokenFluxCharge or 0,
             OrigamiCrowRelative = data.OrigamiCrowRelative or 0,
             OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter or 1,
             AncientHookCounter = data.AncientHookCounter or 0,
@@ -156,7 +155,6 @@ function ShatteredSymbols:LoadPlayerData()
             data.FortuneTellerPreviousCounter = playerDataToLoad.FortuneTellerPreviousCounter or 1
             data.FortuneTellerLuckBoost = playerDataToLoad.FortuneTellerLuckBoost or 0
             data.BrokenFluxPreviousBrokenHearts = playerDataToLoad.BrokenFluxPreviousBrokenHearts or -1
-            data.BrokenFluxCharge = playerDataToLoad.BrokenFluxCharge or 0
             data.OrigamiCrowRelative = playerDataToLoad.OrigamiCrowRelative or 0
             data.OrigamiCrowPreviousCounter = playerDataToLoad.OrigamiCrowPreviousCounter or 1
             data.AncientHookCounter = playerDataToLoad.AncientHookCounter or 0
