@@ -26,7 +26,7 @@
 	<passive  id="77724" name="Forbidden Mind" gfx ="ForbiddenMind.png" description="The forgotten ancient mind" quality="3" devilprice="2" tags="angel nokeeper offensive"/>
 	<passive  id="77725" name="Forbidden Body" gfx ="ForbiddenBody.png" description="The forgotten ancient body" quality="3" devilprice="2" tags="angel"/>
 	<passive  id="77726" name="Jade & Ivory Mask" gfx ="JadeIvoryMask.png" description="Status" quality="3" devilprice="2" tags="offensive"/>
-	<passive  id="77727" name="Pyrite" gfx ="Pyrite.png" description="You, fool!" quality="1" devilprice="1" tags="offensive"/>
+	<passive  id="77727" name="Pyrite" gfx ="Pyrite.png" description="You, fool!" quality="2" devilprice="1" tags="offensive"/>
 	<passive  id="77728" name="Onyx" gfx ="Onyx.png" description="Volatile and mutable" quality="2" devilprice="1" tags="offensive"/>
 	<active  id="77729" name="Unstable Glyph" gfx ="UnstableGlyph.png" description="Overload that crystal wasn't a good idea" quality="3" maxcharges="7" chargetype="special" initcharge ="0" devilprice="1" tags="offensive"/>
 
