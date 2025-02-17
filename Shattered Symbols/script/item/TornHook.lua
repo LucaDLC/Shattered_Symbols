@@ -23,7 +23,15 @@ function ShatteredSymbols:onTornHook()
                 local TornHookChance = 0
                 TornHookChance = TornHooksCounter * 0.15
                 if math.random() < TornHookChance then
-                    Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, player.Position + Vector(0, 50), Vector(0,0), nil)
+                    local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
+                    local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
+                    if pocketItem == 0 then
+                        player:SetPocketActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, ActiveSlot.SLOT_POCKET)
+                    elseif activeItem == 0 then
+                        player:AddCollectible(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, 1, false)
+                    else
+                        Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, player.Position + Vector(0, 50), Vector(0,0), nil)
+                    end
                 end
             end
         end
