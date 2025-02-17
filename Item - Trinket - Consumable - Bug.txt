@@ -21,7 +21,7 @@ ITEM
 77707 - Origami Swan [3] [TEXTURE FINISHED]
 	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
 
-77708 - Meteor [1] [TEXTURE FINISHED]
+77708 - Meteor [0] [TEXTURE FINISHED]
 	Rimuove 2 Broken Heart oppure rimuove 1 broken heart e da 1 black heart oppure da 3 black heart
 
 77709 - Shawty's Letter [2] [TEXTURE FINISHED]
@@ -43,7 +43,7 @@ ITEM
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Bat, da 1 broken heart
 
 77715 - Broken Flux [2]
-	Attivo che si ricarica quando ottieni dei broken heart, 4 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
+	Attivo che si ricarica quando ottieni dei broken heart, 3 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
 
 77716 - Origami Crow [3]
 	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro, da 2 broken heart
@@ -79,7 +79,7 @@ ITEM
 77726 - Jade & Ivory Mask [3]
 	Ad ogni piano hai il 40% che un oggetto preso in precedenza da qualità 0 a 3 venga sostituito con un oggetto di qualità superiore 
 
-77727 - Pyrite [1]
+77727 - Pyrite [2]
 	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
 
 77728 - Onyx [2]
