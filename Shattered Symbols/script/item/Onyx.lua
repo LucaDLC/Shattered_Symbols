@@ -3,7 +3,7 @@ local OnyxLocalID = Isaac.GetItemIdByName("Onyx")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:addCollectible(OnyxLocalID, "{{Collectible}} On each floor, it mutates into a different collectible effect #{{Collectible}} The collectible appear in the item pool of player")
+    EID:addCollectible(OnyxLocalID, "{{Collectible}} On each floor, it mutates into a different collectible effect")
 end
 
 local function GetRandomPassiveItem()
