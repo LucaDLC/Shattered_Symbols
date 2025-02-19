@@ -23,6 +23,7 @@ function ShatteredSymbols:useUpsideDownDeckCard(_, rng, player)
     -- Droppa una carta casuale dal pool delle carte reverse
     local card = reverseCards[math.random(#reverseCards)]
     player:AddCard(card)
+    player:AnimateCard(card, "Pickup")
     for i = 0, 3 do
         local activeItem = player:GetActiveItem(i)
         if activeItem == UpsideDownDeckofCardsLocalID then

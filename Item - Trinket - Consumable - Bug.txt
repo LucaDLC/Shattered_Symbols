@@ -132,6 +132,8 @@ BUG
 
 	- Swan vorrei rimuovere UseActiveItem e internare la logica nell'oggetto 
 
+	- Cambiare la logica di Extra Deck of Card (che non selezioni più le carte speciali ma che escluda quelle non speciali da includere le mod)
+
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
