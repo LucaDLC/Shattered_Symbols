@@ -130,8 +130,6 @@ TRASFORMAZIONI
 BUG
 	
 
-	- Broken Box e Onyx dovrebbe fare un controllo che l'item che restituisce esista ancora altrimenti dia un oggetto casuale (probabilmente automaticamente se lo aggiusta ma va confermata)
-
 	- Swan vorrei rimuovere UseActiveItem e internare la logica nell'oggetto 
 
 
