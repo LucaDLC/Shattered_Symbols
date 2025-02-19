@@ -63,7 +63,11 @@ function ShatteredSymbols:useBrokenBox(_, rng, player)
         end
 
         if data.BrokenBoxItemFlag ~= nil then
-            player:AddCollectible(data.BrokenBoxItemFlag)
+            if Isaac.GetItemConfig():GetCollectibles().Size - 1 >= data.BrokenBoxItemFlag then
+                player:AddCollectible(data.BrokenBoxItemFlag)
+            else
+                player:AddCollectible(rng:RandomInt(Isaac.GetItemConfig():GetCollectibles().Size - 1) + 1)
+            end
             data.BrokenBoxItemFlag = nil
         end
 
