@@ -63,4 +63,21 @@ function ShatteredSymbols:OnNewLevelOnyx()
     end
 end
 
+function ShatteredSymbols:ClearInvalidOnyx()
+    for pl = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(pl)
+        local data = player:GetData()
+        if data.OnyxItemEffectID then 
+            for i = #data.OnyxItemEffectID, 1, -1 do
+                local effectID = data.OnyxItemEffectID[i]
+                if Isaac.GetItemConfig():GetCollectibles().Size - 1 < effectID then
+                    data.OnyxItemEffectID[i] = rng:RandomInt(Isaac.GetItemConfig():GetCollectibles().Size - 1) + 1
+                    player:AddCollectible(data.OnyxItemEffectID[i])
+                end
+            end
+        end
+    end
+end
+
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.OnNewLevelOnyx)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, ShatteredSymbols.ClearInvalidOnyx)
