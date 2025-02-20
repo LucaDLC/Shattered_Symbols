@@ -78,8 +78,9 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
         if REPENTOGON then
             ItemOverlay.Show(Isaac.GetGiantBookIdByName("Glyph"), 0 , player)
         end
-
-        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.MAMA_MEGA_EXPLOSION, 0, player.Position, Vector.Zero, player)
+        
+        local room = game:GetRoom()
+        room:MamaMegaExplosion(player.Position)
 
         local entities = Isaac.GetRoomEntities();
 
