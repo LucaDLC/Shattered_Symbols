@@ -16,6 +16,7 @@ function ShatteredSymbols:onTornHook()
             if math.random(1, 100) <= luck then
                 for i = 1, player:GetCollectibleNum(TornHookLocalID) do
                     player:RemoveCollectible(TornHookLocalID)
+                    SFXManager():Play(SoundEffect.SOUND_SATAN_HURT)
                 end
             else
                 local TornHooksCounter = player:GetCollectibleNum(TornHookLocalID)
