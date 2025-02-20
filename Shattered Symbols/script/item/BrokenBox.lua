@@ -55,6 +55,8 @@ function ShatteredSymbols:useBrokenBox(_, rng, player)
             data.BrokenBoxStatus = false
         end
 
+        SFXManager():Play(SoundEffect.SOUND_DOOR_HEAVY_CLOSE)
+
     -- Se l'oggetto è usato di nuovo (pieno)
     elseif player:HasCollectible(BrokenBoxLocalID) and data.BrokenBoxStatus then
         if data.BrokenBoxHeartFlag then
@@ -89,7 +91,8 @@ function ShatteredSymbols:useBrokenBox(_, rng, player)
         data.BrokenBoxStatus = false  -- Reimposta lo stato a vuoto
     end
 
-    -- Ritorna per rimuovere e scaricare l'oggetto
+    SFXManager():Play(SoundEffect.SOUND_DOOR_HEAVY_OPEN)
+
     return {
         Discharge = true,
         Remove = true,
