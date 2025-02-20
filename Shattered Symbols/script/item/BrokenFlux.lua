@@ -29,6 +29,7 @@ function ShatteredSymbols:havingBrokenFlux(player)
                             player:SetActiveCharge(3, i)
                         end
                     end
+                    SFXManager():Play(SoundEffect.SOUND_LIGHTBOLT_CHARGE)
                 end
                 
                 data.BrokenFluxPreviousBrokenHearts = currentBrokenHearts

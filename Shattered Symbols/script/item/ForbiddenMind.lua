@@ -16,7 +16,7 @@ function ShatteredSymbols:onRoomClearForbiddenMind()
                 for i = 0, DoorSlot.NUM_DOOR_SLOTS - 1 do
                     if level:CanSpawnDoorOutline(currentRoom, i) then
 						level:MakeRedRoomDoor(currentRoom, i)
-                        SFXManager():Play(SoundEffect.SOUND_LIGHTBOLT_CHARGE)
+                        SFXManager():Play(SoundEffect.SOUND_BEEP)
 					end
                 end
             end
