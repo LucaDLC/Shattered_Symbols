@@ -51,6 +51,7 @@ function ShatteredSymbols:havingUnstableGlyph(player)
                                 if data.UnstableGlyphCharge > 7 then
                                     data.UnstableGlyphCharge = 7
                                 end
+                                SFXManager():Play(SoundEffect.SOUND_LIGHTBOLT_CHARGE)
                             elseif previousBroken > currentBroken then
                                 data.UnstableGlyphBrokenHearts[i+1] = currentBroken
                             end
