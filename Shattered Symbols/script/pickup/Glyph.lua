@@ -20,7 +20,7 @@ function ShatteredSymbols:UseGlyph(card, player, useFlags)
     if player:GetBrokenHearts() > 0 then
         player:AddBrokenHearts(-1)  
     end
-    
+    SFXManager():Play(SoundEffect.SOUND_DEATH_CARD)
 end
 
 -- Collega l'effetto della runa al suo utilizzo
