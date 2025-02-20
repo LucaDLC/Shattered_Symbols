@@ -130,8 +130,6 @@ TRASFORMAZIONI
 BUG
 	
 
-	- Swan vorrei rimuovere UseActiveItem e internare la logica nell'oggetto 
-
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
