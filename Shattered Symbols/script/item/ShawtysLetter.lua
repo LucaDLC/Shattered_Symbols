@@ -36,6 +36,7 @@ function ShatteredSymbols:useShawtysLetter(_, rng, player)
     local spawnPosition = game:GetRoom():FindFreePickupSpawnPosition(player.Position, 40, true)
     Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, selectedItem, spawnPosition, Vector(0, 0), nil)
     
+    SFXManager():Play(SoundEffect.SOUND_PAPER_OUT)
 
     return {
         Discharge = true,
