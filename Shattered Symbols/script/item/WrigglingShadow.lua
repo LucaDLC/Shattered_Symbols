@@ -27,12 +27,14 @@ function ShatteredSymbols:useWrigglingShadow(_, rng, player)
             player:AddHearts(2)
         end
 
+        SFXManager():Play(SoundEffect.SOUND_SATAN_HURT)
+
     elseif (not player:HasCollectible(TornHookExternalID) and not player:HasCollectible(AncientHookExternalID)) and player:HasCollectible(WrigglingShadowLocalID) then
         local hookProb = math.random(0, 1)
         if hookProb == 0 then
-            player:GiveCollectible(TornHookExternalID)
+            player:AddCollectible(TornHookExternalID)
         else
-            player:GiveCollectible(AncientHookExternalID)
+            player:AddCollectible(AncientHookExternalID)
         end
     end
 
