@@ -23,6 +23,12 @@ function ShatteredSymbols:useHexCrystal(card, player, useFlags)
         end
     end
     player:AddBrokenHearts(1)
+    SFXManager():Play(SoundEffect.SOUND_ANGEL_BEAM)
+    Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, player.Position, Vector(0,0), player)
+    for i = 1, 30 do 
+        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.DIAMOND_PARTICLE, 0, player.Position, Vector(0,0), player)
+    end
+    
 end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_USE_CARD, ShatteredSymbols.useHexCrystal, HexCrystalLocalID)
