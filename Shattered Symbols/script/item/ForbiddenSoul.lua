@@ -21,6 +21,7 @@ function ShatteredSymbols:useForbidenSoul()
             end
         elseif player:GetGoldenHearts() < 1 and player:HasCollectible(ForbiddenSoulLocalID) then
             player:AddGoldenHearts(1)
+            SFXManager():Play(SoundEffect.SOUND_GOLD_HEART_DROP)
         end
     end
 end
