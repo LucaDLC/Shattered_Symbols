@@ -18,8 +18,9 @@ function ShatteredSymbols:useOrigamiSwan(player)
         for i = 0, 1 do  -- Controlla entrambi gli slot dei trinket
             local trinketID = player:GetTrinket(i)
             if trinketID ~= 0 then  -- Se c'è un trinket nello slot
-                player:AddSmeltedTrinket(trinketID)
                 player:TryRemoveTrinket(trinketID)
+                player:AddSmeltedTrinket(trinketID)
+                SFXManager():Play(SoundEffect.SOUND_VAMP_GULP)
             end
         end
         if OrigamiSwanCounter >= data.OrigamiSwanPreviousCounter then
