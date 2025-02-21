@@ -79,6 +79,7 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
             ItemOverlay.Show(Isaac.GetGiantBookIdByName("Glyph"), 0 , player)
         end
         
+        SFXManager():Play(SoundEffect.SOUND_STATIC)
         local room = game:GetRoom()
         room:MamaMegaExplosion(player.Position)
 

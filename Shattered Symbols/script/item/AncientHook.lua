@@ -33,6 +33,7 @@ function ShatteredSymbols:onAncientHook()
                     else
                         Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, player.Position + Vector(0, 50), Vector(0,0), nil)
                     end
+                    SFXManager():Play(SoundEffect.SOUND_THUMBSUP)
                 end
             end
         end
