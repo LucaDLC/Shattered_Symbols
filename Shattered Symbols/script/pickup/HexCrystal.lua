@@ -26,7 +26,7 @@ function ShatteredSymbols:useHexCrystal(card, player, useFlags)
     SFXManager():Play(SoundEffect.SOUND_ANGEL_BEAM)
     Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, player.Position, Vector(0,0), player)
     for i = 1, 30 do 
-        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.DIAMOND_PARTICLE, 0, player.Position, Vector(0,0), player)
+        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.DIAMOND_PARTICLE, 0, player.Position + Vector(0, -15) , Vector(0,0), player)
     end
     
 end
