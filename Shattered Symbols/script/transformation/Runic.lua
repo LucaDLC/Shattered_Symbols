@@ -5,13 +5,21 @@ if EID then
     EID:assignTransformation(CollectibleType.COLLECTIBLE_CLEAR_RUNE, 5, "Runic")
     EID:assignTransformation(CollectibleType.COLLECTIBLE_RUNE_BAG, 5, "Runic")
     EID:assignTransformation(CollectibleType.COLLECTIBLE_MOMS_RING, 5, "Runic")
+    EID:assignTransformation(Isaac.GetItemIdByName("Runic Geode"),5, "Runic")
+    EID:assignTransformation(Isaac.GetItemIdByName("Runic Altar"),5, "Runic")
+    EID:assignTransformation(Isaac.GetItemIdByName("Unstable Glyph"),5, "Runic")
+    EID:assignTransformation(Isaac.GetItemIdByName("Onyx"),5, "Runic")
 end
 
 -- Lista degli oggetti che compongono l'evoluzione
 local RUNIC_ITEMS = {
     CollectibleType.COLLECTIBLE_CLEAR_RUNE,
     CollectibleType.COLLECTIBLE_RUNE_BAG,
-    CollectibleType.COLLECTIBLE_MOMS_RING
+    CollectibleType.COLLECTIBLE_MOMS_RING,
+    Isaac.GetItemIdByName("Runic Geode"),
+    Isaac.GetItemIdByName("Runic Altar"),
+    Isaac.GetItemIdByName("Unstable Glyph"),
+    Isaac.GetItemIdByName("Onyx")
 }
 
 
