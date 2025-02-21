@@ -33,12 +33,9 @@ function ShatteredSymbols:PaperTransformation()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         if HasPaperEvolution(player) then
-            if player:GetBrokenHearts() > 0 then
-                player:AddBrokenHearts(-1)
-            end
             player:AddBlackHearts(2)
         end
     end
 end
 
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, ShatteredSymbols.PaperTransformation)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.PaperTransformation)
