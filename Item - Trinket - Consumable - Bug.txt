@@ -31,7 +31,7 @@ ITEM
 	Attivo che ti da un companion casuale al costo di un Broken Heart 
 
 77711 - Torn Hook [0] 
-	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate, per ogni punto luck hai la possibilità che si rimuova 
+	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale, per ogni punto luck hai la possibilità che si rimuova
 
 77712 - Wriggling Shadow [2]
 	Rimuove gli Hooks e ti toglie 1 broken heart e da 1 cuore full per hook rimosso, se non hai hook te ne da uno
@@ -59,7 +59,7 @@ ITEM
 	Droppa una carta speciale, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale
 
 77720 - Ancient Hook [0]
-	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale, per ogni punto luck hai la possibilità che si rimuova
+	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate, per ogni punto luck hai la possibilità che si rimuova 
 
 77721 - Runic Geode [2]
 	Attivo che droppa una runa casuale (contemplando anche quelle delle mod) con 6 cariche

@@ -99,7 +99,7 @@ function ShatteredSymbols:SavePlayerData()
             BrokenFluxPreviousBrokenHearts = data.BrokenFluxPreviousBrokenHearts or -1,
             OrigamiCrowRelative = data.OrigamiCrowRelative or 0,
             OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter or 1,
-            AncientHookCounter = data.AncientHookCounter or 0,
+            TornHookCounter = data.TornHookCounter or 0,
             RunicAltarEffects = data.RunicAltarEffects or {},
             OnyxItemEffectID = data.OnyxItemEffectID or {},
         }
@@ -158,7 +158,7 @@ function ShatteredSymbols:LoadPlayerData()
             data.BrokenFluxPreviousBrokenHearts = playerDataToLoad.BrokenFluxPreviousBrokenHearts or -1
             data.OrigamiCrowRelative = playerDataToLoad.OrigamiCrowRelative or 0
             data.OrigamiCrowPreviousCounter = playerDataToLoad.OrigamiCrowPreviousCounter or 1
-            data.AncientHookCounter = playerDataToLoad.AncientHookCounter or 0
+            data.TornHookCounter = playerDataToLoad.TornHookCounter or 0
             data.RunicAltarEffects = playerDataToLoad.RunicAltarEffects or {}
             data.OnyxItemEffectID = playerDataToLoad.OnyxItemEffectID or {}
 
