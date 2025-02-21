@@ -36,6 +36,7 @@ function ShatteredSymbols:useWrigglingShadow(_, rng, player)
         else
             player:AddCollectible(AncientHookExternalID)
         end
+        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PURGATORY, 0, player.Position, Vector(0,0), player)
     end
 
     -- Rimuove l'oggetto Wriggling Shadow dopo l'uso
