@@ -5,24 +5,12 @@ local AncientHookLocalID = Isaac.GetItemIdByName("Ancient Hook")
 -- EID (se usi EID per la descrizione)
 if EID then
     EID:assignTransformation("collectible", AncientHookLocalID, EID.TRANSFORMATION["ORIGAMI"])
-    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart at every Floor #At every floor grants:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.3#{{ArrowUp}} Tears +0.4#{{ArrowUp}} Luck +0.2 #{{Luck}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
+    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart at every Floor #Every floor you have 15% of chance for each Ancient Hook of spawn Death Certificate #{{Luck}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
 end
-
-local statMultiplier = {
-    damage = 0.3,  -- +0.3 Damage per ogni broken heart
-    speed = 0.1,   -- +0.1 Speed per ogni broken heart
-    range = 12,    -- +0.3 Range per ogni broken heart
-    tears = 0.4,   -- +0.4 Fire Rate per ogni broken heart
-    luck = 0.2,    -- +0.2 Luck per ogni broken heart
-}
 
 function ShatteredSymbols:onAncientHook()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
-        local data = player:GetData()
-
-        if not data.AncientHookCounter then data.AncientHookCounter = 0 end
-
         if player:HasCollectible(AncientHookLocalID) then
             local luck = math.max(player.Luck, 0)
             if math.random(1, 100) <= luck then
@@ -31,38 +19,24 @@ function ShatteredSymbols:onAncientHook()
                     SFXManager():Play(SoundEffect.SOUND_SATAN_HURT)
                 end
             else
-                local AncientHooksNum = player:GetCollectibleNum(AncientHookLocalID)
-                player:AddBrokenHearts(1*AncientHooksNum)
-                data.AncientHookCounter = data.AncientHookCounter + (1 * player:GetCollectibleNum(AncientHookLocalID))
-                player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
-                player:AddCacheFlags(CacheFlag.CACHE_SPEED)
-                player:AddCacheFlags(CacheFlag.CACHE_RANGE)
-                player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
-                player:AddCacheFlags(CacheFlag.CACHE_LUCK)
-                player:EvaluateItems()
+                local AncientHooksCounter = player:GetCollectibleNum(AncientHookLocalID)
+                player:AddBrokenHearts(1*AncientHooksCounter)
+                local AncientHookChance = 0
+                AncientHookChance = AncientHooksCounter * 0.15
+                if math.random() < AncientHookChance then
+                    local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
+                    local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
+                    if pocketItem == 0 then
+                        player:SetPocketActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, ActiveSlot.SLOT_POCKET)
+                    elseif activeItem == 0 then
+                        player:AddCollectible(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, 1, false)
+                    else
+                        Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, player.Position + Vector(0, 50), Vector(0,0), nil)
+                    end
+                end
             end
         end
     end
 end
 
-function ShatteredSymbols:onEvaluateCacheAncientHook(player, cacheFlag)
-    local data = player:GetData()
-    if not data.AncientHookCounter then data.AncientHookCounter = 0 end
-    if player:HasCollectible(AncientHookLocalID) or data.AncientHookCounter > 0 then
-        if cacheFlag == CacheFlag.CACHE_DAMAGE then
-            player.Damage = player.Damage + (data.AncientHookCounter * statMultiplier.damage)
-        elseif cacheFlag == CacheFlag.CACHE_SPEED then
-            player.MoveSpeed = player.MoveSpeed + (data.AncientHookCounter * statMultiplier.speed)
-        elseif cacheFlag == CacheFlag.CACHE_RANGE then
-            player.TearRange = player.TearRange + (data.AncientHookCounter * statMultiplier.range)
-        elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
-            local newTears = (30.0 / (player.MaxFireDelay + 1)) + (data.AncientHookCounter * statMultiplier.tears)
-            player.MaxFireDelay = (30.0 / newTears) - 1
-        elseif cacheFlag == CacheFlag.CACHE_LUCK then
-            player.Luck = player.Luck + (data.AncientHookCounter * statMultiplier.luck)
-        end
-    end
-end
-
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.onAncientHook)
-ShatteredSymbols:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, ShatteredSymbols.onEvaluateCacheAncientHook)
