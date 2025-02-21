@@ -115,7 +115,7 @@ TRINKET
 TRASFORMAZIONI
 
 	- Paper (3 origami)
-	Rimuove 1 Broken Heart e da 2 Black Heart
+	Da 1 Black Heart a piano
 
 	- Runic (3 oggetti delle rune)
 	Ottieni Homing Tears
