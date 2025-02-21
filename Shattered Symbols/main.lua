@@ -57,6 +57,12 @@ local PocketItemScript = {
     'TeaBag'
 }
 
+local TransformationScript = {
+    'Runic',
+    'Paper',
+    'Clairvoyant'
+}
+
 
 for LoadItem = 1, #ItemScript do
     require("script.item." .. ItemScript[LoadItem])
@@ -64,6 +70,10 @@ end
 
 for LoadPocket = 1, #PocketItemScript do
     require("script.pickup." .. PocketItemScript[LoadPocket])
+end
+
+for LoadTransformation = 1, #TransformationScript do
+    require("script.transformation." .. TransformationScript[LoadTransformation])
 end
 --------------------- Save Datas ---------------------
 
