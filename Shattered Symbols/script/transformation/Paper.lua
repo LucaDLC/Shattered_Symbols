@@ -7,6 +7,14 @@ if EID then
     EID:assignTransformation(CollectibleType.COLLECTIBLE_CONTRACT_FROM_BELOW, 5, "Paper")
     EID:assignTransformation(CollectibleType.COLLECTIBLE_DEATHS_LIST, 5, "Paper")
     EID:assignTransformation(CollectibleType.COLLECTIBLE_DIVORCE_PAPERS, 5, "Paper")
+    EID:assignTransformation(Isaac.GetItemIdByName("Origami Crow"), 5, "Paper")
+    EID:assignTransformation(Isaac.GetItemIdByName("Origami Bat"), 5, "Paper")
+    EID:assignTransformation(Isaac.GetItemIdByName("Origami Kolibri"), 5, "Paper")
+    EID:assignTransformation(Isaac.GetItemIdByName("Torn Hook"), 5, "Paper")
+    EID:assignTransformation(Isaac.GetItemIdByName("Origami Swan"), 5, "Paper")
+    EID:assignTransformation(Isaac.GetItemIdByName("Origami Boat"), 5, "Paper")
+    EID:assignTransformation(Isaac.GetItemIdByName("Origami Shuriken"), 5, "Paper")
+    EID:assignTransformation(Isaac.GetItemIdByName("Fortune Teller"), 5, "Paper")
 end
 
 -- Lista degli oggetti che compongono l'evoluzione
@@ -15,7 +23,15 @@ local PAPER_ITEMS = {
     CollectibleType.COLLECTIBLE_MISSING_PAGE_2,
     CollectibleType.COLLECTIBLE_CONTRACT_FROM_BELOW,
     CollectibleType.COLLECTIBLE_DEATHS_LIST,
-    CollectibleType.COLLECTIBLE_DIVORCE_PAPERS
+    CollectibleType.COLLECTIBLE_DIVORCE_PAPERS,
+    Isaac.GetItemIdByName("Origami Crow"),
+    Isaac.GetItemIdByName("Origami Bat"),
+    Isaac.GetItemIdByName("Origami Kolibri"),
+    Isaac.GetItemIdByName("Torn Hook"),
+    Isaac.GetItemIdByName("Origami Swan"),
+    Isaac.GetItemIdByName("Origami Boat"),
+    Isaac.GetItemIdByName("Origami Shuriken"),
+    Isaac.GetItemIdByName("Fortune Teller")
 }
 
 
