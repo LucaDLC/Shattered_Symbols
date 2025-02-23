@@ -2,7 +2,6 @@ local game = Game()
 local OrigamiSwanLocalID = Isaac.GetItemIdByName("Origami Swan")
 
 if EID then
-    EID:assignTransformation("collectible", OrigamiSwanLocalID, EID.TRANSFORMATION["ORIGAMI"])
     EID:addCollectible(OrigamiSwanLocalID, "{{ArrowUp}} All trinket you take become instantanely a permanent item #{{ArrowDown}} Gives 2 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 

@@ -20,7 +20,7 @@ local PAPER_ITEMS = {
 
 if EID then
     EID:createTransformation("PaperShattered", "Paper")
-    for _, item in ipairs(CLAIRVOYANT_ITEMS) then
+    for _, item in ipairs(PAPER_ITEMS) do
         EID:assignTransformation("collectible", item, "PaperShattered")
     end
 end

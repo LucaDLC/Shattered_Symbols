@@ -13,7 +13,7 @@ local RUNIC_ITEMS = {
 
 if EID then
     EID:createTransformation("RunicShattered", "Runic")
-    for _, item in ipairs(RUNIC_ITEMS) then
+    for _, item in ipairs(RUNIC_ITEMS) do
         EID:assignTransformation("collectible", item, "RunicShattered")
     end
 end
