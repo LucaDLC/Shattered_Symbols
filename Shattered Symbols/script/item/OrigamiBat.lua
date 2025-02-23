@@ -4,7 +4,6 @@ local OrigamiBatLocalID = Isaac.GetItemIdByName("Origami Bat")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:assignTransformation("collectible", OrigamiBatLocalID, EID.TRANSFORMATION["ORIGAMI"])
     EID:addCollectible(OrigamiBatLocalID, "#{{ArrowUp}} After 64 hits, heal half heart {{HalfHeart}} #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{ArrowUp}} +0.1 Speed {{Speed}} #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 

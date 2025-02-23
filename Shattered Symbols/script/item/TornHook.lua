@@ -4,7 +4,6 @@ local TornHookLocalID = Isaac.GetItemIdByName("Torn Hook")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:assignTransformation("collectible", TornHookLocalID, EID.TRANSFORMATION["ORIGAMI"])
     EID:addCollectible(TornHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart at every Floor #At every floor grants:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.3#{{ArrowUp}} Tears +0.4#{{ArrowUp}} Luck +0.2 #{{Luck}} You have same Chance as Luck to remove Torn Hooks on each floor, at the floor when Torn Hooks removed the effects not activate")
 end
 

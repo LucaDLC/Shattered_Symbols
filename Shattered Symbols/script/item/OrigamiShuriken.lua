@@ -3,7 +3,6 @@ local OrigamiShurikenLocalID = Isaac.GetItemIdByName("Origami Shuriken")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:assignTransformation("collectible", OrigamiShurikenLocalID, EID.TRANSFORMATION["ORIGAMI"])
     EID:addCollectible(OrigamiShurikenLocalID, "{{ArrowUp}} Grants +3 Damage {{Damage}}#{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 

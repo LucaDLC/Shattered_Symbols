@@ -3,7 +3,6 @@ local OrigamiKolibriLocalID = Isaac.GetItemIdByName("Origami Kolibri")
 
 
 if EID then
-    EID:assignTransformation("collectible", OrigamiKolibriLocalID, EID.TRANSFORMATION["ORIGAMI"])
     EID:addCollectible(OrigamiKolibriLocalID, "{{ArrowUp}} Duplicate all charges gained of active item for the rest of the game #{{ArrowUp}} Charge all active items #{{ArrowDown}} Does not duplicate extra charges #{{ArrowDown}} Gives 3 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 

@@ -12,7 +12,7 @@ local CLAIRVOYANT_ITEMS = {
 
 if EID then
     EID:createTransformation("ClairvoyantShattered", "Clairvoyant")
-    for _, item in ipairs(CLAIRVOYANT_ITEMS) then
+    for _, item in ipairs(CLAIRVOYANT_ITEMS) do
         EID:assignTransformation("collectible", item, "ClairvoyantShattered")
     end
 end

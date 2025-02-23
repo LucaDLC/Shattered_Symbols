@@ -3,7 +3,6 @@ local FortuneTellerLocalID = Isaac.GetItemIdByName("Fortune Teller")
 
 -- EID (se usi EID per la descrizione)
 if EID then
-    EID:assignTransformation("collectible", FortuneTellerLocalID, EID.TRANSFORMATION["ORIGAMI"])
     EID:addCollectible(FortuneTellerLocalID, "{{ArrowUp}} Grants +5 Luck {{Luck}}#{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 
