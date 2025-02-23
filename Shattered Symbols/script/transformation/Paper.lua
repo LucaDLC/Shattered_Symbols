@@ -2,11 +2,6 @@ local game = Game()
 
 -- Lista degli oggetti che compongono l'evoluzione
 local PAPER_ITEMS = {
-    CollectibleType.COLLECTIBLE_THE_PACT,
-    CollectibleType.COLLECTIBLE_MISSING_PAGE_2,
-    CollectibleType.COLLECTIBLE_CONTRACT_FROM_BELOW,
-    CollectibleType.COLLECTIBLE_DEATHS_LIST,
-    CollectibleType.COLLECTIBLE_DIVORCE_PAPERS,
     Isaac.GetItemIdByName("Origami Crow"),
     Isaac.GetItemIdByName("Origami Bat"),
     Isaac.GetItemIdByName("Origami Kolibri"),
