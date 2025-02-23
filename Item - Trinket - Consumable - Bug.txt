@@ -130,17 +130,17 @@ TRASFORMAZIONI
 BUG
 	
 
+	- Effetti delle trasformazioni non funzionanti 
+
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
 
 	- Mancano Texture, Death animation e Pillcard
 
-	- Trasformazioni non funzionanti
-
 	- Gli hooks devono essere testati con tainted Lazarus 
 
-	- Migliorare i commenti
+	- Migliorare i commenti dentro il codice e le descrizioni della EID 
 
 	- Controllare gli item per i personaggi che sono molteplici e hanno pool differenti
 

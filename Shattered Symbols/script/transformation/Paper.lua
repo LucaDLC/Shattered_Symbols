@@ -43,4 +43,4 @@ function ShatteredSymbols:PaperTransformation()
     end
 end
 
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.PaperTransformation)
+--ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.PaperTransformation)

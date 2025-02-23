@@ -41,5 +41,5 @@ function ShatteredSymbols:RunicTransformation()
     end
 end
 
--- Assegna le funzioni agli eventi
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, ShatteredSymbols.RunicTransformation)
+
+--ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, ShatteredSymbols.RunicTransformation)

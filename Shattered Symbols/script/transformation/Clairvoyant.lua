@@ -44,5 +44,5 @@ function ShatteredSymbols:ClairvoyantTransformation()
     end
 end
 
--- Assegna le funzioni agli eventi
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.ClairvoyantTransformation)
+
+--ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.ClairvoyantTransformation)
