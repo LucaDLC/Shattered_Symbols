@@ -1,16 +1,5 @@
 local game = Game()
 
-if EID then
-    EID:createTransformation("Runic", "Runic")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_CLEAR_RUNE, 5, "Runic")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_RUNE_BAG, 5, "Runic")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_MOMS_RING, 5, "Runic")
-    EID:assignTransformation(Isaac.GetItemIdByName("Runic Geode"),5, "Runic")
-    EID:assignTransformation(Isaac.GetItemIdByName("Runic Altar"),5, "Runic")
-    EID:assignTransformation(Isaac.GetItemIdByName("Unstable Glyph"),5, "Runic")
-    EID:assignTransformation(Isaac.GetItemIdByName("Onyx"),5, "Runic")
-end
-
 -- Lista degli oggetti che compongono l'evoluzione
 local RUNIC_ITEMS = {
     CollectibleType.COLLECTIBLE_CLEAR_RUNE,
@@ -22,6 +11,12 @@ local RUNIC_ITEMS = {
     Isaac.GetItemIdByName("Onyx")
 }
 
+if EID then
+    EID:createTransformation("RunicShattered", "Runic")
+    for _, item in ipairs(RUNIC_ITEMS) then
+        EID:assignTransformation("collectible", item, "RunicShattered")
+    end
+end
 
 local function HasRunicTransformation(player)
     local count = 0
@@ -38,6 +33,9 @@ function ShatteredSymbols:RunicTransformation()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         if HasRunicTransformation(player) then
+            Game():GetHUD():ShowItemText("Runic!")
+            SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
+            Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, p.Position, Vector.Zero, p)
             player.TearFlags = player.TearFlags | TearFlags.TEAR_HOMING
         end
     end

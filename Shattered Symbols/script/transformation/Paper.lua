@@ -1,22 +1,5 @@
 local game = Game()
 
-if EID then
-    EID:createTransformation("Paper", "Paper")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_THE_PACT, 5, "Paper")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_MISSING_PAGE_2, 5, "Paper")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_CONTRACT_FROM_BELOW, 5, "Paper")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_DEATHS_LIST, 5, "Paper")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_DIVORCE_PAPERS, 5, "Paper")
-    EID:assignTransformation(Isaac.GetItemIdByName("Origami Crow"), 5, "Paper")
-    EID:assignTransformation(Isaac.GetItemIdByName("Origami Bat"), 5, "Paper")
-    EID:assignTransformation(Isaac.GetItemIdByName("Origami Kolibri"), 5, "Paper")
-    EID:assignTransformation(Isaac.GetItemIdByName("Torn Hook"), 5, "Paper")
-    EID:assignTransformation(Isaac.GetItemIdByName("Origami Swan"), 5, "Paper")
-    EID:assignTransformation(Isaac.GetItemIdByName("Origami Boat"), 5, "Paper")
-    EID:assignTransformation(Isaac.GetItemIdByName("Origami Shuriken"), 5, "Paper")
-    EID:assignTransformation(Isaac.GetItemIdByName("Fortune Teller"), 5, "Paper")
-end
-
 -- Lista degli oggetti che compongono l'evoluzione
 local PAPER_ITEMS = {
     CollectibleType.COLLECTIBLE_THE_PACT,
@@ -35,6 +18,14 @@ local PAPER_ITEMS = {
 }
 
 
+if EID then
+    EID:createTransformation("PaperShattered", "Paper")
+    for _, item in ipairs(CLAIRVOYANT_ITEMS) then
+        EID:assignTransformation("collectible", item, "PaperShattered")
+    end
+end
+
+
 local function HasPaperEvolution(player)
     local count = 0
     for _, item in ipairs(PAPER_ITEMS) do
@@ -49,6 +40,9 @@ function ShatteredSymbols:PaperTransformation()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         if HasPaperEvolution(player) then
+            Game():GetHUD():ShowItemText("Paper!")
+            SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
+            Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, p.Position, Vector.Zero, p)
             player:AddBlackHearts(2)
         end
     end

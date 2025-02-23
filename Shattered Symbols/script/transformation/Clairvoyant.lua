@@ -1,15 +1,5 @@
 local game = Game()
 
-if EID then
-    EID:createTransformation("Clairvoyant", "Clairvoyant")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_DECK_OF_CARDS, 5, "Clairvoyant")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_BOOSTER_PACK, 5, "Clairvoyant")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_STARTER_DECK, 5, "Clairvoyant")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_TAROT_CLOTH, 5, "Clairvoyant")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_BLANK_CARD, 5, "Clairvoyant")
-    EID:assignTransformation(CollectibleType.COLLECTIBLE_CRYSTAL_BALL, 5, "Clairvoyant")
-end
-
 -- Lista degli oggetti che compongono l'evoluzione
 local CLAIRVOYANT_ITEMS = {
     CollectibleType.COLLECTIBLE_DECK_OF_CARDS,
@@ -19,6 +9,13 @@ local CLAIRVOYANT_ITEMS = {
     CollectibleType.COLLECTIBLE_BLANK_CARD,
     CollectibleType.COLLECTIBLE_CRYSTAL_BALL
 }
+
+if EID then
+    EID:createTransformation("ClairvoyantShattered", "Clairvoyant")
+    for _, item in ipairs(CLAIRVOYANT_ITEMS) then
+        EID:assignTransformation("collectible", item, "ClairvoyantShattered")
+    end
+end
 
 -- Funzione per contare quanti oggetti Clairvoyant possiede il giocatore
 local function HasClairvoyantTransformation(player)
@@ -36,6 +33,9 @@ function ShatteredSymbols:ClairvoyantTransformation()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         if HasClairvoyantTransformation(player) then
+            Game():GetHUD():ShowItemText("Clairvoyant!")
+            SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
+            Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, p.Position, Vector.Zero, p)
             game:ShowHallucination(2, BackdropType.NUM_BACKDROPS)
             player:AddSoulHearts(1)
         end
