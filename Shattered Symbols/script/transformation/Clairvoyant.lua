@@ -7,7 +7,9 @@ local CLAIRVOYANT_ITEMS = {
     CollectibleType.COLLECTIBLE_STARTER_DECK,
     CollectibleType.COLLECTIBLE_TAROT_CLOTH,
     CollectibleType.COLLECTIBLE_BLANK_CARD,
-    CollectibleType.COLLECTIBLE_CRYSTAL_BALL
+    CollectibleType.COLLECTIBLE_CRYSTAL_BALL,
+    Isaac.GetItemIdByName("Extra Deck of Cards"),
+    Isaac.GetItemIdByName("Upside Down Deck of Cards")
 }
 
 if EID then
