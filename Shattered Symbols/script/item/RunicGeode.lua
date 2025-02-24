@@ -6,9 +6,8 @@ if EID then
 end
 
 
-function ShatteredSymbols:UseGeode(geode, rng, player, flags, slot, data)
-	local seed = rng:Next()
-	local rune = Game():GetItemPool():GetCard(seed, false, true, true)
+function ShatteredSymbols:UseGeode(_, rng, player)
+	local rune = Game():GetItemPool():GetCard(rng:Next(), false, true, true)
 	player:AddCard(rune)
 	player:AnimateCard(rune, "Pickup")
 	return {
