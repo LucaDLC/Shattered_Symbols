@@ -54,19 +54,16 @@ local function HasClairvoyantTransformation(player)
     return count >= 3
 end
 
-
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.ClairvoyantTransformation)
-
 function ShatteredSymbols:ClairvoyantTransformation()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         local data = player:GetData()
-        if HasClairvoyantEvolution(player) and data.ClairvoyantTransformation then
+        if HasClairvoyantTransformation(player) and data.ClairvoyantTransformation then
             player:AddSoulHearts(1)
-            local selectedCard = CARDS_LIST[rng:RandomInt(#CARDS_LIST) + 1 ]
+            local selectedCard = CARDS_LIST[math.random(#CARDS_LIST)]
         
             local position = game:GetRoom():GetCenterPos()
-            Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TAROTCARD, selectedCard, position + Vector(0, 20), Vector.Zero, nil)
+            Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TAROTCARD, selectedCard, position + Vector(0, 40), Vector.Zero, nil)
         end
     end
 end
@@ -74,12 +71,12 @@ end
 function ShatteredSymbols:CheckClairvoyantTransformation(player)
     local data = player:GetData()
     if not data.ClairvoyantTransformation then data.ClairvoyantTransformation = false end
-    if not data.ClairvoyantTransformation and HasClairvoyantEvolution(player) then
+    if not data.ClairvoyantTransformation and HasClairvoyantTransformation(player) then
         Game():GetHUD():ShowItemText("Clairvoyant!")
         SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
         Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, player.Position, Vector.Zero, player)
         data.ClairvoyantTransformation = true
-    elseif data.ClairvoyantTransformation and not HasClairvoyantEvolution(player) then
+    elseif data.ClairvoyantTransformation and not HasClairvoyantTransformation(player) then
         data.ClairvoyantTransformation = false
     end
 end
