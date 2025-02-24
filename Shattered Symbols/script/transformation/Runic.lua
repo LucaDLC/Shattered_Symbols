@@ -19,7 +19,7 @@ end
 local function HasRunicTransformation(player)
     local count = 0
     for _, item in ipairs(RUNIC_ITEMS) do
-        if player:HasCollectible(item) then
+        if player:HasCollectible(item) or table.contains(player:GetData().CapturedActiveItems, item) then
             count = count + 1
         end
     end
@@ -29,6 +29,8 @@ end
 function ShatteredSymbols:RunicTransformation(player)
     local data = player:GetData()
     if not data.RunicTransformation then data.RunicTransformation = false end
+    if not data.CapturedActiveItems then data.CapturedActiveItems = {} end
+
     if not data.RunicTransformation and HasRunicTransformation(player) then
         data.RunicTransformation = true
         Game():GetHUD():ShowItemText("Runic!")
@@ -40,6 +42,16 @@ function ShatteredSymbols:RunicTransformation(player)
         data.RunicTransformation = false
         player:AddCacheFlags(CacheFlag.CACHE_TEARFLAG)
         player:EvaluateItems()
+    end
+  
+    if player:GetActiveItem() > 0 and not table.contains(data.CapturedActiveItems, player:GetActiveItem()) then
+        table.insert(data.CapturedActiveItems, player:GetActiveItem())
+    end
+    if GetSecondaryActiveItem() > 0 and not table.contains(data.CapturedActiveItems, GetSecondaryActiveItem()) then
+        table.insert(data.CapturedActiveItems, GetSecondaryActiveItem())
+    end
+    if player:GetPocketItem() > 0 and not table.contains(data.CapturedActiveItems, player:GetPocketItem()) then
+        table.insert(data.CapturedActiveItems, player:GetPocketItem())
     end
         
 end
