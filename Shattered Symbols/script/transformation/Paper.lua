@@ -5,7 +5,6 @@ local PAPER_ITEMS = {
     Isaac.GetItemIdByName("Origami Crow"),
     Isaac.GetItemIdByName("Origami Bat"),
     Isaac.GetItemIdByName("Origami Kolibri"),
-    Isaac.GetItemIdByName("Torn Hook"),
     Isaac.GetItemIdByName("Origami Swan"),
     Isaac.GetItemIdByName("Origami Boat"),
     Isaac.GetItemIdByName("Origami Shuriken"),
