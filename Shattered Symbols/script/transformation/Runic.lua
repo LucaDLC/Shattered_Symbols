@@ -7,8 +7,7 @@ local RUNIC_ITEMS = {
     CollectibleType.COLLECTIBLE_MOMS_RING,
     Isaac.GetItemIdByName("Runic Geode"),
     Isaac.GetItemIdByName("Runic Altar"),
-    Isaac.GetItemIdByName("Unstable Glyph"),
-    Isaac.GetItemIdByName("Onyx")
+    Isaac.GetItemIdByName("Unstable Glyph")
 }
 
 if EID then
