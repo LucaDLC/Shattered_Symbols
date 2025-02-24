@@ -20,7 +20,7 @@ if EID then
 end
 
 
-local function HasPaperEvolution(player)
+local function HasPaperTransformation(player)
     local count = 0
     for _, item in ipairs(PAPER_ITEMS) do
         if player:HasCollectible(item) then
@@ -34,8 +34,8 @@ function ShatteredSymbols:PaperTransformation()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         local data = player:GetData()
-        if HasPaperEvolution(player) and data.PaperTransformation then
-            player:AddBlackHearts(2)
+        if HasPaperTransformation(player) and data.PaperTransformation then
+            player:AddBlackHearts(1)
         end
     end
 end
@@ -43,12 +43,12 @@ end
 function ShatteredSymbols:CheckPaperTransformation(player)
     local data = player:GetData()
     if not data.PaperTransformation then data.PaperTransformation = false end
-    if not data.PaperTransformation and HasPaperEvolution(player) then
+    if not data.PaperTransformation and HasPaperTransformation(player) then
         Game():GetHUD():ShowItemText("Paper!")
         SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
         Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, player.Position, Vector.Zero, player)
         data.PaperTransformation = true
-    elseif data.PaperTransformation and not HasPaperEvolution(player) then
+    elseif data.PaperTransformation and not HasPaperTransformation(player) then
         data.PaperTransformation = false
     end
 end
