@@ -20,6 +20,9 @@ if EID then
 end
 
 function table.contains(table, element)
+    if not table or #table == 0 then
+        return false
+    end
     for _, value in ipairs(table) do
         if value == element then
             return true
@@ -32,14 +35,8 @@ local function HasPaperTransformation(player)
     local count = 0
     local data = player:GetData()
     for _, item in ipairs(PAPER_ITEMS) do
-        if data.CapturedActiveItems == {} then
-            if player:HasCollectible(item) then
-                count = count + 1
-            end
-        else
-            if player:HasCollectible(item) or table.contains(data.CapturedActiveItems, item) then
-                count = count + 1
-            end
+        if player:HasCollectible(item) or table.contains(data.CapturedActiveItems, item) then
+            count = count + 1
         end
     end
     return count >= 3

@@ -86,6 +86,10 @@ function ShatteredSymbols:SavePlayerData()
         local data = player:GetData()
 
         local playerDataToSave = {
+            CapturedActiveItems = data.CapturedActiveItems or {},
+            RunicTransformation = data.RunicTransformation or false,
+            PaperTransformation = data.PaperTransformation or false,
+            ClairvoyantTransformation = data.ClairvoyantTransformation or false, 
             OrigamiSwanRelative = data.OrigamiSwanRelative or 0,
             OrigamiSwanPreviousCounter = data.OrigamiSwanPreviousCounter or 1,
             OrigamiShurikenRelative = data.OrigamiShurikenRelative or 0,
@@ -145,6 +149,10 @@ function ShatteredSymbols:LoadPlayerData()
             local data = player:GetData()
             local playerDataToLoad = allPlayersData[i + 1] or {}
 
+            data.CapturedActiveItems = playerDataToLoad.CapturedActiveItems or {}
+            data.RunicTransformation = playerDataToLoad.RunicTransformation or false
+            data.PaperTransformation = playerDataToLoad.PaperTransformation or false
+            data.ClairvoyantTransformation = playerDataToLoad.ClairvoyantTransformation or false
             data.OrigamiSwanRelative = playerDataToLoad.OrigamiSwanRelative or 0
             data.OrigamiSwanPreviousCounter = playerDataToLoad.OrigamiSwanPreviousCounter or 1
             data.OrigamiShurikenRelative = playerDataToLoad.OrigamiShurikenRelative or 0
