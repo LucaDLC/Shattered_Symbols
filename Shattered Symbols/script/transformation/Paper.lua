@@ -33,13 +33,25 @@ end
 function ShatteredSymbols:PaperTransformation()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
-        if HasPaperEvolution(player) then
-            Game():GetHUD():ShowItemText("Paper!")
-            SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
-            Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, p.Position, Vector.Zero, p)
+        local data = player:GetData()
+        if HasPaperEvolution(player) and data.PaperTransformation then
             player:AddBlackHearts(2)
         end
     end
 end
 
---ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.PaperTransformation)
+function ShatteredSymbols:CheckPaperTransformation(player)
+    local data = player:GetData()
+    if not data.PaperTransformation then data.PaperTransformation = false end
+    if not data.PaperTransformation and HasPaperEvolution(player) then
+        Game():GetHUD():ShowItemText("Paper!")
+        SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
+        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, player.Position, Vector.Zero, player)
+        data.PaperTransformation = true
+    elseif data.PaperTransformation and not HasPaperEvolution(player) then
+        data.PaperTransformation = false
+    end
+end
+
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.CheckPaperTransformation)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.PaperTransformation)

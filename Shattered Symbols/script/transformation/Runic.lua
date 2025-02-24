@@ -4,7 +4,6 @@ local game = Game()
 local RUNIC_ITEMS = {
     CollectibleType.COLLECTIBLE_CLEAR_RUNE,
     CollectibleType.COLLECTIBLE_RUNE_BAG,
-    CollectibleType.COLLECTIBLE_MOMS_RING,
     Isaac.GetItemIdByName("Runic Geode"),
     Isaac.GetItemIdByName("Runic Altar"),
     Isaac.GetItemIdByName("Unstable Glyph")
@@ -27,18 +26,24 @@ local function HasRunicTransformation(player)
     return count >= 3
 end
 
--- Evento di inizio transizione tra i piani
-function ShatteredSymbols:RunicTransformation()
-    for playerIndex = 0, game:GetNumPlayers() - 1 do
-        local player = Isaac.GetPlayer(playerIndex)
-        if HasRunicTransformation(player) then
-            Game():GetHUD():ShowItemText("Runic!")
-            SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
-            Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, p.Position, Vector.Zero, p)
-            player.TearFlags = player.TearFlags | TearFlags.TEAR_HOMING
-        end
+function ShatteredSymbols:RunicTransformation(player)
+    local data = player:GetData()
+    if not data.RunicTransformation then data.RunicTransformation = false end
+    if not data.RunicTransformation and HasRunicEvolution(player) then
+        Game():GetHUD():ShowItemText("Runic!")
+        SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
+        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, player.Position, Vector.Zero, player)
+        player.TearFlags = player.TearFlags | TearFlags.TEAR_HOMING
+        player:AddCacheFlags(CacheFlag.CACHE_TEARFLAG)
+        data.RunicTransformation = true
+        player:EvaluateItems()
+    elseif data.RunicTransformation and not HasRunicEvolution(player) then
+        player.TearFlags = player.TearFlags & ~TearFlags.TEAR_HOMING
+        player:AddCacheFlags(CacheFlag.CACHE_TEARFLAG)
+        data.RunicTransformation = false
+        player:EvaluateItems()
     end
+        
 end
 
-
---ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, ShatteredSymbols.RunicTransformation)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.RunicTransformation)
