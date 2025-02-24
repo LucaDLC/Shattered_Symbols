@@ -16,11 +16,27 @@ if EID then
     end
 end
 
+function table.contains(table, element)
+    for _, value in ipairs(table) do
+        if value == element then
+            return true
+        end
+    end
+    return false
+end
+
 local function HasRunicTransformation(player)
     local count = 0
+    local data = player:GetData()
     for _, item in ipairs(RUNIC_ITEMS) do
-        if player:HasCollectible(item) or table.contains(player:GetData().CapturedActiveItems, item) then
-            count = count + 1
+        if data.CapturedActiveItems == {} then
+            if player:HasCollectible(item) then
+                count = count + 1
+            end
+        else
+            if player:HasCollectible(item) or table.contains(data.CapturedActiveItems, item) then
+                count = count + 1
+            end
         end
     end
     return count >= 3
@@ -44,14 +60,14 @@ function ShatteredSymbols:RunicTransformation(player)
         player:EvaluateItems()
     end
   
-    if player:GetActiveItem() > 0 and not table.contains(data.CapturedActiveItems, player:GetActiveItem()) then
-        table.insert(data.CapturedActiveItems, player:GetActiveItem())
+    if player:GetActiveItem(ActiveSlot.SLOT_PRIMARY) ~= 0 and not table.contains(data.CapturedActiveItems, player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)) then
+        table.insert(data.CapturedActiveItems, player:GetActiveItem(ActiveSlot.SLOT_PRIMARY))
     end
-    if GetSecondaryActiveItem() > 0 and not table.contains(data.CapturedActiveItems, GetSecondaryActiveItem()) then
-        table.insert(data.CapturedActiveItems, GetSecondaryActiveItem())
+    if player:GetActiveItem(ActiveSlot.SLOT_SECONDARY) ~= 0 and not table.contains(data.CapturedActiveItems, player:GetActiveItem(ActiveSlot.SLOT_SECONDARY)) then
+        table.insert(data.CapturedActiveItems, player:GetActiveItem(ActiveSlot.SLOT_SECONDARY))
     end
-    if player:GetPocketItem() > 0 and not table.contains(data.CapturedActiveItems, player:GetPocketItem()) then
-        table.insert(data.CapturedActiveItems, player:GetPocketItem())
+    if player:GetActiveItem(ActiveSlot.SLOT_POCKET) ~= 0 and not table.contains(data.CapturedActiveItems, player:GetActiveItem(ActiveSlot.SLOT_POCKET)) then
+        table.insert(data.CapturedActiveItems, player:GetActiveItem(ActiveSlot.SLOT_POCKET))
     end
         
 end
