@@ -130,7 +130,7 @@ TRASFORMAZIONI
 BUG
 	
 
-	- Effetti delle trasformazioni non funzionanti 
+	- Runic Geode spawna occasionalmente delle carte, da fixare
 
 
 ---------------------------------------------------------------------
