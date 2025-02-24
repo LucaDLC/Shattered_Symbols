@@ -47,7 +47,7 @@ end
 local function HasClairvoyantTransformation(player)
     local count = 0
     for _, item in ipairs(CLAIRVOYANT_ITEMS) do
-        if player:HasCollectible(item) then
+        if player:HasCollectible(item) or table.contains(player:GetData().CapturedActiveItems, item) then
             count = count + 1
         end
     end
@@ -71,6 +71,8 @@ end
 function ShatteredSymbols:CheckClairvoyantTransformation(player)
     local data = player:GetData()
     if not data.ClairvoyantTransformation then data.ClairvoyantTransformation = false end
+    if not data.CapturedActiveItems then data.CapturedActiveItems = {} end
+
     if not data.ClairvoyantTransformation and HasClairvoyantTransformation(player) then
         Game():GetHUD():ShowItemText("Clairvoyant!")
         SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
@@ -78,6 +80,16 @@ function ShatteredSymbols:CheckClairvoyantTransformation(player)
         data.ClairvoyantTransformation = true
     elseif data.ClairvoyantTransformation and not HasClairvoyantTransformation(player) then
         data.ClairvoyantTransformation = false
+    end
+
+    if player:GetActiveItem() > 0 and not table.contains(data.CapturedActiveItems, player:GetActiveItem()) then
+        table.insert(data.CapturedActiveItems, player:GetActiveItem())
+    end
+    if GetSecondaryActiveItem() > 0 and not table.contains(data.CapturedActiveItems, GetSecondaryActiveItem()) then
+        table.insert(data.CapturedActiveItems, GetSecondaryActiveItem())
+    end
+    if player:GetPocketItem() > 0 and not table.contains(data.CapturedActiveItems, player:GetPocketItem()) then
+        table.insert(data.CapturedActiveItems, player:GetPocketItem())
     end
 end
 

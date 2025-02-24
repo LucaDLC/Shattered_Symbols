@@ -23,7 +23,7 @@ end
 local function HasPaperTransformation(player)
     local count = 0
     for _, item in ipairs(PAPER_ITEMS) do
-        if player:HasCollectible(item) then
+        if player:HasCollectible(item) or table.contains(player:GetData().CapturedActiveItems, item) then
             count = count + 1
         end
     end
@@ -43,6 +43,8 @@ end
 function ShatteredSymbols:CheckPaperTransformation(player)
     local data = player:GetData()
     if not data.PaperTransformation then data.PaperTransformation = false end
+    if not data.CapturedActiveItems then data.CapturedActiveItems = {} end
+
     if not data.PaperTransformation and HasPaperTransformation(player) then
         Game():GetHUD():ShowItemText("Paper!")
         SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
@@ -50,6 +52,16 @@ function ShatteredSymbols:CheckPaperTransformation(player)
         data.PaperTransformation = true
     elseif data.PaperTransformation and not HasPaperTransformation(player) then
         data.PaperTransformation = false
+    end
+
+    if player:GetActiveItem() > 0 and not table.contains(data.CapturedActiveItems, player:GetActiveItem()) then
+        table.insert(data.CapturedActiveItems, player:GetActiveItem())
+    end
+    if GetSecondaryActiveItem() > 0 and not table.contains(data.CapturedActiveItems, GetSecondaryActiveItem()) then
+        table.insert(data.CapturedActiveItems, GetSecondaryActiveItem())
+    end
+    if player:GetPocketItem() > 0 and not table.contains(data.CapturedActiveItems, player:GetPocketItem()) then
+        table.insert(data.CapturedActiveItems, player:GetPocketItem())
     end
 end
 
