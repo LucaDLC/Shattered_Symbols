@@ -115,13 +115,13 @@ TRINKET
 TRASFORMAZIONI
 
 	- Paper (3 origami)
-	Da 1 Black Heart a piano
+	Da Mezzo Black Heart a piano
 
 	- Runic (3 oggetti delle rune)
 	Ottieni Homing Tears
 
 	- Clairvoyant (3 oggetti delle carte)
-	Ottieni il potere del Dream Catcher di sapere cosa c'è nel piano successivo 
+	Ad ogni piano, spawna un consumabile
 
 
 ====================================================================
