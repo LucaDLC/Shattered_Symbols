@@ -130,8 +130,6 @@ TRASFORMAZIONI
 BUG
 	
 
-	- Runic Geode spawna occasionalmente delle carte, da fixare
-
 
 ---------------------------------------------------------------------
 COSE MANCANTI E DA RIGUARDARE
