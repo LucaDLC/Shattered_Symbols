@@ -138,18 +138,14 @@ COSE MANCANTI E DA RIGUARDARE
 
 	- Gli hooks devono essere testati con tainted Lazarus 
 
-	- Migliorare i commenti dentro il codice e le descrizioni della EID 
+	- Migliorare le descrizioni della EID 
 
 	- Controllare gli item per i personaggi che sono molteplici e hanno pool differenti
-
-	- Mancano le descrizioni con il Book of Virtues
 
 
 ---------------------------------------------------------------------
 BILANCIAMENTI
 
 	- Rivisitare Item Pool 
-
-	- Rivedere bene i tag degli Item
 
 
