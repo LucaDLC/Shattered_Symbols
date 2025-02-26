@@ -3,17 +3,23 @@ local SacredLanternLocalID = Isaac.GetItemIdByName("Sacred Lantern")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(SacredLanternLocalID, "{{ArrowUp}} Remove all your broken hearts {{BrokenHeart}} #For every broken heart {{BrokenHeart}} removed you obtain:#{{HalfSoulHeart}} Half Soul Heart")
+    EID:addCollectible(SacredLanternLocalID, "{{ArrowUp}} Remove all your broken hearts {{BrokenHeart}} #For every broken heart {{BrokenHeart}} removed you obtain:#{{HalfSoulHeart}} Half Soul Heart #{{Player14}} Full Coin Heart")
 end
 
 function ShatteredSymbols:useSacredLantern(_, rng, player)
 
     if player:HasCollectible(SacredLanternLocalID) then
         local brokenHearts = player:GetBrokenHearts() 
+        local playerType = player:GetPlayerType()
         if brokenHearts > 0 then
             for i = 1, brokenHearts do
-                player:AddSoulHearts(1) 
                 player:AddBrokenHearts(-1) 
+                if (playerType == PlayerType.PLAYER_KEEPER or playerType == PlayerType.PLAYER_KEEPER_B) then
+                    player:AddMaxHearts(2)
+                    player:AddHearts(2)
+                else
+                    player:AddSoulHearts(1) 
+                end         
             end
         end
         
