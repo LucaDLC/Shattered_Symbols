@@ -132,20 +132,16 @@ BUG
 
 
 ---------------------------------------------------------------------
-COSE MANCANTI E DA RIGUARDARE
+COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
 	- Mancano Texture, Death animation e Pillcard
 
-	- Gli hooks devono essere testati con tainted Lazarus 
+	- Gli oggetti devono essere testati con tainted Lazarus 
 
 	- Migliorare le descrizioni della EID 
 
-	- Controllare gli item per i personaggi che sono molteplici e hanno pool differenti
-
-
----------------------------------------------------------------------
-BILANCIAMENTI
-
 	- Rivisitare Item Pool 
+
+	
 
 
