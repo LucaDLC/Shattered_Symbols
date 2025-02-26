@@ -1,12 +1,11 @@
 local game = Game()
 local ConstellationLocalID = Isaac.GetItemIdByName("Constellation")
 
---EID
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(ConstellationLocalID, "{{Warning}} SINGLE USE {{Warning}}#Spawns a random item from planetarium pool or zodiac signs")
 end
 
--- Liste degli oggetti zodiacali e del planetario
 local zodiac_items = {
     CollectibleType.COLLECTIBLE_ARIES,
     CollectibleType.COLLECTIBLE_TAURUS,
@@ -40,9 +39,9 @@ local planetarium_items = {
 
 local Constellation_Table = {}
 
--- Funzione per gestire l'uso dell'oggetto "Fortune Teller"
+
 function ShatteredSymbols:useConstellation(_, rng, player)
-    -- Svuota la tabella ogni volta che l'oggetto viene usato
+    
     Constellation_Table = {}
     for _, v in pairs(zodiac_items) do
         table.insert(Constellation_Table, v)
@@ -50,10 +49,10 @@ function ShatteredSymbols:useConstellation(_, rng, player)
     for _, v in pairs(planetarium_items) do
         table.insert(Constellation_Table, v)
     end
-    -- Scegli un oggetto casuale dalla lista combinata
+    
     local selectedItem = Constellation_Table[rng:RandomInt(#Constellation_Table) + 1]
 
-    -- Spawna l'oggetto scelto nella stanza
+
     local spawnPosition = game:GetRoom():FindFreePickupSpawnPosition(player.Position, 40, true)
     Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, selectedItem, spawnPosition, Vector(0, 0), nil)
     
@@ -66,7 +65,6 @@ function ShatteredSymbols:useConstellation(_, rng, player)
     }
 end
 
--- Funzione di inizializzazione della mod
 function ShatteredSymbols:onGameStartConstellation()
     local Constellation_Table = {}
 end

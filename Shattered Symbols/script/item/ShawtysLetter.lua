@@ -1,12 +1,10 @@
 local game = Game()
 local ShawtysLetterLocalID = Isaac.GetItemIdByName("Shawty's Letter")
 
---EID
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(ShawtysLetterLocalID, "{{Warning}} SINGLE USE {{Warning}}#Spawns a random origami item")
 end
-
--- Liste degli oggetti zodiacali e del planetario
 
 local Origami_items = {
     Isaac.GetItemIdByName("Fortune Teller"),
@@ -21,18 +19,14 @@ local Origami_items = {
 
 local Shawty_Table = {}
 
--- Funzione per gestire l'uso dell'oggetto "Fortune Teller"
 function ShatteredSymbols:useShawtysLetter(_, rng, player)
-    -- Svuota la tabella ogni volta che l'oggetto viene usato
     Shawty_Table = {}
 
     for _, v in pairs(Origami_items) do
         table.insert(Shawty_Table, v)
     end
-    -- Scegli un oggetto casuale dalla lista combinata
     local selectedItem = Shawty_Table[rng:RandomInt(#Shawty_Table) + 1]
 
-    -- Spawna l'oggetto scelto nella stanza
     local spawnPosition = game:GetRoom():FindFreePickupSpawnPosition(player.Position, 40, true)
     Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, selectedItem, spawnPosition, Vector(0, 0), nil)
     
@@ -45,7 +39,6 @@ function ShatteredSymbols:useShawtysLetter(_, rng, player)
     }
 end
 
--- Funzione di inizializzazione della mod
 function ShatteredSymbols:onGameStartShawtysLetter()
     local Shawty_Table = {}
 end

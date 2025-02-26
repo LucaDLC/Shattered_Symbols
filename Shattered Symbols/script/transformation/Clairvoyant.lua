@@ -36,6 +36,7 @@ local CARDS_LIST = {
     Card.CARD_HUMANITY, Card.CARD_GET_OUT_OF_JAIL, Card.CARD_HOLY, Card.CARD_WILD, Card.CARD_EMERGENCY_CONTACT
 }
 
+-- EID (External Item Descriptions)
 if EID then
     EID:createTransformation("ClairvoyantShattered", "Clairvoyant")
     for _, item in ipairs(CLAIRVOYANT_ITEMS) do

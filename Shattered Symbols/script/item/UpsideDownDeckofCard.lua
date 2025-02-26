@@ -2,12 +2,11 @@ local game = Game()
 local UpsideDownDeckofCardsLocalID = Isaac.GetItemIdByName("Upside Down Deck of Cards")
 local DeckofCardID = Isaac.GetItemIdByName("Deck of Cards")
 
---EID
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(UpsideDownDeckofCardsLocalID, "{{Card}} Spawns 1 reverse card #{{Collectible85}} After use it goes back to being the Deck of Cards")
 end
 
--- Definisci la funzione per l'utilizzo dell'item
 function ShatteredSymbols:useUpsideDownDeckCard(_, rng, player)
     local reverseCards = {
         Card.CARD_REVERSE_FOOL, Card.CARD_REVERSE_MAGICIAN, Card.CARD_REVERSE_HIGH_PRIESTESS,
@@ -20,7 +19,6 @@ function ShatteredSymbols:useUpsideDownDeckCard(_, rng, player)
         Card.CARD_REVERSE_WORLD
     }
 
-    -- Droppa una carta casuale dal pool delle carte reverse
     local card = reverseCards[math.random(#reverseCards)]
     player:AddCard(card)
     player:AnimateCard(card, "Pickup")

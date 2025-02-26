@@ -1,6 +1,5 @@
 local game = Game()
 
--- Lista degli oggetti che compongono l'evoluzione
 local RUNIC_ITEMS = {
     CollectibleType.COLLECTIBLE_CLEAR_RUNE,
     CollectibleType.COLLECTIBLE_RUNE_BAG,
@@ -9,6 +8,7 @@ local RUNIC_ITEMS = {
     Isaac.GetItemIdByName("Unstable Glyph")
 }
 
+-- EID (External Item Descriptions)
 if EID then
     EID:createTransformation("RunicShattered", "Runic")
     for _, item in ipairs(RUNIC_ITEMS) do

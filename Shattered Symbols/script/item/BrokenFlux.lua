@@ -2,17 +2,17 @@ local game = Game()
 local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
 local OrigamiCrowExternalID = Isaac.GetItemIdByName("Origami Crow")
 
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(BrokenFluxLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowDown}} If the absorbed Broken Hearts have replaced Hearts, these are not returned")
 end
 
 function ShatteredSymbols:havingBrokenFlux(player)
-    -- Get the player's data table
     local data = player:GetData()
     if not data.BrokenFluxPreviousBrokenHearts then data.BrokenFluxPreviousBrokenHearts = -1 end
 
     if player:HasCollectible(BrokenFluxLocalID) then
-        for i = 0, 3 do -- Check all active item slots
+        for i = 0, 3 do 
             local activeItem = player:GetActiveItem(i)
             if activeItem ~= 0 and activeItem == BrokenFluxLocalID then
                 local currentBrokenHearts = player:GetBrokenHearts()
@@ -62,7 +62,7 @@ function getRoomIndexByType(roomType)
     for i = 0, rooms.Size - 1 do
         local roomDesc = rooms:Get(i)
         if roomDesc and roomDesc.Data and roomDesc.Data.Type == roomType then
-            return roomDesc.SafeGridIndex -- Restituisce l'indice sicuro per il teletrasporto
+            return roomDesc.SafeGridIndex 
         end
     end
     return nil
