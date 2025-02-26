@@ -2,17 +2,17 @@
 local game = Game()
 local TornHookLocalID = Isaac.GetItemIdByName("Torn Hook")
 
--- EID (se usi EID per la descrizione)
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(TornHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart at every Floor #At every floor grants:#{{ArrowUp}} Damage +0.3#{{ArrowUp}} Speed +0.1#{{ArrowUp}} Range +0.3#{{ArrowUp}} Tears +0.4#{{ArrowUp}} Luck +0.2 #{{Luck}} You have same Chance as Luck to remove Torn Hooks on each floor, at the floor when Torn Hooks removed the effects not activate")
 end
 
 local statMultiplier = {
-    damage = 0.3,  -- +0.3 Damage per ogni broken heart
-    speed = 0.1,   -- +0.1 Speed per ogni broken heart
-    range = 12,    -- +0.3 Range per ogni broken heart
-    tears = 0.4,   -- +0.4 Fire Rate per ogni broken heart
-    luck = 0.2,    -- +0.2 Luck per ogni broken heart
+    damage = 0.3,  -- +0.3 Damage 
+    speed = 0.1,   -- +0.1 Speed 
+    range = 12,    -- +0.3 Range 
+    tears = 0.4,   -- +0.4 Fire Rate 
+    luck = 0.2,    -- +0.2 Luck 
 }
 
 function ShatteredSymbols:onTornHook()

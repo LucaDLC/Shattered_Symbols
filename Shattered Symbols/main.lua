@@ -85,6 +85,7 @@ function ShatteredSymbols:SavePlayerData()
         local player = Isaac.GetPlayer(i)
         local data = player:GetData()
 
+        --Specific Player Data
         local playerDataToSave = {
             CapturedActiveItems = data.CapturedActiveItems or {},
             RunicTransformation = data.RunicTransformation or false,
@@ -118,7 +119,7 @@ function ShatteredSymbols:SavePlayerData()
             OnyxItemEffectID = data.OnyxItemEffectID or {},
         }
 
-        -- Specifiche per il giocatore 0
+        -- Shared Data
         if i == 0 then
             playerDataToSave.BrokenBoxHeartFlag = data.BrokenBoxHeartFlag or false
             playerDataToSave.BrokenBoxItemFlag = data.BrokenBoxItemFlag or nil
@@ -149,6 +150,7 @@ function ShatteredSymbols:LoadPlayerData()
             local data = player:GetData()
             local playerDataToLoad = allPlayersData[i + 1] or {}
 
+            -- Specific Player Data
             data.CapturedActiveItems = playerDataToLoad.CapturedActiveItems or {}
             data.RunicTransformation = playerDataToLoad.RunicTransformation or false
             data.PaperTransformation = playerDataToLoad.PaperTransformation or false
@@ -180,7 +182,7 @@ function ShatteredSymbols:LoadPlayerData()
             data.RunicAltarEffects = playerDataToLoad.RunicAltarEffects or {}
             data.OnyxItemEffectID = playerDataToLoad.OnyxItemEffectID or {}
 
-            -- Specifiche per il giocatore 0
+            -- Shared Data
             if i == 0 then
                 data.BrokenBoxHeartFlag = playerDataToLoad.BrokenBoxHeartFlag or false
                 data.BrokenBoxItemFlag = playerDataToLoad.BrokenBoxItemFlag or nil

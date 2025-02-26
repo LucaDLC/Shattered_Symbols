@@ -2,7 +2,7 @@
 local game = Game()
 local AncientHookLocalID = Isaac.GetItemIdByName("Ancient Hook")
 
--- EID (se usi EID per la descrizione)
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart at every Floor #Every floor you have 15% of chance for each Ancient Hook of spawn Death Certificate #{{Luck}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
 end

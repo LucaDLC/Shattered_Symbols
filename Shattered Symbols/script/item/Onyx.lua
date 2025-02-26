@@ -1,7 +1,7 @@
 local game = Game()
 local OnyxLocalID = Isaac.GetItemIdByName("Onyx")
 
--- EID (se usi EID per la descrizione)
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(OnyxLocalID, "{{Collectible}} On each floor, it mutates into a different collectible effect")
 end
@@ -19,7 +19,6 @@ local function GetRandomPassiveItem()
     if #passiveItems > 0 then return passiveItems[math.random(#passiveItems)] else return nil end
 end
 
--- Callback chiamato ad ogni nuovo piano
 function ShatteredSymbols:OnNewLevelOnyx()
     for pl = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(pl)
@@ -37,13 +36,11 @@ function ShatteredSymbols:OnNewLevelOnyx()
                     table.remove(data.OnyxItemEffectID, i)
                 end
             end
-            -- Aggiungiamo un nuovo effetto per ogni Onyx raccolto
             for i = 1, player:GetCollectibleNum(OnyxLocalID) do
                 local newEffect = GetRandomPassiveItem()
                 table.insert(data.OnyxItemEffectID, newEffect)
                 player:AddCollectible(newEffect)
             end
-            -- Rimuoviamo tutte le copie di Onyx dalla collezione del giocatore
             while player:HasCollectible(OnyxLocalID) do
                 player:RemoveCollectible(OnyxLocalID)
             end

@@ -1,14 +1,12 @@
 local game = Game()
 local FortuneTellerLocalID = Isaac.GetItemIdByName("Fortune Teller")
 
--- EID (se usi EID per la descrizione)
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(FortuneTellerLocalID, "{{ArrowUp}} Grants +5 Luck {{Luck}}#{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 
--- Function to handle item pickup
 function ShatteredSymbols:useFortuneTeller(player)
-    -- Get the player's data table
     local data = player:GetData()
     local FortuneTellerCounter = player:GetCollectibleNum(FortuneTellerLocalID)
     
@@ -18,12 +16,11 @@ function ShatteredSymbols:useFortuneTeller(player)
     
     if player:HasCollectible(FortuneTellerLocalID) then
         
-        -- Apply the effect based on the number of items picked up
         if FortuneTellerCounter >= data.FortuneTellerPreviousCounter then
             data.FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter + 1
             data.FortuneTellerRelative = data.FortuneTellerRelative + 1
-            player:AddBrokenHearts(1) -- Add 1 broken heart
-            data.FortuneTellerLuckBoost = 5*data.FortuneTellerRelative -- Track the permanent damage boost
+            player:AddBrokenHearts(1) 
+            data.FortuneTellerLuckBoost = 5*data.FortuneTellerRelative 
             player:AddCacheFlags(CacheFlag.CACHE_LUCK)
             player:EvaluateItems()
         end
@@ -36,7 +33,6 @@ function ShatteredSymbols:useFortuneTeller(player)
     end
 end
 
--- Function to handle cache update
 function ShatteredSymbols:onEvaluateCacheFortuneTeller(player, cacheFlag)
     local data = player:GetData()
     if cacheFlag == CacheFlag.CACHE_LUCK then

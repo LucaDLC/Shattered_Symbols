@@ -1,7 +1,7 @@
 local game = Game()
 local OrigamiCrowLocalID = Isaac.GetItemIdByName("Origami Crow")
 
--- EID (se usi EID per la descrizione)
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Move primary active item to pocket item if you don't have one or if previous pocket item disappear #{{ArrowUp}} If you don't have active item, first one that you take become the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts which does not replace Heart #{{Warning}} If you take item that give you pocket item, this one overwrite your pocket item that you have moved before")
 end
@@ -17,19 +17,15 @@ local function toPocket(player)
 
 end
 
--- Function to handle item pickup
 function ShatteredSymbols:useOrigamiCrow(player)
-    -- Get the player's data table
     local data = player:GetData()
     local OrigamiCrowCounter = player:GetCollectibleNum(OrigamiCrowLocalID)
 
     if not data.OrigamiCrowRelative then data.OrigamiCrowRelative = 0 end
     if not data.OrigamiCrowPreviousCounter then data.OrigamiCrowPreviousCounter = 1 end
 
-    -- Check if the player has picked up the item
     if player:HasCollectible(OrigamiCrowLocalID) then
         
-        -- Apply the effect based on the number of items picked up
         if OrigamiCrowCounter >= data.OrigamiCrowPreviousCounter then
             data.OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter + 1
             data.OrigamiCrowRelative = data.OrigamiCrowRelative + 1

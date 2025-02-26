@@ -1,13 +1,12 @@
 local game = Game()
 local ForbiddenSoulLocalID = Isaac.GetItemIdByName("Forbidden Soul")
 
--- EID (se usi EID per la descrizione)
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(ForbiddenSoulLocalID, "{{GoldenHeart}} Grant every room a Golden Heart if you don't have one #{{Player10}} {{Player31}} Give 1 Wisp every first visit in a room with 15% chance to inflicting Midas'Touch {{Collectible202}} effect")
 end
 
 
--- Callback per applicare il golden heart all'inizio di ogni stanza
 function ShatteredSymbols:useForbidenSoul()
     for i = 0, Game():GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(i)

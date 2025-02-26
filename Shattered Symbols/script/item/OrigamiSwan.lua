@@ -1,6 +1,7 @@
 local game = Game()
 local OrigamiSwanLocalID = Isaac.GetItemIdByName("Origami Swan")
 
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(OrigamiSwanLocalID, "{{ArrowUp}} All trinket you take become instantanely a permanent item #{{ArrowDown}} Gives 2 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
@@ -14,9 +15,9 @@ function ShatteredSymbols:useOrigamiSwan(player)
     if not data.OrigamiSwanPreviousCounter then data.OrigamiSwanPreviousCounter = 1 end
 
     if player:HasCollectible(OrigamiSwanLocalID) then
-        for i = 0, 1 do  -- Controlla entrambi gli slot dei trinket
+        for i = 0, 1 do  
             local trinketID = player:GetTrinket(i)
-            if trinketID ~= 0 then  -- Se c'è un trinket nello slot
+            if trinketID ~= 0 then  
                 player:TryRemoveTrinket(trinketID)
                 player:AddSmeltedTrinket(trinketID)
                 SFXManager():Play(SoundEffect.SOUND_VAMP_GULP)
@@ -36,5 +37,4 @@ function ShatteredSymbols:useOrigamiSwan(player)
     end
 end
 
--- Registra la funzione che si attiva continuamente
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.useOrigamiSwan)

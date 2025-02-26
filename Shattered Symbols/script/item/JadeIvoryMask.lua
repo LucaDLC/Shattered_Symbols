@@ -9,7 +9,7 @@ for _, v in ipairs(itemIgnoreList) do
     itemIgnoreSet[v] = true
 end
 
-
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(JadeIvoryMaskLocalID, "{{Collectible}} On each floor, there is a 40% chance to upgrade a random item you have previously picked up (only items with quality 3 or lower) into a random item with quality increased by 1")
 end

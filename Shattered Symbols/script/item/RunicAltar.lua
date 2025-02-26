@@ -1,6 +1,7 @@
 local game = Game()
 local RunicAltarLocalID = Isaac.GetItemIdByName("Runic Altar")
 
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(RunicAltarLocalID, "{{Rune}} When you hold the item, after using Rune or Soul Stone, the item charging #{{Rune}} At the Use, repeat effects of absorbed runes used to charging it")
 end
@@ -11,14 +12,13 @@ local function IsRune(card)
 end
 
 function ShatteredSymbols:havingRunicAltar(card, player, flags)
-    -- Get the player's data table
     local data = player:GetData()
     if not data.RunicAltarEffects then data.RunicAltarEffects = {} end
 
     if player:HasCollectible(RunicAltarLocalID) and IsRune(card) and #data.RunicAltarEffects < 3 then
         table.insert(data.RunicAltarEffects, card)
 
-        for i = 0, 3 do -- Check all active item slots
+        for i = 0, 3 do 
             local activeItem = player:GetActiveItem(i)
 
             if activeItem ~= 0 and activeItem == RunicAltarLocalID then
@@ -35,7 +35,6 @@ function ShatteredSymbols:useRunicAltar(_, rng, player)
     if player:HasCollectible(RunicAltarLocalID) then
         
         for _, RuneInAltar in ipairs(data.RunicAltarEffects or {}) do
-            -- Attiva l'effetto della runa
             player:UseCard(RuneInAltar, UseFlag.USE_NOANIM | UseFlag.USE_NOHUD)
         end
         

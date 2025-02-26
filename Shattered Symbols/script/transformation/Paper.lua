@@ -11,7 +11,7 @@ local PAPER_ITEMS = {
     Isaac.GetItemIdByName("Fortune Teller")
 }
 
-
+-- EID (External Item Descriptions)
 if EID then
     EID:createTransformation("PaperShattered", "Paper")
     for _, item in ipairs(PAPER_ITEMS) do

@@ -2,7 +2,7 @@
 local game = Game()
 local PyriteLocalID = Isaac.GetItemIdByName("Pyrite")
 
--- EID (se usi EID per la descrizione)
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(PyriteLocalID, "{{Coin}} All coins turn into Golden Pennies #{{ArrowDown}} Your coins reset to 0 at the start of each floor")
 end

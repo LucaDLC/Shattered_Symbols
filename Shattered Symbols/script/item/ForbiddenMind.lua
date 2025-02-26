@@ -1,7 +1,7 @@
 local game = Game()
 local ForbiddenMindLocalID = Isaac.GetItemIdByName("Forbidden Mind")
 
--- EID (se usi EID per la descrizione)
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(ForbiddenMindLocalID, "{{Room}} After clearing a Room have 33% to open Red Rooms around it")
 end

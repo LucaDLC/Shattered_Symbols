@@ -6,7 +6,7 @@ if EID then
     EID:addCollectible(BrokenBoxLocalID, "{{Warning}} SINGLE USE {{Warning}} #If empty, the box takes up to maximum of: #{{BrokenHeart}} 1 Broken Heart #{{Collectible}} 1 Item #{{Coin}} 10 Coins #{{Bomb}} 1 Bomb #{{Key}} 1 Key #If full, the box gives you everything it took before #{{ArrowDown}} If you don't have nothing to take, the box vanish and it's considered like empty")
 end
 
--- Funzione per gestire l'uso dell'oggetto "Broken Box"
+
 function ShatteredSymbols:useBrokenBox(_, rng, player)
     local SetterData = Isaac.GetPlayer(0)
     local data = SetterData:GetData()
@@ -19,7 +19,7 @@ function ShatteredSymbols:useBrokenBox(_, rng, player)
     if data.BrokenBoxKeyFlag == nil then data.BrokenBoxKeyFlag = 0 end
     if data.BrokenBoxStatus == nil then data.BrokenBoxStatus = false end
 
-    -- Se l'oggetto è usato la prima volta (vuoto)
+    -- Empty Box
     if player:HasCollectible(BrokenBoxLocalID) and not data.BrokenBoxStatus then
         if player:GetBrokenHearts() > 0 then
             player:AddBrokenHearts(-1)
@@ -57,7 +57,7 @@ function ShatteredSymbols:useBrokenBox(_, rng, player)
 
         SFXManager():Play(SoundEffect.SOUND_DOOR_HEAVY_CLOSE)
 
-    -- Se l'oggetto è usato di nuovo (pieno)
+    -- Full Box
     elseif player:HasCollectible(BrokenBoxLocalID) and data.BrokenBoxStatus then
         if data.BrokenBoxHeartFlag then
             player:AddBrokenHearts(1)
@@ -88,7 +88,7 @@ function ShatteredSymbols:useBrokenBox(_, rng, player)
             data.BrokenBoxKeyFlag = 0
         end
 
-        data.BrokenBoxStatus = false  -- Reimposta lo stato a vuoto
+        data.BrokenBoxStatus = false  
     end
 
     SFXManager():Play(SoundEffect.SOUND_DOOR_HEAVY_OPEN)

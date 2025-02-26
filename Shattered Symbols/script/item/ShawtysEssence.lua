@@ -40,22 +40,22 @@ function ShatteredSymbols:useShawtysEssence(_, rng, player)
             local slotRemoved = false
 
             if player:GetMaxHearts() >= 2 and not slotRemoved then
-                player:AddMaxHearts(-2)  -- Rimuove mezzo cuore rosso
+                player:AddMaxHearts(-2)  
                 slotRemoved = true
             end
 
             if not slotRemoved and player:GetBoneHearts() >= 1 then
-                player:AddBoneHearts(-1)  -- Rimuove un cuore osso intero
+                player:AddBoneHearts(-1) 
                 slotRemoved = true
             end
 
             if not slotRemoved and player:GetSoulHearts() >= 2 then
-                player:AddSoulHearts(-2)  -- Rimuove mezzo cuore dell'anima
+                player:AddSoulHearts(-2)  
                 slotRemoved = true
             end
 
             if not slotRemoved and player:GetBlackHearts() >= 2 then
-                player:AddBlackHearts(-2)  -- Rimuove mezzo cuore nero
+                player:AddBlackHearts(-2)  
                 slotRemoved = true
             end
 

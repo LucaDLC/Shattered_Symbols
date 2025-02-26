@@ -8,11 +8,10 @@ if EID then
     EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{ArrowUp}} Remove all Hooks, remove 1 Broken Heart and give 1 Full Heart for each Hook #{{ArrowDown}} If you don't have any hooks, it gives you one")
 end
 
--- Funzione per gestire l'uso dell'oggetto "Wriggling Shadow"
+
 function ShatteredSymbols:useWrigglingShadow(_, rng, player)
     if (player:HasCollectible(TornHookExternalID) or player:HasCollectible(AncientHookExternalID)) and player:HasCollectible(WrigglingShadowLocalID) then
 
-        -- Rimuove tutti gli oggetti Torn Hook
         for i = 1, player:GetCollectibleNum(TornHookExternalID) do
             player:RemoveCollectible(TornHookExternalID)
             player:AddBrokenHearts(-1)
@@ -39,7 +38,6 @@ function ShatteredSymbols:useWrigglingShadow(_, rng, player)
         Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PURGATORY, 0, player.Position, Vector(0,0), player)
     end
 
-    -- Rimuove l'oggetto Wriggling Shadow dopo l'uso
     return {
         Discharge = true,
         Remove = true,

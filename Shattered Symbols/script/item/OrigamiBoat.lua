@@ -1,20 +1,19 @@
 local game = Game()
 local OrigamiBoatLocalID = Isaac.GetItemIdByName("Origami Boat")
 
+-- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(OrigamiBoatLocalID, "Every broken heart {{BrokenHeart}} grants:#{{ArrowUp}} Damage +0.6#{{ArrowUp}} Speed +0.2#{{ArrowUp}} Range +0.5#{{ArrowUp}} Tears +0.5#{{ArrowUp}} Luck +0.3")
 end
 
--- Valori base per l'aumento delle statistiche
 local statMultiplier = {
-    damage = 0.6,  -- +0.6 Damage per ogni broken heart
-    speed = 0.2,   -- +0.2 Speed per ogni broken heart
-    range = 20,    -- +0.5 Range per ogni broken heart
-    tears = 0.5,   -- +0.5 Fire Rate per ogni broken heart
-    luck = 0.3,    -- +0.3 Luck per ogni broken heart
+    damage = 0.6,  -- +0.6 Damage 
+    speed = 0.2,   -- +0.2 Speed 
+    range = 20,    -- +0.5 Range 
+    tears = 0.5,   -- +0.5 Fire Rate
+    luck = 0.3,    -- +0.3 Luck 
 }
 
--- Funzione che aggiorna le statistiche del giocatore
 function ShatteredSymbols:useOrigamiBoat(player)
     local data = player:GetData()
 
@@ -26,7 +25,6 @@ function ShatteredSymbols:useOrigamiBoat(player)
         if currentBrokenHearts ~= data.OrigamiBoatBrokenHeartsCount then
             local diff = currentBrokenHearts - data.OrigamiBoatBrokenHeartsCount
 
-            -- Aumenta o riduci le stats in base alla differenza di broken hearts
             player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
             player:AddCacheFlags(CacheFlag.CACHE_SPEED)
             player:AddCacheFlags(CacheFlag.CACHE_RANGE)
@@ -34,7 +32,6 @@ function ShatteredSymbols:useOrigamiBoat(player)
             player:AddCacheFlags(CacheFlag.CACHE_LUCK)
             player:EvaluateItems()
 
-            -- Aggiorna il conteggio di broken hearts
             data.OrigamiBoatBrokenHeartsCount = currentBrokenHearts
         end
     elseif not player:HasCollectible(OrigamiBoatLocalID) and data.OrigamiBoatHoldingItemforStats == true then
