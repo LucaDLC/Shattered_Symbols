@@ -138,8 +138,6 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
 	- Gli oggetti devono essere testati con tainted Lazarus 
 
-	- Migliorare le descrizioni della EID 
-
 	- Rivisitare Item Pool 
 
 	
