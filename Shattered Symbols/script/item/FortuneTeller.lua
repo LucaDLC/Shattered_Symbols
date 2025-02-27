@@ -3,7 +3,7 @@ local FortuneTellerLocalID = Isaac.GetItemIdByName("Fortune Teller")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(FortuneTellerLocalID, "{{Luck}} +5 Luck #{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart")
+    EID:addCollectible(FortuneTellerLocalID, "{{LuckSmall}} +5 Luck #{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart")
 end
 
 function ShatteredSymbols:useFortuneTeller(player)

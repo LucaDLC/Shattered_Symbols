@@ -3,7 +3,7 @@ local SacredLanternLocalID = Isaac.GetItemIdByName("Sacred Lantern")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(SacredLanternLocalID, "{{BrokenHeart}} Remove all your Broken Hearts #{{BrokenHeart}} For every Broken Heart removed you obtain:#{{HalfSoulHeart}} Half Soul Heart #{{Player14}} Empty Coin Heart")
+    EID:addCollectible(SacredLanternLocalID, "{{BrokenHeart}} Remove all your Broken Hearts #{{HalfSoulHeart}} For every Broken Heart removed you obtain an Half Soul Heart #{{Player14}} For every Broken Heart removed you obtain an Empty Coin Heart")
 end
 
 function ShatteredSymbols:useSacredLantern(_, rng, player)
