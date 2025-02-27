@@ -3,7 +3,7 @@ local OrigamiKolibriLocalID = Isaac.GetItemIdByName("Origami Kolibri")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiKolibriLocalID, "{{Battery}} Duplicate all charges gained of active item for the rest of the game #{{Battery}} Charge all active items #{{Battery}} Does not duplicate extra charges #{{BrokenHeart}} Gives 3 Broken Hearts which does not replace Heart")
+    EID:addCollectible(OrigamiKolibriLocalID, "{{Battery}} Duplicate all charges gained of active item for the rest of the game #{{Battery}} Does not duplicate extra charges #{{BrokenHeart}} Gives 3 Broken Hearts which does not replace Heart")
 end
 
 
