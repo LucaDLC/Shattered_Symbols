@@ -4,7 +4,7 @@ local OrigamiBatLocalID = Isaac.GetItemIdByName("Origami Bat")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiBatLocalID, "#{{HalfHeart}} After 64 hits, heal Half Heart #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{Speed}} +0.1 Speed #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
+    EID:addCollectible(OrigamiBatLocalID, "#{{HalfHeart}} After 64 hits, heal Half Heart #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{SpeedSmall}} +0.1 Speed #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 
 function ShatteredSymbols:useOrigamiBat(player)

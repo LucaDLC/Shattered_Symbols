@@ -3,7 +3,7 @@ local OrigamiShurikenLocalID = Isaac.GetItemIdByName("Origami Shuriken")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiShurikenLocalID, "{{Damage}} +3 Damage #{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart")
+    EID:addCollectible(OrigamiShurikenLocalID, "{{DamageSmall}} +3 Damage #{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart")
 end
 
 function ShatteredSymbols:useOrigamiShuriken(player)

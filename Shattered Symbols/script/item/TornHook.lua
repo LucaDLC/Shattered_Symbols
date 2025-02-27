@@ -4,7 +4,7 @@ local TornHookLocalID = Isaac.GetItemIdByName("Torn Hook")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(TornHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart at every Floor #{{ArrowUp}} At every floor grants:#{{Damage}} Damage +0.3#{{Speed}} Speed +0.1#{{Range}} Range +0.3#{{Tears}} Tears +0.4#{{Luck}} Luck +0.2 #{{Luck}} You have same Chance as Luck to remove Torn Hooks on each floor, at the floor when Torn Hooks removed the effects not activate")
+    EID:addCollectible(TornHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart at every Floor #{{ArrowUp}} At every floor grants:#{{DamageSmall}} Damage +0.3#{{SpeedSmall}} Speed +0.1#{{RangeSmall}} Range +0.3#{{TearsSmall}} Tears +0.4#{{LuckSmall}} Luck +0.2 #{{LuckSmall}} You have same Chance as Luck to remove Torn Hooks on each floor, at the floor when Torn Hooks removed the effects not activate")
 end
 
 local statMultiplier = {
