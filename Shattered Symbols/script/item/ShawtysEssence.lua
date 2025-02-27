@@ -3,7 +3,7 @@ local ShawtysEssenceLocalID = Isaac.GetItemIdByName("Shawty's Essence")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ShawtysEssenceLocalID, "{{ArrowUp}} Give a random familiar #{{ArrowDown}} Give 1 Broken Heart {{BrokenHeart}} which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} {{Player31}} Give 5 Wisps that poison enemies then item disappear")
+    EID:addCollectible(ShawtysEssenceLocalID, "{{ArrowUp}} Give a random familiar #{{BrokenHeart}} Give 1 Broken Heart which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} Give 5 Wisps that poison enemies then item disappear")
 end
 
 local familiars = {}

@@ -3,7 +3,7 @@ local MeteorLocalID = Isaac.GetItemIdByName("Meteor")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(MeteorLocalID, "{{ArrowUp}} Remove 2 Broken Hearts {{BrokenHeart}} #{{ArrowUp}} If you have 1 Broken Hearts {{BrokenHeart}} remove it and gain 1 Black Heart {{BlackHeart}} #{{ArrowUp}} If you don't have Broken Hearts {{BrokenHeart}} gain 3 Black Heart {{BlackHeart}}")
+    EID:addCollectible(MeteorLocalID, "{{BrokenHeart}} Remove 2 Broken Hearts #{{BlackHeart}} If you have less than 2 Broken Hearts, remove Broken Hearts if you have and gain 2 Black Heart for each Broken Heart that you miss for having 2 Broken Hearts")
 end
 
 function ShatteredSymbols:useMeteor(player)
@@ -22,9 +22,9 @@ function ShatteredSymbols:useMeteor(player)
                 player:AddBrokenHearts(-2) 
             elseif player:GetBrokenHearts() == 1 then
                 player:AddBrokenHearts(-1)
-                player:AddBlackHearts(2)
+                player:AddBlackHearts(4)
             elseif player:GetBrokenHearts() == 0 then
-                player:AddBlackHearts(6)
+                player:AddBlackHearts(8)
             end
         end
     else
