@@ -1,5 +1,6 @@
 local game = Game()
 local OrigamiKolibriLocalID = Isaac.GetItemIdByName("Origami Kolibri")
+local RunicAltarExternalID = Isaac.GetItemIdByName("Runic Altar")
 
 -- EID (External Item Descriptions)
 if EID then
@@ -25,7 +26,7 @@ function ShatteredSymbols:useOrigamiKolibri(player)
 
         for i = 0, 3 do 
             local activeItem = player:GetActiveItem(i)
-            if activeItem ~= 0 then
+            if activeItem ~= 0 and activeItem ~= RunicAltarExternalID then
                 local currentCharge = player:GetActiveCharge(i)
                 
                 if data.OrigamiKolibriChargeMemory[i] == nil then
