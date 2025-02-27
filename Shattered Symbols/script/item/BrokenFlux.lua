@@ -1,6 +1,5 @@
 local game = Game()
 local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
-local OrigamiCrowExternalID = Isaac.GetItemIdByName("Origami Crow")
 
 -- EID (External Item Descriptions)
 if EID then
