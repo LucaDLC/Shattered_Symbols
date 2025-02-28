@@ -221,14 +221,26 @@ end
 
 function ShatteredSymbols:ExecuteConsoleCommand(_, Command) 
     if Command == "Launch" then 
-        for Load = 1, #ItemScript do
-            require("script.item." .. ItemScript[Load])
+        for Load1 = 1, #ItemScript do
+            require("script.item." .. ItemScript[Load1])
+        end
+        for Load2 = 1, #PocketItemScript do
+            require("script.pickup." .. PocketItemScript[Load2])
+        end
+        for Load3 = 1, #TransformationScript do
+            require("script.transformation." .. TransformationScript[Load3])
         end
         print("Shattered Symbols: Scripts Launched")
     end
     if Command == "Script" then 
-        for Load = 1, #ItemScript do
-            print("script.item." .. ItemScript[Load])
+        for Load1 = 1, #ItemScript do
+            print("script.item." .. ItemScript[Load1])
+        end
+        for Load2 = 1, #PocketItemScript do
+            print("script.pickup." .. PocketItemScript[Load2])
+        end
+        for Load3 = 1, #TransformationScript do
+            print("script.transformation." .. TransformationScript[Load3])
         end
     end
     if Command == "Erase" then
