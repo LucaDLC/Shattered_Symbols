@@ -99,7 +99,7 @@ function ShatteredSymbols:SavePlayerData()
             OrigamiBatRelative = data.OrigamiBatRelative or 0,
             OrigamiBatPreviousCounter = data.OrigamiBatPreviousCounter or 1,
             OrigamiBatTearsCount = data.OrigamiBatTearsCount or 0,
-            OrigamiBatSpeedBoost = data.OrigamiBatSpeedBoost or 0,
+            OrigamiBatTearsBoost = data.OrigamiBatTearsBoost or 0,
             OrigamiBatLimit = data.OrigamiBatLimit or 0,
             OrigamiKolibriChargeMemory = data.OrigamiKolibriChargeMemory or {},
             OrigamiKolibriRelative = data.OrigamiKolibriRelative or 0,
@@ -163,7 +163,7 @@ function ShatteredSymbols:LoadPlayerData()
             data.OrigamiBatRelative = playerDataToLoad.OrigamiBatRelative or 0
             data.OrigamiBatPreviousCounter = playerDataToLoad.OrigamiBatPreviousCounter or 1
             data.OrigamiBatTearsCount = playerDataToLoad.OrigamiBatTearsCount or 0
-            data.OrigamiBatSpeedBoost = playerDataToLoad.OrigamiBatSpeedBoost or 0
+            data.OrigamiBatTearsBoost = playerDataToLoad.OrigamiBatTearsBoost or 0
             data.OrigamiBatLimit = playerDataToLoad.OrigamiBatLimit or 0
             data.OrigamiKolibriChargeMemory = playerDataToLoad.OrigamiKolibriChargeMemory or {}
             data.OrigamiKolibriRelative = playerDataToLoad.OrigamiKolibriRelative or 0
