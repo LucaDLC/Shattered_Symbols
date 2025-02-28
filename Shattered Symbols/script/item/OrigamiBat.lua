@@ -4,7 +4,7 @@ local OrigamiBatLocalID = Isaac.GetItemIdByName("Origami Bat")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiBatLocalID, "#{{HalfHeart}} After 64 hits, heal Half Heart #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{SpeedSmall}} +0.1 Speed #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
+    EID:addCollectible(OrigamiBatLocalID, "#{{HalfHeart}} After 64 hits, heal Half Heart #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{TearsSmall}} +0.2 Tears #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
 end
 
 function ShatteredSymbols:useOrigamiBat(player)
@@ -14,7 +14,7 @@ function ShatteredSymbols:useOrigamiBat(player)
     if not data.OrigamiBatTearsCount then data.OrigamiBatTearsCount = 0 end
     if not data.OrigamiBatRelative then data.OrigamiBatRelative = 0 end
     if not data.OrigamiBatPreviousCounter then data.OrigamiBatPreviousCounter = 1 end
-    if not data.OrigamiBatSpeedBoost then data.OrigamiBatSpeedBoost = 0 end
+    if not data.OrigamiBatTearsBoost then data.OrigamiBatTearsBoost = 0 end
     if not data.OrigamiBatLimit then data.OrigamiBatLimit = 0 end
 
     if player:HasCollectible(OrigamiBatLocalID) then
@@ -23,9 +23,9 @@ function ShatteredSymbols:useOrigamiBat(player)
             data.OrigamiBatPreviousCounter = data.OrigamiBatPreviousCounter + 1
             data.OrigamiBatRelative = data.OrigamiBatRelative + 1
             data.OrigamiBatTearsCount = 0
-            data.OrigamiBatSpeedBoost = 0.1*data.OrigamiBatRelative
+            data.OrigamiBatTearsBoost = 0.2*data.OrigamiBatRelative
             player:AddBrokenHearts(1)
-            player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+            player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
             player:EvaluateItems()
         end
     else
@@ -61,9 +61,10 @@ end
 
 function ShatteredSymbols:onEvaluateCacheOrigamiBat(player, cacheFlag)
     local data = player:GetData()
-    if cacheFlag == CacheFlag.CACHE_SPEED then
-        if data.OrigamiBatSpeedBoost then
-            player.MoveSpeed = player.MoveSpeed + data.OrigamiBatSpeedBoost
+    if cacheFlag == CacheFlag.CACHE_FIREDELAY then
+        if data.OrigamiBatTearsBoost then
+            local newTears = (30.0 / (player.MaxFireDelay + 1)) + data.OrigamiBatTearsBoost
+            player.MaxFireDelay = (30.0 / newTears) - 1
         end
     end
 end
