@@ -129,7 +129,6 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- Gli stessi oggetti presi più volte non attivano la trasformazione (era voluto ma ho visto che il gioco invece la conta valida)
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
