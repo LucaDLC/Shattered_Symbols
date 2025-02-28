@@ -3,13 +3,13 @@ local OrigamiBoatLocalID = Isaac.GetItemIdByName("Origami Boat")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiBoatLocalID, "{{BrokenHeart}} Every Broken Heart grants:#{{DamageSmall}} +0.9 Damage#{{SpeedSmall}} +0.3 Speed#{{RangeSmall}} +1.2 Range#{{TearsSmall}} +0.8 Tears#{{LuckSmall}} +1 Luck")
+    EID:addCollectible(OrigamiBoatLocalID, "{{BrokenHeart}} Every Broken Heart grants:#{{DamageSmall}} +0.9 Damage#{{SpeedSmall}} +0.3 Speed#{{RangeSmall}} +1.1 Range#{{TearsSmall}} +0.8 Tears#{{LuckSmall}} +1 Luck")
 end
 
 local statMultiplier = {
     damage = 0.9,  -- +0.9 Damage 
     speed = 0.3,   -- +0.3 Speed 
-    range = 48,    -- +1.2 Range 
+    range = 44,    -- +1.1 Range 
     tears = 0.8,   -- +0.8 Fire Rate
     luck = 1,      -- +1 Luck 
 }
