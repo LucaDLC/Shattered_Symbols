@@ -32,7 +32,10 @@ local function HasRunicTransformation(player)
     local count = 0
     local data = player:GetData()
     for _, item in ipairs(RUNIC_ITEMS) do
-        if player:HasCollectible(item) or table.contains(data.CapturedActiveItems, item) then
+        if player:HasCollectible(item) and not table.contains(data.CapturedActiveItems, item) then
+            count = count + player:GetCollectibleNum(item)
+        end
+        if table.contains(data.CapturedActiveItems, item) then
             count = count + 1
         end
     end
