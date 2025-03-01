@@ -84,6 +84,9 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
         local room = game:GetRoom()
         room:MamaMegaExplosion(player.Position)
 
+        player:AddGoldenKey()  -- Golden Key
+        player:AddGoldenBomb() -- Golden Bomb 
+        
         local entities = Isaac.GetRoomEntities();
 
         for i = 1, #Isaac.GetItemConfig():GetCollectibles() do
