@@ -47,6 +47,9 @@ function ShatteredSymbols:havingUnstableGlyph(player)
                             local currentBroken = selected:GetBrokenHearts()
                             if previousBroken < currentBroken then
                                 local difference = currentBroken - previousBroken
+                                if difference > 7 - data.UnstableGlyphCharge then
+                                    difference = 7 - data.UnstableGlyphCharge
+                                end
                                 selected:AddBrokenHearts(-difference)
                                 data.UnstableGlyphCharge = data.UnstableGlyphCharge + difference
                                 if data.UnstableGlyphCharge > 7 then
