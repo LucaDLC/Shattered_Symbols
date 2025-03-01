@@ -137,8 +137,6 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
 	- Gli oggetti devono essere testati con tainted Lazarus 
 
-	- Rivisitare Item Pool 
-
 	
 
 
