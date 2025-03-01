@@ -8,53 +8,42 @@
 	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	
-    </Pool>
-
-    <Pool Name="greedTreasure">
-	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
+    </Pool>
+
+    <Pool Name="greedTreasure">
+	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
     <Pool Name="shop">
-	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
@@ -64,95 +53,103 @@
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
     </Pool>
 
     <Pool Name="secret">
         <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     
     <Pool Name="greedSecret">
         <Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="ultraSecret">
-		
+	<Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="goldenChest">
 	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedGoldenChest">
 	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Constellation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Meteor" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="redChest">
-		
+	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="angel">
-	
+	<Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedAngel">
-        
+	<Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+        <Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="devil">
-        <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedDevil">
-        <Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -160,8 +157,11 @@
 
     <Pool Name="curse">
         <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -174,8 +174,11 @@
 
     <Pool Name="greedCurse">
         <Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -187,18 +190,23 @@
     </Pool>
 
     <Pool Name="demonBagger">
+	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Boat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
         <Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="craneGame">
+	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
