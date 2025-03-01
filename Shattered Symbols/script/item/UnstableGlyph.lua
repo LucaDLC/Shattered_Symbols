@@ -7,7 +7,7 @@ local itemIgnoreList = {
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Rerolls all items in the room into quality 4 items and triggers an explosion. #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, it consumes to charge; each Broken Heart equals one charge. #{{Battery}} Shares charges with all Unstable Glyphs across players and matches. #{{ArrowDown}} Absorbed Broken Hearts that replaced Hearts are not restored.")
+    EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Rerolls all items in the room into quality 4 items and triggers an explosion, gain Golden Bomb and Golden Key #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, it consumes to charge; each Broken Heart equals one charge. #{{Battery}} Shares charges with all Unstable Glyphs across players and matches. #{{ArrowDown}} Absorbed Broken Hearts that replaced Hearts are not restored.")
 end
 
 local function tablecontains(tbl, element)
