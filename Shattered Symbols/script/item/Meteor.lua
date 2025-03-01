@@ -3,7 +3,7 @@ local MeteorLocalID = Isaac.GetItemIdByName("Meteor")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(MeteorLocalID, "{{BrokenHeart}} Remove 2 Broken Hearts #{{BlackHeart}} If you have fewer than 2 Broken Hearts, remove any you have, and for each one missing to reach 2 Broken Hearts you receive 2 Black Hearts#{{DeathMark}} Occasionally, a meteor will strike an enemy in the room. If there are no enemies present, it will fall at a random location, with its frequency increasing with numbers of Meteor you have. #{{Warning}} Meteors can also damage Isaac.")
+    EID:addCollectible(MeteorLocalID, "{{BrokenHeart}} Remove 2 Broken Hearts #{{BlackHeart}} If you have fewer than 2 Broken Hearts, remove any you have, and for each one missing to reach 2 Broken Hearts you receive 2 Black Hearts#{{DeathMark}} Occasionally, a meteor will strike an enemy in the room. If there are no enemies present, it will fall at a random location, with its frequency increasing with numbers of Meteor you have #{{Warning}} Meteors can also damage Isaac")
 end
 
 local function triggerCrackOfTheSky()
