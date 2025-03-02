@@ -89,11 +89,10 @@ ITEM
 	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama, si carica con 7 broken hearts, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
 
 77730 - Vesta [1]
-	Occasionalmennte brucia tutti i nemici nella stanza per 3 secondi
+	Occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi
 
 77731 - Pallas [1]
-	Occasionalmente ti rende invincibile per 3 secondi
-	
+	Occasionalmente 	
 ---------------------------------------------------------------------
 CONSUMABILI
 
