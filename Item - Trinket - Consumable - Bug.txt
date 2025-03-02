@@ -92,7 +92,7 @@ ITEM
 	Occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi
 
 77731 - Pallas [1]
-	Occasionalmente 	
+	Occasionalmente ??? 	
 ---------------------------------------------------------------------
 CONSUMABILI
 
@@ -134,6 +134,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
+	- Pallas non fa nulla
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
