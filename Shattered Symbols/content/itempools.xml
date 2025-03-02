@@ -99,6 +99,8 @@
 
     <Pool Name="planetarium">
 	<Item Name="Ceres" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Vesta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Pallas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="goldenChest">
