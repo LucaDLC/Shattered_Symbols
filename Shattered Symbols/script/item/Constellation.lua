@@ -34,7 +34,9 @@ local planetarium_items = {
     CollectibleType.COLLECTIBLE_SOL,
     CollectibleType.COLLECTIBLE_SATURNUS,
     CollectibleType.COLLECTIBLE_LUNA,
-    Isaac.GetItemIdByName("Ceres")
+    Isaac.GetItemIdByName("Ceres"),
+    Isaac.GetItemIdByName("Vesta"),
+    Isaac.GetItemIdByName("Pallas")
 }
 
 local Constellation_Table = {}
