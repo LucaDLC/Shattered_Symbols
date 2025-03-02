@@ -1,11 +1,12 @@
 local game = Game()
 local HexCrystalLocalID = Isaac.GetCardIdByName("Hex Crystal")
 
+-- EID (External Item Descriptions)
 if EID then
     EID:addCard(HexCrystalLocalID, "Adds effects at the enemy in the room: #{{BleedingOut}} Bleeding Out #{{Weakness}} Weakness ")
 end
 
--- Callback per quando il giocatore usa una runa
+
 function ShatteredSymbols:useHexCrystal(card, player, useFlags)
     if REPENTOGON then
 		ItemOverlay.Show(Isaac.GetGiantBookIdByName("Hex"), 0 , player)
@@ -15,10 +16,10 @@ function ShatteredSymbols:useHexCrystal(card, player, useFlags)
 
     for _, entity in ipairs(entities) do
         if entity:IsActiveEnemy(false) then
-            -- Applica lo stato BleedingOut
+            -- Bleeding Out
             entity:AddEntityFlags(EntityFlag.FLAG_BLEED_OUT)
 
-            -- Applica lo stato Weakness
+            -- Weakness
             entity:AddEntityFlags(EntityFlag.FLAG_WEAKNESS)
         end
     end

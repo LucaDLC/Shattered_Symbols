@@ -1,6 +1,7 @@
 local game = Game()
 local GlyphLocalID = Isaac.GetCardIdByName("Glyph")
 
+-- EID (External Item Descriptions)
 if EID then
     EID:addCard(GlyphLocalID, "{{BrokenHeart}} Remove 1 Broken Heart #{{Confusion}} Give Confusion at the enemies in the room for 5 seconds")
 end
@@ -23,5 +24,4 @@ function ShatteredSymbols:UseGlyph(card, player, useFlags)
     SFXManager():Play(SoundEffect.SOUND_DEATH_CARD)
 end
 
--- Collega l'effetto della runa al suo utilizzo
 ShatteredSymbols:AddCallback(ModCallbacks.MC_USE_CARD, ShatteredSymbols.UseGlyph, GlyphLocalID)
