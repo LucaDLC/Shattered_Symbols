@@ -7,7 +7,7 @@
 	<active  id="77705" name="Upside Down Deck of Cards" gfx ="UpsideDownDeckofCards.png" description="Ops..." quality="2" maxcharges="5" chargetype="normal" devilprice="1"/>
 	<active  id="77706" name="Constellation" gfx ="Constellation.png" description="Look the sky!" quality="3" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
 	<passive  id="77707" name="Origami Swan" gfx ="OrigamiSwan.png" description="It's Wonderful but it suffers" quality="3" devilprice="1" tags="offensive"/>
-	<passive  id="77708" name="Ceres" gfx ="Ceres.png" description="The asteroid planet" quality="1" devilprice="1" tags="nolostbr"/>
+	<passive  id="77708" name="Ceres" gfx ="Ceres.png" description="The first asteroid planet" quality="1" devilprice="1" tags="nolostbr"/>
 	<active  id="77709" name="Shawty's Letter" gfx ="ShawtysLetter.png" description="This is not a good sign" quality="2" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
 	<active  id="77710" name="Shawty's Essence" gfx ="ShawtysEssence.png" description="Intoxicating" quality="2" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
 	<passive  id="77711" name="Torn Hook" gfx ="TornHook.png" description="a CuRsE¿" quality="0" devilprice="1" tags="lazarusshared offensive"/>
@@ -29,5 +29,7 @@
 	<passive  id="77727" name="Pyrite" gfx ="Pyrite.png" description="You, fool!" quality="2" devilprice="2" tags="offensive"/>
 	<passive  id="77728" name="Onyx" gfx ="Onyx.png" description="Volatile and mutable" quality="2" devilprice="1" tags="offensive"/>
 	<active  id="77729" name="Unstable Glyph" gfx ="UnstableGlyph.png" description="Overload that crystal wasn't a good idea" quality="4" maxcharges="7" chargetype="special" initcharge ="0" devilprice="1" tags="offensive"/>
+	<passive  id="77730" name="Vesta" gfx ="Vesta.png" description="The fourth asteroid planet" quality="1" devilprice="1"/>
+	<passive  id="77731" name="Pallas" gfx ="Pallas.png" description="The second asteroid planet" quality="1" devilprice="1"/>
 
 </items>
