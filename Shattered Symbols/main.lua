@@ -26,7 +26,7 @@ local ItemScript = {
     'UpsideDownDeckofCard',
     'Constellation',
     'OrigamiSwan',
-    'Meteor',
+    'Ceres',
     'ShawtysLetter',
     'ShawtysEssence',
     'TornHook',
@@ -106,8 +106,8 @@ function ShatteredSymbols:SavePlayerData()
             OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter or 1,
             OrigamiBoatBrokenHeartsCount = data.OrigamiBoatBrokenHeartsCount or 0,
             OrigamiBoatHoldingItemforStats = data.OrigamiBoatHoldingItemforStats or false,
-            MeteorRelative = data.MeteorRelative or 0,
-            MeteorPreviousCounter = data.MeteorPreviousCounter or 1,
+            CeresRelative = data.CeresRelative or 0,
+            CeresPreviousCounter = data.CeresPreviousCounter or 1,
             FortuneTellerRelative = data.FortuneTellerRelative or 0,
             FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter or 1,
             FortuneTellerLuckBoost = data.FortuneTellerLuckBoost or 0,
@@ -170,8 +170,8 @@ function ShatteredSymbols:LoadPlayerData()
             data.OrigamiKolibriPreviousCounter = playerDataToLoad.OrigamiKolibriPreviousCounter or 1
             data.OrigamiBoatBrokenHeartsCount = playerDataToLoad.OrigamiBoatBrokenHeartsCount or 0
             data.OrigamiBoatHoldingItemforStats = playerDataToLoad.OrigamiBoatHoldingItemforStats or false
-            data.MeteorRelative = playerDataToLoad.MeteorRelative or 0
-            data.MeteorPreviousCounter = playerDataToLoad.MeteorPreviousCounter or 1
+            data.CeresRelative = playerDataToLoad.CeresRelative or 0
+            data.CeresPreviousCounter = playerDataToLoad.CeresPreviousCounter or 1
             data.FortuneTellerRelative = playerDataToLoad.FortuneTellerRelative or 0
             data.FortuneTellerPreviousCounter = playerDataToLoad.FortuneTellerPreviousCounter or 1
             data.FortuneTellerLuckBoost = playerDataToLoad.FortuneTellerLuckBoost or 0

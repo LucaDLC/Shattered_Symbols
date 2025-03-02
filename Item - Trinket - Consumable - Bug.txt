@@ -21,7 +21,7 @@ ITEM
 77707 - Origami Swan [3] [TEXTURE FINISHED]
 	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
 
-77708 - Meteor [1] [TEXTURE FINISHED]
+77708 - Ceres [1] [TEXTURE FINISHED]
 	Rimuove 2 Broken Heart oppure rimuove 1 broken heart e da 1 black heart oppure da 3 black heart, occasionalmente spawna delle meteore che aumentano a seconda del numero di meteor
 
 77709 - Shawty's Letter [2] [TEXTURE FINISHED]
