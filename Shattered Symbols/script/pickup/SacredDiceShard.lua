@@ -5,11 +5,11 @@ local itemIgnoreList = {
     238, 239, 550, 551, 626, 627, 668
 }
 
+-- EID (External Item Descriptions)
 if EID then
     EID:addCard(SacredDiceShardLocalID, "{{Collectible105}} Reroll all item in the room up to 1 quality #{{BrokenHeart}} Give 2 Broken Heart")
 end
 
---Support function
 local function tablecontains(tbl, element)
     for _, value in ipairs(tbl) do
         if value == element then
@@ -19,7 +19,6 @@ local function tablecontains(tbl, element)
     return false
 end
 
--- Callback per quando il giocatore usa una runa
 function ShatteredSymbols:useSacredDiceShard(cardID, player, useFlags)
     if cardID == SacredDiceShardLocalID then
         local tier0ItemPool = {}
