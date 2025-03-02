@@ -3,7 +3,7 @@ local VestaLocalID = Isaac.GetItemIdByName("Vesta")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(VestaLocalID, "{{Burning}} Occasionally, the enemies in the room start to burn for 3 seconds and its frequency increasing with numbers of Vesta you have")
+    EID:addCollectible(VestaLocalID, "{{DeathMark}} Occasionally, the enemies in the room obtain these effects and its frequency increasing with numbers of Vesta you have: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds ")
 end
 
 local function triggerBurn(player)
@@ -12,9 +12,9 @@ local function triggerBurn(player)
     for _, entity in pairs(Isaac.GetRoomEntities()) do
         if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_PLAYER then  
             entity:AddBurn(EntityRef(player), 90, player.Damage)
+            entity:AddMidasFreeze(EntityRef(player), 90)
         end
     end
-    
 end
 
 function ShatteredSymbols:VestaEffect(player)
