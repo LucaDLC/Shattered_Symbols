@@ -12,22 +12,18 @@ local function triggerBurn(player)
     for _, entity in pairs(Isaac.GetRoomEntities()) do
         if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_PLAYER then  
             entity:AddBurn(EntityRef(player), 90, player.Damage)
-            entity:AddMidasFreeze(EntityRef(player), 90)
+            entity:AddFreeze(EntityRef(player), 90)
         end
     end
 end
 
 function ShatteredSymbols:VestaEffect(player)
-    local data = player:GetData()
-
     if player:HasCollectible(VestaLocalID) then
-
         local numberOfVestas = player:GetCollectibleNum(VestaLocalID)
         if numberOfVestas > 0 then
             if numberOfVestas > 5 then numberOfVestas = 5 end
+            local randomValue = math.random(1, math.floor(1024 / 2 ^ numberOfVestas))
             
-            local randomValue = math.random(1, math.floor(1024 / 2^numberOfVestas))
-        
             if randomValue == 1 then
                 triggerBurn(player)  
             end
@@ -38,15 +34,12 @@ end
 function ShatteredSymbols:VestaFloor()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
-        local data = player:GetData()
         if player:HasCollectible(VestaLocalID) then
-
             local numberOfVestas = player:GetCollectibleNum(VestaLocalID)
             if numberOfVestas > 0 then
                 if numberOfVestas > 5 then numberOfVestas = 5 end
-                    if math.random() < (0.2 * numberOfVestas) then
-                        player:AddBrokenHearts(-1) 
-                    end
+                if math.random() < (0.2 * numberOfVestas) then
+                    player:AddBrokenHearts(-1) 
                 end
             end
         end

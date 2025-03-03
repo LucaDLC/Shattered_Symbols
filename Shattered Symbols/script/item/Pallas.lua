@@ -15,6 +15,7 @@ local itemIgnoreSet = {}
 for _, v in ipairs(itemIgnoreList) do
     itemIgnoreSet[v] = true
 end
+
 local function IsRune(card)
     local cardType = Isaac.GetItemConfig():GetCard(card)
     return cardType and cardType.CardType == ItemConfig.CARDTYPE_RUNE
@@ -22,20 +23,18 @@ end
 
 local function triggerPallas(player)
     local rune
-	repeat
-		rune = Game():GetItemPool():GetCard(RNG():Next(), false, true, true)
-	until IsRune(rune) and Isaac.GetItemConfig():GetCard(rune).IsRune
-	player:UseActiveItem(rune)
+    repeat
+        rune = Game():GetItemPool():GetCard(RNG():Next(), false, true, true)
+    until IsRune(rune) and Isaac.GetItemConfig():GetCard(rune).IsRune
+    player:UseActiveItem(rune)
 end
 
 function ShatteredSymbols:PallasEffect(player)
     local data = player:GetData()
 
     if player:HasCollectible(PallasLocalID) then
-
         local numberOfPallass = player:GetCollectibleNum(PallasLocalID)
         if numberOfPallass > 0 then
-
             if numberOfPallass > 5 then numberOfPallass = 5 end
             local randomValue = math.random(1, math.floor(1024 / 2^numberOfPallass))
         
@@ -44,7 +43,6 @@ function ShatteredSymbols:PallasEffect(player)
             end
         end
     end
-
 end
 
 function ShatteredSymbols:PallasRoomEffect()
@@ -61,13 +59,12 @@ function ShatteredSymbols:PallasRoomEffect()
             end
 
             if #eligibleItems > 0 then
-                    
-                player:RemoveCollectible(eligibleItems[math.random(1, #eligibleItems)])
+                local itemToRemove = eligibleItems[math.random(1, #eligibleItems)]
+                player:RemoveCollectible(itemToRemove)
                 player:AddCollectible(MutableOnyxExternalID, 0, false)
-                    
+                
                 Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, player.Position, Vector(0,0), player)
                 SFXManager():Play(SoundEffect.SOUND_1UP)
-            
             end
         end
     end
