@@ -25,7 +25,7 @@ function ShatteredSymbols:VestaEffect(player)
         local numberOfVestas = player:GetCollectibleNum(VestaLocalID)
         if numberOfVestas > 0 then
             if numberOfVestas > 5 then numberOfVestas = 5 end
-            if rng:RandomFloat() < (0.2 * numberOfVestas) then
+            if math.random() < (0.2 * numberOfVestas) then
                 player:AddBrokenHearts(-1) 
             end
             

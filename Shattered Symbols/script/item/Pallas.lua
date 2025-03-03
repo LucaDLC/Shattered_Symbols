@@ -23,9 +23,9 @@ end
 local function triggerPallas(player)
     local rune
 	repeat
-		rune = Game():GetItemPool():GetCard(rng:Next(), false, true, true)
+		rune = Game():GetItemPool():GetCard(RNG():Next(), false, true, true)
 	until IsRune(rune) and Isaac.GetItemConfig():GetCard(rune).IsRune
-	player:AddCard(rune)
+	player:UseActiveItem(rune)
 end
 
 function ShatteredSymbols:PallasEffect(player)
@@ -50,7 +50,7 @@ end
 function ShatteredSymbols:PallasRoomEffect()
     for p = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(p)
-        if player:HasCollectible(PallasLocalID) then
+        if player:HasCollectible(PallasLocalID) and (math.random() < (0.05 * player:GetCollectibleNum(PallasLocalID))) then
             local eligibleItems = {}
 
             for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
@@ -73,3 +73,4 @@ function ShatteredSymbols:PallasRoomEffect()
     end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.PallasEffect)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.PallasRoomEffect)
