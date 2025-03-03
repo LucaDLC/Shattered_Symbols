@@ -13,7 +13,7 @@ ITEM
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
 
 77705 - Upside Down Deck of Card [2] [TEXTURE FINISHED]
-	Droppa una reverse card, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale
+	Droppa una reverse card, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale
 
 77706 - Constellation [3] [TEXTURE FINISHED]
 	Attivo monouso, spawna un item tra i segni zodiacali, gli item del planetario e la meteor
@@ -22,7 +22,7 @@ ITEM
 	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
 
 77708 - Ceres [1] [TEXTURE FINISHED]
-	Rimuove 2 Broken Heart oppure rimuove 1 broken heart e da 1 black heart oppure da 3 black heart, occasionalmente spawna delle meteore che aumentano a seconda del numero di meteor
+	Rimuove 3 Broken Heart e se non ne hai 3 ti ricompensa con dei black hearts, occasionalmente spawna delle meteore che aumentano a seconda del numero di Ceres
 
 77709 - Shawty's Letter [2] [TEXTURE FINISHED]
 	Attivo monouso che spawna un item origami
@@ -56,7 +56,7 @@ ITEM
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
 
 77719 - Extra Deck of Card [2]
-	Droppa una carta speciale, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 7,5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale
+	Droppa una carta speciale, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale
 
 77720 - Ancient Hook [0]
 	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate, per ogni punto luck hai la possibilità che si rimuova 
@@ -89,10 +89,10 @@ ITEM
 	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama, si carica con 7 broken hearts, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
 
 77730 - Vesta [1]
-	Occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi e apre una red room
+	Ad ogni piano hai il 20% di possibilità che ti rimuova un broken heart, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
 
 77731 - Pallas [1]
-	Ad ogni piano ???, Occasionalmente attiva un effetto di una runa casuale 	
+	???? , occasionalmente attiva un effetto di una runa casuale 	
 ---------------------------------------------------------------------
 CONSUMABILI
 
@@ -136,7 +136,6 @@ BUG
 	
 	- Pallas non fa nulla
 
-	- Vesta non apre le red room
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI

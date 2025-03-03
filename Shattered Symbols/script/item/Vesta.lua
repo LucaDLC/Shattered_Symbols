@@ -3,7 +3,7 @@ local VestaLocalID = Isaac.GetItemIdByName("Vesta")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(VestaLocalID, "{{DeathMark}} Occasionally, the enemies in the room obtain these effects and its frequency increasing with numbers of Vesta you have: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds ")
+    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} Every floor you have 20% chance to remove 1 Broken Heart {{DeathMark}} Occasionally, the enemies in the room obtain these effects: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds #{{ArrowUp}} Both effects increasing with numbers of Vesta you have")
 end
 
 local function triggerBurn(player)
@@ -25,6 +25,10 @@ function ShatteredSymbols:VestaEffect(player)
         local numberOfVestas = player:GetCollectibleNum(VestaLocalID)
         if numberOfVestas > 0 then
             if numberOfVestas > 5 then numberOfVestas = 5 end
+            if rng:RandomFloat() < (0.2 * numberOfVestas) then
+                player:AddBrokenHearts(-1) 
+            end
+            
             local randomValue = math.random(1, math.floor(1024 / 2^numberOfVestas))
         
             if randomValue == 1 then

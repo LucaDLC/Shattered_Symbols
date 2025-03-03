@@ -46,7 +46,7 @@ local ItemScript = {
     'ForbiddenBody',
     'JadeIvoryMask',
     'Pyrite',
-    'Onyx',
+    'MutableOnyx',
     'UnstableGlyph',
     'Vesta',
     'Pallas'
@@ -277,7 +277,7 @@ local function isDeckofCard(descObj)
 end
 
 local function mutableDeckofCard(descObj)
- EID:appendToDescription(descObj, "#After use it, have 5% chance to mutate into Extra Deck and 5% chance to mutate into Upside Down Deck")
+    EID:appendToDescription(descObj, "#After use it, have 5% chance to mutate into Extra Deck and 5% chance to mutate into Upside Down Deck")
     return descObj
 end
 

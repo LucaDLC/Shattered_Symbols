@@ -3,7 +3,7 @@ local CeresLocalID = Isaac.GetItemIdByName("Ceres")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(CeresLocalID, "{{BrokenHeart}} Remove 2 Broken Hearts #{{BlackHeart}} If you have fewer than 2 Broken Hearts, remove any you have, and for each one missing to reach 2 Broken Hearts you receive 2 Black Hearts#{{DeathMark}} Occasionally, an asteroid will strike an enemy in the room. If there are no enemies present, it will fall at a random location, with its frequency increasing with numbers of Ceres you have #{{Warning}} Asteroids can also damage Isaac")
+    EID:addCollectible(CeresLocalID, "{{BrokenHeart}} Remove 3 Broken Hearts #{{BlackHeart}} If you have fewer than 3 Broken Hearts, remove any you have, and for each one missing to reach 3 Broken Hearts you receive 1 -> 2 -> 4 Black Hearts#{{DeathMark}} Occasionally, an asteroid will strike an enemy in the room. If there are no enemies present, it will fall at a random location, with its frequency increasing with numbers of Ceres you have #{{Warning}} Asteroids can also damage Isaac")
 end
 
 local function triggerCrackOfTheSky()
@@ -41,8 +41,11 @@ function ShatteredSymbols:CeresRain(player)
         if CeresCounter >= data.CeresPreviousCounter then
             data.CeresPreviousCounter = data.CeresPreviousCounter + 1
             data.CeresRelative = data.CeresRelative + 1
-            if player:GetBrokenHearts() >= 2 then
-                player:AddBrokenHearts(-2) 
+            if player:GetBrokenHearts() >= 3 then
+                player:AddBrokenHearts(-3) 
+            elseif player:GetBrokenHearts() == 2 then
+                player:AddBrokenHearts(-2)
+                player:AddBlackHearts(2)
             elseif player:GetBrokenHearts() == 1 then
                 player:AddBrokenHearts(-1)
                 player:AddBlackHearts(4)
