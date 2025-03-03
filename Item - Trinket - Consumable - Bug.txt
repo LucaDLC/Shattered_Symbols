@@ -89,10 +89,10 @@ ITEM
 	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama, si carica con 7 broken hearts, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
 
 77730 - Vesta [1]
-	Occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi
+	Occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi e apre una red room
 
 77731 - Pallas [1]
-	Occasionalmente ??? 	
+	Ad ogni piano ???, Occasionalmente attiva un effetto di una runa casuale 	
 ---------------------------------------------------------------------
 CONSUMABILI
 
@@ -135,6 +135,8 @@ TRASFORMAZIONI
 BUG
 	
 	- Pallas non fa nulla
+
+	- Vesta non apre le red room
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
