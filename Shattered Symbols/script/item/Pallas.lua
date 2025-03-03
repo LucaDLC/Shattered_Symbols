@@ -4,7 +4,7 @@ local MutableOnyxExternalID = Isaac.GetItemIdByName("Mutable Onyx")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PallasLocalID, "{{}} Every room you have 5% of chance to substitute a not volatile Item with an Mutable Onyx #{{}} Occasionally, active effects of a rune #{{ArrowUp}} Both effects increasing with numbers of Vesta you have")
+    EID:addCollectible(PallasLocalID, "{{Room}} Every room you have 5% of chance to substitute a not volatile Item with an Mutable Onyx #{{Rune}} Occasionally, active effects of a rune #{{ArrowUp}} Both effects increasing with numbers of Vesta you have")
 end
 
 local itemIgnoreList = {
