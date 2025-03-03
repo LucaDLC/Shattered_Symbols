@@ -82,7 +82,7 @@ ITEM
 77727 - Pyrite [2]
 	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
 
-77728 - Onyx [2]
+77728 - Mutable Onyx [2]
 	Ad ogni piano, acquisisce un effetto causale di un item passivo 
 
 77729 - Unstable Glyph [4]
@@ -92,7 +92,7 @@ ITEM
 	Ad ogni piano hai il 20% di possibilità che ti rimuova un broken heart, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
 
 77731 - Pallas [1]
-	???? , occasionalmente attiva un effetto di una runa casuale 	
+	Ogni stanza hai il 5% di possibilità di sostitire un oggetto non volatile in un Mutable Onyx , occasionalmente attiva un effetto di una runa casuale, entrambi gli effetti scalano in base al numero di Pallas
 ---------------------------------------------------------------------
 CONSUMABILI
 
@@ -134,7 +134,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- Pallas non fa nulla
+	- Pallas non è completo
 
 
 ---------------------------------------------------------------------
