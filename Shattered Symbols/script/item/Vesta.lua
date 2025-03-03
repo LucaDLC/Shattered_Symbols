@@ -25,9 +25,6 @@ function ShatteredSymbols:VestaEffect(player)
         local numberOfVestas = player:GetCollectibleNum(VestaLocalID)
         if numberOfVestas > 0 then
             if numberOfVestas > 5 then numberOfVestas = 5 end
-            if math.random() < (0.2 * numberOfVestas) then
-                player:AddBrokenHearts(-1) 
-            end
             
             local randomValue = math.random(1, math.floor(1024 / 2^numberOfVestas))
         
@@ -38,5 +35,25 @@ function ShatteredSymbols:VestaEffect(player)
     end
 end
 
+function ShatteredSymbols:VestaFloor()
+    for playerIndex = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(playerIndex)
+        local data = player:GetData()
+        if player:HasCollectible(VestaLocalID) then
+
+            local numberOfVestas = player:GetCollectibleNum(VestaLocalID)
+            if numberOfVestas > 0 then
+                if numberOfVestas > 5 then numberOfVestas = 5 end
+                    if math.random() < (0.2 * numberOfVestas) then
+                        player:AddBrokenHearts(-1) 
+                    end
+                end
+            end
+        end
+    end
+end
+
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.VestaEffect)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.VestaFloor)
+
 

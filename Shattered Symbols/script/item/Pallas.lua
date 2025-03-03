@@ -71,6 +71,7 @@ function ShatteredSymbols:PallasRoomEffect()
             end
         end
     end
+end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.PallasEffect)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.PallasRoomEffect)
