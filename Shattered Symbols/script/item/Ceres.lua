@@ -56,7 +56,7 @@ function ShatteredSymbols:CeresRain(player)
 
         local numberOfCeres = player:GetCollectibleNum(CeresLocalID)
         if numberOfCeres > 0 then
-            local randomValue = math.random(1, math.floor(1024 / (2*numberOfCeres)))
+            local randomValue = math.random(1, math.floor(1700 / (2*numberOfCeres)))
         
             if randomValue == 1 then
                 triggerCrackOfTheSky()  
