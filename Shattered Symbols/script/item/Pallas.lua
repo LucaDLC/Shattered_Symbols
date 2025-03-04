@@ -4,7 +4,7 @@ local MutableOnyxExternalID = Isaac.GetItemIdByName("Mutable Onyx")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PallasLocalID, "{{Room}} Every room you have 5% of chance to substitute a not volatile Item with an Mutable Onyx #{{Rune}} Occasionally, active effects of a rune #{{ArrowUp}} Both effects increasing with numbers of Vesta you have")
+    EID:addCollectible(PallasLocalID, "{{Room}} Every room you have 5% of chance to substitute a not volatile Item with an Mutable Onyx # Occasionally, give one of these: #{{Bomb}} a Bomb #{{Key}} a Key #{{Coin}} 3 Coins #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
 end
 
 local itemIgnoreList = {
@@ -16,17 +16,17 @@ for _, v in ipairs(itemIgnoreList) do
     itemIgnoreSet[v] = true
 end
 
-local function IsRune(card)
-    local cardType = Isaac.GetItemConfig():GetCard(card)
-    return cardType and cardType.CardType == ItemConfig.CARDTYPE_RUNE
-end
-
 local function triggerPallas(player)
-    local rune
-    repeat
-        rune = Game():GetItemPool():GetCard(RNG():Next(), false, true, true)
-    until IsRune(rune) and Isaac.GetItemConfig():GetCard(rune).IsRune
-    player:UseActiveItem(rune)
+    local randomReward = math.random(1, 3)
+
+    if randomReward == 1 then
+        player:AddBombs(1)
+    elseif randomReward == 2 then
+        player:AddKeys(1)
+    elseif randomReward == 3 then
+        player:AddCoins(3)
+    end
+    
 end
 
 function ShatteredSymbols:PallasEffect(player)
@@ -35,8 +35,7 @@ function ShatteredSymbols:PallasEffect(player)
     if player:HasCollectible(PallasLocalID) then
         local numberOfPallass = player:GetCollectibleNum(PallasLocalID)
         if numberOfPallass > 0 then
-            if numberOfPallass > 5 then numberOfPallass = 5 end
-            local randomValue = math.random(1, math.floor(1024 / 2^numberOfPallass))
+            local randomValue = math.random(1, math.floor(1024 / numberOfPallass))
         
             if randomValue == 1 then
                 triggerPallas(player)  
