@@ -26,6 +26,8 @@ local function triggerPallas(player)
     elseif randomReward == 3 then
         player:AddCoins(3)
     end
+
+    SFXManager():Play(SoundEffect.SOUND_LUCKYPICKUP)
     
 end
 
