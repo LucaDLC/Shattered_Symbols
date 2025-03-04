@@ -33,9 +33,9 @@ function ShatteredSymbols:PallasEffect(player)
     local data = player:GetData()
 
     if player:HasCollectible(PallasLocalID) then
-        local numberOfPallass = player:GetCollectibleNum(PallasLocalID)
-        if numberOfPallass > 0 then
-            local randomValue = math.random(1, math.floor(1024 / 2*numberOfPallass))
+        local numberOfPallas = player:GetCollectibleNum(PallasLocalID)
+        if numberOfPallas > 0 then
+            local randomValue = math.random(1, math.floor(1024 / (2*numberOfPallas)))
         
             if randomValue == 1 then
                 triggerPallas(player)  
