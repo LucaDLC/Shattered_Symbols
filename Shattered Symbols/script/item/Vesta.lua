@@ -39,6 +39,7 @@ function ShatteredSymbols:VestaFloor()
                 if numberOfVestas > 5 then numberOfVestas = 5 end
                 if math.random() < (0.2 * numberOfVestas) then
                     player:AddBrokenHearts(-1) 
+                    SFXManager():Play(SoundEffect.SOUND_SHELLGAME)
                 end
             end
         end

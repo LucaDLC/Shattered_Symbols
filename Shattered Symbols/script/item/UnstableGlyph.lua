@@ -89,6 +89,7 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
 
         player:AddGoldenKey()  -- Golden Key
         player:AddGoldenBomb() -- Golden Bomb 
+        SFXManager():Play(SoundEffect.SOUND_GOLDENKEY)
         
         local entities = Isaac.GetRoomEntities();
 
