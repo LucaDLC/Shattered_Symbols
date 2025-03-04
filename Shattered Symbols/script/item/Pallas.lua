@@ -4,7 +4,7 @@ local MutableOnyxExternalID = Isaac.GetItemIdByName("Mutable Onyx")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PallasLocalID, "{{Room}} Every room you have 5% of chance to substitute a not Volatile Item with an Mutable Onyx #{{Crown}} Occasionally, give one of these: #{{Bomb}} 1 Bomb #{{Key}} 1 Key #{{Coin}} 3 Coins #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
+    EID:addCollectible(PallasLocalID, "{{Room}} After clearyng a room you have 5% of chance to substitute a not Volatile Item with an Mutable Onyx #{{Crown}} Occasionally, give one of these: #{{Bomb}} 1 Bomb #{{Key}} 1 Key #{{Coin}} 3 Coins #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
 end
 
 local itemIgnoreList = {
@@ -70,4 +70,4 @@ function ShatteredSymbols:PallasRoomEffect()
 end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.PallasEffect)
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.PallasRoomEffect)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD, ShatteredSymbols.PallasRoomEffect)
