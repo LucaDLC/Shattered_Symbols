@@ -3,7 +3,7 @@ local VestaLocalID = Isaac.GetItemIdByName("Vesta")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} Every floor you have 20% chance to remove 1 Broken Heart {{DeathMark}} Occasionally, the enemies in the room obtain these effects: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds #{{ArrowUp}} Both effects increasing with numbers of Vesta you have")
+    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} Every floor you have 20% chance to remove 1 Broken Heart #{{DeathMark}} Occasionally, the enemies in the room obtain these effects: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds #{{ArrowUp}} Both effects increasing with numbers of Vesta you have")
 end
 
 local function triggerBurn(player)
