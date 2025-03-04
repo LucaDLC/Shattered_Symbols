@@ -47,12 +47,20 @@ end
 function ShatteredSymbols:PallasRoomEffect()
     for p = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(p)
+        local data = player:GetData()
         if player:HasCollectible(PallasLocalID) and (math.random() < (0.05 * player:GetCollectibleNum(PallasLocalID))) then
             local eligibleItems = {}
+            local mutableSet = {}
+
+            if data.MutableOnyxItemEffectID then
+                for _, id in ipairs(data.MutableOnyxItemEffectID) do
+                    mutableSet[id] = true
+                end
+            end
 
             for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
                 local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                if itemConfig and id ~= PallasLocalID and id ~= MutableOnyxExternalID and not itemIgnoreSet[id] and player:HasCollectible(id) and itemConfig.Type == ItemType.ITEM_PASSIVE then
+                if itemConfig and id ~= PallasLocalID and id ~= MutableOnyxExternalID and not itemIgnoreSet[id] and not mutableSet[id] and player:HasCollectible(id) and itemConfig.Type == ItemType.ITEM_PASSIVE then
                     table.insert(eligibleItems, id)
                 end
             end
