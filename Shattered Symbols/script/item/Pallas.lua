@@ -4,7 +4,7 @@ local MutableOnyxExternalID = Isaac.GetItemIdByName("Mutable Onyx")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PallasLocalID, "{{Room}} Every room you have 5% of chance to substitute a not volatile Item with an Mutable Onyx #{{Crown}} Occasionally, give one of these: #{{Bomb}} 1 Bomb #{{Key}} 1 Key #{{Coin}} 3 Coins #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
+    EID:addCollectible(PallasLocalID, "{{Room}} Every room you have 5% of chance to substitute a not Volatile Item with an Mutable Onyx #{{Crown}} Occasionally, give one of these: #{{Bomb}} 1 Bomb #{{Key}} 1 Key #{{Coin}} 3 Coins #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
 end
 
 local itemIgnoreList = {
@@ -52,7 +52,7 @@ function ShatteredSymbols:PallasRoomEffect()
 
             for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
                 local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                if itemConfig and id ~= PallasLocalID and id ~= MutableOnyxExternalID and not itemIgnoreSet[id] and player:HasCollectible(id) then
+                if itemConfig and id ~= PallasLocalID and id ~= MutableOnyxExternalID and not itemIgnoreSet[id] and player:HasCollectible(id) and itemConfig.Type == ItemType.ITEM_PASSIVE then
                     table.insert(eligibleItems, id)
                 end
             end
