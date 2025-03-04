@@ -4,7 +4,7 @@ local MutableOnyxExternalID = Isaac.GetItemIdByName("Mutable Onyx")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PallasLocalID, "{{Room}} After clearyng a room you have 5% of chance to substitute a not Volatile Item with an Mutable Onyx #{{Crown}} Occasionally, give one of these: #{{Bomb}} 1 Bomb #{{Key}} 1 Key #{{Coin}} 3 Coins #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
+    EID:addCollectible(PallasLocalID, "{{Room}} After clearing a room you have 5% of chance to substitute a not Volatile Item with an Mutable Onyx #{{Crown}} Occasionally, give these pickup: #{{Bomb}} 1 Bomb #{{Key}} 1 Key #{{Coin}} 3 Coins #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
 end
 
 local itemIgnoreList = {
@@ -17,15 +17,10 @@ for _, v in ipairs(itemIgnoreList) do
 end
 
 local function triggerPallas(player)
-    local randomReward = math.random(1, 3)
-
-    if randomReward == 1 then
-        player:AddBombs(1)
-    elseif randomReward == 2 then
-        player:AddKeys(1)
-    elseif randomReward == 3 then
-        player:AddCoins(3)
-    end
+    
+    player:AddBombs(1)
+    player:AddKeys(1)
+    player:AddCoins(3)
 
     SFXManager():Play(SoundEffect.SOUND_LUCKYPICKUP)
     
