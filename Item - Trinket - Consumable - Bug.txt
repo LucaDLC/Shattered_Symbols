@@ -16,7 +16,7 @@ ITEM
 	Droppa una reverse card, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale
 
 77706 - Constellation [3] [TEXTURE FINISHED]
-	Attivo monouso, spawna un item tra i segni zodiacali, gli item del planetario e la meteor
+	Attivo monouso, spawna un item tra i segni zodiacali, gli item del planetario e le meteore
 
 77707 - Origami Swan [3] [TEXTURE FINISHED]
 	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
@@ -86,7 +86,7 @@ ITEM
 	Ad ogni piano, acquisisce un effetto causale di un item passivo 
 
 77729 - Unstable Glyph [4]
-	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama, si carica con 7 broken hearts, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
+	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama e da la golden key e golden bomb, si carica con 7 broken hearts, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
 
 77730 - Vesta [2]
 	Ad ogni piano hai il 20% di possibilità che ti rimuova un broken heart, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
