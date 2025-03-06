@@ -22,6 +22,33 @@ local function onGameStartShawtysEssence()
     end
 end
 
+local function BrokenHeartRemovingSystem(player)
+    local slotRemoved = false
+
+    if player:GetMaxHearts() >= 2 and not slotRemoved then
+        player:AddMaxHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBoneHearts() >= 1 then
+        player:AddBoneHearts(-1) 
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetSoulHearts() >= 2 then
+        player:AddSoulHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBlackHearts() >= 2 then
+        player:AddBlackHearts(-2)  
+        slotRemoved = true
+    end
+
+    player:AddBrokenHearts(1)
+
+end
+
 function ShatteredSymbols:useShawtysEssence(_, rng, player)
     local playerType = player:GetPlayerType()
     if player:HasCollectible(ShawtysEssenceLocalID) then
@@ -37,29 +64,7 @@ function ShatteredSymbols:useShawtysEssence(_, rng, player)
                 ShowAnim = true
             }
         else
-            local slotRemoved = false
-
-            if player:GetMaxHearts() >= 2 and not slotRemoved then
-                player:AddMaxHearts(-2)  
-                slotRemoved = true
-            end
-
-            if not slotRemoved and player:GetBoneHearts() >= 1 then
-                player:AddBoneHearts(-1) 
-                slotRemoved = true
-            end
-
-            if not slotRemoved and player:GetSoulHearts() >= 2 then
-                player:AddSoulHearts(-2)  
-                slotRemoved = true
-            end
-
-            if not slotRemoved and player:GetBlackHearts() >= 2 then
-                player:AddBlackHearts(-2)  
-                slotRemoved = true
-            end
-
-            player:AddBrokenHearts(1)
+            BrokenHeartRemovingSystem(player)
             player:AddCollectible(familiarID)
         end
     end
