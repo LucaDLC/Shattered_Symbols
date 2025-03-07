@@ -30,6 +30,6 @@
 	<passive  id="77728" name="Mutable Onyx" gfx ="MutableOnyx.png" description="Volatile and mutable" quality="2" devilprice="1" tags="offensive"/>
 	<active  id="77729" name="Unstable Glyph" gfx ="UnstableGlyph.png" description="Overload that crystal wasn't a good idea" quality="4" maxcharges="7" chargetype="special" initcharge ="0" devilprice="1" tags="offensive"/>
 	<passive  id="77730" name="Vesta" gfx ="Vesta.png" description="The fourth asteroid planet" quality="2" devilprice="1"/>
-	<passive  id="77731" name="Pallas" gfx ="Pallas.png" description="The second asteroid planet" quality="0" devilprice="1"/>
+	<passive  id="77731" name="Pallas" gfx ="Pallas.png" description="The second asteroid planet" quality="1" devilprice="1"/>
 
 </items>
