@@ -4,7 +4,7 @@ local MutableOnyxExternalID = Isaac.GetItemIdByName("Mutable Onyx")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PallasLocalID, "{{Room}} After clearing a room you have 7,5% of chance to substitute a not Volatile Item with an Mutable Onyx #{{Crown}} Occasionally, give these pickup: #{{Bomb}} 1 Bomb #{{Key}} 1 Key #{{Coin}} 3 Coins #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
+    EID:addCollectible(PallasLocalID, "{{Room}} After clearing a room you have 7,5% of chance to substitute a not Volatile Item with an Mutable Onyx #{{Crown}} Occasionally, spawn a Minisaac and give these pickup: #{{Bomb}} 1 Bomb #{{Key}} 1 Key #{{Coin}} 3 Coins  #{{ArrowUp}} Both effects increasing with numbers of Pallas you have")
 end
 
 local itemIgnoreList = {
@@ -18,11 +18,11 @@ end
 
 local function triggerPallas(player)
     
+    player:AddMinisaac(player.Position, true)
     player:AddBombs(1)
     player:AddKeys(1)
     player:AddCoins(3)
-
-    SFXManager():Play(SoundEffect.SOUND_LUCKYPICKUP)
+    SFXManager():Play(SoundEffect.SOUND_BABY_HURT)
     
 end
 
@@ -46,6 +46,7 @@ function ShatteredSymbols:PallasRoomEffect()
         local player = Isaac.GetPlayer(p)
         local data = player:GetData()
         if player:HasCollectible(PallasLocalID) and (math.random() < (0.075 * player:GetCollectibleNum(PallasLocalID))) then
+
             local eligibleItems = {}
             local mutableSet = {}
 
