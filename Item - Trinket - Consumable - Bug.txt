@@ -92,7 +92,7 @@ ITEM
 	Ad ogni piano hai il 20% di possibilità che ti rimuova un broken heart, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
 
 77731 - Pallas [1]
-	Ogni stanza hai il 5% di possibilità di sostituire un oggetto non volatile in un Mutable Onyx , occasionalmente da una bomba o una chiave o 3 monete, entrambi gli effetti scalano in base al numero di Pallas
+	Ogni stanza hai il 5% di possibilità di sostituire un oggetto non volatile in un Mutable Onyx , occasionalmente da una bomba o una chiave o 3 monete e spawna un minisaac, entrambi gli effetti scalano in base al numero di Pallas
 
 ---------------------------------------------------------------------
 CONSUMABILI
@@ -135,7 +135,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-
+	- Bisogna bilanciare Pallas
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
