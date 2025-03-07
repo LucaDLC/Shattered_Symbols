@@ -3,7 +3,7 @@ local VestaLocalID = Isaac.GetItemIdByName("Vesta")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} Every floor you have 20% chance to remove 1 Broken Heart and substitute it with an Empty Heart Container ##{{Player10}} Every floor you have 20% chance to give Holy Card effect #{{DeathMark}} Occasionally, the enemies in the room obtain these effects: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds #{{ArrowUp}} Both effects increasing with numbers of Vesta you have")
+    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} Every floor you have 20% chance to remove 1 Broken Heart and substitute it with an Empty Heart Container ##{{Player10}} Every floor you have 30% chance to give Holy Card effect #{{DeathMark}} Occasionally, the enemies in the room obtain these effects: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds #{{ArrowUp}} Both effects increasing with numbers of Vesta you have")
 end
 
 local function triggerBurn(player)
@@ -37,7 +37,7 @@ function ShatteredSymbols:VestaFloor()
             local numberOfVestas = player:GetCollectibleNum(VestaLocalID)
             if numberOfVestas > 0 then
                 if numberOfVestas > 5 then numberOfVestas = 5 end
-                if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B then
+                if (playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B) and math.random() < (0.3 * numberOfVestas) then
                     player:UseCard(Card.CARD_HOLY, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
                     SFXManager():Play(SoundEffect.SOUND_SHELLGAME)
                 elseif math.random() < (0.2 * numberOfVestas) and player:GetBrokenHearts() > 0 then
