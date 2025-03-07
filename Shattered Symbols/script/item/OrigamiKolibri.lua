@@ -4,7 +4,34 @@ local RunicAltarExternalID = Isaac.GetItemIdByName("Runic Altar")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiKolibriLocalID, "{{Battery}} Duplicate all charges gained of active item for the rest of the game #{{Battery}} Does not duplicate extra charges #{{BrokenHeart}} Gives 3 Broken Hearts which does not replace Heart")
+    EID:addCollectible(OrigamiKolibriLocalID, "{{Battery}} Duplicate all charges gained of active item for the rest of the game #{{Battery}} Does not duplicate extra charges #{{BrokenHeart}} Gives 2 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+end
+
+local function BrokenHeartRemovingSystem(player)
+    local slotRemoved = false
+
+    if player:GetMaxHearts() >= 2 and not slotRemoved then
+        player:AddMaxHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBoneHearts() >= 1 then
+        player:AddBoneHearts(-1) 
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetSoulHearts() >= 2 then
+        player:AddSoulHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBlackHearts() >= 2 then
+        player:AddBlackHearts(-2)  
+        slotRemoved = true
+    end
+
+    player:AddBrokenHearts(1)
+
 end
 
 
@@ -21,7 +48,8 @@ function ShatteredSymbols:useOrigamiKolibri(player)
         if OrigamiKolibriCounter >= data.OrigamiKolibriPreviousCounter then
             data.OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter + 1
             data.OrigamiKolibriRelative = data.OrigamiKolibriRelative + 1
-            player:AddBrokenHearts(3) 
+            BrokenHeartRemovingSystem(player)
+            BrokenHeartRemovingSystem(player) 
         end
 
         for i = 0, 3 do 

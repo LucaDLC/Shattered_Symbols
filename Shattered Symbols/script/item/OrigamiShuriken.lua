@@ -3,7 +3,34 @@ local OrigamiShurikenLocalID = Isaac.GetItemIdByName("Origami Shuriken")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiShurikenLocalID, "{{DamageSmall}} +3 Damage #{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart")
+    EID:addCollectible(OrigamiShurikenLocalID, "{{DamageSmall}} +3 Damage #{{BrokenHeart}} Gives 1 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+end
+
+local function BrokenHeartRemovingSystem(player)
+    local slotRemoved = false
+
+    if player:GetMaxHearts() >= 2 and not slotRemoved then
+        player:AddMaxHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBoneHearts() >= 1 then
+        player:AddBoneHearts(-1) 
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetSoulHearts() >= 2 then
+        player:AddSoulHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBlackHearts() >= 2 then
+        player:AddBlackHearts(-2)  
+        slotRemoved = true
+    end
+
+    player:AddBrokenHearts(1)
+
 end
 
 function ShatteredSymbols:useOrigamiShuriken(player)
@@ -19,7 +46,7 @@ function ShatteredSymbols:useOrigamiShuriken(player)
         if OrigamiShurikenCounter >= data.OrigamiShurikenPreviousCounter then
             data.OrigamiShurikenPreviousCounter = data.OrigamiShurikenPreviousCounter + 1
             data.OrigamiShurikenRelative = data.OrigamiShurikenRelative + 1
-            player:AddBrokenHearts(1) 
+            BrokenHeartRemovingSystem(player) 
             data.OrigamiShurikenDamageBoost = 3*data.OrigamiShurikenRelative 
             player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
             player:EvaluateItems()
