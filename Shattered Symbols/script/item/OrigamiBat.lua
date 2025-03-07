@@ -4,7 +4,34 @@ local OrigamiBatLocalID = Isaac.GetItemIdByName("Origami Bat")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiBatLocalID, "#{{HalfHeart}} After 64 hits, heal Half Heart #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{TearsSmall}} +0.2 Tears #{{ArrowDown}} Gives 1 Broken Hearts which does not replace Heart{{BrokenHeart}}")
+    EID:addCollectible(OrigamiBatLocalID, "#{{HalfHeart}} After 64 hits, heal Half Heart #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{TearsSmall}} +0.2 Tears #{{BrokenHeart}} Gives 1 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+end
+
+local function BrokenHeartRemovingSystem(player)
+    local slotRemoved = false
+
+    if player:GetMaxHearts() >= 2 and not slotRemoved then
+        player:AddMaxHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBoneHearts() >= 1 then
+        player:AddBoneHearts(-1) 
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetSoulHearts() >= 2 then
+        player:AddSoulHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBlackHearts() >= 2 then
+        player:AddBlackHearts(-2)  
+        slotRemoved = true
+    end
+
+    player:AddBrokenHearts(1)
+
 end
 
 function ShatteredSymbols:useOrigamiBat(player)
@@ -24,7 +51,7 @@ function ShatteredSymbols:useOrigamiBat(player)
             data.OrigamiBatRelative = data.OrigamiBatRelative + 1
             data.OrigamiBatTearsCount = 0
             data.OrigamiBatTearsBoost = 0.2*data.OrigamiBatRelative
-            player:AddBrokenHearts(1)
+            BrokenHeartRemovingSystem(player)
             player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
             player:EvaluateItems()
         end

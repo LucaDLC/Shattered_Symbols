@@ -3,7 +3,34 @@ local FortuneTellerLocalID = Isaac.GetItemIdByName("Fortune Teller")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(FortuneTellerLocalID, "{{LuckSmall}} +5 Luck #{{BrokenHeart}} Gives 1 Broken Hearts which does not replace Heart")
+    EID:addCollectible(FortuneTellerLocalID, "{{LuckSmall}} +5 Luck #{{BrokenHeart}} Gives 1 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+end
+
+local function BrokenHeartRemovingSystem(player)
+    local slotRemoved = false
+
+    if player:GetMaxHearts() >= 2 and not slotRemoved then
+        player:AddMaxHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBoneHearts() >= 1 then
+        player:AddBoneHearts(-1) 
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetSoulHearts() >= 2 then
+        player:AddSoulHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBlackHearts() >= 2 then
+        player:AddBlackHearts(-2)  
+        slotRemoved = true
+    end
+
+    player:AddBrokenHearts(1)
+
 end
 
 function ShatteredSymbols:useFortuneTeller(player)
@@ -19,7 +46,7 @@ function ShatteredSymbols:useFortuneTeller(player)
         if FortuneTellerCounter >= data.FortuneTellerPreviousCounter then
             data.FortuneTellerPreviousCounter = data.FortuneTellerPreviousCounter + 1
             data.FortuneTellerRelative = data.FortuneTellerRelative + 1
-            player:AddBrokenHearts(1) 
+            BrokenHeartRemovingSystem(player) 
             data.FortuneTellerLuckBoost = 5*data.FortuneTellerRelative 
             player:AddCacheFlags(CacheFlag.CACHE_LUCK)
             player:EvaluateItems()
