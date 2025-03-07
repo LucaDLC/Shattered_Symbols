@@ -89,10 +89,10 @@ ITEM
 	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama e da la golden key e golden bomb, si carica con 7 broken hearts, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
 
 77730 - Vesta [2]
-	Ad ogni piano hai il 20% di possibilità che ti rimuova un broken heart, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
+	Ad ogni piano hai il 20% di possibilità che ti rimuova un broken heart dandoti uno slot vuoto, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
 
-77731 - Pallas [0]
-	Ogni stanza hai il 50% di possibilità di otteenre bombe, chiavi e monete , occasionalmente spawna un minisaac, entrambi gli effetti scalano in base al numero di Pallas
+77731 - Pallas [1]
+	Ogni stanza hai il 50% di possibilità di ottenere bombe, chiavi e monete , occasionalmente spawna un minisaac, entrambi gli effetti scalano in base al numero di Pallas
 
 ---------------------------------------------------------------------
 CONSUMABILI
