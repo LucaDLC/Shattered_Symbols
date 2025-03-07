@@ -92,7 +92,7 @@ ITEM
 	Ad ogni piano hai il 20% di possibilità che ti rimuova un broken heart dandoti uno slot vuoto, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
 
 77731 - Pallas [1]
-	Ogni stanza spawna 2-4 minisaac, l'effetto scala in base al numero di Pallas
+	Ogni stanza spawna 2-3 minisaac, l'effetto scala in base al numero di Pallas
 
 ---------------------------------------------------------------------
 CONSUMABILI
