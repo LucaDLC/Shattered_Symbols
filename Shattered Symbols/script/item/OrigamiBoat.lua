@@ -16,12 +16,13 @@ local statMultiplier = {
 
 function ShatteredSymbols:useOrigamiBoat(player)
     local data = player:GetData()
-
+    local playerType = player:GetPlayerType()
+    
     if not data.OrigamiBoatBrokenHeartsCount then data.OrigamiBoatBrokenHeartsCount = 0 end
     if not data.OrigamiBoatHoldingItemforStats then data.OrigamiBoatHoldingItemforStats = false end
     
     local currentBrokenHearts = player:GetBrokenHearts()
-    if player:HasCollectible(OrigamiBoatLocalID) then
+    if player:HasCollectible(OrigamiBoatLocalID) and not (playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B) then
         if currentBrokenHearts ~= data.OrigamiBoatBrokenHeartsCount then
             local diff = currentBrokenHearts - data.OrigamiBoatBrokenHeartsCount
 
@@ -34,7 +35,7 @@ function ShatteredSymbols:useOrigamiBoat(player)
 
             data.OrigamiBoatBrokenHeartsCount = currentBrokenHearts
         end
-    elseif not player:HasCollectible(OrigamiBoatLocalID) and data.OrigamiBoatHoldingItemforStats == true then
+    elseif not player:HasCollectible(OrigamiBoatLocalID) and data.OrigamiBoatHoldingItemforStats == true and not (playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B) then
         player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
         player:AddCacheFlags(CacheFlag.CACHE_SPEED)
         player:AddCacheFlags(CacheFlag.CACHE_RANGE)
@@ -47,7 +48,7 @@ end
 function ShatteredSymbols:onEvaluateCacheOrigamiBoat(player, cacheFlag)
     local data = player:GetData()
     local brokenHearts = player:GetBrokenHearts()
-    if (currentBrokenHearts ~= data.OrigamiBoatBrokenHeartsCount) and player:HasCollectible(OrigamiBoatLocalID) then
+    if (currentBrokenHearts ~= data.OrigamiBoatBrokenHeartsCount) and player:HasCollectible(OrigamiBoatLocalID) and not (playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B) then
         data.OrigamiBoatHoldingItemforStats = true
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
             player.Damage = player.Damage + (brokenHearts * statMultiplier.damage)
@@ -61,7 +62,7 @@ function ShatteredSymbols:onEvaluateCacheOrigamiBoat(player, cacheFlag)
         elseif cacheFlag == CacheFlag.CACHE_LUCK then
             player.Luck = player.Luck + (brokenHearts * statMultiplier.luck)
         end
-    elseif data.OrigamiBoatHoldingItemforStats == true then
+    elseif data.OrigamiBoatHoldingItemforStats == true and not (playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B) then
         data.OrigamiBoatHoldingItemforStats = false
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
             player.Damage = player.Damage + (0 * statMultiplier.damage)
