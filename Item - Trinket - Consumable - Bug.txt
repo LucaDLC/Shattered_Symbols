@@ -135,7 +135,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- Bisogna bilanciare Pallas
+	- Flux e Unstable Glyph devono fare un check, devono far in modo di rendere il cuore rimosso dal broken heart
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
