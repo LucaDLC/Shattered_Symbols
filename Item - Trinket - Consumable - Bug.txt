@@ -135,7 +135,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- Flux e Unstable Glyph devono fare un check, devono far in modo di rendere il cuore rimosso dal broken heart
+	- Unstable Glyph deve fare un check, deve far in modo di rendere il cuore rimosso dal broken heart (prendere come esempio: Broken Flux)
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
