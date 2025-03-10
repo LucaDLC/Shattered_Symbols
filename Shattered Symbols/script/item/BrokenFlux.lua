@@ -3,20 +3,28 @@ local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(BrokenFluxLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge #{{ArrowDown}} If the absorbed Broken Hearts have replaced Hearts, these are not returned")
+    EID:addCollectible(BrokenFluxLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge ")
 end
 
 function ShatteredSymbols:havingBrokenFlux(player)
     local data = player:GetData()
     if not data.BrokenFluxPreviousBrokenHearts then data.BrokenFluxPreviousBrokenHearts = -1 end
+    if not data.BrokenFluxPreviousHearts then
+        data.BrokenFluxPreviousHearts = {red = 0, bone = 0, soul = 0, black = 0}
+    end
 
     if player:HasCollectible(BrokenFluxLocalID) then
         for i = 0, 3 do 
             local activeItem = player:GetActiveItem(i)
             if activeItem ~= 0 and activeItem == BrokenFluxLocalID then
                 local currentBrokenHearts = player:GetBrokenHearts()
+                
                 if data.BrokenFluxPreviousBrokenHearts == -1 then
                     data.BrokenFluxPreviousBrokenHearts = currentBrokenHearts
+                    data.BrokenFluxPreviousHearts.red = player:GetMaxHearts()
+                    data.BrokenFluxPreviousHearts.bone = player:GetBoneHearts()
+                    data.BrokenFluxPreviousHearts.soul = player:GetSoulHearts()
+                    data.BrokenFluxPreviousHearts.black = player:GetBlackHearts()
                 end
                 
                 if currentBrokenHearts > data.BrokenFluxPreviousBrokenHearts then
@@ -24,6 +32,27 @@ function ShatteredSymbols:havingBrokenFlux(player)
                         if player:GetActiveCharge(i) < 3 then
                             player:AddBrokenHearts(-1)
                             player:SetActiveCharge(player:GetActiveCharge(i) + 1, i)
+                            
+                            local currentRed = player:GetMaxHearts()
+                            local currentBone = player:GetBoneHearts()
+                            local currentSoul = player:GetSoulHearts()
+                            local currentBlack = player:GetBlackHearts()
+
+                            if currentRed < data.BrokenFluxPreviousHearts.red then
+                                player:AddMaxHearts(2)
+                                player:AddHearts(2)
+                            elseif currentBone < data.BrokenFluxPreviousHearts.bone then
+                                player:AddBoneHearts(1)
+                            elseif currentSoul < data.BrokenFluxPreviousHearts.soul then
+                                player:AddSoulHearts(2)
+                            elseif currentBlack < data.BrokenFluxPreviousHearts.black then
+                                player:AddBlackHearts(2)
+                            end
+
+                            data.BrokenFluxPreviousHearts.red = player:GetMaxHearts()
+                            data.BrokenFluxPreviousHearts.bone = player:GetBoneHearts()
+                            data.BrokenFluxPreviousHearts.soul = player:GetSoulHearts()
+                            data.BrokenFluxPreviousHearts.black = player:GetBlackHearts()
                         else  
                             player:SetActiveCharge(3, i)
                         end
@@ -36,8 +65,10 @@ function ShatteredSymbols:havingBrokenFlux(player)
         end
     else
         data.BrokenFluxPreviousBrokenHearts = -1
+        data.BrokenFluxPreviousHearts = {red = 0, bone = 0, soul = 0, black = 0}
     end
 end
+
 
 function ShatteredSymbols:useBrokenFlux(_, rng, player)
     local data = player:GetData()
