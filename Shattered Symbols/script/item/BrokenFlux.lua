@@ -49,10 +49,6 @@ function ShatteredSymbols:havingBrokenFlux(player)
                                 player:AddBlackHearts(2)
                             end
 
-                            data.BrokenFluxPreviousHearts.red = player:GetMaxHearts()
-                            data.BrokenFluxPreviousHearts.bone = player:GetBoneHearts()
-                            data.BrokenFluxPreviousHearts.soul = player:GetSoulHearts()
-                            data.BrokenFluxPreviousHearts.black = player:GetBlackHearts()
                         else  
                             player:SetActiveCharge(3, i)
                         end
@@ -61,6 +57,10 @@ function ShatteredSymbols:havingBrokenFlux(player)
                 end
                 
                 data.BrokenFluxPreviousBrokenHearts = currentBrokenHearts
+                data.BrokenFluxPreviousHearts.red = player:GetMaxHearts()
+                data.BrokenFluxPreviousHearts.bone = player:GetBoneHearts()
+                data.BrokenFluxPreviousHearts.soul = player:GetSoulHearts()
+                data.BrokenFluxPreviousHearts.black = player:GetBlackHearts()
             end
         end
     else
