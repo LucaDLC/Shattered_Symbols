@@ -135,7 +135,6 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
-	- Unstable Glyph deve fare un check, deve far in modo di rendere il cuore rimosso dal broken heart (prendere come esempio: Broken Flux)
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
@@ -143,6 +142,8 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 	- Mancano Texture, Death animation e Pillcard
 
 	- Gli oggetti devono essere testati con tainted Lazarus 
+
+	- Analizzare bene il codice di Unstable Glyph per capire se ha qualcosa di sospetto
 
 	
 
