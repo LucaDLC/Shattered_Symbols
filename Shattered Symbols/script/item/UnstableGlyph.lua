@@ -20,6 +20,7 @@ local function tablecontains(tbl, element)
 end
 
 function ShatteredSymbols:havingUnstableGlyph(player)
+
     local SetterData = Isaac.GetPlayer(0)
     local data = SetterData:GetData()
     if not data.UnstableGlyphCharge then data.UnstableGlyphCharge = 0 end
@@ -31,33 +32,52 @@ function ShatteredSymbols:havingUnstableGlyph(player)
             local activeItem = player:GetActiveItem(i)
 
             if activeItem ~= 0 and activeItem == UnstableGlyphLocalID then
+
                 if data.UnstableGlyphBrokenHearts == {} then
+
                     for i = 0, game:GetNumPlayers() - 1 do
+
                         local selected = game:GetPlayer(i)
                         local selectedData = selected:GetData()
                         table.insert(data.UnstableGlyphBrokenHearts, selected:GetBrokenHearts())
+
                     end
+
                 else
+
                     if data.UnstableGlyphCharge >= 7 then
+
                         data.UnstableGlyphCharge = 7
+
                     else
+
                         for i = 0, game:GetNumPlayers() - 1 do
+
                             local selected = game:GetPlayer(i)
                             local previousBroken = data.UnstableGlyphBrokenHearts[i+1] or 0
                             local currentBroken = selected:GetBrokenHearts()
+
                             if previousBroken < currentBroken then
+
                                 local difference = currentBroken - previousBroken
+
                                 if difference > 7 - data.UnstableGlyphCharge then
                                     difference = 7 - data.UnstableGlyphCharge
                                 end
+
                                 selected:AddBrokenHearts(-difference)
                                 data.UnstableGlyphCharge = data.UnstableGlyphCharge + difference
+
                                 if data.UnstableGlyphCharge > 7 then
                                     data.UnstableGlyphCharge = 7
                                 end
+
                                 SFXManager():Play(SoundEffect.SOUND_LIGHTBOLT_CHARGE)
+
                             elseif previousBroken > currentBroken then
+
                                 data.UnstableGlyphBrokenHearts[i+1] = currentBroken
+
                             end
                             
                         end
@@ -66,8 +86,11 @@ function ShatteredSymbols:havingUnstableGlyph(player)
                 end
             end
         end
+
     else
+
         data.UnstableGlyphBrokenHearts = {}
+
     end
         
 end
