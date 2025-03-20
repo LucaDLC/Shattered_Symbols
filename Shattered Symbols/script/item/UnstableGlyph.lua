@@ -38,7 +38,6 @@ function ShatteredSymbols:havingUnstableGlyph(player)
                     for i = 0, game:GetNumPlayers() - 1 do
 
                         local selected = game:GetPlayer(i)
-                        local selectedData = selected:GetData()
                         table.insert(data.UnstableGlyphBrokenHearts, selected:GetBrokenHearts())
 
                     end
