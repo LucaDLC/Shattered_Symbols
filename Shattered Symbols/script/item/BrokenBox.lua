@@ -3,7 +3,7 @@ local BrokenBoxLocalID = Isaac.GetItemIdByName("Broken Box")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(BrokenBoxLocalID, "{{Warning}} SINGLE USE {{Warning}} #If empty, the box takes up to maximum of: #{{BrokenHeart}} 1 Broken Heart #{{Collectible}} 1 Item #{{Coin}} 10 Coins #{{Bomb}} 1 Bomb #{{Key}} 1 Key #If full, the box gives you everything it took before #{{ArrowDown}} If you don't have nothing to take, the box vanish and it's considered like empty")
+    EID:addCollectible(BrokenBoxLocalID, "{{Warning}} SINGLE USE {{Warning}} #If empty, the box takes up to maximum of: #{{BrokenHeart}} 1 Broken Heart #{{Collectible}} 1 Item #{{Coin}} 15 Coins #{{Bomb}} 3 Bombs #{{Key}} 3 Keys #If full, the box gives you everything it took before #{{ArrowDown}} If you don't have nothing to take, the box vanish and it's considered like empty")
 end
 
 
@@ -40,13 +40,13 @@ function ShatteredSymbols:useBrokenBox(_, rng, player)
 
         collectibles = {}
         
-        data.BrokenBoxMoneyFlag = math.min(player:GetNumCoins(), 10)
+        data.BrokenBoxMoneyFlag = math.min(player:GetNumCoins(), 15)
         player:AddCoins(-data.BrokenBoxMoneyFlag)
 
-        data.BrokenBoxBombFlag = math.min(player:GetNumBombs(), 1)
+        data.BrokenBoxBombFlag = math.min(player:GetNumBombs(), 3)
         player:AddBombs(-data.BrokenBoxBombFlag)
 
-        data.BrokenBoxKeyFlag = math.min(player:GetNumKeys(), 1)
+        data.BrokenBoxKeyFlag = math.min(player:GetNumKeys(), 3)
         player:AddKeys(-data.BrokenBoxKeyFlag)
 
         if data.BrokenBoxItemFlag ~= nil or data.BrokenBoxMoneyFlag > 0 or data.BrokenBoxBombFlag > 0 or data.BrokenBoxKeyFlag > 0 then
