@@ -34,7 +34,7 @@ function ShatteredSymbols:havingUnstableGlyph(player)
 
             if activeItem ~= 0 and activeItem == UnstableGlyphLocalID then
 
-                if data.UnstableGlyphHeartsTracking == {} then
+                if next(data.UnstableGlyphHeartsTracking) == nil then
 
                     for i = 0, game:GetNumPlayers() - 1 do
 
@@ -45,7 +45,7 @@ function ShatteredSymbols:havingUnstableGlyph(player)
 
                 end
                 
-                if data.UnstableGlyphBrokenHearts == {} then
+                if next(data.UnstableGlyphBrokenHearts) == nil then
 
                     for i = 0, game:GetNumPlayers() - 1 do
 
@@ -133,11 +133,8 @@ function ShatteredSymbols:havingUnstableGlyph(player)
         end
 
         if someoneHaveGlyph == false then
-            for i = 0, game:GetNumPlayers() - 1 do
-                local selected = game:GetPlayer(i)
-                data.UnstableGlyphHeartsTracking[i+1] = {red = selected:GetMaxHearts(), bone = selected:GetBoneHearts(), soul = selected:GetSoulHearts(), black = selected:GetBlackHearts()}
-                data.UnstableGlyphBrokenHearts[i+1] = selected:GetBrokenHearts()
-            end
+            data.UnstableGlyphHeartsTracking = {}
+            data.UnstableGlyphBrokenHearts = {}
         end
 
     end

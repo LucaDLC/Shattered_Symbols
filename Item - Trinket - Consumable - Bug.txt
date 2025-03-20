@@ -143,8 +143,6 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
 	- Gli oggetti devono essere testati con tainted Lazarus 
 
-	- Analizzare bene il codice di Unstable Glyph per capire se ha qualcosa di sospetto
-
 	
 
 
