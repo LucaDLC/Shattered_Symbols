@@ -7,7 +7,7 @@ local itemIgnoreList = {
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Rerolls all items in the room into quality 4 items and triggers an explosion, gain: #{{GoldenBomb}} Golden Bomb #{{GoldenKey}} Golden Key #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, it consumes to charge; each Broken Heart equals one charge. #{{Battery}} Shares charges with all Unstable Glyphs across players and matches. #{{ArrowDown}} Absorbed Broken Hearts that replaced Hearts are not restored.")
+    EID:addCollectible(UnstableGlyphLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{Collectible}} Rerolls all items in the room into quality 4 items and triggers an explosion, gain: #{{GoldenBomb}} Golden Bomb #{{GoldenKey}} Golden Key #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, it consumes to charge; each Broken Heart equals one charge. #{{Battery}} Shares charges with all Unstable Glyphs across players and matches")
 end
 
 local function tablecontains(tbl, element)
@@ -20,11 +20,12 @@ local function tablecontains(tbl, element)
 end
 
 function ShatteredSymbols:havingUnstableGlyph(player)
+
     local SetterData = Isaac.GetPlayer(0)
     local data = SetterData:GetData()
     if not data.UnstableGlyphCharge then data.UnstableGlyphCharge = 0 end
     if not data.UnstableGlyphBrokenHearts then data.UnstableGlyphBrokenHearts = {} end
-    if not data.UnstableGlyphPreviousHearts then data.UnstableGlyphPreviousHearts = {red= -1, bone= -1, soul= -1, black= -1} end
+    if not data.UnstableGlyphHeartsTracking then data.UnstableGlyphHeartsTracking = {} end
 
     if player:HasCollectible(UnstableGlyphLocalID) then
 
@@ -32,78 +33,113 @@ function ShatteredSymbols:havingUnstableGlyph(player)
             local activeItem = player:GetActiveItem(i)
 
             if activeItem ~= 0 and activeItem == UnstableGlyphLocalID then
-                if data.UnstableGlyphBrokenHearts == {} then
+
+                if data.UnstableGlyphHeartsTracking == {} then
+
                     for i = 0, game:GetNumPlayers() - 1 do
+
+                        local selected = game:GetPlayer(i)
+                        table.insert(data.UnstableGlyphHeartsTracking, {red = selected:GetMaxHearts(), bone = selected:GetBoneHearts(), soul = selected:GetSoulHearts(), black = selected:GetBlackHearts()})
+
+                    end
+
+                end
+                
+                if data.UnstableGlyphBrokenHearts == {} then
+
+                    for i = 0, game:GetNumPlayers() - 1 do
+
                         local selected = game:GetPlayer(i)
                         table.insert(data.UnstableGlyphBrokenHearts, selected:GetBrokenHearts())
-                        data.UnstableGlyphHearts[i+1] = {
-                            red = selected:GetMaxHearts(),
-                            bone = selected:GetBoneHearts(),
-                            soul = selected:GetSoulHearts(),
-                            black = selected:GetBlackHearts()
-                        }
+
                     end
+
                 else
+
                     if data.UnstableGlyphCharge >= 7 then
+
                         data.UnstableGlyphCharge = 7
+
                     else
+
                         for i = 0, game:GetNumPlayers() - 1 do
+
                             local selected = game:GetPlayer(i)
                             local previousBroken = data.UnstableGlyphBrokenHearts[i+1] or 0
                             local currentBroken = selected:GetBrokenHearts()
+
                             if previousBroken < currentBroken then
+
                                 local difference = currentBroken - previousBroken
+
                                 if difference > 7 - data.UnstableGlyphCharge then
                                     difference = 7 - data.UnstableGlyphCharge
                                 end
+
                                 selected:AddBrokenHearts(-difference)
                                 data.UnstableGlyphCharge = data.UnstableGlyphCharge + difference
-                                if data.UnstableGlyphCharge > 7 then
-                                    data.UnstableGlyphCharge = 7
-                                end
 
                                 local currentRed = selected:GetMaxHearts()
                                 local currentBone = selected:GetBoneHearts()
                                 local currentSoul = selected:GetSoulHearts()
                                 local currentBlack = selected:GetBlackHearts()
 
-                                if currentRed < data.UnstableGlyphHearts[i+1].red then
-                                    selected:AddMaxHearts((data.UnstableGlyphHearts[i+1].red - currentRed)*2)
-                                    selected:AddHearts((data.UnstableGlyphHearts[i+1].red - currentRed)*2)
+                                for j = 1, difference do
+                                    if currentRed < data.UnstableGlyphHeartsTracking[i+1].red then
+                                        selected:AddMaxHearts(2)
+                                        selected:AddHearts(2)
+                                    elseif currentBone < data.UnstableGlyphHeartsTracking[i+1].bone then
+                                        selected:AddBoneHearts(1)
+                                    elseif currentSoul < data.UnstableGlyphHeartsTracking[i+1].soul then
+                                        selected:AddSoulHearts(2)
+                                    elseif currentBlack < data.UnstableGlyphHeartsTracking[i+1].black then
+                                        selected:AddBlackHearts(2)
+                                    end
+                                    currentRed = selected:GetMaxHearts()
+                                    currentBone = selected:GetBoneHearts()
+                                    currentSoul = selected:GetSoulHearts()
+                                    currentBlack = selected:GetBlackHearts()
                                 end
-                                if currentBone < data.UnstableGlyphHearts[i+1].bone then
-                                    selected:AddBoneHearts(data.UnstableGlyphHearts[i+1].bone - currentBone)
-                                end
-                                if currentSoul < data.UnstableGlyphHearts[i+1].soul then
-                                    selected:AddSoulHearts((data.UnstableGlyphHearts[i+1].soul - currentSoul)*2)
-                                end
-                                if currentBlack < data.UnstableGlyphHearts[i+1].black then
-                                    selected:AddBlackHearts((data.UnstableGlyphHearts[i+1].black - currentBlack)*2)
+
+                                if data.UnstableGlyphCharge > 7 then
+                                    data.UnstableGlyphCharge = 7
                                 end
 
                                 SFXManager():Play(SoundEffect.SOUND_LIGHTBOLT_CHARGE)
-                            elseif previousBroken > currentBroken then
-                                data.UnstableGlyphBrokenHearts[i+1] = currentBroken
-                                
-                            end
-                            
-                            data.UnstableGlyphHearts[i+1] = {
-                                red = selected:GetMaxHearts(),
-                                bone = selected:GetBoneHearts(),
-                                soul = selected:GetSoulHearts(),
-                                black = selected:GetBlackHearts()
-                            }
 
+
+                            elseif previousBroken > currentBroken then
+
+                                data.UnstableGlyphBrokenHearts[i+1] = currentBroken
+
+                            end
+
+                            data.UnstableGlyphHeartsTracking[i+1] = {red = selected:GetMaxHearts(), bone = selected:GetBoneHearts(), soul = selected:GetSoulHearts(), black = selected:GetBlackHearts()}
+                        
                         end
                     end
                     player:SetActiveCharge(data.UnstableGlyphCharge, i)
                 end
-
             end
         end
+
     else
-        data.UnstableGlyphBrokenHearts = {}
-        data.UnstableGlyphPreviousHearts = {}
+        local someoneHaveGlyph = false
+        for i = 0, game:GetNumPlayers() - 1 do
+            local selected = game:GetPlayer(i)
+            if selected:HasCollectible(UnstableGlyphLocalID) then
+                someoneHaveGlyph = true
+            end
+        end
+
+        if someoneHaveGlyph == false then
+            for i = 0, game:GetNumPlayers() - 1 do
+                local selected = game:GetPlayer(i)
+                data.UnstableGlyphHeartsTracking[i+1] = {red = selected:GetMaxHearts(), bone = selected:GetBoneHearts(), soul = selected:GetSoulHearts(), black = selected:GetBlackHearts()}
+            end
+            data.UnstableGlyphBrokenHearts = {}
+        end
+
     end
         
 end
@@ -113,6 +149,8 @@ function ShatteredSymbols:useUnstableGlyph(_, rng, player)
     local SetterData = Isaac.GetPlayer(0)
     local data = SetterData:GetData()
     if not data.UnstableGlyphCharge then data.UnstableGlyphCharge = 0 end
+    if not data.UnstableGlyphBrokenHearts then data.UnstableGlyphBrokenHearts = {} end
+    if not data.UnstableGlyphHeartsTracking then data.UnstableGlyphHeartsTracking = {} end
     
     if player:HasCollectible(UnstableGlyphLocalID) then
         if REPENTOGON then
