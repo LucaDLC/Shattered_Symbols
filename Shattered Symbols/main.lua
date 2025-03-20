@@ -132,6 +132,7 @@ function ShatteredSymbols:SavePlayerData()
             playerDataToSave.BrokenBoxStatus = data.BrokenBoxStatus or false
             playerDataToSave.UnstableGlyphCharge = data.UnstableGlyphCharge or 0
             playerDataToSave.UnstableGlyphBrokenHearts = data.UnstableGlyphBrokenHearts or {}
+            playerDataToSave.UnstableGlyphHeartsTracking = data.UnstableGlyphHeartsTracking or {}
         end
 
         table.insert(allPlayersData, playerDataToSave)
@@ -195,7 +196,8 @@ function ShatteredSymbols:LoadPlayerData()
                 data.BrokenBoxKeyFlag = playerDataToLoad.BrokenBoxKeyFlag or 0
                 data.BrokenBoxStatus = playerDataToLoad.BrokenBoxStatus or false
                 data.UnstableGlyphCharge = playerDataToLoad.UnstableGlyphCharge or 0
-                data.UnstableGlyphBrokenHearts = playerDataToLoad.RunicAltarEffects or {}
+                data.UnstableGlyphBrokenHearts = playerDataToLoad.UnstableGlyphBrokenHearts or {}
+                data.UnstableGlyphHeartsTracking = playerDataToLoad.UnstableGlyphHeartsTracking or {}
             end
         end
 
@@ -213,7 +215,6 @@ function ShatteredSymbols:LoadPlayerData()
         data.BrokenBoxKeyFlag = playerDataToLoad.BrokenBoxKeyFlag or 0
         data.BrokenBoxStatus = playerDataToLoad.BrokenBoxStatus or false
         data.UnstableGlyphCharge = playerDataToLoad.UnstableGlyphCharge or 0
-        data.UnstableGlyphBrokenHearts = playerDataToLoad.RunicAltarEffects or {}
 
     else
         ShatteredSymbols:RemoveData()
