@@ -49,7 +49,7 @@ ITEM
 	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro, da 2 broken heart
 
 77717 - Broken Box [2]
-	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 10 monete, 1 bomba e 1 chiave (sempre se presenti altrimenti sottrae il possibile) 
+	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 15 monete, 3 bomba e 3 chiave (sempre se presenti altrimenti sottrae il possibile) 
 	quando viene ripresa anche in un altra run restituisce tutto (se non prende nulla al primo giro, quando viene ripresa vale come vuota)
 
 77718 - Midnight Bite [2]
