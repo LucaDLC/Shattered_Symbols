@@ -3,7 +3,7 @@ local ShawtysLetterLocalID = Isaac.GetItemIdByName("Shawty's Letter")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ShawtysLetterLocalID, "{{Warning}} SINGLE USE {{Warning}}#Spawns a random origami item")
+    EID:addCollectible(ShawtysLetterLocalID, "{{Warning}} SINGLE USE {{Warning}}#{{Collectible}} Spawns a random origami item")
 end
 
 local Origami_items = {
