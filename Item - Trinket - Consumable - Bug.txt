@@ -143,6 +143,8 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
 	- Gli oggetti devono essere testati con tainted Lazarus 
 
+	- Mettere doppia texture per Broken Box (cambiare sprite dal codice in base a se è piena o meno)
+
 	
 
 
