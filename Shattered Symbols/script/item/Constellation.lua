@@ -3,7 +3,7 @@ local ConstellationLocalID = Isaac.GetItemIdByName("Constellation")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ConstellationLocalID, "{{Warning}} SINGLE USE {{Warning}}#Spawns a random item from Planetarium Pool or Zodiac Signs")
+    EID:addCollectible(ConstellationLocalID, "{{Warning}} SINGLE USE {{Warning}}#{{Planetarium}} Spawns a random item from Planetarium Pool or Zodiac Signs")
 end
 
 local zodiac_items = {
