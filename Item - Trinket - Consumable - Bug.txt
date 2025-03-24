@@ -135,6 +135,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 	
+	- Constellation prende solo gli item selezionati, vorrei prendesse tutta la pool del planetario
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
