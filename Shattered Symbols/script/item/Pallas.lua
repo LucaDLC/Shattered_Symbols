@@ -3,7 +3,7 @@ local PallasLocalID = Isaac.GetItemIdByName("Pallas")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PallasLocalID, "{{Room}} After clearing a room spawn 2-3 Minisaac #{{ArrowUp}} The maximum number of Minisaac it can spawn increases with the number of Pallas you have")
+    EID:addCollectible(PallasLocalID, "{{Room}} After clearing a room spawn 1-3 Minisaac #{{ArrowUp}} The maximum number of Minisaac it can spawn increases with the number of Pallas you have")
 end
 
 
@@ -12,7 +12,7 @@ function ShatteredSymbols:PallasRoomEffect()
         local player = Isaac.GetPlayer(p)
         local data = player:GetData()
         if player:HasCollectible(PallasLocalID) then
-            local randomReward = math.random(2, (2 + player:GetCollectibleNum(PallasLocalID)))
+            local randomReward = math.random(1, (2 + player:GetCollectibleNum(PallasLocalID)))
             for i = 1, randomReward do
                 player:AddMinisaac(player.Position, true)
                 SFXManager():Play(SoundEffect.SOUND_BABY_HURT)
