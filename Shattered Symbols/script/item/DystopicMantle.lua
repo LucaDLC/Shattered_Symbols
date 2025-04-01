@@ -17,4 +17,4 @@ function ShatteredSymbols:useDystopicMantle()
     end
 end
 
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PLAYER_DEATH, ShatteredSymbols.useDystopicMantle)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_UPDATE, ShatteredSymbols.useDystopicMantle)
