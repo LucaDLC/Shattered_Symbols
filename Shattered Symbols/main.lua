@@ -122,6 +122,8 @@ function ShatteredSymbols:SavePlayerData()
             TornHookCounter = data.TornHookCounter or 0,
             RunicAltarEffects = data.RunicAltarEffects or {},
             OnyxItemEffectID = data.OnyxItemEffectID or {},
+            CtrlHoldTimeHoleyPocket = data.CtrlHoldTimeHoleyPocket or 0,
+            LastCtrlPressFrameHoleyPocket = data.LastCtrlPressFrameHoleyPocket or 0,
         }
 
         -- Shared Data
@@ -188,6 +190,8 @@ function ShatteredSymbols:LoadPlayerData()
             data.TornHookCounter = playerDataToLoad.TornHookCounter or 0
             data.RunicAltarEffects = playerDataToLoad.RunicAltarEffects or {}
             data.OnyxItemEffectID = playerDataToLoad.OnyxItemEffectID or {}
+            data.CtrlHoldTimeHoleyPocket = playerDataToLoad.CtrlHoldTimeHoleyPocket or 0
+            data.LastCtrlPressFrameHoleyPocket = playerDataToLoad.LastCtrlPressFrameHoleyPocket or 0
 
             -- Shared Data
             if i == 0 then
