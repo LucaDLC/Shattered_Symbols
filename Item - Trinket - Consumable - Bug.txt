@@ -147,7 +147,6 @@ BUG
 
 	- Crow sarebbe da far in modo che quando l'item viene sovrascritto, lo spawni a terra ma senza duplicarlo se viene usato e sostituito subito dopo
 
-	- Holey Pocket non funziona
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
