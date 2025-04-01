@@ -88,7 +88,7 @@ function ShatteredSymbols:OnTearRunic(tear)
         local data = player:GetData()
         
         if data.RunicTransformation then
-            tear:SetColor(Color(128/255, 0, 128/255, 1), 0, 0, false, false)
+            tear:SetColor(Color(140/255, 120/255, 255/255, 1), 0, 0, false, false)
         else
             tear:SetColor(Color(1, 1, 1, 1), 0, 0, false, false)
         end
