@@ -145,8 +145,6 @@ BUG
 	
 	- Constellation prende solo gli item selezionati, vorrei prendesse tutta la pool del planetario
 
-	- Crow sarebbe da far in modo che quando l'item viene sovrascritto, lo spawni a terra ma senza duplicarlo se viene usato e sostituito subito dopo
-
 	- Holey Pocket deve interagire anche con un bottone di un ipotetico controller (Arrow Up)
 
 ---------------------------------------------------------------------
