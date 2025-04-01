@@ -44,7 +44,7 @@
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
+	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedShop">
@@ -64,7 +64,7 @@
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
+	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="secret">
@@ -72,6 +72,7 @@
 	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
     
     <Pool Name="greedSecret">
@@ -79,6 +80,7 @@
 	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="ultraSecret">
@@ -140,6 +142,7 @@
 	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="angel">
@@ -156,12 +159,14 @@
 	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Dystopic Mantle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedDevil">
 	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Dystopic Mantle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="curse">
@@ -178,7 +183,7 @@
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
+	<Item Name="Dystopic Mantle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedCurse">
@@ -195,7 +200,7 @@
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
+	<Item Name="Dystopic Mantle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="demonBagger">
@@ -209,6 +214,7 @@
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Dystopic Mantle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="craneGame">
