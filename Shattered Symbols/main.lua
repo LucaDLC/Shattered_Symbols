@@ -49,7 +49,9 @@ local ItemScript = {
     'MutableOnyx',
     'UnstableGlyph',
     'Vesta',
-    'Pallas'
+    'Pallas',
+    'HoleyPocket',
+    'DystopicMantle'
 }
 local PocketItemScript = {
     'Glyph',
