@@ -11,14 +11,14 @@ end
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(JadeIvoryMaskLocalID, "{{Collectible}} On each floor, there is a 40% chance to upgrade a random item you have previously picked up (only items with quality 3 or lower) into a random item with quality increased by 1")
+    EID:addCollectible(JadeIvoryMaskLocalID, "{{Collectible}} On each floor, there is a 75% chance to upgrade a random item you have previously picked up (only items with quality 3 or lower) into a random item with quality increased by 1")
 end
 
 function ShatteredSymbols:OnNewLevelJadeIvoryMask()
     for p = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(p)
         if player:HasCollectible(JadeIvoryMaskLocalID) then
-            if math.random() < 0.4 then
+            if math.random() < 0.75 then
 
                 local eligibleItems = {}
                 
