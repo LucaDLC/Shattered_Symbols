@@ -1,0 +1,20 @@
+local game = Game()
+local DystopicMantleLocalID = Isaac.GetItemIdByName("Dystopic Mantle")
+
+-- EID (External Item Descriptions)
+if EID then
+    EID:addCollectible(DystopicMantleLocalID, "{{HolyMantleSmall}} After death, it become Holy Mantle")
+end
+
+
+function ShatteredSymbols:useDystopicMantle()
+    for i = 0, Game():GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(i)
+        if player:IsDead() and player:HasCollectible(DystopicMantleLocalID) then
+            player:RemoveCollectible(DystopicMantleLocalID)
+            player:AddCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE, 1, false)
+        end
+    end
+end
+
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PLAYER_DEATH, ShatteredSymbols.useDystopicMantle)

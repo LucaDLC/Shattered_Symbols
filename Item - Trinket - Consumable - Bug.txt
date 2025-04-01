@@ -96,10 +96,10 @@ ITEM
 
 
 
-77732 - ??? [2]
-	Tenendo premuto SHIFT per 3 secondi puoi droppare l'item attivo
+77732 - Holey Pocket [2]
+	Tenendo premuto CTRL per 3 secondi puoi droppare l'item attivo
 
-77733 - ??? [2]
+77733 - Dystopic Mantle [2]
 	Dopo che isaac è morto, questo item si trasforma in holy mantle
 
 ---------------------------------------------------------------------
