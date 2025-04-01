@@ -22,37 +22,14 @@ local zodiac_items = {
     CollectibleType.COLLECTIBLE_ZODIAC
 }
 
-local planetarium_items = {
-    CollectibleType.COLLECTIBLE_NEPTUNUS,
-    CollectibleType.COLLECTIBLE_TERRA,
-    CollectibleType.COLLECTIBLE_URANUS,
-    CollectibleType.COLLECTIBLE_VENUS,
-    CollectibleType.COLLECTIBLE_MARS,
-    CollectibleType.COLLECTIBLE_JUPITER,
-    CollectibleType.COLLECTIBLE_PLUTO,
-    CollectibleType.COLLECTIBLE_MERCURIUS,
-    CollectibleType.COLLECTIBLE_SOL,
-    CollectibleType.COLLECTIBLE_SATURNUS,
-    CollectibleType.COLLECTIBLE_LUNA,
-    Isaac.GetItemIdByName("Ceres"),
-    Isaac.GetItemIdByName("Vesta"),
-    Isaac.GetItemIdByName("Pallas")
-}
-
-local Constellation_Table = {}
-
 
 function ShatteredSymbols:useConstellation(_, rng, player)
-    
-    Constellation_Table = {}
-    for _, v in pairs(zodiac_items) do
-        table.insert(Constellation_Table, v)
+    local selectedItem
+    if rng:RandomFloat() < 0.5 then
+        selectedItem = game:GetItemPool():GetCollectible(ItemPoolType.POOL_PLANETARIUM, false, rng:Next())
+    else
+        selectedItem = zodiac_items[rng:RandomInt(#zodiac_items) + 1]
     end
-    for _, v in pairs(planetarium_items) do
-        table.insert(Constellation_Table, v)
-    end
-    
-    local selectedItem = Constellation_Table[rng:RandomInt(#Constellation_Table) + 1]
 
 
     local spawnPosition = game:GetRoom():FindFreePickupSpawnPosition(player.Position, 40, true)
@@ -67,10 +44,6 @@ function ShatteredSymbols:useConstellation(_, rng, player)
     }
 end
 
-function ShatteredSymbols:onGameStartConstellation()
-    local Constellation_Table = {}
-end
-
 function ShatteredSymbols:ConstellationWispInit(wisp)
 	if  wisp.Player and wisp.Player:HasCollectible(ConstellationLocalID) then
 		if wisp.SubType == ConstellationLocalID then
@@ -81,6 +54,5 @@ end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, ShatteredSymbols.ConstellationWispInit, FamiliarVariant.WISP)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_USE_ITEM, ShatteredSymbols.useConstellation, ConstellationLocalID)
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, ShatteredSymbols.onGameStartConstellation)
 
 
