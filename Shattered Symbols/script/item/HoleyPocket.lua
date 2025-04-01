@@ -1,9 +1,10 @@
 local game = Game()
 local HoleyPocketLocalID = Isaac.GetItemIdByName("Holey Pocket")
+local OrigamiCrowExternalID = Isaac.GetItemIdByName("Origami Crow")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(HoleyPocketLocalID, "{{ArrowUp}} Drop active item holding CTRL button")
+    EID:addCollectible(HoleyPocketLocalID, "{{ArrowUp}} Drop active item holding CTRL button #{{ArrowUp}} If you have Origami Crow, drop pocket item holding CTRL button")
 end
 
 function ShatteredSymbols:useHoleyPocket()
@@ -22,12 +23,18 @@ function ShatteredSymbols:useHoleyPocket()
             if currentFrame - data.LastCtrlPressFrameHoleyPocket < 3 then
                 data.CtrlHoldTimeHoleyPocket = data.CtrlHoldTimeHoleyPocket + 1
 
-                if data.CtrlHoldTimeHoleyPocket >= 30 then
+                if data.CtrlHoldTimeHoleyPocket >= 30 and not player:HasCollectible(OrigamiCrowExternalID) then
                     local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
                     if activeItem > 0 then
-                        local pos = player.Position
                         player:RemoveCollectible(activeItem, false, ActiveSlot.SLOT_PRIMARY)
-                        Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, activeItem, pos, Vector(0, 0), nil)
+                        Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, activeItem, player.Position + Vector(0, 50), Vector(0, 0), nil)
+                    end
+                    data.CtrlHoldTimeHoleyPocket = 0
+                elseif data.CtrlHoldTimeHoleyPocket >= 30 and player:HasCollectible(OrigamiCrowExternalID) then
+                    local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
+                    if pocketItem > 0 then
+                        player:RemoveCollectible(pocketItem, false, ActiveSlot.SLOT_POCKET)
+                        Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, pocketItem, player.Position + Vector(0, 50), Vector(0, 0), nil)
                     end
                     data.CtrlHoldTimeHoleyPocket = 0
                 end
