@@ -22,7 +22,7 @@ function ShatteredSymbols:useHoleyPocket()
             if currentFrame - data.LastCtrlPressFrameHoleyPocket < 3 then
                 data.CtrlHoldTimeHoleyPocket = data.CtrlHoldTimeHoleyPocket + 1
 
-                if data.CtrlHoldTimeHoleyPocket >= 60 then
+                if data.CtrlHoldTimeHoleyPocket >= 30 then
                     local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
                     if activeItem > 0 then
                         local pos = player.Position
