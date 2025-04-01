@@ -143,6 +143,7 @@ BUG
 	
 	- Constellation prende solo gli item selezionati, vorrei prendesse tutta la pool del planetario
 
+	- Holey Pocket deve interagire anche con un bottone di un ipotetico controller (Arrow Up)
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
