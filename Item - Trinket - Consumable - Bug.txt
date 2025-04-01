@@ -140,10 +140,8 @@ TRASFORMAZIONI
 --------------------------------------------------------------------
 ====================================================================
 BUG
-	
-	- Constellation prende solo gli item selezionati, vorrei prendesse tutta la pool del planetario
 
-	- Holey Pocket deve interagire anche con un bottone di un ipotetico controller (Arrow Up)
+	
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
@@ -153,6 +151,8 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 	- Gli oggetti devono essere testati con tainted Lazarus 
 
 	- Mettere doppia texture per Broken Box (cambiare sprite dal codice in base a se è piena o meno)
+
+	- Holey Pocket dovrebbe interagire anche con un bottone di un ipotetico controller (tipo Arrow Up)
 
 	
 
