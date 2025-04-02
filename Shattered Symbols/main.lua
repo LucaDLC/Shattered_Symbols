@@ -126,6 +126,7 @@ function ShatteredSymbols:SavePlayerData()
             CtrlHoldTimeHoleyPocket = data.CtrlHoldTimeHoleyPocket or 0,
             LastCtrlPressFrameHoleyPocket = data.LastCtrlPressFrameHoleyPocket or 0,
             DystopicCrystalDeathCounter = data.DystopicCrystalDeathCounter or 0,
+            DystopicCrystalIsDead = data.DystopicCrystalIsDead or false,
         }
 
         -- Shared Data
@@ -195,6 +196,7 @@ function ShatteredSymbols:LoadPlayerData()
             data.CtrlHoldTimeHoleyPocket = playerDataToLoad.CtrlHoldTimeHoleyPocket or 0
             data.LastCtrlPressFrameHoleyPocket = playerDataToLoad.LastCtrlPressFrameHoleyPocket or 0
             data.DystopicCrystalDeathCounter = playerDataToLoad.DystopicCrystalDeathCounter or 0
+            data.DystopicCrystalIsDead = playerDataToLoad.DystopicCrystalIsDead or false
 
             -- Shared Data
             if i == 0 then
