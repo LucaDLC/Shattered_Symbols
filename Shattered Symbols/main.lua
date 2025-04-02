@@ -51,7 +51,8 @@ local ItemScript = {
     'Vesta',
     'Pallas',
     'HoleyPocket',
-    'DystopicMantle'
+    'DystopicMantle',
+    'DystopicCrystal'
 }
 local PocketItemScript = {
     'Glyph',
@@ -124,6 +125,7 @@ function ShatteredSymbols:SavePlayerData()
             OnyxItemEffectID = data.OnyxItemEffectID or {},
             CtrlHoldTimeHoleyPocket = data.CtrlHoldTimeHoleyPocket or 0,
             LastCtrlPressFrameHoleyPocket = data.LastCtrlPressFrameHoleyPocket or 0,
+            DystopicCrystalDeathCounter = data.DystopicCrystalDeathCounter or 0,
         }
 
         -- Shared Data
@@ -192,6 +194,7 @@ function ShatteredSymbols:LoadPlayerData()
             data.OnyxItemEffectID = playerDataToLoad.OnyxItemEffectID or {}
             data.CtrlHoldTimeHoleyPocket = playerDataToLoad.CtrlHoldTimeHoleyPocket or 0
             data.LastCtrlPressFrameHoleyPocket = playerDataToLoad.LastCtrlPressFrameHoleyPocket or 0
+            data.DystopicCrystalDeathCounter = playerDataToLoad.DystopicCrystalDeathCounter or 0
 
             -- Shared Data
             if i == 0 then
