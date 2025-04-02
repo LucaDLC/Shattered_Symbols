@@ -33,5 +33,6 @@
 	<passive  id="77731" name="Pallas" gfx ="Pallas.png" description="The second asteroid planet" quality="2" devilprice="1" tags="offensive"/>
 	<passive  id="77732" name="Holey Pocket" gfx ="HoleyPocket.png" description="I lost something" quality="2" devilprice="1" tags="offensive"/>
 	<passive  id="77733" name="Dystopic Mantle" gfx ="DystopicMantle.png" description="Kinda weird" quality="2" devilprice="1" tags="nolostbr"/>
+	<passive  id="77734" name="Dystopic Crystal" gfx ="DystopicCrystal.png" description="I'm not scared of the dark" quality="3" devilprice="2" tags="offensive"/>
 
 </items>

@@ -5,7 +5,8 @@ local RUNIC_ITEMS = {
     CollectibleType.COLLECTIBLE_RUNE_BAG,
     Isaac.GetItemIdByName("Runic Geode"),
     Isaac.GetItemIdByName("Runic Altar"),
-    Isaac.GetItemIdByName("Unstable Glyph")
+    Isaac.GetItemIdByName("Unstable Glyph"),
+    Isaac.GetItemIdByName("Dystopic Crystal")
 }
 
 -- EID (External Item Descriptions)

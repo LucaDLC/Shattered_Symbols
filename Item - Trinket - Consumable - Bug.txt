@@ -144,7 +144,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 
-	- Mantle da aggiungere il volo
+	- Mantle da aggiungere l'animazione delle ali quando si muore
 
 	- Dystopic Crystal da finire
 	
