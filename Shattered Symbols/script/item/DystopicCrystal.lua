@@ -11,7 +11,7 @@ end
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(DystopicCrystalLocalID, "{{ArrowUp}} After death, gain: #{{DamageSmall}} +2 Damage #{{SpeedSmall}} +0.5 Speed #{{RangeSmall}} +2 Range #{{TearsSmall}} +1.5 Tears #{{ShotspeedSmall}} +0.5 Shot Speed #{{LuckSmall}} +2 Luck #{{Collectible}} there is a 50% chance + 1% for every Luck point to upgrade another random item with quality 3 or lower into a random item with quality 4")
+    EID:addCollectible(DystopicCrystalLocalID, "{{ArrowUp}} After death, gain: #{{DamageSmall}} +2 Damage #{{SpeedSmall}} +0.5 Speed #{{RangeSmall}} +2 Range #{{TearsSmall}} +1.5 Tears #{{ShotspeedSmall}} +0.3 Shot Speed #{{LuckSmall}} +2 Luck #{{Collectible}} there is a 50% chance + 1% for every Luck point to upgrade another random item with quality 3 or lower into a random item with quality 4")
 end
 
 local statMultiplier = {
@@ -19,7 +19,7 @@ local statMultiplier = {
     speed = 0.5,   -- +0.5 Speed 
     range = 80,    -- +2 Range 
     tears = 1.5,   -- +1.5 Fire Rate
-    shot = 0.5,    -- +0.5 Shot Speed
+    shot = 0.3,    -- +0.3 Shot Speed
     luck = 2,      -- +2 Luck 
 }
 
@@ -29,8 +29,10 @@ function ShatteredSymbols:useDystopicCrystal()
         local player = Isaac.GetPlayer(i)
         local data = player:GetData()
         if not data.DystopicCrystalDeathCounter then data.DystopicCrystalDeathCounter = 0 end
-        if player:IsDead() and player:HasCollectible(DystopicCrystalLocalID) then
+        if not data.DystopicCrystalIsDead then data.DystopicCrystalIsDead = false end
+        if player:IsDead() and player:HasCollectible(DystopicCrystalLocalID) and not data.DystopicCrystalIsDead then
             data.DystopicCrystalDeathCounter = data.DystopicCrystalDeathCounter + 1
+            data.DystopicCrystalIsDead = true
             player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
             player:AddCacheFlags(CacheFlag.CACHE_SPEED)
             player:AddCacheFlags(CacheFlag.CACHE_RANGE)
@@ -73,6 +75,9 @@ function ShatteredSymbols:useDystopicCrystal()
                     end
                 end
             end
+        end
+        if not player:IsDead() then
+            data.DystopicCrystalIsDead = false
         end
     end
 end
