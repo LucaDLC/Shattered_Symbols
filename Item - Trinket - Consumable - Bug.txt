@@ -77,7 +77,7 @@ ITEM
 	Gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti 
 
 77726 - Jade & Ivory Mask [3]
-	Ad ogni piano hai il 40% che un oggetto preso in precedenza da qualità 0 a 3 venga sostituito con un oggetto di qualità superiore 
+	Ad ogni piano un oggetto preso in precedenza da qualità 0 a 3 viene sostituito con un oggetto di qualità superiore 
 
 77727 - Pyrite [3]
 	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
