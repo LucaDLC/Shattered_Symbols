@@ -146,9 +146,6 @@ BUG
 
 	- Mantle da aggiungere l'animazione delle ali quando si muore
 
-	- Dystopic Crystal non funziona
-	
-
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
