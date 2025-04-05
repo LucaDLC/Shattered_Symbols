@@ -36,11 +36,21 @@ function ShatteredSymbols:OnNewLevelJadeIvoryMask()
                 local oldItemConfig = Isaac.GetItemConfig():GetCollectible(oldItemID)
                 local newQuality = oldItemConfig.Quality + 1
                 local pool = {}
-                
-                for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
-                    local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                    if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == newQuality then
-                        table.insert(pool, id)
+                local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
+
+                if activeItem == 0 or activeItem == CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES then
+                    for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
+                        local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
+                        if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == newQuality then
+                            table.insert(pool, id)
+                        end
+                    end
+                else
+                    for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
+                        local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
+                        if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == newQuality and itemConfig.Type == ItemType.ITEM_PASSIVE then
+                            table.insert(pool, id)
+                        end
                     end
                 end
 
