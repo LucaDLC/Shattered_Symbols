@@ -146,8 +146,6 @@ BUG
 
 	- Mantle da aggiungere l'animazione delle ali quando si muore
 
-	- Controllare se il Crystal muti gli oggetti sempre in Q4 (è solo un dubbio)
-
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 

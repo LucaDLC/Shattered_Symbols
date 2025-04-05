@@ -56,13 +56,24 @@ function ShatteredSymbols:useDystopicCrystal()
                 
                     local oldItemID = eligibleItems[math.random(1, #eligibleItems)]
                     local pool = {}
-                
-                    for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
-                        local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                        if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == 4 then
-                            table.insert(pool, id)
+                    local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
+                    
+                    if activeItem == 0 or activeItem == CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES then
+                        for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
+                            local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
+                            if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == 4 then
+                                table.insert(pool, id)
+                            end
+                        end
+                    else
+                        for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
+                            local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
+                            if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == 4 and itemConfig.Type == ItemType.ITEM_PASSIVE then
+                                table.insert(pool, id)
+                            end
                         end
                     end
+                    
 
                     if #pool > 0 then
                         local newItemID = pool[math.random(1, #pool)]
