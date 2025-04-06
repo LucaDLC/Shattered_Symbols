@@ -1,14 +1,6 @@
 local game = Game()
 local DystopicCrystalLocalID = Isaac.GetItemIdByName("Dystopic Crystal")
 
-local itemIgnoreList = {
-    238, 239, 550, 551, 626, 627, 668
-}
-local itemIgnoreSet = {}
-for _, v in ipairs(itemIgnoreList) do
-    itemIgnoreSet[v] = true
-end
-
 -- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(DystopicCrystalLocalID, "{{ArrowUp}} After death, gain: #{{DamageSmall}} +2 Damage #{{SpeedSmall}} +0.5 Speed #{{RangeSmall}} +2 Range #{{TearsSmall}} +1.5 Tears #{{ShotspeedSmall}} +0.3 Shot Speed #{{LuckSmall}} +2 Luck #{{Collectible}} there is a 50% chance + 1% for every Luck point to upgrade another random item with quality 3 or lower into a random item with quality 4")
@@ -45,7 +37,7 @@ function ShatteredSymbols:useDystopicCrystal()
             
                 for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
                     local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                    if itemConfig and id ~= DystopicCrystalLocalID and not itemIgnoreSet[id] and player:HasCollectible(id) then
+                    if itemConfig and id ~= DystopicCrystalLocalID and not itemConfig:HasTags(ItemConfig.TAG_QUEST) and player:HasCollectible(id) then
                         if itemConfig.Quality >= 0 and itemConfig.Quality <= 3 then
                             table.insert(eligibleItems, id)
                         end
@@ -61,14 +53,14 @@ function ShatteredSymbols:useDystopicCrystal()
                     if activeItem == 0 or activeItem == CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES then
                         for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
                             local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                            if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == 4 then
+                            if itemConfig and not itemConfig:HasTags(ItemConfig.TAG_QUEST) and itemConfig.Quality == 4 then
                                 table.insert(pool, id)
                             end
                         end
                     else
                         for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
                             local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                            if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == 4 and itemConfig.Type == ItemType.ITEM_PASSIVE then
+                            if itemConfig and not itemConfig:HasTags(ItemConfig.TAG_QUEST) and itemConfig.Quality == 4 and itemConfig.Type == ItemType.ITEM_PASSIVE then
                                 table.insert(pool, id)
                             end
                         end
