@@ -4,7 +4,7 @@ local AncientHookLocalID = Isaac.GetItemIdByName("Ancient Hook")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts at every Floor which does not replace Heart until all available slots for new Hearts are used #{{Collectible628}} Every floor you have 15% of chance for each Ancient Hook of spawn Death Certificate #{{LuckSmall}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
+    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts at every Floor which does not replace Heart until all available slots for new Hearts are used #{{Collectible628}} Every floor you have 20% of chance for each Ancient Hook of spawn Death Certificate #{{LuckSmall}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
 end
 
 function ShatteredSymbols:onAncientHook()
@@ -21,7 +21,7 @@ function ShatteredSymbols:onAncientHook()
                 local AncientHooksCounter = player:GetCollectibleNum(AncientHookLocalID)
                 player:AddBrokenHearts(1*AncientHooksCounter)
                 local AncientHookChance = 0
-                AncientHookChance = AncientHooksCounter * 0.15
+                AncientHookChance = AncientHooksCounter * 0.20
                 if math.random() < AncientHookChance then
                     local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
                     local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
