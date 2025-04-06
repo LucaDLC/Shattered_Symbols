@@ -1,14 +1,6 @@
 local game = Game()
 local JadeIvoryMaskLocalID = Isaac.GetItemIdByName("Jade & Ivory Mask")
 
-local itemIgnoreList = {
-    238, 239, 550, 551, 626, 627, 668
-}
-local itemIgnoreSet = {}
-for _, v in ipairs(itemIgnoreList) do
-    itemIgnoreSet[v] = true
-end
-
 -- EID (External Item Descriptions)
 if EID then
     EID:addCollectible(JadeIvoryMaskLocalID, "{{Collectible}} On each floor, upgrade a random item you have previously picked up (only items with quality 3 or lower) into a random item with quality increased by 1")
@@ -23,7 +15,7 @@ function ShatteredSymbols:OnNewLevelJadeIvoryMask()
             
             for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
                 local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                if itemConfig and id ~= JadeIvoryMaskLocalID and not itemIgnoreSet[id] and player:HasCollectible(id) then
+                if itemConfig and id ~= JadeIvoryMaskLocalID and not itemConfig:HasTags(ItemConfig.TAG_QUEST) and player:HasCollectible(id) then
                     if itemConfig.Quality >= 0 and itemConfig.Quality <= 3 then
                         table.insert(eligibleItems, id)
                     end
@@ -41,14 +33,14 @@ function ShatteredSymbols:OnNewLevelJadeIvoryMask()
                 if activeItem == 0 or activeItem == CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES then
                     for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
                         local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                        if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == newQuality then
+                        if itemConfig and not itemConfig:HasTags(ItemConfig.TAG_QUEST) and itemConfig.Quality == newQuality then
                             table.insert(pool, id)
                         end
                     end
                 else
                     for id = 1, Isaac.GetItemConfig():GetCollectibles().Size do
                         local itemConfig = Isaac.GetItemConfig():GetCollectible(id)
-                        if itemConfig and not itemIgnoreSet[id] and itemConfig.Quality == newQuality and itemConfig.Type == ItemType.ITEM_PASSIVE then
+                        if itemConfig and not itemConfig:HasTags(ItemConfig.TAG_QUEST) and itemConfig.Quality == newQuality and itemConfig.Type == ItemType.ITEM_PASSIVE then
                             table.insert(pool, id)
                         end
                     end
