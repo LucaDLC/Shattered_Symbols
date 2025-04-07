@@ -3,7 +3,7 @@ local DystopicMantleLocalID = Isaac.GetItemIdByName("Dystopic Mantle")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(DystopicMantleLocalID, "{{HolyMantleSmall}} After death, it become Holy Mantle #{{ArrowUp}} Grants flight")
+    EID:addCollectible(DystopicMantleLocalID, "{{HolyMantleSmall}} After death, it become Holy Mantle and grants flight")
 end
 
 
