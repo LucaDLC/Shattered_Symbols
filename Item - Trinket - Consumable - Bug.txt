@@ -157,7 +157,6 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
 	- Mettere doppia texture per Broken Box (cambiare sprite dal codice in base a se è piena o meno)
 
-	- Holey Pocket dovrebbe interagire anche con un bottone di un ipotetico controller (tipo Arrow Up)
 
 	
 
