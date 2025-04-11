@@ -48,6 +48,7 @@ function ShatteredSymbols:onBossRoomForbidenBody()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         local data = player:GetData()
+        if not data.ForbiddenBodyMantleCounter then data.ForbiddenBodyMantleCounter = 0 end
         if data.ForbiddenBodyMantleCounter > 0 then
             for i = 0, data.ForbiddenBodyMantleCounter do
                 player:GetEffects():AddCollectibleEffect(CollectibleType.COLLECTIBLE_HOLY_MANTLE, true, 1)
