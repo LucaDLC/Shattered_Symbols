@@ -78,19 +78,6 @@ function ShatteredSymbols:onBossRoomForbidenBody()
     end
 end
 
-function ShatteredSymbols:onNewLevelForbidenBody()
-    for i = 0, game:GetNumPlayers() - 1 do
-        local player = Isaac.GetPlayer(i)
-        local data = player:GetData()
-        if data.ForbiddenBodyMantleCounter and data.ForbiddenBodyMantleCounter > 0 then
-            for j = 1, data.ForbiddenBodyMantleCounter do
-                player:GetEffects():AddCollectibleEffect(CollectibleType.COLLECTIBLE_HOLY_MANTLE, true, 1)
-            end
-        end
-    end
-end
-
-ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_NEW_LEVEL, ShatteredSymbols.onNewLevelForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.useForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, ShatteredSymbols.holdingForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.onBossRoomForbidenBody)
