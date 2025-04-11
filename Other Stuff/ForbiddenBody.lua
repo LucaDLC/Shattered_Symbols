@@ -90,7 +90,7 @@ function ShatteredSymbols:onNewLevelForbidenBody()
     end
 end
 
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.onNewLevelForbidenBody)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_NEW_LEVEL, ShatteredSymbols.onNewLevelForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.useForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, ShatteredSymbols.holdingForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.onBossRoomForbidenBody)
