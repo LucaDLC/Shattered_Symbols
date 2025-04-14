@@ -46,8 +46,19 @@ function ShatteredSymbols:useQueenOfSpades(card, player, useFlags)
             local newItemID = pool[math.random(1, #pool)]
             player:AddCollectible(newItemID, 0, false)
 
-            newItemID = pool[math.random(1, #pool)]
-            player:AddCollectible(newItemID, 0, false)
+            for i, v in ipairs(pool) do
+                if v == newItemID then
+                    table.remove(pool, i)
+                    break
+                end
+            end
+
+            if #pool > 0 then
+                newItemID = pool[math.random(1, #pool)]
+                player:AddCollectible(newItemID, 0, false)
+            else
+                player:AddCollectible(newItemID, 0, false)
+            end
             
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, player.Position, Vector(0,0), player)
             SFXManager():Play(SoundEffect.SOUND_1UP)
