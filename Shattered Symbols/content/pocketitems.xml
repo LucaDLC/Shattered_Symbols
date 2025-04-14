@@ -10,5 +10,6 @@
 	<card type="object" pickup="99903" name="Sacred Dice Shard" description="No longer relaunchable" hud="Sacred Dice Shard" mimiccharge="5"/>
 	<card type="object" pickup="99904" name="Fiendish Seed" description="Through darkness" hud="Fiendish Seed" mimiccharge="4"/>
 	<card type="object" pickup="99905" name="Tea Bag" description="Future" hud="Tea Bag" mimiccharge="7"/>
+	<card type="tarot" pickup="99906" name="Queen of Spades" description="Decadence" hud="Queen of Spades" mimiccharge="6"/>
 
 </pocketitems>

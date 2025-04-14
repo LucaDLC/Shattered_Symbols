@@ -59,7 +59,8 @@ local PocketItemScript = {
     'HexCrystal',
     'SacredDiceShard',
     'FiendishSeed',
-    'TeaBag'
+    'TeaBag',
+    'QueenOfSpades'
 }
 
 local TransformationScript = {

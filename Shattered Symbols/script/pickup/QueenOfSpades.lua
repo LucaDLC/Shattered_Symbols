@@ -1,5 +1,5 @@
 local game = Game()
-local QueenOfSpadesID = Isaac.GetCardIdByName("Queen Of Spades")
+local QueenOfSpadesID = Isaac.GetCardIdByName("Queen of Spades")
 
 -- EID (External Item Descriptions)
 if EID then

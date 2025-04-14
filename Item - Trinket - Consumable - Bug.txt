@@ -106,24 +106,22 @@ ITEM
 ---------------------------------------------------------------------
 CONSUMABILI
 
-88801 - Glyph
+99901 - Glyph
 	Runa che rimuove un broken heart, da confusion ai nemici per 5 secondi
 
-88802 - Hex Crystal
+99902 - Hex Crystal
 	Applica weakness e bleeding ai nemici nella stanza per un broken heart
 
-88803 - Sacred Dice Shard
+99903 - Sacred Dice Shard
 	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
 
-88804 - Tea Bag
+99904 - Tea Bag
 	Converte le chance del patto satanico nel patto angelico senza ripristinare i patti angelici qualora fosse stato preso un patto satanico
 
-88805 - Fiendish Seed [TEXTURE FINISHED]
+99905 - Fiendish Seed [TEXTURE FINISHED]
 	Converte i soul heart in black heart
 
-
-
-88806 - Queen of Spades
+99906 - Queen of Spades
 	Rimuove un oggetto posseduto di qualità 1 o superiore e da 2 oggetti di qualità -1
 
 ---------------------------------------------------------------------
