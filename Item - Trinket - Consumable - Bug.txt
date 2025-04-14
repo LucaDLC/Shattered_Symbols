@@ -124,7 +124,7 @@ CONSUMABILI
 
 
 88806 - Queen of Spades
-	Rimuove un oggetto posseduto di qualità più alta e da 2 oggetti di qualità -1
+	Rimuove un oggetto posseduto di qualità 1 o superiore e da 2 oggetti di qualità -1
 
 ---------------------------------------------------------------------
 TRINKET
