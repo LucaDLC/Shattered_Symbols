@@ -61,7 +61,6 @@ function ShatteredSymbols:useQueenOfSpades(card, player, useFlags)
             end
             
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, player.Position, Vector(0,0), player)
-            SFXManager():Play(SoundEffect.SOUND_1UP)
         end
     end
     SFXManager():Play(Isaac.GetSoundIdByName("Queen of Spades"))
