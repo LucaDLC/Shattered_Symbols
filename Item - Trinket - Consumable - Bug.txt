@@ -121,6 +121,11 @@ CONSUMABILI
 88805 - Fiendish Seed [TEXTURE FINISHED]
 	Converte i soul heart in black heart
 
+
+
+88806 - Queen of Spades
+	Rimuove un oggetto posseduto di qualità più alta e da 2 oggetti di qualità -1
+
 ---------------------------------------------------------------------
 TRINKET
 
