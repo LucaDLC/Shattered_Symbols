@@ -11,6 +11,7 @@ function ShatteredSymbols:useForbidenBody(player)
     local playerType = player:GetPlayerType()
     
     if not data.ForbiddenBodyMantleCounter then data.ForbiddenBodyMantleCounter = 0 end
+    if not data.ForbiddenBodyMantlePreviousCounter then data.ForbiddenBodyMantlePreviousCounter = 0 end
     
     if player:GetEternalHearts() == 1 and player:HasCollectible(ForbiddenBodyLocalID) then
         if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B then
@@ -25,6 +26,7 @@ function ShatteredSymbols:useForbidenBody(player)
     if (playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B) then
         local currentMantle = player:GetEffects():GetCollectibleEffectNum(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
         if currentMantle < data.ForbiddenBodyMantleCounter then
+            data.ForbiddenBodyMantlePreviousCounter = data.ForbiddenBodyMantleCounter
             data.ForbiddenBodyMantleCounter = currentMantle
         end
     end
@@ -54,9 +56,7 @@ function ShatteredSymbols:onBossRoomForbidenBody()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         local data = player:GetData()
-        if data.ForbiddenBodyMantleCounter == nil then 
-            data.ForbiddenBodyMantleCounter = 0 
-        end
+        if not data.ForbiddenBodyMantleCounter then data.ForbiddenBodyMantleCounter = 0 end
 
         if data.ForbiddenBodyMantleCounter > 0 then
             for i = 1, data.ForbiddenBodyMantleCounter do
@@ -78,6 +78,23 @@ function ShatteredSymbols:onBossRoomForbidenBody()
     end
 end
 
+function ShatteredSymbols:onNewFloorForbidenBody()
+    for playerIndex = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(playerIndex)
+        local data = player:GetData()
+        if not data.ForbiddenBodyMantleCounter then data.ForbiddenBodyMantleCounter = 0 end
+        if not data.ForbiddenBodyMantlePreviousCounter then data.ForbiddenBodyMantlePreviousCounter = 0 end
+        if player:HasCollectible(ForbiddenBodyLocalID) then 
+            for i = 1, data.ForbiddenBodyMantlePreviousCounter do
+                player:GetEffects():AddCollectibleEffect(CollectibleType.COLLECTIBLE_HOLY_MANTLE, true, 1)
+                data.ForbiddenBodyMantleCounter = player:GetEffects():GetCollectibleEffectNum(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
+            end
+        end
+    end
+end
+
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.useForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, ShatteredSymbols.holdingForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.onBossRoomForbidenBody)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.onNewFloorForbidenBody)
+
