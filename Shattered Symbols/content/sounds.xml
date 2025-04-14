@@ -1,0 +1,5 @@
+<sounds root="sfx/">
+    <sound name="Queen of Spades">
+        <sample weight="1" path="QueenOfSpades.wav" />
+    </sound>
+</sounds>

@@ -64,7 +64,7 @@ function ShatteredSymbols:useQueenOfSpades(card, player, useFlags)
             SFXManager():Play(SoundEffect.SOUND_1UP)
         end
     end
-        
+    SFXManager():Play(Isaac.GetSoundIdByName("Queen of Spades"))
 end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_USE_CARD, ShatteredSymbols.useQueenOfSpades, QueenOfSpadesID)
