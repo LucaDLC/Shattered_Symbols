@@ -78,23 +78,36 @@ function ShatteredSymbols:onBossRoomForbidenBody()
     end
 end
 
-function ShatteredSymbols:onNewFloorForbidenBody()
-    for playerIndex = 0, game:GetNumPlayers() - 1 do
-        local player = Isaac.GetPlayer(playerIndex)
-        local data = player:GetData()
-        if not data.ForbiddenBodyMantleCounter then data.ForbiddenBodyMantleCounter = 0 end
-        if not data.ForbiddenBodyMantlePreviousCounter then data.ForbiddenBodyMantlePreviousCounter = 0 end
-        if player:HasCollectible(ForbiddenBodyLocalID) then 
+
+function ShatteredSymbols:checkFloorChange(player)
+    local data = player:GetData()
+    local level = game:GetLevel()
+    local currentStage = level:GetStage()
+
+    if not data.LastForbiddenBodyStage then
+        data.LastForbiddenBodyStage = currentStage
+    end
+    if not data.ForbiddenBodyMantleCounter then
+        data.ForbiddenBodyMantleCounter = 0
+    end
+    if not data.ForbiddenBodyMantlePreviousCounter then
+        data.ForbiddenBodyMantlePreviousCounter = 0
+    end
+
+    if currentStage ~= data.LastForbiddenBodyStage then
+        data.LastForbiddenBodyStage = currentStage
+
+        if player:HasCollectible(ForbiddenBodyLocalID) then
             for i = 1, data.ForbiddenBodyMantlePreviousCounter do
                 player:GetEffects():AddCollectibleEffect(CollectibleType.COLLECTIBLE_HOLY_MANTLE, true, 1)
-                data.ForbiddenBodyMantleCounter = player:GetEffects():GetCollectibleEffectNum(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
             end
+            data.ForbiddenBodyMantleCounter = player:GetEffects():GetCollectibleEffectNum(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
         end
     end
 end
 
+
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.useForbidenBody)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.checkFloorChange)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, ShatteredSymbols.holdingForbidenBody)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.onBossRoomForbidenBody)
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.onNewFloorForbidenBody)
-
