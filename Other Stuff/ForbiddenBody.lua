@@ -98,7 +98,7 @@ function ShatteredSymbols:checkFloorChange(player)
         data.LastForbiddenBodyStage = currentStage
 
         if player:HasCollectible(ForbiddenBodyLocalID) then
-            for i = 1, data.ForbiddenBodyMantlePreviousCounter do
+            for i = 1, data.ForbiddenBodyMantlePreviousCounter - 1 do
                 player:GetEffects():AddCollectibleEffect(CollectibleType.COLLECTIBLE_HOLY_MANTLE, true, 1)
             end
             data.ForbiddenBodyMantleCounter = player:GetEffects():GetCollectibleEffectNum(CollectibleType.COLLECTIBLE_HOLY_MANTLE)
