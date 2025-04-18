@@ -149,7 +149,7 @@ BUG
 
 	- Mantle da aggiungere l'animazione delle ali quando si muore
 
-	- Forbidden Body e Vesta devono cambiare l'effetot da Holy Card ad Holy Mantle ma il problema è che si rimuove cambiando stanza -> player:GetEffects():AddCollectibleEffect(CollectibleType.COLLECTIBLE_HOLY_MANTLE, true, 1)
+	- Vesta deve cambiare l'effeto da Holy Card ad Holy Mantle esattamente come è stato fatto con Forbidden Body
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
