@@ -128,6 +128,9 @@ function ShatteredSymbols:SavePlayerData()
             LastCtrlPressFrameHoleyPocket = data.LastCtrlPressFrameHoleyPocket or 0,
             DystopicCrystalDeathCounter = data.DystopicCrystalDeathCounter or 0,
             DystopicCrystalIsDead = data.DystopicCrystalIsDead or false,
+            ForbiddenBodyMantleCounter = data.ForbiddenBodyMantleCounter or 0,
+            ForbiddenBodyMantlePreviousCounter = data.ForbiddenBodyMantlePreviousCounter or 0,
+            LastForbiddenBodyStage = data.LastForbiddenBodyStage or nil,
         }
 
         -- Shared Data
@@ -198,6 +201,9 @@ function ShatteredSymbols:LoadPlayerData()
             data.LastCtrlPressFrameHoleyPocket = playerDataToLoad.LastCtrlPressFrameHoleyPocket or 0
             data.DystopicCrystalDeathCounter = playerDataToLoad.DystopicCrystalDeathCounter or 0
             data.DystopicCrystalIsDead = playerDataToLoad.DystopicCrystalIsDead or false
+            data.ForbiddenBodyMantleCounter = playerDataToLoad.ForbiddenBodyMantleCounter or 0
+            data.ForbiddenBodyMantlePreviousCounter = playerDataToLoad.ForbiddenBodyMantlePreviousCounter or 0
+            data.LastForbiddenBodyStage = playerDataToLoad.LastForbiddenBodyStage or nil
 
             -- Shared Data
             if i == 0 then
