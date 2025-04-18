@@ -107,13 +107,13 @@ ITEM
 CONSUMABILI
 
 99901 - Glyph
-	Runa che rimuove un broken heart, da confusion ai nemici per 5 secondi
+	Runa che rimuove 1 broken heart, da confusion ai nemici per 5 secondi
 
 99902 - Hex Crystal
-	Applica weakness e bleeding ai nemici nella stanza per un broken heart
+	Applica weakness e bleeding ai nemici nella stanza per 1 broken heart
 
 99903 - Sacred Dice Shard
-	Rerolla gli item sui piedistalli in una qualità più alta ma da 2 un broken heart 
+	Rerolla gli item sui piedistalli in una qualità più alta ma da 1 un broken heart 
 
 99904 - Tea Bag
 	Converte le chance del patto satanico nel patto angelico senza ripristinare i patti angelici qualora fosse stato preso un patto satanico
