@@ -6,6 +6,32 @@ if EID then
     EID:addCard(HexCrystalLocalID, "Adds effects at the enemy in the room: #{{BleedingOut}} Bleeding Out #{{Weakness}} Weakness ")
 end
 
+local function BrokenHeartRemovingSystem(player)
+    local slotRemoved = false
+
+    if player:GetMaxHearts() >= 2 and not slotRemoved then
+        player:AddMaxHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBoneHearts() >= 1 then
+        player:AddBoneHearts(-1) 
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetSoulHearts() >= 2 then
+        player:AddSoulHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBlackHearts() >= 2 then
+        player:AddBlackHearts(-2)  
+        slotRemoved = true
+    end
+
+    player:AddBrokenHearts(1)
+
+end
 
 function ShatteredSymbols:useHexCrystal(card, player, useFlags)
     if REPENTOGON then
@@ -23,7 +49,7 @@ function ShatteredSymbols:useHexCrystal(card, player, useFlags)
             entity:AddEntityFlags(EntityFlag.FLAG_WEAKNESS)
         end
     end
-    player:AddBrokenHearts(1)
+    BrokenHeartRemovingSystem(player)
     SFXManager():Play(SoundEffect.SOUND_ANGEL_BEAM)
     Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, player.Position, Vector(0,0), player)
     for i = 1, 30 do 
