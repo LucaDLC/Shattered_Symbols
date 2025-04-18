@@ -7,7 +7,7 @@ local itemIgnoreList = {
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCard(SacredDiceShardLocalID, "{{Collectible105}} Reroll all item in the room up to 1 quality #{{BrokenHeart}} Give 2 Broken Heart")
+    EID:addCard(SacredDiceShardLocalID, "{{Collectible105}} Reroll all item in the room up to 1 quality #{{BrokenHeart}} Give 1 Broken Heart")
 end
 
 local function tablecontains(tbl, element)
@@ -17,6 +17,33 @@ local function tablecontains(tbl, element)
         end
     end
     return false
+end
+
+local function BrokenHeartRemovingSystem(player)
+    local slotRemoved = false
+
+    if player:GetMaxHearts() >= 2 and not slotRemoved then
+        player:AddMaxHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBoneHearts() >= 1 then
+        player:AddBoneHearts(-1) 
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetSoulHearts() >= 2 then
+        player:AddSoulHearts(-2)  
+        slotRemoved = true
+    end
+
+    if not slotRemoved and player:GetBlackHearts() >= 2 then
+        player:AddBlackHearts(-2)  
+        slotRemoved = true
+    end
+
+    player:AddBrokenHearts(1)
+
 end
 
 function ShatteredSymbols:useSacredDiceShard(cardID, player, useFlags)
@@ -103,7 +130,7 @@ function ShatteredSymbols:useSacredDiceShard(cardID, player, useFlags)
                 end 
             end
         end
-        player:AddBrokenHearts(2)
+        BrokenHeartRemovingSystem(player)
     end
     
 end
