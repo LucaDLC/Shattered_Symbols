@@ -160,6 +160,8 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
 	- Mettere doppia texture per Broken Box (cambiare sprite dal codice in base a se è piena o meno)
 
+	- Bilanciare Dystopic Crystal, Vesta ed Essence
+
 
 	
 
