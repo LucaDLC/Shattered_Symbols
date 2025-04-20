@@ -52,7 +52,8 @@ local ItemScript = {
     'Pallas',
     'HoleyPocket',
     'DystopicMantle',
-    'DystopicCrystal'
+    'DystopicCrystal',
+    'ShatteredHeart'
 }
 local PocketItemScript = {
     'Glyph',
