@@ -3,11 +3,11 @@ local DystopicCrystalLocalID = Isaac.GetItemIdByName("Dystopic Crystal")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(DystopicCrystalLocalID, "{{ArrowUp}} After death, gain: #{{DamageSmall}} +1.2 Damage #{{SpeedSmall}} +0.5 Speed #{{RangeSmall}} +1.5 Range #{{TearsSmall}} +1 Tears #{{ShotspeedSmall}} +0.3 Shot Speed #{{LuckSmall}} +2 Luck #{{Collectible}} there is a 10% chance + 1% for every Luck point to upgrade another random item with quality 3 or lower into a random item with quality 4")
+    EID:addCollectible(DystopicCrystalLocalID, "{{ArrowUp}} After death, gain: #{{DamageSmall}} +1.3 Damage #{{SpeedSmall}} +0.5 Speed #{{RangeSmall}} +1.5 Range #{{TearsSmall}} +1 Tears #{{ShotspeedSmall}} +0.3 Shot Speed #{{LuckSmall}} +2 Luck #{{Collectible}} there is a 10% chance + 1% for every Luck point to upgrade another random item with quality 3 or lower into a random item with quality 4")
 end
 
 local statMultiplier = {
-    damage = 1.2,  -- +1.2 Damage 
+    damage = 1.3,  -- +1.3 Damage 
     speed = 0.5,   -- +0.5 Speed 
     range = 60,    -- +1.5 Range 
     tears = 1,     -- +1 Fire Rate
