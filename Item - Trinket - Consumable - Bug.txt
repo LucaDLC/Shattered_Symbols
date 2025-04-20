@@ -149,8 +149,6 @@ BUG
 
 	- Mantle da aggiungere l'animazione delle ali quando si muore
 
-	- Vesta deve cambiare l'effeto da Holy Card ad Holy Mantle esattamente come è stato fatto con Forbidden Body
-
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
