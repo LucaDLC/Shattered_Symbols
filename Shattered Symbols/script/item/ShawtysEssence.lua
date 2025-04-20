@@ -3,7 +3,7 @@ local ShawtysEssenceLocalID = Isaac.GetItemIdByName("Shawty's Essence")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ShawtysEssenceLocalID, "{{ArrowUp}} Give a random familiar #{{BrokenHeart}} Give 1 Broken Heart which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player10}} Give 5 Wisps that poison enemies then item disappear")
+    EID:addCollectible(ShawtysEssenceLocalID, "{{ArrowUp}} Give a random familiar #{{BrokenHeart}} Give 1 Broken Heart which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Collectible}} After use, you have a 35% chance of the item disappearing #{{Player10}} Give 2 Wisps that poison enemies")
 end
 
 local familiars = {}
@@ -11,7 +11,7 @@ local familiars = {}
 local function onGameStartShawtysEssence()
     for i = 1, Isaac.GetItemConfig():GetCollectibles().Size do
         local itemConfig = Isaac.GetItemConfig():GetCollectible(i)
-        if itemConfig and itemConfig.Type == ItemType.ITEM_FAMILIAR then
+        if itemConfig and itemConfig.Type == ItemType.ITEM_FAMILIAR and not itemConfig:HasTags(ItemConfig.TAG_QUEST) then
             if i ~= CollectibleType.COLLECTIBLE_KEY_PIECE_1 
             and i ~= CollectibleType.COLLECTIBLE_KEY_PIECE_2 
             and i ~= CollectibleType.COLLECTIBLE_KNIFE_PIECE_1 
@@ -55,25 +55,27 @@ function ShatteredSymbols:useShawtysEssence(_, rng, player)
         local familiarID = familiars[rng:RandomInt(#familiars) + 1]
         
         if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B then
-            for i = 1, 5 do
+            for i = 1, 2 do
                 player:AddWisp(ShawtysEssenceLocalID, player.Position)
             end 
-            return {
-                Discharge = true,
-                Remove = true,
-                ShowAnim = true
-            }
         else
             BrokenHeartRemovingSystem(player)
             player:AddCollectible(familiarID)
         end
     end
-
-    return {
-        Discharge = true,
-        Remove = false,
-        ShowAnim = true
-    }
+    if rng:RandomFloat() < 0.35 then
+        return {
+            Discharge = true,
+            Remove = true,
+            ShowAnim = true
+        }
+    else
+        return {
+            Discharge = true,
+            Remove = false,
+            ShowAnim = true
+        }
+    end
 end
 
 function ShatteredSymbols:ShawtysEssenceWispInit(wisp)
