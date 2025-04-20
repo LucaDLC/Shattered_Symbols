@@ -17,7 +17,8 @@
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
+	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
     <Pool Name="greedTreasure">
@@ -34,7 +35,7 @@
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
     <Pool Name="shop">
@@ -45,6 +46,7 @@
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
     <Pool Name="greedShop">
@@ -65,6 +67,7 @@
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
     <Pool Name="secret">
@@ -121,6 +124,7 @@
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
     <Pool Name="greedGoldenChest">
@@ -133,6 +137,7 @@
 	<Item Name="Origami Bat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
     <Pool Name="redChest">
@@ -230,6 +235,7 @@
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
 </ItemPools>
