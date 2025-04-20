@@ -146,6 +146,7 @@
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="angel">
