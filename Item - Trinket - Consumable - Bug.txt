@@ -89,7 +89,7 @@ ITEM
 	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama e da la golden key e golden bomb, si carica con 7 broken hearts, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
 
 77730 - Vesta [3]
-	Ad ogni piano d l'effeto della holy card se hai almeno un broken heart, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
+	Ad ogni piano d l'effetto della holy card se hai almeno un broken heart, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di Vesta
 
 77731 - Pallas [2]
 	Ogni stanza spawna 1-3 minisaac, l'effetto scala in base al numero di Pallas
