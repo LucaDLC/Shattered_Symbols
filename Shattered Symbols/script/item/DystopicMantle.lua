@@ -11,10 +11,10 @@ function ShatteredSymbols:useDystopicMantle()
     for i = 0, Game():GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(i)
         if player:IsDead() and player:HasCollectible(DystopicMantleLocalID) then
-            player:AddCacheFlags(CacheFlag.CACHE_FLYING)
-            player:EvaluateItems()
             player:RemoveCollectible(DystopicMantleLocalID)
             player:AddCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE, 1, false)
+            player:AddCacheFlags(CacheFlag.CACHE_FLYING)
+            player:EvaluateItems()
             SFXManager():Play(SoundEffect.SOUND_HOLY)
         end
     end
