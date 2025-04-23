@@ -15,6 +15,7 @@ function ShatteredSymbols:useDystopicMantle()
             player:EvaluateItems()
             player:RemoveCollectible(DystopicMantleLocalID)
             player:AddCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE, 1, false)
+            player:AddCostume(Isaac.GetItemConfig():GetCollectible(33), 1) -- non va
             SFXManager():Play(SoundEffect.SOUND_HOLY)
         end
     end
