@@ -152,6 +152,8 @@ BUG
 
 	- Mantle da aggiungere l'animazione delle ali quando si muore
 
+	- Aggiungere le wisp a Wriggling
+
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
