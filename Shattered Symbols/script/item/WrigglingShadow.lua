@@ -45,5 +45,13 @@ function ShatteredSymbols:useWrigglingShadow(_, rng, player)
     }
 end
 
+function ShatteredSymbols:WrigglingShadowWispInit(wisp)
+	if  wisp.Player and wisp.Player:HasCollectible(WrigglingShadowLocalID) then
+		if wisp.SubType == WrigglingShadowLocalID then
+			wisp.SubType = 83
+		end
+	end
+end
 
+ShatteredSymbols:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, ShatteredSymbols.WrigglingShadowWispInit, FamiliarVariant.WISP)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_USE_ITEM, ShatteredSymbols.useWrigglingShadow, WrigglingShadowLocalID)
