@@ -150,6 +150,8 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 
+	- Dystopic Mantle ha le animazioni buggate con variabile data. da inserire nel main
+
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 

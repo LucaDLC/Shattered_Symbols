@@ -11,7 +11,7 @@ function ShatteredSymbols:useDystopicMantle()
     for i = 0, Game():GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(i)
         local data = player:GetData()
-        if not data.IsDeadDystopicMantle then data.IsDeadDystopicMantle = 5 end
+        if not data.IsDeadDystopicMantle then data.IsDeadDystopicMantle = 5 end --variabile da mettere nel main 
         if player:IsDead() and player:HasCollectible(DystopicMantleLocalID) then  
             data.IsDeadDystopicMantle = 0
         end
