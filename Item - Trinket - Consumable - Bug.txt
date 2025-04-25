@@ -150,8 +150,6 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 
-	- Mantle da aggiungere l'animazione delle ali quando si muore
-
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
