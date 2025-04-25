@@ -23,7 +23,7 @@ function ShatteredSymbols:useDystopicMantle()
             player:AddCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE, 1, false)
             SFXManager():Play(SoundEffect.SOUND_HOLY)
         end
-        if data.IsDeadDystopicMantle > 5 then
+        if data.IsDeadDystopicMantle > 6 then
             data.IsDeadDystopicMantle = data.IsDeadDystopicMantle - 1 
             player:AddCostume(Isaac.GetItemConfig():GetCollectible(33), 1)
         end
@@ -38,5 +38,17 @@ function ShatteredSymbols:onEvaluateCacheDystopicMantle(player, cacheFlag)
     end
 end
 
+function ShatteredSymbols:newRoomDystopicMantle()
+    for i = 0, Game():GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(i)
+        local data = player:GetData()
+        if data.IsDeadDystopicMantle == 6 then
+            player:AddCostume(Isaac.GetItemConfig():GetCollectible(33), 1)
+        end
+    end
+end
+
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_UPDATE, ShatteredSymbols.useDystopicMantle)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_EVALUATE_CACHE, ShatteredSymbols.onEvaluateCacheDystopicMantle)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.newRoomDystopicMantle)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.newRoomDystopicMantle)
