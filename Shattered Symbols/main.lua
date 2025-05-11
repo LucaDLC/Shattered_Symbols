@@ -51,7 +51,7 @@ local ItemScript = {
     'Vesta',
     'Pallas',
     'HoleyPocket',
-    'DystopicMantle',
+    'DystopicFaith',
     'DystopicCrystal',
     'ShatteredHeart'
 }
