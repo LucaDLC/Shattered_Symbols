@@ -15,7 +15,7 @@ function ShatteredSymbols:useDystopicFaith()
         if player:IsDead() and player:HasCollectible(DystopicFaithLocalID) then  
             data.IsDeadDystopicFaith = true
         end
-        if not player:IsDead() data.IsDeadDystopicFaith and player:HasCollectible(DystopicFaithLocalID) then
+        if not player:IsDead() and data.IsDeadDystopicFaith and player:HasCollectible(DystopicFaithLocalID) then
             data.IsDeadDystopicFaith = false
             player:RemoveCollectible(DystopicFaithLocalID)
             player:AddCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE, 1, false)
