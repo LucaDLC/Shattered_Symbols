@@ -98,7 +98,7 @@ ITEM
 	Tenendo premuto CTRL per 3 secondi puoi droppare l'item attivo o pocket con la sinergia di Origami Crow
 
 77733 - Dystopic Faith [2]
-	Dopo che isaac è morto, questo item si trasforma in holy mantle, il player può volare
+	Dopo che isaac è morto, questo item si trasforma in holy mantle e in fate
 
 77734 - Dystopic Crystal [3]
 	Dopo che isaac è morto, ottieni un boost importante delle statistiche e un item in tuo possesso si trasforma in un item qualità 4 con il 10% di possibilità + Luck
@@ -150,7 +150,6 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 
-	- Dystopic Mantle ha le animazioni buggate con variabile data. da inserire nel main
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
