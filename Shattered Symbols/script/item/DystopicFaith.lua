@@ -11,7 +11,7 @@ function ShatteredSymbols:useDystopicFaith()
     for i = 0, Game():GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(i)
         local data = player:GetData()
-        if not data.IsDeadDystopicFaith then data.IsDeadDystopicFaith = false end --variabile da mettere nel main 
+        if not data.IsDeadDystopicFaith then data.IsDeadDystopicFaith = false end 
         if player:IsDead() and player:HasCollectible(DystopicFaithLocalID) then  
             data.IsDeadDystopicFaith = true
         end
