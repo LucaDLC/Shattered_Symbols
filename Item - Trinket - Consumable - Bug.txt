@@ -97,7 +97,7 @@ ITEM
 77732 - Holey Pocket [2]
 	Tenendo premuto CTRL per 3 secondi puoi droppare l'item attivo o pocket con la sinergia di Origami Crow
 
-77733 - Dystopic Mantle [2]
+77733 - Dystopic Faith [2]
 	Dopo che isaac è morto, questo item si trasforma in holy mantle, il player può volare
 
 77734 - Dystopic Crystal [3]
