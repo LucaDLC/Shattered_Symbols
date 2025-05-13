@@ -3,7 +3,7 @@ local DystopicFaithLocalID = Isaac.GetItemIdByName("Dystopic Faith")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(DystopicFaithLocalID, "{{HolyMantleSmall}} After death, it become Holy Mantle and Fate")
+    EID:addCollectible(DystopicFaithLocalID, "{{Collectible}} After death, it become: #{{AngelRoom}} An Angel Room item if the player has taken a Devil Deal #{{DevilRoom}} A Devil Room item if the player has not taken any Devil Deal")
 end
 
 
@@ -16,10 +16,18 @@ function ShatteredSymbols:useDystopicFaith()
             data.IsDeadDystopicFaith = true
         end
         if not player:IsDead() and data.IsDeadDystopicFaith and player:HasCollectible(DystopicFaithLocalID) then
-            data.IsDeadDystopicFaith = false
             player:RemoveCollectible(DystopicFaithLocalID)
-            player:AddCollectible(CollectibleType.COLLECTIBLE_HOLY_MANTLE, 1, false)
-            player:AddCollectible(CollectibleType.COLLECTIBLE_FATE, 1, false)
+
+            local rng = RNG()
+            rng:SetSeed(math.random(1, 99999999), 1)
+
+            if game:GetDevilRoomDeals() > 0 then
+                player:AddCollectible(game:GetItemPool():GetCollectible(ItemPoolType.POOL_ANGEL, false, rng:Next()), 1, false)
+            else
+                player:AddCollectible(game:GetItemPool():GetCollectible(ItemPoolType.POOL_DEVIL, false, rng:Next()), 1, false)
+            end
+            
+            data.IsDeadDystopicFaith = false
             SFXManager():Play(SoundEffect.SOUND_HOLY)
         end
     end
