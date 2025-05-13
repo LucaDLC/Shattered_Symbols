@@ -3,7 +3,7 @@ local DystopicFaithLocalID = Isaac.GetItemIdByName("Dystopic Faith")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(DystopicFaithLocalID, "{{Collectible}} After death, it become: #{{AngelRoom}} An Angel Room item if the player has taken a Devil Deal #{{DevilRoom}} A Devil Room item if the player has not taken any Devil Deal #{{SecretRoom}} A Secret Room item")
+    EID:addCollectible(DystopicFaithLocalID, "{{Collectible}} After death, it disappear and spawn: #{{AngelRoom}} An Angel Room item if the player has taken a Devil Deal #{{DevilRoom}} A Devil Room item if the player has not taken any Devil Deal #{{SecretRoom}} A Secret Room item")
 end
 
 
