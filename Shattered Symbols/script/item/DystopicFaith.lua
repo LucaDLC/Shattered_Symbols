@@ -3,7 +3,7 @@ local DystopicFaithLocalID = Isaac.GetItemIdByName("Dystopic Faith")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(DystopicFaithLocalID, "{{Collectible}} After death, it become: #{{AngelRoom}} An Angel Room item if the player has taken a Devil Deal #{{DevilRoom}} A Devil Room item if the player has not taken any Devil Deal")
+    EID:addCollectible(DystopicFaithLocalID, "{{Collectible}} After death, it become: #{{AngelRoom}} An Angel Room item if the player has taken a Devil Deal #{{DevilRoom}} A Devil Room item if the player has not taken any Devil Deal #{{SecretRoom}} A Secret Room item")
 end
 
 
@@ -22,10 +22,11 @@ function ShatteredSymbols:useDystopicFaith()
             rng:SetSeed(math.random(1, 99999999), 1)
 
             if game:GetDevilRoomDeals() > 0 then
-                player:AddCollectible(game:GetItemPool():GetCollectible(ItemPoolType.POOL_ANGEL, false, rng:Next()), 1, false)
+                Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, game:GetItemPool():GetCollectible(ItemPoolType.POOL_ANGEL, false, rng:Next()), player.Position + Vector(0, 50), Vector(0,0), nil)
             else
-                player:AddCollectible(game:GetItemPool():GetCollectible(ItemPoolType.POOL_DEVIL, false, rng:Next()), 1, false)
+                Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, game:GetItemPool():GetCollectible(ItemPoolType.POOL_DEVIL, false, rng:Next()), player.Position + Vector(0, 50), Vector(0,0), nil)
             end
+            Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, game:GetItemPool():GetCollectible(ItemPoolType.POOL_SECRET, false, rng:Next()), player.Position + Vector(0, -50), Vector(0,0), nil)
             
             data.IsDeadDystopicFaith = false
             SFXManager():Play(SoundEffect.SOUND_HOLY)
