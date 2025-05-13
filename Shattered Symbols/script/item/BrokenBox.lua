@@ -50,7 +50,7 @@ function ShatteredSymbols:useBrokenBox(_, rng, player)
         player:AddKeys(-data.BrokenBoxKeyFlag)
 
         if data.BrokenBoxItemFlag ~= nil or data.BrokenBoxMoneyFlag > 0 or data.BrokenBoxBombFlag > 0 or data.BrokenBoxKeyFlag > 0 then
-            data.BrokenBoxStatus = true  -- Imposta lo stato a pieno
+            data.BrokenBoxStatus = true  
         else
             data.BrokenBoxStatus = false
         end
