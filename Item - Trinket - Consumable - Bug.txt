@@ -150,8 +150,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 
-	- cambiare concept a dystopic faith, al posto di mantle e faith, dare 1 oggetti passivi della pool degli angeli e 1 della pool del diavolo + 1 random di una delle 2 pool
-
+	
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 

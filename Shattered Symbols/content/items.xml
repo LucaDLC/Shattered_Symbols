@@ -32,7 +32,7 @@
 	<passive  id="77730" name="Vesta" gfx ="Vesta.png" description="The fourth asteroid planet" quality="3" devilprice="1" tags="offensive"/>
 	<passive  id="77731" name="Pallas" gfx ="Pallas.png" description="The second asteroid planet" quality="2" devilprice="1" tags="offensive"/>
 	<passive  id="77732" name="Holey Pocket" gfx ="HoleyPocket.png" description="I lost something" quality="2" devilprice="1" tags="offensive"/>
-	<passive  id="77733" name="Dystopic Faith" gfx ="DystopicFaith.png" description="Kinda weird" quality="2" devilprice="1" tags="nolostbr"/>
+	<passive  id="77733" name="Dystopic Faith" gfx ="DystopicFaith.png" description="Kinda weird" quality="1" devilprice="1" tags="nolostbr"/>
 	<passive  id="77734" name="Dystopic Crystal" gfx ="DystopicCrystal.png" description="I'm not scared of the dark" quality="3" devilprice="2" tags="offensive"/>
 	<active  id="77735" name="Shattered Heart" gfx ="ShatteredHeart.png" description="Collect the fragments and rebuild it" quality="1" maxcharges="1" chargetype="normal" initcharge ="0" devilprice="1" tags="nolostbr"/>
 
