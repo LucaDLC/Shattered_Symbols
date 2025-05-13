@@ -16,7 +16,7 @@
 	<passive  id="77714" name="Origami Bat" gfx ="OrigamiBat.png" description="Go away" quality="2" devilprice="1" tags="nolostbr"/>
 	<active  id="77715" name="Broken Flux" gfx ="BrokenFlux.png" description="Feel the pain" quality="2" maxcharges="3" chargetype="special" initcharge ="0" devilprice="1" tags="nogreed offensive"/>
 	<passive  id="77716" name="Origami Crow" gfx ="OrigamiCrow.png" description="Somebody is watching you" quality="3" devilprice="1" tags="offensive"/>
-	<active  id="77717" name="Broken Box" gfx ="BrokenBox.png" description="No one can discover the secrets inside" quality="2" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
+	<active  id="77717" name="Broken Box" gfx ="BrokenBox_Empty.png" description="No one can discover the secrets inside" quality="2" maxcharges="0" chargetype="normal" devilprice="1" tags="offensive"/>
 	<passive  id="77718" name="Midnight Bite" gfx ="MidnightBite.png" description="Zombie undercover" quality="2" devilprice="1" tags="nolostbr nokeeper"/>
 	<active  id="77719" name="Extra Deck of Cards" gfx ="ExtraDeckofCards.png" description="Special evocation" quality="2" maxcharges="5" chargetype="normal" devilprice="1"/>
 	<passive  id="77720" name="Ancient Hook" gfx ="AncientHook.png" description="Struggling won't help you" quality="0" devilprice="1" tags="lazarusshared offensive"/>
