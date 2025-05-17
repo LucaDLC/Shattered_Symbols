@@ -13,7 +13,7 @@ ITEM
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
 
 77705 - Upside Down Deck of Card [2] [TEXTURE FINISHED]
-	Droppa una reverse card, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale
+	Droppa una reverse card, viene sostituito al Deck of Card con una probabilità del 5% e dopo l'utilizzo dell' Upside Down Deck torna il Deck of Card normale
 
 77706 - Constellation [3] [TEXTURE FINISHED]
 	Attivo monouso, spawna un item tra i segni zodiacali, gli item del planetario e le meteore
@@ -28,7 +28,7 @@ ITEM
 	Attivo monouso che spawna un item origami
 
 77710 - Shawty's Essence [2]
-	Attivo che ti da un companion casuale al costo di un Broken Heart 
+	Attivo che ti da un companion casuale al costo di un Broken Heart, può scomparire dopo l'utilizzo
 
 77711 - Torn Hook [0] 
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale, per ogni punto luck hai la possibilità che si rimuova
@@ -37,7 +37,7 @@ ITEM
 	Rimuove gli Hooks e ti toglie 1 broken heart e da 1 cuore full per hook rimosso, se non hai hook te ne da uno
 
 77713 - Origami Kolibri [3]
-	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 3 broken heart
+	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 2 broken heart
 
 77714 - Origami Bat [2]
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Bat, da 1 broken heart
@@ -56,7 +56,7 @@ ITEM
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
 
 77719 - Extra Deck of Card [2]
-	Droppa una carta speciale, viene sostituito al Deck of Card dopo l'utilizzo con una probabilità del 5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale
+	Droppa una carta speciale, viene sostituito al Deck of Card con una probabilità del 5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale
 
 77720 - Ancient Hook [0]
 	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate, per ogni punto luck hai la possibilità che si rimuova 
