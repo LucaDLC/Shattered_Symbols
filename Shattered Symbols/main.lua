@@ -35,7 +35,7 @@ local ItemScript = {
     'OrigamiBat',
     'BrokenFlux',
     'OrigamiCrow',
-    'BrokenBox',
+    'ForgottenBox',
     'MidnightBite',
     'ExtraDeckofCard',
     'AncientHook',
@@ -137,12 +137,12 @@ function ShatteredSymbols:SavePlayerData()
 
         -- Shared Data
         if i == 0 then
-            playerDataToSave.BrokenBoxHeartFlag = data.BrokenBoxHeartFlag or false
-            playerDataToSave.BrokenBoxItemFlag = data.BrokenBoxItemFlag or nil
-            playerDataToSave.BrokenBoxMoneyFlag = data.BrokenBoxMoneyFlag or 0
-            playerDataToSave.BrokenBoxBombFlag = data.BrokenBoxBombFlag or 0
-            playerDataToSave.BrokenBoxKeyFlag = data.BrokenBoxKeyFlag or 0
-            playerDataToSave.BrokenBoxStatus = data.BrokenBoxStatus or false
+            playerDataToSave.ForgottenBoxHeartFlag = data.ForgottenBoxHeartFlag or false
+            playerDataToSave.ForgottenBoxItemFlag = data.ForgottenBoxItemFlag or nil
+            playerDataToSave.ForgottenBoxMoneyFlag = data.ForgottenBoxMoneyFlag or 0
+            playerDataToSave.ForgottenBoxBombFlag = data.ForgottenBoxBombFlag or 0
+            playerDataToSave.ForgottenBoxKeyFlag = data.ForgottenBoxKeyFlag or 0
+            playerDataToSave.ForgottenBoxStatus = data.ForgottenBoxStatus or false
             playerDataToSave.UnstableGlyphCharge = data.UnstableGlyphCharge or 0
             playerDataToSave.UnstableGlyphBrokenHearts = data.UnstableGlyphBrokenHearts or {}
             playerDataToSave.UnstableGlyphHeartsTracking = data.UnstableGlyphHeartsTracking or {}
@@ -210,12 +210,12 @@ function ShatteredSymbols:LoadPlayerData()
 
             -- Shared Data
             if i == 0 then
-                data.BrokenBoxHeartFlag = playerDataToLoad.BrokenBoxHeartFlag or false
-                data.BrokenBoxItemFlag = playerDataToLoad.BrokenBoxItemFlag or nil
-                data.BrokenBoxMoneyFlag = playerDataToLoad.BrokenBoxMoneyFlag or 0
-                data.BrokenBoxBombFlag = playerDataToLoad.BrokenBoxBombFlag or 0
-                data.BrokenBoxKeyFlag = playerDataToLoad.BrokenBoxKeyFlag or 0
-                data.BrokenBoxStatus = playerDataToLoad.BrokenBoxStatus or false
+                data.ForgottenBoxHeartFlag = playerDataToLoad.ForgottenBoxHeartFlag or false
+                data.ForgottenBoxItemFlag = playerDataToLoad.ForgottenBoxItemFlag or nil
+                data.ForgottenBoxMoneyFlag = playerDataToLoad.ForgottenBoxMoneyFlag or 0
+                data.ForgottenBoxBombFlag = playerDataToLoad.ForgottenBoxBombFlag or 0
+                data.ForgottenBoxKeyFlag = playerDataToLoad.ForgottenBoxKeyFlag or 0
+                data.ForgottenBoxStatus = playerDataToLoad.ForgottenBoxStatus or false
                 data.UnstableGlyphCharge = playerDataToLoad.UnstableGlyphCharge or 0
                 data.UnstableGlyphBrokenHearts = playerDataToLoad.UnstableGlyphBrokenHearts or {}
                 data.UnstableGlyphHeartsTracking = playerDataToLoad.UnstableGlyphHeartsTracking or {}
@@ -229,12 +229,12 @@ function ShatteredSymbols:LoadPlayerData()
         local player = Isaac.GetPlayer(0)
         local data = player:GetData()
 
-        data.BrokenBoxHeartFlag = playerDataToLoad.BrokenBoxHeartFlag or false
-        data.BrokenBoxItemFlag = playerDataToLoad.BrokenBoxItemFlag or nil
-        data.BrokenBoxMoneyFlag = playerDataToLoad.BrokenBoxMoneyFlag or 0
-        data.BrokenBoxBombFlag = playerDataToLoad.BrokenBoxBombFlag or 0
-        data.BrokenBoxKeyFlag = playerDataToLoad.BrokenBoxKeyFlag or 0
-        data.BrokenBoxStatus = playerDataToLoad.BrokenBoxStatus or false
+        data.ForgottenBoxHeartFlag = playerDataToLoad.ForgottenBoxHeartFlag or false
+        data.ForgottenBoxItemFlag = playerDataToLoad.ForgottenBoxItemFlag or nil
+        data.ForgottenBoxMoneyFlag = playerDataToLoad.ForgottenBoxMoneyFlag or 0
+        data.ForgottenBoxBombFlag = playerDataToLoad.ForgottenBoxBombFlag or 0
+        data.ForgottenBoxKeyFlag = playerDataToLoad.ForgottenBoxKeyFlag or 0
+        data.ForgottenBoxStatus = playerDataToLoad.ForgottenBoxStatus or false
         data.UnstableGlyphCharge = playerDataToLoad.UnstableGlyphCharge or 0
 
     else
