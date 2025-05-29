@@ -22,9 +22,9 @@
 	<passive  id="77720" name="Ancient Hook" gfx ="AncientHook.png" description="Struggling won't help you" quality="0" devilprice="1" tags="lazarusshared offensive"/>
 	<active  id="77721" name="Runic Geode" gfx ="RunicGeode.png" description="Feel the magical power" quality="2" maxcharges="6" chargetype="normal" devilprice="1" tags="offensive"/>
 	<active  id="77722" name="Runic Altar" gfx ="RunicAltar.png" description="Magic whispers" quality="2" maxcharges="3" chargetype="special" initcharge ="0" devilprice="1" tags="offensive"/>
-	<passive  id="77723" name="Forbidden Soul" gfx ="ForbiddenSoul.png" description="The forgotten ancient soul" quality="3" devilprice="2" tags="angel nokeeper offensive"/>
-	<passive  id="77724" name="Forbidden Mind" gfx ="ForbiddenMind.png" description="The forgotten ancient mind" quality="3" devilprice="2" tags="angel nogreed offensive"/>
-	<passive  id="77725" name="Forbidden Body" gfx ="ForbiddenBody.png" description="The forgotten ancient body" quality="3" devilprice="2" tags="angel nolostbr"/>
+	<passive  id="77723" name="Forbidden Soul" gfx ="ForbiddenSoul.png" description="The forbidden ancient soul" quality="3" devilprice="2" tags="angel nokeeper offensive"/>
+	<passive  id="77724" name="Forbidden Mind" gfx ="ForbiddenMind.png" description="The forbidden ancient mind" quality="3" devilprice="2" tags="angel nogreed offensive"/>
+	<passive  id="77725" name="Forbidden Body" gfx ="ForbiddenBody.png" description="The forbidden ancient body" quality="3" devilprice="2" tags="angel nolostbr"/>
 	<passive  id="77726" name="Jade & Ivory Mask" gfx ="JadeIvoryMask.png" description="Status" quality="3" devilprice="2" tags="offensive"/>
 	<passive  id="77727" name="Pyrite" gfx ="Pyrite.png" description="You, fool!" quality="3" devilprice="2" tags="offensive"/>
 	<passive  id="77728" name="Mutable Onyx" gfx ="MutableOnyx.png" description="Volatile and mutable" quality="2" devilprice="1" tags="offensive"/>

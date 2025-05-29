@@ -67,19 +67,19 @@ ITEM
 77722 - Runic Altar [2]
 	Attivo con 3 cariche che si ricarica quando viene usata una runa, quando viene usato attiva i 3 effetti delle rune usate per caricarlo
 
-77723 - Forbidden Soul [3]
+77723 - Forbidden Soul [3] [TEXTURE FINISHED]
 	Ottieni un golden heart per il tuo ultimo slot cuore se possibile ad ogni stanza, come un Holy Mantle
 
-77724 - Forbidden Mind [3]
+77724 - Forbidden Mind [3] [TEXTURE FINISHED]
 	Hai il 33% di possibilità di aprire tutte le Red Room della stanza dopo averla pulita
 
-77725 - Forbidden Body [3]
+77725 - Forbidden Body [3] [TEXTURE FINISHED]
 	Gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti 
 
 77726 - Jade & Ivory Mask [3]
 	Ad ogni piano un oggetto preso in precedenza da qualità 0 a 3 viene sostituito con un oggetto di qualità superiore 
 
-77727 - Pyrite [3]
+77727 - Pyrite [3] [TEXTURE FINISHED]
 	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
 
 77728 - Mutable Onyx [2]
