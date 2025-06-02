@@ -115,7 +115,7 @@ CONSUMABILI
 99902 - Hex Crystal
 	Applica weakness e bleeding ai nemici nella stanza per 1 broken heart
 
-99903 - Sacred Dice Shard
+99903 - Sacred Dice Shard [TEXTURE FINISHED]
 	Rerolla gli item sui piedistalli in una qualità più alta ma da 1 un broken heart 
 
 99904 - Tea Bag
@@ -124,7 +124,7 @@ CONSUMABILI
 99905 - Fiendish Seed [TEXTURE FINISHED]
 	Converte i soul heart in black heart
 
-99906 - Queen of Spades
+99906 - Queen of Spades [TEXTURE FINISHED]
 	Rimuove un oggetto posseduto di qualità 1 o superiore e da 2 oggetti di qualità -1
 
 ---------------------------------------------------------------------
