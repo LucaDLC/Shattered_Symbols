@@ -30,13 +30,13 @@ ITEM
 77710 - Shawty's Essence [2]
 	Attivo che ti da un companion casuale al costo di un Broken Heart, può scomparire dopo l'utilizzo
 
-77711 - Torn Hook [0] 
+77711 - Torn Hook [0] [TEXTURE FINISHED]
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale, per ogni punto luck hai la possibilità che si rimuova
 
 77712 - Wriggling Shadow [2]
 	Rimuove gli Hooks e ti toglie 1 broken heart e da 1 cuore full per hook rimosso, se non hai hook te ne da uno
 
-77713 - Origami Kolibri [3]
+77713 - Origami Kolibri [3] [TEXTURE NEED REWORK]
 	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 2 broken heart
 
 77714 - Origami Bat [2]
@@ -58,13 +58,13 @@ ITEM
 77719 - Extra Deck of Card [2]
 	Droppa una carta speciale, viene sostituito al Deck of Card con una probabilità del 5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale
 
-77720 - Ancient Hook [0]
+77720 - Ancient Hook [0] [TEXTURE NEED REWORK]
 	Ad ogni piano ti da un broken heart e da la probabilità del 15% spawnare un Death certificate, per ogni punto luck hai la possibilità che si rimuova 
 
 77721 - Runic Geode [2]
 	Attivo che droppa una runa casuale (contemplando anche quelle delle mod) con 6 cariche
 
-77722 - Runic Altar [2]
+77722 - Runic Altar [2] [TEXTURE NEED REWORK]
 	Attivo con 3 cariche che si ricarica quando viene usata una runa, quando viene usato attiva i 3 effetti delle rune usate per caricarlo
 
 77723 - Forbidden Soul [3] [TEXTURE FINISHED]
@@ -82,7 +82,7 @@ ITEM
 77727 - Pyrite [3] [TEXTURE FINISHED]
 	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
 
-77728 - Mutable Onyx [2]
+77728 - Mutable Onyx [2] [TEXTURE NEED REWORK]
 	Ad ogni piano, acquisisce un effetto causale di un item passivo 
 
 77729 - Unstable Glyph [4]
@@ -94,7 +94,7 @@ ITEM
 77731 - Pallas [2]
 	Ogni stanza spawna 1-3 minisaac, l'effetto scala in base al numero di Pallas
 
-77732 - Holey Pocket [2]
+77732 - Holey Pocket [2] [TEXTURE FINISHED]
 	Tenendo premuto CTRL per 3 secondi puoi droppare l'item attivo o pocket con la sinergia di Origami Crow
 
 77733 - Dystopic Faith [2]
@@ -109,10 +109,10 @@ ITEM
 ---------------------------------------------------------------------
 CONSUMABILI
 
-99901 - Glyph
+99901 - Glyph [GIANTBOOK FINISHED]
 	Runa che rimuove 1 broken heart, da confusion ai nemici per 5 secondi
 
-99902 - Hex Crystal
+99902 - Hex Crystal 
 	Applica weakness e bleeding ai nemici nella stanza per 1 broken heart
 
 99903 - Sacred Dice Shard [TEXTURE FINISHED]
@@ -124,7 +124,7 @@ CONSUMABILI
 99905 - Fiendish Seed [TEXTURE FINISHED]
 	Converte i soul heart in black heart
 
-99906 - Queen of Spades [TEXTURE FINISHED]
+99906 - Queen of Spades [TEXTURE FINISHED] 
 	Rimuove un oggetto posseduto di qualità 1 o superiore e da 2 oggetti di qualità -1
 
 ---------------------------------------------------------------------
