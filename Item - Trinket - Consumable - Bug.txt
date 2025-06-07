@@ -3,13 +3,13 @@ ITEM
 77701 - Sacred Lantern [2] [TEXTURE FINISHED]
 	Rimuove i Broken Heart, li sostituisce con un Soul Heart per ogni Broken Heart
 
-77702 - Fortune Teller [2]
+77702 - Fortune Teller [2] [TEXTURE FINISHED]
 	Dà un Broken Heart per +5 di Luck
 
 77703 - Origami Shuriken [3]
 	Dà un Broken Heart per +3 di Damage clean
 
-77704 - Origami Boat [3]
+77704 - Origami Boat [3] [TEXTURE NEED REWORK]
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
 
 77705 - Upside Down Deck of Card [2] [TEXTURE FINISHED]
