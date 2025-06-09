@@ -103,7 +103,7 @@ ITEM
 77734 - Dystopic Crystal [3]
 	Dopo che isaac è morto, ottieni un boost importante delle statistiche e un item in tuo possesso si trasforma in un item qualità 4 con il 10% di possibilità + Luck
 
-77735 - Shattered Heart [1]
+77735 - Shattered Heart [1] [TEXTURE NEED REWORK]
 	Rimuove un Broken Heart e da un Empty Heart Container
 
 ---------------------------------------------------------------------
