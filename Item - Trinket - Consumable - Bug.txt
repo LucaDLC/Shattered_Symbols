@@ -100,7 +100,7 @@ ITEM
 77733 - Dystopic Faith [2]
 	Dopo che isaac è morto, questo item si trasforma in un oggetto della pool della secret, e uno della angel/devil pool a seconda se è stato preso un patto satanico o meno
 
-77734 - Dystopic Crystal [3]
+77734 - Dystopic Crystal [3] [TEXTURE FINISHED]
 	Dopo che isaac è morto, ottieni un boost importante delle statistiche e un item in tuo possesso si trasforma in un item qualità 4 con il 10% di possibilità + Luck
 
 77735 - Shattered Heart [1] [TEXTURE NEED REWORK]
