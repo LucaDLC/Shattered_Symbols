@@ -27,7 +27,7 @@ ITEM
 77709 - Shawty's Letter [2] [TEXTURE FINISHED]
 	Attivo monouso che spawna un item origami
 
-77710 - Shawty's Essence [2]
+77710 - Shawty's Essence [2] [TEXTURE FINISHED]
 	Attivo che ti da un companion casuale al costo di un Broken Heart, può scomparire dopo l'utilizzo
 
 77711 - Torn Hook [0] [TEXTURE FINISHED]
@@ -45,7 +45,7 @@ ITEM
 77715 - Broken Flux [2] [TEXTURE FINISHED]
 	Attivo che si ricarica quando ottieni dei broken heart, 3 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
 
-77716 - Origami Crow [3]
+77716 - Origami Crow [3] [TEXTURE NEED REWORK]
 	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro, da 2 broken heart
 
 77717 - Forgotten Box [2]
