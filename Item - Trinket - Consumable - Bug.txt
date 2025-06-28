@@ -39,7 +39,7 @@ ITEM
 77713 - Origami Kolibri [3] [TEXTURE NEED REWORK]
 	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 2 broken heart
 
-77714 - Origami Bat [2]
+77714 - Origami Bat [2] [TEXTURE NEED REWORK]
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Bat, da 1 broken heart
 
 77715 - Broken Flux [2] [TEXTURE FINISHED]
