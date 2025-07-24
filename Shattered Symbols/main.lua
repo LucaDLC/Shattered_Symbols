@@ -54,8 +54,8 @@ local ItemScript = {
     'DystopicFaith',
     'DystopicCrystal',
     'ShatteredHeart',
-    'AdamantOrb',
-    'LustrousOrb'
+    'LustrousOrb',
+    'AdamantOrb'
 }
 local PocketItemScript = {
     'Glyph',

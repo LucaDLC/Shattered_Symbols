@@ -106,11 +106,11 @@ ITEM
 77735 - Shattered Heart [1] [TEXTURE NEED REWORK]
 	Rimuove un Broken Heart e da un Empty Heart Container
 
-77736 - Adamant Crystal [3] 
-	Ricomincia la partita e i giocatori mantengono il 50% degli oggetti raccolti ma ottengono 1 broken heart nella nuova partita
-
-77737 - Lustrous Orb [2]
+77736 - Lustrous Orb [2]
 	Shuffle delle pool dei giocatori e rimuove 1 broken heart
+
+77737 - Adamant Orb [3] 
+	Ricomincia la partita e i giocatori mantengono il 50% degli oggetti raccolti ma ottengono 1 broken heart nella nuova partita
 
 ---------------------------------------------------------------------
 CONSUMABILI
@@ -156,6 +156,7 @@ TRASFORMAZIONI
 ====================================================================
 BUG
 
+	- Adamant Orb non funziona
 	
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
