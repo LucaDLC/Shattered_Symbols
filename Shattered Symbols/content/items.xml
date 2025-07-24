@@ -35,7 +35,7 @@
 	<passive  id="77733" name="Dystopic Faith" gfx ="DystopicFaith.png" description="Kinda weird" quality="1" devilprice="1" tags="nolostbr"/>
 	<passive  id="77734" name="Dystopic Crystal" gfx ="DystopicCrystal.png" description="I'm not scared of the dark" quality="3" devilprice="2" tags="offensive"/>
 	<active  id="77735" name="Shattered Heart" gfx ="ShatteredHeart.png" description="Collect the fragments and rebuild it" quality="1" maxcharges="0" chargetype="normal" devilprice="1" tags="nolostbr"/>
-	<active  id="77736" name="Adamant Orb" gfx ="AdamantOrb.png" description="Break integrity constraints" quality="3" maxcharges="0" chargetype="normal" devilprice="1" />
-	<active  id="77737" name="Lustrous Orb" gfx ="LustrousOrb.png" description="Reality is intertwined" quality="2" maxcharges="0" chargetype="normal" devilprice="1" />
+	<active  id="77736" name="Lustrous Orb" gfx ="LustrousOrb.png" description="Reality is intertwined" quality="2" maxcharges="0" chargetype="normal" devilprice="1" />
+	<active  id="77737" name="Adamant Orb" gfx ="AdamantOrb.png" description="Break integrity constraints" quality="3" maxcharges="0" chargetype="normal" devilprice="1" />
 
 </items>
