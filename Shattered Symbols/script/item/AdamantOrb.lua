@@ -6,6 +6,13 @@ if EID then
     EID:addCollectible(AdamantOrbLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{TimerSmall}} Restart the game with 50% of Passive Item you hold #{{BrokenHeart}} Give 1 Broken Heart for the new run of each player which does not replace Heart")
 end
 
+local function shuffle(tbl, rng)
+    for i = #tbl, 2, -1 do
+        local j = rng:RandomInt(i) + 1
+        tbl[i], tbl[j] = tbl[j], tbl[i]
+    end
+end
+
 function ShatteredSymbols:useAdamantOrb(_, rng, player)
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local selectedPlayer = Isaac.GetPlayer(playerIndex)
@@ -16,17 +23,17 @@ function ShatteredSymbols:useAdamantOrb(_, rng, player)
         if not data.AdamantOrbItems then data.AdamantOrbItems = {} end
         if not data.AdamantOrbRestarted then data.AdamantOrbRestarted = false end
 
-        -- Raccoglie tutti gli oggetti passivi
-        for i = 1, CollectibleType.NUM_COLLECTIBLES - 1 do
-            local count = selectedPlayer:GetCollectibleNum(i, false)
-            if count > 0 and collectibles:GetCollectible(i).Type == ItemType.ITEM_PASSIVE then
-                table.insert(keptItems, { id = i, count = count })
+        for i = 1, Isaac.GetItemConfig():GetCollectibles().Size - 1 do
+            local cfg = Isaac.GetItemConfig():GetCollectible(i)
+            if selectedPlayer:HasCollectible(i) and cfg.Type == ItemType.ITEM_PASSIVE then
+                table.insert(keptItems, i)
             end
         end
 
         local half = math.floor(#keptItems / 2)
         
-        RNG.Shuffle(keptItems)
+        rng:SetSeed(Random(), 1)
+        shuffle(keptItems, rng)
         
         for i = 1, half do
             table.insert(data.AdamantOrbItems, keptItems[i])
@@ -36,35 +43,35 @@ function ShatteredSymbols:useAdamantOrb(_, rng, player)
 
     end
     
-        ShatteredSymbols:SavePlayerData()
-        Game():StartNewGame()
-    
-        return {
-            Discharge = true,
-            Remove = true,
-            ShowAnim = true
+    return {
+        Discharge = true,
+        Remove = true,
+        ShowAnim = true
     }
 end
 
-function AdamantOrb:adamantPostPlayerInit(player)
-    for playerIndex = 0, game:GetNumPlayers() - 1 do
-        local selectedPlayer = Isaac.GetPlayer(playerIndex)
+function ShatteredSymbols:adamantPostPlayerInit()
+
+    for i = 0, Game():GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(i)
         local data = player:GetData()
 
         if not data.AdamantOrbItems then data.AdamantOrbItems = {} end
         if not data.AdamantOrbRestarted then data.AdamantOrbRestarted = false end
 
         if data.AdamantOrbRestarted then
+
             for _, itemData in ipairs(data.AdamantOrbItems) do
-                for _ = 1, itemData.count do
-                    player:AddCollectible(itemData.id, 0, false)
-                end
+                player:AddCollectible(itemData)
             end
+
             data.AdamantOrbItems = {}
             data.AdamantOrbRestarted = false
             player:AddBrokenHearts(1)
+
         end
     end
+
 end
 
 function ShatteredSymbols:AdamantOrbWispInit(wisp)
@@ -77,6 +84,6 @@ end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_FAMILIAR_INIT, ShatteredSymbols.AdamantOrbWispInit, FamiliarVariant.WISP)
 ShatteredSymbols:AddCallback(ModCallbacks.MC_USE_ITEM, ShatteredSymbols.useAdamantOrb, AdamantOrbLocalID)
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, ShatteredSymbols.adamantPostPlayerInit)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_UPDATE, ShatteredSymbols.adamantPostPlayerInit)
 
 
