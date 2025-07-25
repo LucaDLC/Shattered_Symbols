@@ -135,8 +135,6 @@ function ShatteredSymbols:SavePlayerData()
             ForbiddenBodyMantlePreviousCounter = data.ForbiddenBodyMantlePreviousCounter or 0,
             LastForbiddenBodyStage = data.LastForbiddenBodyStage or nil,
             IsDeadDystopicFaith = data.IsDeadDystopicFaith or false,
-            AdamantOrbItems = data.AdamantOrbItems or {},
-            AdamantOrbRestarted = data.AdamantOrbRestarted or false,
         }
 
         -- Shared Data
@@ -211,8 +209,6 @@ function ShatteredSymbols:LoadPlayerData()
             data.ForbiddenBodyMantlePreviousCounter = playerDataToLoad.ForbiddenBodyMantlePreviousCounter or 0
             data.LastForbiddenBodyStage = playerDataToLoad.LastForbiddenBodyStage or nil
             data.IsDeadDystopicFaith = playerDataToLoad.IsDeadDystopicFaith or false
-            data.AdamantOrbItems = playerDataToLoad.AdamantOrbItems or {}
-            data.AdamantOrbRestarted = playerDataToLoad.AdamantOrbRestarted or false
 
             -- Shared Data
             if i == 0 then
