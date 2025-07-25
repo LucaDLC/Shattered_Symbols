@@ -5,7 +5,7 @@ local AncientHookExternalID = Isaac.GetItemIdByName("Ancient Hook")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{ArrowUp}} Remove all Hooks, remove 1 Broken Heart and give 1 Full Heart for each Hook #{{ArrowDown}} If you don't have any hooks, it gives you one")
+    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{ArrowUp}} Remove all Hooks, remove 50% of all your Broken Hearts and give 1 Empty Heart Container for each Broken Heart removed if you have at least 1 Hook #{{ArrowDown}} If you don't have any Hooks, it gives you one")
 end
 
 
@@ -14,17 +14,15 @@ function ShatteredSymbols:useWrigglingShadow(_, rng, player)
 
         for i = 1, player:GetCollectibleNum(TornHookExternalID) do
             player:RemoveCollectible(TornHookExternalID)
-            player:AddBrokenHearts(-1)
-            player:AddMaxHearts(2)
-            player:AddHearts(2)
         end
 
         for i = 1, player:GetCollectibleNum(AncientHookExternalID) do
             player:RemoveCollectible(AncientHookExternalID)
-            player:AddBrokenHearts(-1)
-            player:AddMaxHearts(2)
-            player:AddHearts(2)
         end
+
+        player:AddBrokenHearts(-(player:GetBrokenHearts()/2))
+        player:AddMaxHearts(player:GetBrokenHearts())
+        player:AddHearts(player:GetBrokenHearts())
 
         SFXManager():Play(SoundEffect.SOUND_SATAN_HURT)
 
