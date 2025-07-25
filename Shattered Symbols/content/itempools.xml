@@ -93,7 +93,6 @@
 
     <Pool Name="ultraSecret">
 	<Item Name="Sacred Lantern" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Origami Shuriken" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Fortune Teller" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -101,7 +100,6 @@
 	<Item Name="Pyrite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Kolibri" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Origami Crow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
