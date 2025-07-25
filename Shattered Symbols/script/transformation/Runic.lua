@@ -6,7 +6,9 @@ local RUNIC_ITEMS = {
     Isaac.GetItemIdByName("Runic Geode"),
     Isaac.GetItemIdByName("Runic Altar"),
     Isaac.GetItemIdByName("Unstable Glyph"),
-    Isaac.GetItemIdByName("Dystopic Crystal")
+    Isaac.GetItemIdByName("Dystopic Crystal"),
+    Isaac.GetItemIdByName("Adamant Orb"),
+    Isaac.GetItemIdByName("Lustrous Orb")
 }
 
 -- EID (External Item Descriptions)
