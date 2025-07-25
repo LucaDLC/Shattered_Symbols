@@ -18,8 +18,7 @@
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
-	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>		
     </Pool>
 
     <Pool Name="greedTreasure">
@@ -37,7 +36,6 @@
 	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
-	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="shop">
@@ -111,6 +109,7 @@
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Dystopic Crystal" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Adamant Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
@@ -118,6 +117,8 @@
 	<Item Name="Ceres" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Vesta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Pallas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Adamant Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="goldenChest">
@@ -132,7 +133,6 @@
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
 	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Adamant Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedGoldenChest">
@@ -147,7 +147,6 @@
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
 	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Adamant Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="redChest">
@@ -249,8 +248,6 @@
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
-	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Adamant Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
 </ItemPools>
