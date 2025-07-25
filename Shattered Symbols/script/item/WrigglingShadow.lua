@@ -12,6 +12,15 @@ end
 function ShatteredSymbols:useWrigglingShadow(_, rng, player)
     if (player:HasCollectible(TornHookExternalID) or player:HasCollectible(AncientHookExternalID)) and player:HasCollectible(WrigglingShadowLocalID) then
 
+        local brokenHearts = player:GetBrokenHearts()
+        local removedHearts
+        
+        if brokenHearts < 2 then
+            removedHearts = math.ceil(brokenHearts / 2)
+        else
+            removedHearts = math.floor(brokenHearts / 2)
+        end
+
         for i = 1, player:GetCollectibleNum(TornHookExternalID) do
             player:RemoveCollectible(TornHookExternalID)
         end
@@ -20,9 +29,9 @@ function ShatteredSymbols:useWrigglingShadow(_, rng, player)
             player:RemoveCollectible(AncientHookExternalID)
         end
 
-        player:AddBrokenHearts(-(player:GetBrokenHearts()/2))
-        player:AddMaxHearts(player:GetBrokenHearts())
-        player:AddHearts(player:GetBrokenHearts())
+        player:AddBrokenHearts(-removedHearts)
+        player:AddMaxHearts(removedHearts*2)
+        player:AddHearts(removedHearts*2)
 
         SFXManager():Play(SoundEffect.SOUND_SATAN_HURT)
 
