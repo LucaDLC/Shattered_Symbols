@@ -106,10 +106,10 @@ ITEM
 77735 - Shattered Heart [1] [TEXTURE NEED REWORK]
 	Rimuove un Broken Heart e da un Empty Heart Container
 
-77736 - Lustrous Orb [2]
+77736 - Lustrous Orb [2] [TEXTURE FINISHED]
 	Shuffle delle pool dei giocatori e rimuove 1 broken heart
 
-77737 - Adamant Orb [3] 
+77737 - Adamant Orb [3] [TEXTURE FINISHED]
 	Ricomincia la partita e i giocatori mantengono il 50% degli oggetti raccolti ma ottengono 1 broken heart nella nuova partita
 
 ---------------------------------------------------------------------

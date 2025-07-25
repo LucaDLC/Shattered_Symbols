@@ -38,6 +38,9 @@ ITEM (32 x 32 Pixel)
 
 77732 - Holey Pocket [2] [TEXTURE FINISHED]
 
+77736 - Lustrous Orb [2] [TEXTURE FINISHED]
+
+77737 - Adamant Orb [3] [TEXTURE FINISHED]
 ---------------------------------------------------
 
 77713 - Origami Kolibri [3] [TEXTURE FINISHED - ASK FOR AN OPINION]
@@ -88,10 +91,7 @@ ITEM (32 x 32 Pixel)
 77735 - Shattered Heart
 	un cuore viola scuro misto blu scuro composto da tanti frammenti lunghi con l'epicentro della frammentazione al centro che si prolungano verso l'esterno
 
-77736 - Lustrous Orb [2]
 
-
-77737 - Adamant Orb [3]
 
 
 
