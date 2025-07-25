@@ -43,15 +43,15 @@ ITEM (32 x 32 Pixel)
 77737 - Adamant Orb [3] [TEXTURE FINISHED]
 ---------------------------------------------------
 
-77713 - Origami Kolibri [3] [TEXTURE FINISHED - ASK FOR AN OPINION]
+77713 - Origami Kolibri [3] [TEXTURE FINISHED]
 
-77714 - Origami Bat [2] [TEXTURE FINISHED - ASK FOR AN OPINION]
+77714 - Origami Bat [2] [TEXTURE FINISHED]
 
-77715 - Broken Flux [2] [TEXTURE FINISHED - ASK FOR AN OPINION]
+77715 - Broken Flux [2] [TEXTURE FINISHED]
 
-77716 - Origami Crow [3] [TEXTURE FINISHED - ASK FOR AN OPINION]
+77716 - Origami Crow [3] [TEXTURE FINISHED]
 
-77718 - Midnight Bite [2] [TEXTURE FINISHED - ASK FOR AN OPINION]
+77718 - Midnight Bite [2] [TEXTURE FINISHED]
 
 ---------------------------------------------------
 
