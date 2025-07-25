@@ -75,8 +75,12 @@ function ShatteredSymbols:ClairvoyantTransformation()
         local player = Isaac.GetPlayer(playerIndex)
         local data = player:GetData()
         if HasClairvoyantTransformation(player) and data.ClairvoyantTransformation then
-            player:AddSoulHearts(1)
-            local selectedCard = CARDS_LIST[math.random(#CARDS_LIST)]
+            player:AddSoulHearts(2)
+            
+            local rng = RNG()
+            rng:SetSeed(Random(), 1)  
+
+            local selectedCard =  game:GetItemPool():GetCard(rng:Next(), true, false, false)  --CARDS_LIST[math.random(#CARDS_LIST)]
         
             local position = game:GetRoom():GetCenterPos()
             Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TAROTCARD, selectedCard, position + Vector(0, 40), Vector.Zero, nil)
