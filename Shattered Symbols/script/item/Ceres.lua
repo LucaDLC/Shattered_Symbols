@@ -3,7 +3,7 @@ local CeresLocalID = Isaac.GetItemIdByName("Ceres")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(CeresLocalID, "{{BrokenHeart}} Remove 3 Broken Hearts #{{BlackHeart}} If you have fewer than 3 Broken Hearts, remove any you have, and for each one missing to reach 3 Broken Hearts you receive 1 -> 2 -> 4 Black Hearts#{{DeathMark}} Occasionally, an asteroid will strike an enemy in the room. If there are no enemies present, it will fall at a random location, with its frequency increasing with numbers of Ceres you have #{{Warning}} Asteroids can also damage Isaac")
+    EID:addCollectible(CeresLocalID, "{{BrokenHeart}} Give 1 Broken Heart #{{Heart}} On each floor, heal every Empty Container #{{DeathMark}} Occasionally, an asteroid will strike an enemy in the room. If there are no enemies present, it will fall at a random location, with its frequency increasing with numbers of Broken Heart you have #{{Warning}} Asteroids can also damage Isaac")
 end
 
 local function triggerCrackOfTheSky()
@@ -41,26 +41,16 @@ function ShatteredSymbols:CeresRain(player)
         if CeresCounter >= data.CeresPreviousCounter then
             data.CeresPreviousCounter = data.CeresPreviousCounter + 1
             data.CeresRelative = data.CeresRelative + 1
-            if player:GetBrokenHearts() >= 3 then
-                player:AddBrokenHearts(-3) 
-            elseif player:GetBrokenHearts() == 2 then
-                player:AddBrokenHearts(-2)
-                player:AddBlackHearts(2)
-            elseif player:GetBrokenHearts() == 1 then
-                player:AddBrokenHearts(-1)
-                player:AddBlackHearts(4)
-            elseif player:GetBrokenHearts() == 0 then
-                player:AddBlackHearts(8)
-            end
+            
+            player:AddBrokenHearts(1) 
+            
         end
 
-        local numberOfCeres = player:GetCollectibleNum(CeresLocalID)
-        if numberOfCeres > 0 then
-            local randomValue = math.random(1, math.floor(1700 / (2*numberOfCeres)))
+        local numberOfCeresEffect = player:GetBrokenHearts() + 1
+        local randomValue = math.random(1, math.floor(1700 / (2*numberOfCeresEffect)))
         
-            if randomValue == 1 then
-                triggerCrackOfTheSky()  
-            end
+        if randomValue == 1 then
+            triggerCrackOfTheSky()  
         end
 
     else
@@ -72,5 +62,20 @@ function ShatteredSymbols:CeresRain(player)
     end
 end
 
+function ShatteredSymbols:CeresFloor()
+    for playerIndex = 0, game:GetNumPlayers() - 1 do
+        local player = Isaac.GetPlayer(playerIndex)
+        if player:HasCollectible(CeresLocalID) then
+            local max = player:GetEffectiveMaxHearts()       
+            local current = player:GetHearts()               
+            local missing = max - current
+            if missing > 0 then
+                player:AddHearts(missing)
+            end
+        end
+    end
+end
+
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.CeresRain)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.CeresFloor)
 
