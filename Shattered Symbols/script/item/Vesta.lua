@@ -3,7 +3,7 @@ local VestaLocalID = Isaac.GetItemIdByName("Vesta")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} Every floor if you have at least 1 Broken Heart, you gain the Holy Card Effect #{{DeathMark}} Occasionally, the enemies in the room obtain these effects: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds #{{ArrowUp}} Freezing and Burning effects increasing frequencies with the numbers of Vesta you have #{{Player10}} Every floor you gain the Holy Card Effect")
+    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} Every floor if you don't have Broken Heart, you gain the Holy Card Effect #{{DeathMark}} Occasionally, the enemies in the room obtain these effects: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds #{{ArrowUp}} Freezing and Burning effects increasing frequencies with the numbers of Broken Heart you have #{{Player10}} Every floor you gain the Holy Card Effect")
 end
 
 local function triggerBurn(player)
@@ -19,14 +19,13 @@ end
 
 function ShatteredSymbols:VestaEffect(player)
     if player:HasCollectible(VestaLocalID) then
-        local numberOfVestas = player:GetCollectibleNum(VestaLocalID)
-        if numberOfVestas > 0 then
-            local randomValue = math.random(1, math.floor(1700 / (2*numberOfVestas)))
+        local numberOfVestasEffect = player:GetBrokenHearts() + 1
+        local randomValue = math.random(1, math.floor(1700 / (2*numberOfVestasEffect)))
             
-            if randomValue == 1 then
-                triggerBurn(player)  
-            end
+        if randomValue == 1 then
+            triggerBurn(player)  
         end
+
     end
 end
 
@@ -36,10 +35,7 @@ function ShatteredSymbols:VestaFloor()
         if player:HasCollectible(VestaLocalID) then
             
             local playerType = player:GetPlayerType()
-            if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B then
-                player:UseCard(Card.CARD_HOLY, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
-                SFXManager():Play(SoundEffect.SOUND_SHELLGAME)
-            elseif player:GetBrokenHearts() > 0 then
+            if playerType == PlayerType.PLAYER_THELOST or playerType == PlayerType.PLAYER_THELOST_B or player:GetBrokenHearts() == 0 then
                 player:UseCard(Card.CARD_HOLY, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
                 SFXManager():Play(SoundEffect.SOUND_SHELLGAME)
             end
