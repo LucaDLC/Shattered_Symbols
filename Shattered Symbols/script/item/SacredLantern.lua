@@ -3,7 +3,17 @@ local SacredLanternLocalID = Isaac.GetItemIdByName("Sacred Lantern")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(SacredLanternLocalID, "{{BrokenHeart}} Remove all your Broken Hearts #{{SoulHeart}} For every Broken Heart removed you obtain an Soul Heart #{{Player14}} For every Broken Heart removed you obtain an Empty Coin Heart")
+    EID:addCollectible(SacredLanternLocalID, "{{BrokenHeart}} Remove all your Broken Hearts #{{SoulHeart}} For every Broken Heart removed you obtain an Soul Heart #{{Player14}} For every Broken Heart removed you obtain an Empty Coin Heart #{{Burning}} Burns all enemies in the room for a number of seconds equal to the Broken Hearts removed")
+end
+
+local function triggerBurn(player)
+    local room = game:GetRoom()    
+    local damageTime = 30 * player:GetBrokenHearts()
+    for _, entity in pairs(Isaac.GetRoomEntities()) do
+        if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_PLAYER then  
+            entity:AddBurn(EntityRef(player), damageTime, player.Damage)
+        end
+    end
 end
 
 function ShatteredSymbols:useSacredLantern(_, rng, player)
@@ -12,6 +22,7 @@ function ShatteredSymbols:useSacredLantern(_, rng, player)
         local brokenHearts = player:GetBrokenHearts() 
         local playerType = player:GetPlayerType()
         if brokenHearts > 0 then
+            triggerBurn(player)
             for i = 1, brokenHearts do
                 player:AddBrokenHearts(-1) 
                 if (playerType == PlayerType.PLAYER_KEEPER or playerType == PlayerType.PLAYER_KEEPER_B) then
