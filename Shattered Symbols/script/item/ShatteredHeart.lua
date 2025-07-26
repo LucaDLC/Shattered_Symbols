@@ -3,13 +3,15 @@ local ShatteredHeartLocalID = Isaac.GetItemIdByName("Shattered Heart")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ShatteredHeartLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{BrokenHeart}} Remove 1 Broken Heart and gain an Empty Heart Container ")
+    EID:addCollectible(ShatteredHeartLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{BrokenHeart}} Remove 1 Broken Heart and gain a Full Gold Heart Container ")
 end
 
 function ShatteredSymbols:useShatteredHeart(_, rng, player)
     if player:HasCollectible(ShatteredHeartLocalID) then
         player:AddBrokenHearts(-1)
         player:AddMaxHearts(2)
+        player:AddHearts(2)
+        player:AddGoldenHearts(1)
     end
     return {
         Discharge = true,
