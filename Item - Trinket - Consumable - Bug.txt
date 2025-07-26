@@ -6,10 +6,10 @@ ITEM
 77702 - Fortune Teller [2] [TEXTURE FINISHED]
 	Dà un Broken Heart per +5 di Luck
 
-77703 - Origami Shuriken [3]
+77703 - Origami Shuriken [3] [TEXTURE FINISHED]
 	Dà un Broken Heart per +3 di Damage clean
 
-77704 - Origami Boat [3] [TEXTURE NEED REWORK]
+77704 - Origami Boat [3] [TEXTURE FINISHED]
 	Per ogni Broken Heart posseduto dà uno Stats Up generale
 
 77705 - Upside Down Deck of Card [2] [TEXTURE FINISHED]
@@ -33,19 +33,19 @@ ITEM
 77711 - Torn Hook [0] [TEXTURE FINISHED]
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale, per ogni punto luck hai la possibilità che si rimuova
 
-77712 - Wriggling Shadow [2]
+77712 - Wriggling Shadow [2] [TEXTURE FINISHED]
 	Rimuove il 50% dei broken heart ma da un hooks
 
-77713 - Origami Kolibri [3] [TEXTURE NEED REWORK]
+77713 - Origami Kolibri [3] [TEXTURE FINISHED]
 	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 2 broken heart
 
-77714 - Origami Bat [2] [TEXTURE NEED REWORK]
+77714 - Origami Bat [2] [TEXTURE FINISHED]
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Bat, da 1 broken heart
 
 77715 - Broken Flux [2] [TEXTURE FINISHED]
 	Attivo che si ricarica quando ottieni dei broken heart, 3 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
 
-77716 - Origami Crow [3] [TEXTURE NEED REWORK]
+77716 - Origami Crow [3] [TEXTURE FINISHED]
 	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro, da 2 broken heart
 
 77717 - Forgotten Box [2]
@@ -55,7 +55,7 @@ ITEM
 77718 - Midnight Bite [2] [TEXTURE FINISHED]
 	Passivo che trasforma i cuori rossi in cuori marci per il resto della partita
 
-77719 - Extra Deck of Card [2]
+77719 - Extra Deck of Card [2] [TEXTURE FINISHED]
 	Droppa una carta speciale, viene sostituito al Deck of Card con una probabilità del 5% e dopo l'utilizzo dell' Extra Deck torna il Deck of Card normale
 
 77720 - Ancient Hook [0] [TEXTURE NEED REWORK]
@@ -85,19 +85,19 @@ ITEM
 77728 - Mutable Onyx [2] [TEXTURE NEED REWORK]
 	Ad ogni piano, acquisisce un effetto causale di un item passivo 
 
-77729 - Unstable Glyph [4]
+77729 - Unstable Glyph [4] [TEXTURE FINISHED] + [GIANTBOOK FINISHED]
 	Ogni oggetto nella stanza diventa di qualità 4, fa l'esplosione di mega mama e da la golden key e golden bomb, si carica con 7 broken hearts, la carica è condivisa con tutti i giocatori durante la partita corrente e le successive
 
-77730 - Vesta [3]
+77730 - Vesta [3] [TEXTURE FINISHED]
 	Ad ogni piano d l'effetto della holy card se non hai broken heart, occasionalmennte brucia e congela tutti i nemici nella stanza per 3 secondi, entrambi gli effetti scalano in base al numero di broken heart
 
-77731 - Pallas [2]
+77731 - Pallas [2] [TEXTURE FINISHED]
 	Ogni stanza spawna 1-3 minisaac, l'effetto scala in base al numero di broken heart
 
 77732 - Holey Pocket [2] [TEXTURE FINISHED]
 	Tenendo premuto CTRL per 3 secondi puoi droppare l'item attivo o pocket con la sinergia di Origami Crow
 
-77733 - Dystopic Faith [2]
+77733 - Dystopic Faith [2] [TEXTURE FINISHED]
 	Dopo che isaac è morto, questo item si trasforma in un oggetto della pool della secret, e uno della angel/devil pool a seconda se è stato preso un patto satanico o meno
 
 77734 - Dystopic Crystal [3] [TEXTURE FINISHED]
@@ -142,7 +142,7 @@ TRINKET
 TRASFORMAZIONI
 
 	- Paper (3 origami)
-	Da Mezzo Black Heart a piano
+	Da Mezzo Black Heart  da 3 monete per  ogni broken heart a piano
 
 	- Runic (3 oggetti delle rune)
 	Ottieni Homing Tears
