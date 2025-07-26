@@ -7,8 +7,25 @@ if EID then
     EID:addCollectible(ExtraDeckLocalID, "{{RedCard}} Spawns 1 special card #{{Collectible85}} After use it goes back to being the Deck of Cards")
 end
 
+local notSpecialCards = {
+    Card.CARD_REVERSE_FOOL, Card.CARD_REVERSE_MAGICIAN, Card.CARD_REVERSE_HIGH_PRIESTESS,
+    Card.CARD_REVERSE_EMPRESS, Card.CARD_REVERSE_EMPEROR, Card.CARD_REVERSE_HIEROPHANT,
+    Card.CARD_REVERSE_LOVERS, Card.CARD_REVERSE_CHARIOT, Card.CARD_REVERSE_JUSTICE,
+    Card.CARD_REVERSE_HERMIT, Card.CARD_REVERSE_WHEEL_OF_FORTUNE, Card.CARD_REVERSE_STRENGTH,
+    Card.CARD_REVERSE_HANGED_MAN, Card.CARD_REVERSE_DEATH, Card.CARD_REVERSE_TEMPERANCE,
+    Card.CARD_REVERSE_DEVIL, Card.CARD_REVERSE_TOWER, Card.CARD_REVERSE_STARS,
+    Card.CARD_REVERSE_MOON, Card.CARD_REVERSE_SUN, Card.CARD_REVERSE_JUDGEMENT,
+    Card.CARD_REVERSE_WORLD,Card.CARD_FOOL, Card.CARD_MAGICIAN, Card.CARD_HIGH_PRIESTESS,
+    Card.CARD_EMPRESS, Card.CARD_EMPEROR, Card.CARD_HIEROPHANT,
+    Card.CARD_LOVERS, Card.CARD_CHARIOT, Card.CARD_JUSTICE,
+    Card.CARD_HERMIT, Card.CARD_WHEEL_OF_FORTUNE, Card.CARD_STRENGTH,
+    Card.CARD_HANGED_MAN, Card.CARD_DEATH, Card.CARD_TEMPERANCE,
+    Card.CARD_DEVIL, Card.CARD_TOWER, Card.CARD_STARS,
+    Card.CARD_MOON, Card.CARD_SUN, Card.CARD_JUDGEMENT,
+    Card.CARD_WORLD
+}
 
-local specialCards = {
+--[[ local specialCards = {
     Card.CARD_CLUBS_2, Card.CARD_DIAMONDS_2, Card.CARD_SPADES_2,
     Card.CARD_HEARTS_2, Card.CARD_ACE_OF_CLUBS, Card.CARD_ACE_OF_DIAMONDS,
     Card.CARD_ACE_OF_SPADES, Card.CARD_ACE_OF_HEARTS, Card.CARD_JOKER,
@@ -16,12 +33,23 @@ local specialCards = {
     Card.CARD_HUGE_GROWTH, Card.CARD_ANCIENT_RECALL, Card.CARD_ERA_WALK,
     Card.CARD_CREDIT, Card.CARD_RULES, Card.CARD_QUESTIONMARK,
     Card.CARD_HUMANITY, Card.CARD_GET_OUT_OF_JAIL, Card.CARD_HOLY, Card.CARD_WILD, Card.CARD_EMERGENCY_CONTACT, Isaac.GetCardIdByName("Queen of Spades")
-}
+} --]]
 
+local function isCardAllowed(card)
+    for _, forbidden in ipairs(notSpecialCards) do
+        if card == forbidden then
+            return false
+        end
+    end
+    return true
+end
 
 function ShatteredSymbols:useExtraDeck(_, rng, player)
-    
-    local card = specialCards[math.random(#specialCards)]
+    local card
+    repeat 
+        card = game:GetItemPool():GetCard(rng:Next(),true,false,false)
+    until isCardAllowed(card)
+
     player:AddCard(card)
     player:AnimateCard(card, "Pickup")
     for i = 0, 3 do
