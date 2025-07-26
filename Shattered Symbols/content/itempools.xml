@@ -16,7 +16,7 @@
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Book" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>		
     </Pool>
@@ -33,7 +33,7 @@
 	<Item Name="Broken Flux" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Book" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
@@ -65,7 +65,7 @@
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Book" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -153,7 +153,7 @@
 	<Item Name="Origami Swan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Wriggling Shadow" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Book" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Soul" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Forbidden Body" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -198,7 +198,7 @@
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Book" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -216,7 +216,7 @@
 	<Item Name="Broken Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Midnight Bite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Runic Altar" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Runic Book" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Jade & Ivory Mask" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="UnstableGlyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>

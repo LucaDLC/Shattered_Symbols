@@ -40,7 +40,7 @@ local ItemScript = {
     'ExtraDeckofCard',
     'AncientHook',
     'RunicGeode',
-    'RunicAltar',
+    'RunicBook',
     'ForbiddenSoul',
     'ForbiddenMind',
     'ForbiddenBody',
@@ -125,7 +125,7 @@ function ShatteredSymbols:SavePlayerData()
             OrigamiCrowRelative = data.OrigamiCrowRelative or 0,
             OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter or 1,
             TornHookCounter = data.TornHookCounter or 0,
-            RunicAltarEffects = data.RunicAltarEffects or {},
+            RunicBookEffects = data.RunicBookEffects or {},
             OnyxItemEffectID = data.OnyxItemEffectID or {},
             CtrlHoldTimeHoleyPocket = data.CtrlHoldTimeHoleyPocket or 0,
             LastCtrlPressFrameHoleyPocket = data.LastCtrlPressFrameHoleyPocket or 0,
@@ -199,7 +199,7 @@ function ShatteredSymbols:LoadPlayerData()
             data.OrigamiCrowRelative = playerDataToLoad.OrigamiCrowRelative or 0
             data.OrigamiCrowPreviousCounter = playerDataToLoad.OrigamiCrowPreviousCounter or 1
             data.TornHookCounter = playerDataToLoad.TornHookCounter or 0
-            data.RunicAltarEffects = playerDataToLoad.RunicAltarEffects or {}
+            data.RunicBookEffects = playerDataToLoad.RunicBookEffects or {}
             data.OnyxItemEffectID = playerDataToLoad.OnyxItemEffectID or {}
             data.CtrlHoldTimeHoleyPocket = playerDataToLoad.CtrlHoldTimeHoleyPocket or 0
             data.LastCtrlPressFrameHoleyPocket = playerDataToLoad.LastCtrlPressFrameHoleyPocket or 0
