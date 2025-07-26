@@ -25,16 +25,6 @@ local notSpecialCards = {
     Card.CARD_WORLD
 }
 
---[[ local specialCards = {
-    Card.CARD_CLUBS_2, Card.CARD_DIAMONDS_2, Card.CARD_SPADES_2,
-    Card.CARD_HEARTS_2, Card.CARD_ACE_OF_CLUBS, Card.CARD_ACE_OF_DIAMONDS,
-    Card.CARD_ACE_OF_SPADES, Card.CARD_ACE_OF_HEARTS, Card.CARD_JOKER,
-    Card.CARD_SUICIDE_KING, Card.CARD_QUEEN_OF_HEARTS, Card.CARD_CHAOS,
-    Card.CARD_HUGE_GROWTH, Card.CARD_ANCIENT_RECALL, Card.CARD_ERA_WALK,
-    Card.CARD_CREDIT, Card.CARD_RULES, Card.CARD_QUESTIONMARK,
-    Card.CARD_HUMANITY, Card.CARD_GET_OUT_OF_JAIL, Card.CARD_HOLY, Card.CARD_WILD, Card.CARD_EMERGENCY_CONTACT, Isaac.GetCardIdByName("Queen of Spades")
-} --]]
-
 local function isCardAllowed(card)
     for _, forbidden in ipairs(notSpecialCards) do
         if card == forbidden then
