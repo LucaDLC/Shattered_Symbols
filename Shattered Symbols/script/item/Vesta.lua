@@ -20,7 +20,7 @@ end
 function ShatteredSymbols:VestaEffect(player)
     if player:HasCollectible(VestaLocalID) then
         local numberOfVestasEffect = player:GetBrokenHearts() + 1
-        local randomValue = math.random(1, math.floor(2500 / (2*numberOfVestasEffect)))
+        local randomValue = math.random(1, math.floor(2200 / (2*numberOfVestasEffect)))
             
         if randomValue == 1 then
             triggerBurn(player)  
