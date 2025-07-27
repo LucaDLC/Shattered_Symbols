@@ -1,0 +1,21 @@
+<entities anm2root="gfx/item/pickup/" version="5">
+
+<entity
+        anm2path="Pickup.anm2"
+        baseHP="0"
+        boss="0"
+        champion="0"
+        collisionDamage="0"
+        collisionMass="3"
+        collisionRadius="12"
+        friction="1"
+        id="5"
+        name="Pickup"
+        numGridCollisionPoints="24"
+        shadowSize="16"
+        stageHP="0"
+        variant="300">
+               <preload-snd id="8" />
+    </entity>
+
+</entities>
