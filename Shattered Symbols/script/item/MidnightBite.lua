@@ -3,7 +3,7 @@ local MidnightBiteLocalID = Isaac.GetItemIdByName("Midnight Bite")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(MidnightBiteLocalID, "{{RottenHeart}} Relpace all Red Heart with Rotten Heart during the rest of the game #{{HalfHeart}} Every Half Heart in the Slots count as Rotten Heart meanwhile all types of spawned Heart become a single Rotten Heart")
+    EID:addCollectible(MidnightBiteLocalID, "{{RottenHeart}} Relpaces all Red Hearts with Rotten Hearts for the rest of the game #{{HalfHeart}} Every Half Heart counts as Rotten Heart and all types of spawned Hearts become a Rotten Heart")
 end
 
 function ShatteredSymbols:useMidnightBite(player)

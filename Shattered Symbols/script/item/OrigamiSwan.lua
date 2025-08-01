@@ -3,7 +3,7 @@ local OrigamiSwanLocalID = Isaac.GetItemIdByName("Origami Swan")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiSwanLocalID, "{{Trinket}} All trinket you take become instantanely a permanent item #{{BrokenHeart}} Gives 2 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+    EID:addCollectible(OrigamiSwanLocalID, "{{Trinket}} All trinkets you pick up become permanent items #{{BrokenHeart}} Gives 2 Broken Hearts which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
 end
 
 local function BrokenHeartRemovingSystem(player)

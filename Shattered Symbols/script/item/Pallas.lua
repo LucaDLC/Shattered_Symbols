@@ -3,7 +3,7 @@ local PallasLocalID = Isaac.GetItemIdByName("Pallas")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PallasLocalID, "{{Room}} After clearing a room spawn 1-3 Minisaac #{{BrokenHeart}} The maximum number of Minisaac it can spawn increases with the number of Broken Heart you have")
+    EID:addCollectible(PallasLocalID, "{{Room}} After clearing a room spawn 1-3 Minisaac #{{BrokenHeart}} The maximum number of Minisaac it can spawn increases with the number of Broken Hearts you have")
 end
 
 

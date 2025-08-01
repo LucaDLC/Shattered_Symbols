@@ -5,7 +5,7 @@ local globalHookTimer = nil
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Hearts at every Floor which does not replace Heart until all available slots for new Hearts are used #{{Collectible628}} First time you visit a room you have 3% of chance for each Ancient Hook of enter in Death Certificate room #{{LuckSmall}} You have same Chance as Luck to remove Ancient Hooks on each floor, at the floor when Ancient Hooks removed the effects not activate")
+    EID:addCollectible(AncientHookLocalID, "{{BrokenHeart}} Gives 1 Broken Heart on every Floor which does not replaces Hearts until there are no more unused slots #{{Collectible628}} On first visit to a room, you have a 3% chance per Ancient Hook to enter the Death Certificate room #{{LuckSmall}} Your Luck stat determines the chance to remove Ancient Hooks each floor; on the floor Ancient Hooks are removed, their effects do not activate.)
 end
 
 function ShatteredSymbols:onAncientHook()

@@ -4,7 +4,7 @@ local OrigamiBatLocalID = Isaac.GetItemIdByName("Origami Bat")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiBatLocalID, "#{{HalfHeart}} After 64 hits, heal Half Heart #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{TearsSmall}} +0.5 Tears #{{BrokenHeart}} Gives 1 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+    EID:addCollectible(OrigamiBatLocalID, "#{{HalfHeart}} After 64 hits, heals Half Heart #{{ArrowUp}} Halve the number of hits for each Origami Bat #{{TearsSmall}} +0.5 Tears #{{BrokenHeart}} Gives 1 Broken Heart which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
 end
 
 local function BrokenHeartRemovingSystem(player)

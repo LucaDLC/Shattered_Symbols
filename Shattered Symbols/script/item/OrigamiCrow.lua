@@ -3,7 +3,7 @@ local OrigamiCrowLocalID = Isaac.GetItemIdByName("Origami Crow")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Move primary active item to pocket item if you don't have one or if previous pocket item disappear #{{ArrowUp}} If you don't have active item, first one that you take become the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Warning}} If you take item that give you pocket item, this one overwrite your pocket item that you have moved before")
+    EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Moves the active item to the pocket item if you don't have one #{{ArrowUp}} If you have no active item, the first one you pick becomes the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts which replace Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Warning}} Picking up an item that grants you a pocket item will overwrite your current one.")
 end
 
 local function BrokenHeartRemovingSystem(player)

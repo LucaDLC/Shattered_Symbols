@@ -3,7 +3,7 @@ local BrokenFluxLocalID = Isaac.GetItemIdByName("Broken Flux")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(BrokenFluxLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleport in Ultra Secret Room #{{BrokenHeart}} When you hold the item, after gaining Broken Heart, the item remove it for charging, every Broken Heart is equal to one charge ")
+    EID:addCollectible(BrokenFluxLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{UltraSecretRoom}} Teleports you to the Ultra Secret Room #{{BrokenHeart}} While holding this item, each Broken Heart gained is consumed to charge the item, with every Broken Heart counting as one charge.")
 end
 
 function ShatteredSymbols:havingBrokenFlux(player)

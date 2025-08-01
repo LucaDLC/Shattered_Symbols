@@ -4,7 +4,7 @@ local OrigamiCrowExternalID = Isaac.GetItemIdByName("Origami Crow")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(HoleyPocketLocalID, "{{ArrowUp}} Drop active item holding CTRL button #{{ArrowUp}} If you have Origami Crow, drop pocket item holding CTRL button")
+    EID:addCollectible(HoleyPocketLocalID, "{{ArrowUp}} You can now drop the active item holding CTRL button #{{ArrowUp}} If you have the Origami Crow item, you drop the pocket item instead")
 end
 
 function ShatteredSymbols:useHoleyPocket()
