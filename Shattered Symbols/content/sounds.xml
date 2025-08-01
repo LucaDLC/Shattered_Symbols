@@ -2,4 +2,11 @@
     <sound name="Queen of Spades">
         <sample weight="1" path="QueenOfSpades.wav" />
     </sound>
+    <sound name="Time">
+        <sample weight="1" path="483.ogg" />
+    </sound>
+    <sound name="Space">
+        <sample weight="1" path="484.ogg" />
+    </sound>
+
 </sounds>
