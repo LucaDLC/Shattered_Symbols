@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <name>Shattered Symbols</name>
+    <directory>shattered symbols</directory>
+    <id>3539908990</id>
+    <description>Shattered Symbols
+
+Dive into The Binding of Isaac with Shattered Symbols, a mod that adds over 30 unique items expanding the Broken Hearts mechanic and introduces a mysterious collection of fractured artifacts charged with arcane power.
+
+Shattered Symbols brings a fresh layer of complexity and strategy to your run. Explore relics that blur the line between light and shadow, enchant the synegies of the game and discover new gameplay dinamics. Master the power behind broken hearts and rewrite your fate.
+
+Key Features
+Over 35 new items expanding and enchanting synergies of the game and discover new dynamics.
+Unique active and passive items with mysterious and powerful effects.
+3 New Transformation
+6 New Consumables
+
+Multiplayer friendly design to share the experience with friends.
+
+Credits
+LucaDLC: Creator / Programmer
+Αshμra天罰: Programmer /  Texture Artist
+
+GitHub:</description>
+    <version>1.0</version>
+    <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Items"/>
+    <tag id="Active Items"/>
+    <tag id="Cards"/>
+    <tag id="Pickups"/>
+    <tag id="Graphics"/>
+    <tag id="Sound Effects"/>
+</metadata>

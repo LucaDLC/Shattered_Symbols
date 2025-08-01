@@ -3,7 +3,7 @@ local AdamantOrbLocalID = Isaac.GetItemIdByName("Adamant Orb")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(AdamantOrbLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{TimerSmall}} Restarts the game, keeping 50% of your passive items #{{BrokenHeart}} Each player starts the new run with 1 Broken Heart, replacing hearts in this order: {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+    EID:addCollectible(AdamantOrbLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{TimerSmall}} Restarts the game, keeping 50% of your passive items #{{BrokenHeart}} Each player's Broken Heart is set 1 which replaces Hearts in this order: {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}") 
 end
 
 local function shuffle(tbl, rng)
