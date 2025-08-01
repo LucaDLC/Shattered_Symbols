@@ -7,7 +7,7 @@ local itemIgnoreList = {
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCard(SacredDiceShardLocalID, "{{Collectible105}} Reroll all item in the room up to 1 quality #{{BrokenHeart}} Give 1 Broken Heart")
+    EID:addCard(SacredDiceShardLocalID, "{{Collectible105}} Rerolls all items in the room, into random items of 1 quality higher #{{BrokenHeart}} Gives 1 Broken Heart")
 end
 
 local function tablecontains(tbl, element)

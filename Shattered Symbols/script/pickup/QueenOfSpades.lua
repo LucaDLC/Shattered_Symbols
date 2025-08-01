@@ -3,7 +3,7 @@ local QueenOfSpadesID = Isaac.GetCardIdByName("Queen of Spades")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCard(QueenOfSpadesID, "{{Collectible}} Devolve an item with quality 1 or higher you have into two items with into two random items with quality decreased by 1")
+    EID:addCard(QueenOfSpadesID, "{{Collectible}} De-evolve an quality 1 or higher item you have in two random items of one lower tier. If you have no items of that quality, nothing happens.")
 end
 
 function ShatteredSymbols:useQueenOfSpades(card, player, useFlags)
