@@ -4,7 +4,7 @@ local DeckofCardID = Isaac.GetItemIdByName("Deck of Cards")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ExtraDeckLocalID, "{{RedCard}} Spawns 1 special card #{{Collectible85}} After use it goes back to being the Deck of Cards")
+    EID:addCollectible(ExtraDeckLocalID, "{{RedCard}} Spawns 1 special card #{{Collectible85}} After the use it turns back to the Deck of Cards")
 end
 
 local notSpecialCards = {

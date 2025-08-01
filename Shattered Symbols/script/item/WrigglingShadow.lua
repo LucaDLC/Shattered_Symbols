@@ -5,7 +5,7 @@ local AncientHookExternalID = Isaac.GetItemIdByName("Ancient Hook")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{BrokenHeart}} Remove 50% of all your Broken Hearts and give 1 Empty Heart Container for each Broken Heart removed #{{ArrowDown}} It gives to you a random Hook")
+    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{BrokenHeart}} Remove the 50% of your Broken Hearts and give 1 Empty Heart Container for each Broken Heart removed #{{ArrowDown}} It gives you a random Hook")
 end
 
 

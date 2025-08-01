@@ -4,7 +4,7 @@ local PyriteLocalID = Isaac.GetItemIdByName("Pyrite")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(PyriteLocalID, "{{Coin}} All coins turn into Golden Pennies #{{ArrowDown}} Your coins reset to 0 at the start of each floor")
+    EID:addCollectible(PyriteLocalID, "{{Coin}} All coins turn into Golden Pennies #{{ArrowDown}} Resets your coin to 0 at the start of each floor")
 end
 
 function ShatteredSymbols:OnPickupInitPyrite(entity)

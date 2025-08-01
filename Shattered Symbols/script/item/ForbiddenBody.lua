@@ -3,7 +3,7 @@ local ForbiddenBodyLocalID = Isaac.GetItemIdByName("Forbidden Body")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ForbiddenBodyLocalID, "{{EthernalHeart}} Half Eternal Heart count as 2 and can remove 1 Broken Heart #{{BossRoom}} When you enter in the Boss Room for the first time you have 20% to obtain an Half Eternal Heart #{{Player10}} Half Eternal Heart count as Holy Mantle effect")
+    EID:addCollectible(ForbiddenBodyLocalID, "{{EthernalHeart}} Half Eternal Heart counts as 2 and can remove 1 Broken Heart #{{BossRoom}} When you enter in a Boss Room for the first time you have 20% chance to obtain Half Eternal Heart #{{Player10}} Half Eternal Heart counts as Holy Mantle effect")
 end
 
 function ShatteredSymbols:useForbidenBody(player)

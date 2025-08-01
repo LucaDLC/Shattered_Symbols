@@ -3,7 +3,7 @@ local RunicBookLocalID = Isaac.GetItemIdByName("Runic Book")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(RunicBookLocalID, "{{Rune}} When you hold the item, after using Rune or Soul Stone, the item charging #{{Rune}} At the Use, repeat effects of absorbed runes used to charging it")
+    EID:addCollectible(RunicBookLocalID, "{{Rune}} While holding this item, using a Rune or Soul Stone charges it #{{Rune}} When used, repeats the effects of the absorbed runes used to charge it.")
 end
 
 local function IsRune(card)

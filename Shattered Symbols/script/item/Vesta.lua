@@ -3,7 +3,7 @@ local VestaLocalID = Isaac.GetItemIdByName("Vesta")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} Every floor if you don't have Broken Heart, you gain the Holy Card Effect #{{DeathMark}} Occasionally, the enemies in the room obtain these effects: #{{Burning}} Burn for 3 seconds #{{Freezing}} Freeze for 3 seconds #{{ArrowUp}} Freezing and Burning effects increasing frequencies with the numbers of Broken Heart you have #{{Player10}} Every floor you gain the Holy Card Effect")
+    EID:addCollectible(VestaLocalID, "{{BrokenHeart}} If you have no Broken Hearts, gain the Holy Card effect at the start of each floor #{{DeathMark}} Occasionally, enemies in the room are affected by: #{{Burning}} Burning for 3 seconds #{{Freezing}} Freezing for 3 seconds #{{ArrowUp}} The frequency of Burning and Freezing increases with the number of Broken Hearts you have #{{Player10}} Grants the Holy Card effect at the start of every floor.")
 end
 
 local function triggerBurn(player)

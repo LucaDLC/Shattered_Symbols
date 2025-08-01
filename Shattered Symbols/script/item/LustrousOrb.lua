@@ -3,7 +3,7 @@ local LustrousOrbLocalID = Isaac.GetItemIdByName("Lustrous Orb")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(LustrousOrbLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{CurseMazeSmall}} Shuffle all gained passive items between Players Pools #{{BrokenHeart}} Remove 1 Broken Heart to each player")
+    EID:addCollectible(LustrousOrbLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{CurseMazeSmall}} Shuffles all gained passive items between Players #{{BrokenHeart}} Removes 1 Broken Heart to each player")
 end
 
 function ShatteredSymbols:useLustrousOrb(_, rng, player)

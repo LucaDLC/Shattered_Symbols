@@ -3,7 +3,7 @@ local JadeIvoryMaskLocalID = Isaac.GetItemIdByName("Jade & Ivory Mask")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(JadeIvoryMaskLocalID, "{{Collectible}} On each floor, upgrade a random item you have previously picked up, with quality 3 or lower, into a random item with quality increased by 1")
+    EID:addCollectible(JadeIvoryMaskLocalID, "{{Collectible}} On each floor, upgrades a random item of quality 3 or lower you have, into a random item with 1 quality higher.")
 end
 
 function ShatteredSymbols:OnNewLevelJadeIvoryMask()

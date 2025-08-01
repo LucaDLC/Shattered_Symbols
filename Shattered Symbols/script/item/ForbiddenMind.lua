@@ -3,7 +3,7 @@ local ForbiddenMindLocalID = Isaac.GetItemIdByName("Forbidden Mind")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(ForbiddenMindLocalID, "{{Room}} After clearing a Room have 33% to open Red Rooms around it")
+    EID:addCollectible(ForbiddenMindLocalID, "{{Room}} After clearing a Room you have a 33% chance to open Red Rooms around it")
 end
 
 function ShatteredSymbols:onRoomClearForbiddenMind()

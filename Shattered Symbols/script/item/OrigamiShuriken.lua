@@ -3,7 +3,7 @@ local OrigamiShurikenLocalID = Isaac.GetItemIdByName("Origami Shuriken")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiShurikenLocalID, "{{DamageSmall}} +3 Damage #{{BrokenHeart}} Gives 1 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+    EID:addCollectible(OrigamiShurikenLocalID, "{{DamageSmall}} +3 Damage #{{BrokenHeart}} Gives 1 Broken Heart which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
 end
 
 local function BrokenHeartRemovingSystem(player)

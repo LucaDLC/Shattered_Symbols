@@ -4,7 +4,7 @@ local RunicAltarExternalID = Isaac.GetItemIdByName("Runic Altar")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiKolibriLocalID, "{{Battery}} Duplicate all charges gained of active item for the rest of the game #{{Battery}} Does not duplicate extra charges #{{BrokenHeart}} Gives 2 Broken Hearts which does replace Heart in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+    EID:addCollectible(OrigamiKolibriLocalID, "{{Battery}} Duplicates all charges gained of active item for the rest of the game #{{Battery}} Does not duplicate extra charges #{{BrokenHeart}} Gives 2 Broken Hearts which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
 end
 
 local function BrokenHeartRemovingSystem(player)
