@@ -3,10 +3,10 @@
         <sample weight="1" path="QueenOfSpades.wav" />
     </sound>
     <sound name="Time">
-        <sample weight="1" path="483.ogg" />
+        <sample weight="1" path="483.wav" />
     </sound>
     <sound name="Space">
-        <sample weight="1" path="484.ogg" />
+        <sample weight="1" path="484.wav" />
     </sound>
 
 </sounds>
