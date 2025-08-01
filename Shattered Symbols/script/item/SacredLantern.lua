@@ -3,7 +3,7 @@ local SacredLanternLocalID = Isaac.GetItemIdByName("Sacred Lantern")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(SacredLanternLocalID, "{{BrokenHeart}} Removes all of your Broken Hearts #{{SoulHeart}} For each Broken Heart removed, you gain a Soul Heart #{{Player14}} For each Broken Heart removed, you gain an Empty Coin Heart #{{Burning}} Burns all enemies in the room for a number of seconds equal to the Broken Hearts removed".)
+    EID:addCollectible(SacredLanternLocalID, "{{BrokenHeart}} Removes all of your Broken Hearts #{{SoulHeart}} For each Broken Heart removed, you gain a Soul Heart #{{Player14}} For each Broken Heart removed, you gain an Empty Coin Heart #{{Burning}} Burns all enemies in the room for a number of seconds equal to the Broken Hearts removed")
 end
 
 local function triggerBurn(player)
