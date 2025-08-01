@@ -3,7 +3,7 @@ local CeresLocalID = Isaac.GetItemIdByName("Ceres")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(CeresLocalID, "{{BrokenHeart}} Replaces hearts in this order with 1 Broken Heart:{{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Heart}} Heals all empty containers each floor #{{DeathMark}} Occasionally, an asteroid strikes a random enemy in the room; if no enemies are present, it falls at a random location. The frequency increases with the number of Broken Hearts you have #{{Warning}} Asteroids can also damage Isaac.")
+    EID:addCollectible(CeresLocalID, "{{BrokenHeart}} Replaces hearts in this order with 1 Broken Heart:{{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Heart}} Heals all empty containers each floor #{{DeathMark}} Occasionally, an asteroid strikes a random enemy in the room; if no enemies are present, it falls at a random location. The frequency increases with the number of Broken Hearts you have #{{Warning}} Asteroids can also damage Isaac")
 end
 
 local function triggerCrackOfTheSky()
