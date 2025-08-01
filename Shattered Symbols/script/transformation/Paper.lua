@@ -51,7 +51,7 @@ function ShatteredSymbols:PaperTransformation()
         local data = player:GetData()
         if HasPaperTransformation(player) and data.PaperTransformation then
             player:AddBlackHearts(1)
-            player:AddCoins(player:GetBrokenHearts() * 3)
+            player:AddCoins(player:GetBrokenHearts() * 5)
         end
     end
 end
