@@ -3,7 +3,7 @@ local FiendishSeedLocalID = Isaac.GetCardIdByName("Fiendish Seed")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCard(FiendishSeedLocalID, "{{SoulHeart}} Convert your Full Soul Heart in Black Heart")
+    EID:addCard(FiendishSeedLocalID, "{{SoulHeart}} Convert your Full Soul Hearts in Black Hearts")
 end
 
 function ShatteredSymbols:useFiendishSeed(card, player, useFlags)
