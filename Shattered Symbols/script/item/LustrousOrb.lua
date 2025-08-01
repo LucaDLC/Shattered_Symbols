@@ -58,6 +58,8 @@ function ShatteredSymbols:useLustrousOrb(_, rng, player)
         end
     end
 
+    SFXManager():Play(Isaac.GetSoundIdByName("Space"))
+
     return {
         Discharge = true,
         Remove = true,

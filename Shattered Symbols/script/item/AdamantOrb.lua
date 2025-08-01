@@ -70,6 +70,7 @@ function ShatteredSymbols:useAdamantOrb(_, rng, player)
     end
     
     Isaac.GetPlayer(0):UseActiveItem(CollectibleType.COLLECTIBLE_R_KEY, UseFlag.USE_NOANIM)
+    SFXManager():Play(Isaac.GetSoundIdByName("Time"))
 
     return {
         Discharge = true,
