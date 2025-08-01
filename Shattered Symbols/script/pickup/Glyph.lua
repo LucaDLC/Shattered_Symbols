@@ -3,7 +3,7 @@ local GlyphLocalID = Isaac.GetCardIdByName("Glyph")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCard(GlyphLocalID, "{{BrokenHeart}} Remove 1 Broken Heart #{{Confusion}} Give Confusion at the enemies in the room for 5 seconds")
+    EID:addCard(GlyphLocalID, "{{BrokenHeart}} Remove 1 Broken Heart #{{Confusion}} Gives Confusion at the enemies in the room for 5 seconds")
 end
 
 function ShatteredSymbols:UseGlyph(card, player, useFlags)
