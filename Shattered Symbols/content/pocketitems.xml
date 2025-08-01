@@ -1,15 +1,11 @@
 <pocketitems>
 
-	<!--Runes-->
-
-	<rune type="rune" pickup="201" name="Glyph" description="Arcane" hud="Glyph" mimiccharge="6" />
-	<rune type="rune" pickup="202" name="Hex Crystal" description="Enchant" hud="Hex Crystal" mimiccharge="6"/>
-
-	<!--Cards-->
-
-	<card type="object" pickup="203" name="Sacred Dice Shard" description="No longer relaunchable" hud="Sacred Dice Shard" mimiccharge="5"/>
-	<card type="object" pickup="204" name="Fiendish Seed" description="Through darkness" hud="Fiendish Seed" mimiccharge="4"/>
-	<card type="object" pickup="205" name="Tea Bag" description="Future" hud="Tea Bag" mimiccharge="7"/>
-	<card type="suit" pickup="206" name="Queen of Spades" description="Decadence" hud="Queen of Spades" mimiccharge="6"/>
+	<rune type="rune" pickup="9901" name="Glyph" description="Arcane" hud="Glyph" mimiccharge="6" />
+	<rune type="rune" pickup="9902" name="Hex Crystal" description="Enchant" hud="Hex Crystal" mimiccharge="6"/>
+	
+	<card type="object" pickup="9903" name="Sacred Dice Shard" description="No longer relaunchable" hud="Sacred Dice Shard" mimiccharge="5"/>
+	<card type="object" pickup="9904" name="Fiendish Seed" description="Through darkness" hud="Fiendish Seed" mimiccharge="4"/>
+	<card type="object" pickup="9905" name="Tea Bag" description="Future" hud="Tea Bag" mimiccharge="7"/>
+	<card type="suit" pickup="9906" name="Queen of Spades" description="Decadence" hud="Queen of Spades" mimiccharge="6"/>
 
 </pocketitems>
