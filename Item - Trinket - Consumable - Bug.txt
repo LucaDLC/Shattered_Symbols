@@ -185,8 +185,6 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 
 		- Gli oggetti devono essere testati con tainted Lazarus 
 
-		- Origami Crow trovare un modo rigorosamente dinamico e adattabile anche ad altre mod di far si che non sovrascriva l'oggetto posseduto se prendo un item che mi garantisce un pocket item
-
 		- Potenziare un minimo Clairvoyant
 
 	#GRAFICA
