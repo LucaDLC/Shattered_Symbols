@@ -52,6 +52,8 @@ function ShatteredSymbols:PaperTransformation()
         if HasPaperTransformation(player) and data.PaperTransformation then
             player:AddBlackHearts(1)
             player:AddCoins(player:GetBrokenHearts() * 3)
+            player:AddBombs(player:GetBrokenHearts() * 1)
+            player:AddKeys(player:GetBrokenHearts() * 1)
         end
     end
 end
