@@ -183,6 +183,8 @@ BUGS & FIXS
 
 	- Potenziare un minimo Clairvoyant
 
+	- Origami Crow ricarica erroneamente l'item che sposta nel pocket slot invece di mantenere la stessa carica
+
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
