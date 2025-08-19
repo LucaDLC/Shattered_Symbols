@@ -171,13 +171,17 @@ TRASFORMAZIONI
 ====================================================================
 --------------------------------------------------------------------
 ====================================================================
-BUG
+BUGS & FIXS
 
-	- Holey Pocket droppa gli item ma al drop li ricarica completamente
+	- Holey Pocket droppa gli item ma al drop li ricarica completamente (inserire una Map con oggetto droppato + carica)
 
 	- Soul of Jacob and Esau da broken heart al player principale
 
 	- pirite si comporta stranamente quando ci sono tante monete, come se le golden spawnino altre golden che non c'entrano
+
+	- potenziare Jade & Ivory facendo in modo che evolvi il 15% dell'inventario, oppure ridurla di qualità (meglio la prima soluzione)
+
+	- Potenziare un minimo Clairvoyant
 
 
 ---------------------------------------------------------------------
@@ -187,8 +191,6 @@ COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
 	#LOGICA
 
 		- Gli oggetti devono essere testati con tainted Lazarus 
-
-		- Potenziare un minimo Clairvoyant
 
 	#GRAFICA
 
