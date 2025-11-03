@@ -155,13 +155,13 @@ TRASFORMAZIONI
 
 
 	- Paper (3 origami)
-	Da Mezzo Black Heart da 3 monete per ogni broken heart a piano
+	Da Mezzo Black Heart, da 3 monete + 1 bomba + 1 chiave per ogni broken heart a piano
 
 	- Runic (3 oggetti delle rune)
 	Ottieni Homing Tears
 
 	- Clairvoyant (3 oggetti delle carte)
-	Ad ogni piano, spawna un consumabile
+	Ad ogni stanza, 2/5 può usare una carta benefica per il giocatore, 1/5 generare mezzo soul heart, 2/5 non fa nulla
 
 
 
