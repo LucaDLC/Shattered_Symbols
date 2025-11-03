@@ -179,8 +179,6 @@ BUGS & FIXS
 
 	- pirite si comporta stranamente quando ci sono tante monete, come se le golden spawnino altre golden che non c'entrano
 
-	- Potenziare un minimo Clairvoyant
-
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
