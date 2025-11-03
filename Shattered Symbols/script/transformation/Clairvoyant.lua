@@ -13,27 +13,15 @@ local CLAIRVOYANT_ITEMS = {
 }
 
 local CARDS_LIST = {
-    Card.CARD_REVERSE_FOOL, Card.CARD_REVERSE_MAGICIAN, Card.CARD_REVERSE_HIGH_PRIESTESS,
-    Card.CARD_REVERSE_EMPRESS, Card.CARD_REVERSE_EMPEROR, Card.CARD_REVERSE_HIEROPHANT,
-    Card.CARD_REVERSE_LOVERS, Card.CARD_REVERSE_CHARIOT, Card.CARD_REVERSE_JUSTICE,
-    Card.CARD_REVERSE_HERMIT, Card.CARD_REVERSE_WHEEL_OF_FORTUNE, Card.CARD_REVERSE_STRENGTH,
-    Card.CARD_REVERSE_HANGED_MAN, Card.CARD_REVERSE_DEATH, Card.CARD_REVERSE_TEMPERANCE,
-    Card.CARD_REVERSE_DEVIL, Card.CARD_REVERSE_TOWER, Card.CARD_REVERSE_STARS,
-    Card.CARD_REVERSE_MOON, Card.CARD_REVERSE_SUN, Card.CARD_REVERSE_JUDGEMENT,
-    Card.CARD_REVERSE_WORLD, Card.CARD_FOOL, Card.CARD_MAGICIAN, Card.CARD_HIGH_PRIESTESS,
-    Card.CARD_EMPRESS, Card.CARD_EMPEROR, Card.CARD_HIEROPHANT,
-    Card.CARD_LOVERS, Card.CARD_CHARIOT, Card.CARD_JUSTICE,
-    Card.CARD_HERMIT, Card.CARD_WHEEL_OF_FORTUNE, Card.CARD_STRENGTH,
-    Card.CARD_HANGED_MAN, Card.CARD_DEATH, Card.CARD_TEMPERANCE,
-    Card.CARD_DEVIL, Card.CARD_TOWER, Card.CARD_STARS,
-    Card.CARD_MOON, Card.CARD_SUN, Card.CARD_JUDGEMENT,
+    Card.CARD_REVERSE_MAGICIAN, Card.CARD_REVERSE_EMPRESS, Card.CARD_REVERSE_HIEROPHANT,
+    Card.CARD_REVERSE_CHARIOT, Card.CARD_REVERSE_JUSTICE, Card.CARD_REVERSE_STRENGTH,
+    Card.CARD_REVERSE_DEATH, Card.CARD_REVERSE_DEVIL, Card.CARD_MAGICIAN, Card.CARD_EMPRESS, 
+    Card.CARD_HIEROPHANT, Card.CARD_LOVERS, Card.CARD_CHARITOT, Card.CARD_JUSTICE, 
+    Card.CARD_STRENGTH, Card.CARD_HANGED_MAN, Card.CARD_DEATH, Card.CARD_DEVIL, Card.CARD_SUN,
     Card.CARD_WORLD, Card.CARD_CLUBS_2, Card.CARD_DIAMONDS_2, Card.CARD_SPADES_2,
-    Card.CARD_HEARTS_2, Card.CARD_ACE_OF_CLUBS, Card.CARD_ACE_OF_DIAMONDS,
-    Card.CARD_ACE_OF_SPADES, Card.CARD_ACE_OF_HEARTS, Card.CARD_JOKER,
-    Card.CARD_SUICIDE_KING, Card.CARD_QUEEN_OF_HEARTS, Card.CARD_CHAOS,
-    Card.CARD_HUGE_GROWTH, Card.CARD_ANCIENT_RECALL, Card.CARD_ERA_WALK,
-    Card.CARD_CREDIT, Card.CARD_RULES, Card.CARD_QUESTIONMARK,
-    Card.CARD_HUMANITY, Card.CARD_GET_OUT_OF_JAIL, Card.CARD_HOLY, Card.CARD_WILD, Card.CARD_EMERGENCY_CONTACT
+    Card.CARD_HEARTS_2, Card.CARD_ACE_OF_DIAMONDS, Card.CARD_ACE_OF_SPADES, Card.CARD_ACE_OF_HEARTS,
+    Card.CARD_JOKER, Card.CARD_QUEEN_OF_HEARTS, Card.CARD_HUGE_GROWTH, Card.CARD_ERA_WALK, 
+    Card.CARD_QUESTIONMARK, Card.CARD_GET_OUT_OF_JAIL, Card.CARD_HOLY, Card.CARD_WILD
 }
 
 -- EID (External Item Descriptions)
@@ -74,19 +62,24 @@ function ShatteredSymbols:ClairvoyantTransformation()
     for playerIndex = 0, game:GetNumPlayers() - 1 do
         local player = Isaac.GetPlayer(playerIndex)
         local data = player:GetData()
-        if HasClairvoyantTransformation(player) and data.ClairvoyantTransformation then
-            player:AddSoulHearts(2)
-            
-            local rng = RNG()
-            rng:SetSeed(Random(), 1)  
+        local level = game:GetLevel()
+        local room = level:GetCurrentRoom()
 
-            local selectedCard =  game:GetItemPool():GetCard(rng:Next(), true, false, false)  --CARDS_LIST[math.random(#CARDS_LIST)]
-        
-            local position = game:GetRoom():GetCenterPos()
-            Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TAROTCARD, selectedCard, position + Vector(0, 40), Vector.Zero, nil)
+        if room:IsFirstVisit() and HasClairvoyantTransformation(player) and data.ClairvoyantTransformation then
+            local rng = RNG()
+            rng:SetSeed(Random(), 1)
+            local roll = rng:RandomInt(5) 
+
+            if roll == 2 then
+                player:AddSoulHearts(1)
+            elseif roll < 2 then
+                local selectedCard = CARDS_LIST[rng:RandomInt(#CARDS_LIST) + 1]
+                player:UseCard(selectedCard, 0) 
+            end
         end
     end
 end
+
 
 function ShatteredSymbols:CheckClairvoyantTransformation(player)
     local data = player:GetData()
@@ -114,4 +107,4 @@ function ShatteredSymbols:CheckClairvoyantTransformation(player)
 end
 
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_PEFFECT_UPDATE, ShatteredSymbols.CheckClairvoyantTransformation)
-ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_LEVEL, ShatteredSymbols.ClairvoyantTransformation)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, ShatteredSymbols.ClairvoyantTransformation)
