@@ -179,8 +179,6 @@ BUGS & FIXS
 
 	- pirite si comporta stranamente quando ci sono tante monete, come se le golden spawnino altre golden che non c'entrano
 
-	- potenziare Jade & Ivory facendo in modo che evolvi il 15% dell'inventario, oppure ridurla di qualità (meglio la prima soluzione)
-
 	- Potenziare un minimo Clairvoyant
 
 
