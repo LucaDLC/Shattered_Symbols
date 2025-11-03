@@ -11,7 +11,6 @@ function ShatteredSymbols:useLustrousOrb(_, rng, player)
     local allItems = {}
     local playerCount = game:GetNumPlayers()
 
-    -- Raccogli tutti gli oggetti passivi da ogni giocatore
     for i = 0, playerCount - 1 do
         local p = Isaac.GetPlayer(i)
         for itemID = 1, CollectibleType.NUM_COLLECTIBLES - 1 do
@@ -20,22 +19,17 @@ function ShatteredSymbols:useLustrousOrb(_, rng, player)
                 local count = p:GetCollectibleNum(itemID, false)
                 for j = 1, count do
                     table.insert(allItems, itemID)
-                end
-                -- Rimuove l'oggetto
-                if count > 0 then
                     p:RemoveCollectible(itemID, true)
                 end
             end
         end
     end
 
-    -- Mescola
     for i = #allItems, 2, -1 do
         local j = math.random(i)
         allItems[i], allItems[j] = allItems[j], allItems[i]
     end
 
-    -- Redistribuisci equamente
     local distribuzione = {}
     for i = 0, playerCount - 1 do
         distribuzione[i] = {}
@@ -52,7 +46,6 @@ function ShatteredSymbols:useLustrousOrb(_, rng, player)
         for _, itemID in ipairs(distribuzione[i]) do
             p:AddCollectible(itemID, 0, true)
         end
-        -- Rimuovi 1 Broken Heart se presente
         if p:GetBrokenHearts() > 0 then
             p:AddBrokenHearts(-1)
         end
