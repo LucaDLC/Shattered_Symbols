@@ -44,7 +44,9 @@ local function toPocket(player)
     data.OrigamiCrowPocket = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
 
     if activeItem ~= 0 and data.OrigamiCrowPocket == 0 and activeItem ~= CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES then
+        local charge = player:GetActiveCharge(ActiveSlot.SLOT_PRIMARY)
         player:SetPocketActiveItem(activeItem, ActiveSlot.SLOT_POCKET)
+        player:SetActiveCharge(charge, ActiveSlot.SLOT_POCKET)
         player:RemoveCollectible(activeItem, true, ActiveSlot.SLOT_PRIMARY)
     end
 
