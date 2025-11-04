@@ -1,6 +1,7 @@
 local game = Game()
 local HoleyPocketLocalID = Isaac.GetItemIdByName("Holey Pocket")
 local OrigamiCrowExternalID = Isaac.GetItemIdByName("Origami Crow")
+local OrigamiKolibriExternalID = Isaac.GetItemIdByName("Origami Kolibri")
 
 -- EID (External Item Descriptions)
 if EID then
@@ -26,6 +27,7 @@ function ShatteredSymbols:useHoleyPocket()
                 if data.CtrlHoldTimeHoleyPocket >= 30 and not player:HasCollectible(OrigamiCrowExternalID) then
                     local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
                     if activeItem > 0 then
+                        player:GetActiveCharge(ActiveSlot.SLOT_PRIMARY)
                         player:RemoveCollectible(activeItem, false, ActiveSlot.SLOT_PRIMARY)
                         Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, activeItem, player.Position + Vector(0, 50), Vector(0, 0), nil)
                         SFXManager():Play(SoundEffect.SOUND_SLOTSPAWN)
@@ -34,6 +36,7 @@ function ShatteredSymbols:useHoleyPocket()
                 elseif data.CtrlHoldTimeHoleyPocket >= 30 and player:HasCollectible(OrigamiCrowExternalID) then
                     local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
                     if pocketItem > 0 then
+                        player:GetActiveCharge(ActiveSlot.SLOT_POCKET)
                         player:RemoveCollectible(pocketItem, false, ActiveSlot.SLOT_POCKET)
                         Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, pocketItem, player.Position + Vector(0, 50), Vector(0, 0), nil)
                         SFXManager():Play(SoundEffect.SOUND_SLOTSPAWN)
