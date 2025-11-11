@@ -84,7 +84,7 @@ ITEM
 	Ad ogni piano un oggetto preso in precedenza da qualità 0 a 3 viene sostituito con un oggetto di qualità superiore 
 
 77727 - Pyrite [3]
-	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano
+	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano (Con delay anti-flood nella stanza)
 
 77728 - Mutable Onyx [2] [TEXTURES NEED ADJUSTMANTS]
 	Ad ogni piano, acquisisce un effetto causale di un item passivo 
