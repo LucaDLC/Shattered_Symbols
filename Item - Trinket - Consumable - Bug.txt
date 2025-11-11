@@ -177,8 +177,6 @@ BUGS & FIXS
 
 	- Soul of Jacob and Esau da broken heart al player principale
 
-	- pirite si comporta stranamente quando ci sono tante monete, come se le golden spawnino altre golden che non c'entrano
-
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
