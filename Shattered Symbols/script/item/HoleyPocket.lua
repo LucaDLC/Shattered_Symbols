@@ -5,7 +5,7 @@ local OrigamiKolibriExternalID = Isaac.GetItemIdByName("Origami Kolibri")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(HoleyPocketLocalID, "{{ArrowUp}} You can now drop the active item holding CTRL button #{{ArrowUp}} If you have the Origami Crow item, you drop the pocket item instead")
+    EID:addCollectible(HoleyPocketLocalID, "{{ArrowUp}} You can now drop the active item holding CTRL button, the items that you drop discharge themself #{{ArrowUp}} If you have the Origami Crow item, you drop the pocket item instead #{{ArrowUp}} If you have the Origami Kolibri, you can save charges instead")
 end
 
 function ShatteredSymbols:useHoleyPocket()
@@ -28,14 +28,16 @@ function ShatteredSymbols:useHoleyPocket()
 
                 if data.CtrlHoldTimeHoleyPocket >= 30 and not player:HasCollectible(OrigamiCrowExternalID) then
                     local activeItem = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
+
                     if activeItem > 0 then
+                        
                         local itemCharge = player:GetActiveCharge(ActiveSlot.SLOT_PRIMARY)
                         local level = game:GetLevel()
                         local stage = level:GetStage()
 
                         player:RemoveCollectible(activeItem, false, ActiveSlot.SLOT_PRIMARY)
                         local pickup = Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, activeItem, player.Position + Vector(0, 50), Vector(0, 0), nil)
-                        
+
                         table.insert(dataCharges.ChargesDroppedItems, {
                             ItemID = activeItem,
                             FloorID = stage,
@@ -80,10 +82,13 @@ function ShatteredSymbols:useHoleyPocket()
                         if player:GetActiveItem(ActiveSlot.SLOT_PRIMARY) ~= entry.ItemID and player:GetActiveItem(ActiveSlot.SLOT_POCKET) == entry.ItemID then 
                             activeSlot = ActiveSlot.SLOT_POCKET 
                         end 
-                        player:SetActiveCharge(entry.Charge, activeSlot) 
-                        table.remove(dataCharges.ChargesDroppedItems, i) 
-                        
-                        break 
+                        if player:HasCollectible(OrigamiKolibriExternalID) then
+                            player:SetActiveCharge(entry.Charge, activeSlot) 
+                        else
+                            player:SetActiveCharge(0, activeSlot)
+                        end
+                        table.remove(dataCharges.ChargesDroppedItems, i)
+                        break
                     end 
                 end 
             end
