@@ -140,6 +140,7 @@ function ShatteredSymbols:SavePlayerData()
 
         -- Shared Data
         if i == 0 then
+            playerDataToSave.ChargesDroppedItems = data.ChargesDroppedItems or {}
             playerDataToSave.ForgottenBoxHeartFlag = data.ForgottenBoxHeartFlag or false
             playerDataToSave.ForgottenBoxItemFlag = data.ForgottenBoxItemFlag or nil
             playerDataToSave.ForgottenBoxMoneyFlag = data.ForgottenBoxMoneyFlag or 0
@@ -214,6 +215,7 @@ function ShatteredSymbols:LoadPlayerData()
 
             -- Shared Data
             if i == 0 then
+                data.ChargesDroppedItems = playerDataToLoad.ChargesDroppedItems or {}
                 data.ForgottenBoxHeartFlag = playerDataToLoad.ForgottenBoxHeartFlag or false
                 data.ForgottenBoxItemFlag = playerDataToLoad.ForgottenBoxItemFlag or nil
                 data.ForgottenBoxMoneyFlag = playerDataToLoad.ForgottenBoxMoneyFlag or 0
