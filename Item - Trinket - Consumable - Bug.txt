@@ -173,7 +173,7 @@ TRASFORMAZIONI
 ====================================================================
 BUGS & FIXS
 
-	- Holey Pocket droppa gli item ma al drop li ricarica completamente (inserire una Map con oggetto droppato + carica, si potrebbe fare che se droppi l'item te lo scarica ma se possiedi Kolibri, allora ti mantiene la carica con la Map)
+	- Holey Pocket se si hanno 2 item uguali, gestisce male le cariche
 
 	- Soul of Jacob and Esau da broken heart al player principale
 
