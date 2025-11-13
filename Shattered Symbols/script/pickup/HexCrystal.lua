@@ -3,7 +3,7 @@ local HexCrystalLocalID = Isaac.GetCardIdByName("Hex Crystal")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCard(HexCrystalLocalID, "Inflicts the following effects to the enemies in the room: #{{BleedingOut}} Bleeding Out #{{Weakness}} Weakness ")
+    EID:addCard(HexCrystalLocalID, "{{BrokenHeart}} Gives 1 Broken Heart which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{ArrowUp}} Inflicts permanently the following effects to the enemies in the room: #{{BleedingOut}} Bleeding Out #{{Weakness}} Weakness ")
 end
 
 local function BrokenHeartRemovingSystem(player)
