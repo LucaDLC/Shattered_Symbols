@@ -1,7 +1,7 @@
 <pocketitems>
 
-	<rune type="rune" pickup="9901" name="Glyph" description="Arcane" hud="Glyph" mimiccharge="6" />
-	<rune type="rune" pickup="9902" name="Hex Crystal" description="Enchant" hud="Hex Crystal" mimiccharge="6"/>
+	<rune type="rune" pickup="9901" name="Glyph" description="Arcane" hud="Glyph" mimiccharge="8" />
+	<rune type="rune" pickup="9902" name="Hex Crystal" description="Enchant" hud="Hex Crystal" mimiccharge="10"/>
 	
 	<card type="object" pickup="9903" name="Sacred Dice Shard" description="No longer relaunchable" hud="Sacred Dice Shard" mimiccharge="5"/>
 	<card type="object" pickup="9904" name="Fiendish Seed" description="Through darkness" hud="Fiendish Seed" mimiccharge="4"/>
