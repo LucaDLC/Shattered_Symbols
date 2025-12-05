@@ -177,6 +177,8 @@ BUGS & FIXS
 
 	- Soul of Jacob and Esau da broken heart al player principale
 
+	- Sembrerebbe che con Tainted Eden la mod si rompa tutta
+
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI
