@@ -38,11 +38,12 @@ function ShatteredSymbols:useHoleyPocket()
                         player:RemoveCollectible(activeItem, false, ActiveSlot.SLOT_PRIMARY)
                         local pickup = Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, activeItem, player.Position + Vector(0, 50), Vector(0, 0), nil)
 
-                        table.insert(dataCharges.ChargesDroppedItems, {
+                        local seedKey = tostring(pickup.InitSeed)
+                        dataCharges.ChargesDroppedItems[seedKey] = {
                             ItemID = activeItem,
                             FloorID = stage,
                             Charge = itemCharge
-                        })
+                        }
 
                         SFXManager():Play(SoundEffect.SOUND_SLOTSPAWN)
                         
@@ -58,11 +59,12 @@ function ShatteredSymbols:useHoleyPocket()
                         player:RemoveCollectible(pocketItem, false, ActiveSlot.SLOT_POCKET)
                         local pickup = Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, pocketItem, player.Position + Vector(0, 50), Vector(0, 0), nil)
                         
-                        table.insert(dataCharges.ChargesDroppedItems, {
+                        local seedKey = tostring(pickup.InitSeed)
+                        dataCharges.ChargesDroppedItems[seedKey] = {
                             ItemID = pocketItem,
                             FloorID = stage,
                             Charge = pocketItemCharge
-                        })
+                        }
                         
                         SFXManager():Play(SoundEffect.SOUND_SLOTSPAWN)
                     end
@@ -72,29 +74,61 @@ function ShatteredSymbols:useHoleyPocket()
                 data.CtrlHoldTimeHoleyPocket = 0
             end
 
-            if player:GetActiveItem(ActiveSlot.SLOT_PRIMARY) ~= nil or player:GetActiveItem(ActiveSlot.SLOT_POCKET) ~= nil then 
-                for i, entry in ipairs(dataCharges.ChargesDroppedItems) do 
-                    local level = game:GetLevel()
-                    local stage = level:GetStage()
-                    if player:HasCollectible(entry.ItemID) and entry.FloorID == stage then 
-                        
-                        local activeSlot = ActiveSlot.SLOT_PRIMARY 
-                        if player:GetActiveItem(ActiveSlot.SLOT_PRIMARY) ~= entry.ItemID and player:GetActiveItem(ActiveSlot.SLOT_POCKET) == entry.ItemID then 
-                            activeSlot = ActiveSlot.SLOT_POCKET 
-                        end 
-                        if player:HasCollectible(OrigamiKolibriExternalID) then
-                            player:SetActiveCharge(entry.Charge, activeSlot) 
-                        else
-                            player:SetActiveCharge(0, activeSlot)
-                        end
-                        table.remove(dataCharges.ChargesDroppedItems, i)
-                        break
-                    end 
-                end 
-            end
-
         end
     end
 end
 
+-- When the player touches a collectible pedestal, check if it's a Holey Pocket drop
+-- and annotate which seed is about to be picked up
+function ShatteredSymbols:holeyPocketPickupCollision(pickup, collider, _)
+    if pickup.Variant ~= PickupVariant.PICKUP_COLLECTIBLE then return end
+    if collider.Type ~= EntityType.ENTITY_PLAYER then return end
+
+    local dataCharges = Isaac.GetPlayer(0):GetData()
+    if not dataCharges.ChargesDroppedItems then return end
+
+    local seedKey = tostring(pickup.InitSeed)
+    if dataCharges.ChargesDroppedItems[seedKey] then
+        local player = collider:ToPlayer()
+        if player then
+            local data = player:GetData()
+            data.PendingHoleyRestore = seedKey
+        end
+    end
+end
+
+-- REPENTOGON: When a collectible is added to inventory, restore the saved charge
+-- MC_POST_ADD_COLLECTIBLE args: (CollectibleType, Charge, FirstTime, Slot, VarData, Player)
+function ShatteredSymbols:holeyPocketRestoreCharge(collectibleType, charge, firstTime, slot, varData, player)
+    if not player then return end
+
+    local data = player:GetData()
+    local dataCharges = Isaac.GetPlayer(0):GetData()
+
+    if not data.PendingHoleyRestore then return end
+    if not dataCharges.ChargesDroppedItems then return end
+
+    local seedKey = data.PendingHoleyRestore
+    local entry = dataCharges.ChargesDroppedItems[seedKey]
+
+    if entry and entry.ItemID == collectibleType then
+        local level = game:GetLevel()
+        local stage = level:GetStage()
+
+        if entry.FloorID == stage then
+            if player:HasCollectible(OrigamiKolibriExternalID) then
+                player:SetActiveCharge(entry.Charge, slot)
+            else
+                player:SetActiveCharge(0, slot)
+            end
+        end
+
+        dataCharges.ChargesDroppedItems[seedKey] = nil
+    end
+
+    data.PendingHoleyRestore = nil
+end
+
 ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_UPDATE, ShatteredSymbols.useHoleyPocket)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_PRE_PICKUP_COLLISION, ShatteredSymbols.holeyPocketPickupCollision)
+ShatteredSymbols:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE, ShatteredSymbols.holeyPocketRestoreCharge)
