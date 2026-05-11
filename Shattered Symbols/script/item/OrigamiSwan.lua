@@ -44,8 +44,12 @@ function ShatteredSymbols:useOrigamiSwan(player)
         for i = 0, 1 do  
             local trinketID = player:GetTrinket(i)
             if trinketID ~= 0 then  
-                player:TryRemoveTrinket(trinketID)
-                player:AddSmeltedTrinket(trinketID)
+                if REPENTOGON then
+                    player:TryRemoveTrinket(trinketID)
+                    player:AddSmeltedTrinket(trinketID)
+                else
+                    player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
+                end
                 SFXManager():Play(SoundEffect.SOUND_VAMP_GULP)
             end
         end
