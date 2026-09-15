@@ -116,6 +116,9 @@ ITEM
 77737 - Adamant Orb [3]
 	Ricomincia la partita e i giocatori mantengono il 50% degli oggetti raccolti ma ottengono 1 broken heart nella nuova partita
 
+77738 - Origami Horse
+	Moltiplica Tears, Damage e Luck in base ai broken heart o agli slot cuori disponibili (alcuni in malus e altri in benefit)
+
 
 
 ---------------------------------------------------------------------
