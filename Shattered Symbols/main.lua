@@ -55,7 +55,8 @@ local ItemScript = {
     'DystopicCrystal',
     'ShatteredHeart',
     'LustrousOrb',
-    'AdamantOrb'
+    'AdamantOrb',
+    'OrigamiHorse'
 }
 local PocketItemScript = {
     'Glyph',
@@ -136,6 +137,8 @@ function ShatteredSymbols:SavePlayerData()
             ForbiddenBodyMantlePreviousCounter = data.ForbiddenBodyMantlePreviousCounter or 0,
             LastForbiddenBodyStage = data.LastForbiddenBodyStage or nil,
             IsDeadDystopicFaith = data.IsDeadDystopicFaith or false,
+            OrigamiHorseBrokenHeartsCount = data.OrigamiHorseBrokenHeartsCount or 0,
+            OrigamiHorseHoldingItemforStats = data.OrigamiHorseHoldingItemforStats or false,
         }
 
         -- Shared Data
@@ -212,6 +215,8 @@ function ShatteredSymbols:LoadPlayerData()
             data.ForbiddenBodyMantlePreviousCounter = playerDataToLoad.ForbiddenBodyMantlePreviousCounter or 0
             data.LastForbiddenBodyStage = playerDataToLoad.LastForbiddenBodyStage or nil
             data.IsDeadDystopicFaith = playerDataToLoad.IsDeadDystopicFaith or false
+            data.OrigamiHorseBrokenHeartsCount = playerDataToLoad.OrigamiHorseBrokenHeartsCount or 0
+            data.OrigamiHorseHoldingItemforStats = playerDataToLoad.OrigamiHorseHoldingItemforStats or false
 
             -- Shared Data
             if i == 0 then

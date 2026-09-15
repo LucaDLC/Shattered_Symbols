@@ -37,5 +37,6 @@
 	<active  id="77735" name="Shattered Heart" gfx ="ShatteredHeart.png" description="Collect the fragments and rebuild it" quality="1" maxcharges="0" chargetype="normal" devilprice="1" tags="nolostbr"/>
 	<active  id="77736" name="Lustrous Orb" gfx ="LustrousOrb.png" description="Reality is intertwined" quality="2" maxcharges="0" chargetype="normal" devilprice="1" />
 	<active  id="77737" name="Adamant Orb" gfx ="AdamantOrb.png" description="Break integrity constraints" quality="3" maxcharges="0" chargetype="normal" devilprice="1" />
+	<passive  id="77738" name="Origami Horse" gfx ="OrigamiHorse.png" description="Trojan Heart" quality="3" devilprice="1" tags="nolostbr"/>
 
 </items>
