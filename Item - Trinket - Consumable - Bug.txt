@@ -179,6 +179,12 @@ BUGS & FIXS
 
 	- Sembrerebbe che con Tainted Eden la mod si rompa tutta (evitare che esca dai roll randomici, da mettere i flag)
 
+	- Testare Origami Swan, Kolibri e Crow con Keeper e TKeeper
+	
+	- Testare Wriggling e Dystopic con l'ultimo balancing
+
+	- Testare il funzionamento del nuovo oggetto Origami Horse 
+
 
 ---------------------------------------------------------------------
 COSE MANCANTI, DA RIGUARDARE E BILANCIAMENTI

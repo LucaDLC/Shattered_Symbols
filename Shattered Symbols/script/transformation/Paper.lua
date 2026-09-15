@@ -8,7 +8,8 @@ local PAPER_ITEMS = {
     Isaac.GetItemIdByName("Origami Swan"),
     Isaac.GetItemIdByName("Origami Boat"),
     Isaac.GetItemIdByName("Origami Shuriken"),
-    Isaac.GetItemIdByName("Fortune Teller")
+    Isaac.GetItemIdByName("Fortune Teller"),
+    Isaac.GetItemIdByName("Origami Horse")
 }
 
 -- EID (External Item Descriptions)

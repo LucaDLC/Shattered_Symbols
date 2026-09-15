@@ -18,7 +18,8 @@
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Book" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>		
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>		
     </Pool>
 
     <Pool Name="greedTreasure">
@@ -35,7 +36,8 @@
 	<Item Name="Runic Geode" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Runic Book" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
+	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="shop">
@@ -69,7 +71,8 @@
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
+	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
     <Pool Name="secret">
@@ -131,6 +134,7 @@
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
 	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedGoldenChest">
@@ -145,6 +149,7 @@
 	<Item Name="Mutable Onyx" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
 	<Item Name="Lustrous Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="redChest">
@@ -160,6 +165,7 @@
 	<Item Name="Holey Pocket" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shawty's Essence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Adamant Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="angel">
@@ -204,6 +210,7 @@
 	<Item Name="Unstable Glyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Dystopic Faith" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Adamant Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="greedCurse">
@@ -222,6 +229,7 @@
 	<Item Name="Unstable Glyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Dystopic Faith" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Adamant Orb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="demonBagger">
@@ -237,6 +245,7 @@
 	<Item Name="Unstable Glyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Dystopic Faith" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Dystopic Crystal" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
     </Pool>
 
     <Pool Name="craneGame">
@@ -247,7 +256,8 @@
 	<Item Name="Unstable Glyph" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Shattered Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	<Item Name="Torn Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
+	<Item Name="Ancient Hook" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Item Name="Origami Horse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>	
     </Pool>
 
 </ItemPools>
