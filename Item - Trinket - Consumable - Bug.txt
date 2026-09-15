@@ -173,11 +173,11 @@ TRASFORMAZIONI
 ====================================================================
 BUGS & FIXS
 
-	- Holey Pocket se si hanno 2 item uguali, gestisce male le cariche
+	- Holey Pocket se si hanno 2 item uguali, gestisce male le cariche e se droppato l'item poi riacquisisce la carica (DA RISOLVERE!)
 
-	- Soul of Jacob and Esau da broken heart al player principale
+	- Soul of Jacob and Esau da broken heart al player principale (da mettere i flag, stessa motivazione di sotto)
 
-	- Sembrerebbe che con Tainted Eden la mod si rompa tutta
+	- Sembrerebbe che con Tainted Eden la mod si rompa tutta (evitare che esca dai roll randomici, da mettere i flag)
 
 
 ---------------------------------------------------------------------
