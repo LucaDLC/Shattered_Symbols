@@ -5,7 +5,7 @@ local AncientHookExternalID = Isaac.GetItemIdByName("Ancient Hook")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{BrokenHeart}} Remove the 50% of your Broken Hearts and give 1 Empty Heart Container for each Broken Heart removed #{{ArrowDown}} It gives you a random Hook")
+    EID:addCollectible(WrigglingShadowLocalID, "{{Warning}} SINGLE USE {{Warning}} #{{BrokenHeart}} Remove the 50% of your Broken Hearts and give 2 Empty Heart Container for each Broken Heart removed #{{ArrowDown}} It gives you a random Hook")
 end
 
 
@@ -23,8 +23,8 @@ function ShatteredSymbols:useWrigglingShadow(_, rng, player)
         end
 
         player:AddBrokenHearts(-removedHearts)
-        player:AddMaxHearts(removedHearts*2)
-        player:AddHearts(removedHearts*2)
+        player:AddMaxHearts(removedHearts*4)
+        player:AddHearts(removedHearts*4)
 
         if hookProb == 0 then
             player:AddCollectible(TornHookExternalID)

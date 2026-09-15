@@ -23,10 +23,10 @@ ITEM
 	Attivo monouso, spawna un item tra i segni zodiacali, gli item del planetario e le meteore
 
 77707 - Origami Swan [3] 
-	Dà 2 broken heart per potre assorbire istantaneamente tutti i trinket presi durante la run
+	Dà 2 broken heart (1 a keeper) per potre assorbire istantaneamente tutti i trinket presi durante la run
 
 77708 - Ceres [1] 
-	Rimuove 3 Broken Heart e se non ne hai 3 ti ricompensa con dei black hearts, occasionalmente spawna delle meteore che aumentano a seconda del numero di Ceres
+	Cura tutti i cuori ad ogni piano, da un broken heart, occasionalmente spawna delle meteore che aumentano a seconda del numero di Broken Heart
 
 77709 - Shawty's Letter [2] 
 	Attivo monouso che spawna un item origami
@@ -38,10 +38,10 @@ ITEM
 	Ad ogni piano ti da un broken heart ma ad ogni piano da uno stats up generale, per ogni punto luck hai la possibilità che si rimuova
 
 77712 - Wriggling Shadow [2] 
-	Rimuove il 50% dei broken heart ma da un hooks
+	Rimuove il 50% dei broken heart e da 2 Full Container Hearts per ogni broken heart rimosso, ma da un hooks
 
 77713 - Origami Kolibri [3] 
-	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 2 broken heart
+	Raddoppia le cariche ottenute degli oggetti attivi tranne le overcharge e carica tutti gli oggetti posseduti dal giocatore ma dà 2 broken heart (1 a keeper)
 
 77714 - Origami Bat [2] 
 	Cura di mezzo cuore dopo 64 lacrime andate a segno che si dimezza per ogni Bat, da 1 broken heart
@@ -50,7 +50,7 @@ ITEM
 	Attivo che si ricarica quando ottieni dei broken heart, 3 broken heart ed è carico, all uso ti teletrasporta nella Ultra Secret Red
 
 77716 - Origami Crow [3]
-	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro, da 2 broken heart
+	Se non hai un pocketitem, prende l'item attivo e lo imposta come pocketitem, se non hai un attivo il primo che prendi viene settato, se il pocketitem sparisce puoi reimpostarne un altro, da 2 broken heart (1 a keeper)
 
 77717 - Forgotten Box [2]
 	Attivo che quando viene utilizzato sottrae 1 broken heart, 1 oggetto casuale, 15 monete, 3 bomba e 3 chiave (sempre se presenti altrimenti sottrae il possibile) 
@@ -81,7 +81,7 @@ ITEM
 	Gli half Eternal Heart danno direttamente uno slot cuore e rimuovono 1 broken heart quando raccolti 
 
 77726 - Jade & Ivory Mask [3]  
-	Ad ogni piano un oggetto preso in precedenza da qualità 0 a 3 viene sostituito con un oggetto di qualità superiore 
+	Ad ogni piano il 20% degli item presi in precedenza da qualità 0 a 3 viene sostituito con oggetti di qualità superiore 
 
 77727 - Pyrite [3]
 	Tutte le monete droppate di qualsiasi tipo (normali, nere e d'argento) diventano golden penny, ad ogni piano si azzerano (Con delay anti-flood nella stanza)
@@ -105,7 +105,7 @@ ITEM
 	Dopo che isaac è morto, questo item si trasforma in un oggetto della pool della secret, e uno della angel/devil pool a seconda se è stato preso un patto satanico o meno
 
 77734 - Dystopic Crystal [3]
-	Dopo che isaac è morto, ottieni un boost importante delle statistiche e un item in tuo possesso si trasforma in un item qualità 4 con il 10% di possibilità + Luck
+	Dopo che isaac è morto, ottieni un boost importante delle statistiche e un item in tuo possesso si trasforma in un item qualità 4 con il 50% di possibilità + Luck
 
 77735 - Shattered Heart [1] 
 	Rimuove un Broken Heart e da un Full Gold Heart Container

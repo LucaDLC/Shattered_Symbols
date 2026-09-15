@@ -4,7 +4,7 @@ local RunicAltarExternalID = Isaac.GetItemIdByName("Runic Altar")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiKolibriLocalID, "{{Battery}} Duplicates all charges gained of active item for the rest of the game #{{Battery}} Does not duplicate extra charges #{{BrokenHeart}} Gives 2 Broken Hearts which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+    EID:addCollectible(OrigamiKolibriLocalID, "{{Battery}} Duplicates all charges gained of active item for the rest of the game #{{Battery}} Does not duplicate extra charges #{{BrokenHeart}} Gives 2 Broken Hearts which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player14}} Gives 1 Broken Hearts which replaces Hearts {{CoinHeart}}")
 end
 
 local function BrokenHeartRemovingSystem(player)
@@ -48,8 +48,12 @@ function ShatteredSymbols:useOrigamiKolibri(player)
         if OrigamiKolibriCounter >= data.OrigamiKolibriPreviousCounter then
             data.OrigamiKolibriPreviousCounter = data.OrigamiKolibriPreviousCounter + 1
             data.OrigamiKolibriRelative = data.OrigamiKolibriRelative + 1
-            BrokenHeartRemovingSystem(player)
-            BrokenHeartRemovingSystem(player) 
+            if (playerType == PlayerType.PLAYER_KEEPER or playerType == PlayerType.PLAYER_KEEPER_B) then
+                BrokenHeartRemovingSystem(player)
+            else
+                BrokenHeartRemovingSystem(player)
+                BrokenHeartRemovingSystem(player)
+            end 
         end
 
         for i = 0, 3 do 

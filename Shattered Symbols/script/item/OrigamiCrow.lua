@@ -3,7 +3,7 @@ local OrigamiCrowLocalID = Isaac.GetItemIdByName("Origami Crow")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Moves the active item to the pocket item if you don't have one #{{ArrowUp}} If you have no active item, the first one you pick becomes the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Warning}} Picking up an item that grants you a pocket item will drop your current one")
+    EID:addCollectible(OrigamiCrowLocalID, "{{ArrowUp}} Moves the active item to the pocket item if you don't have one #{{ArrowUp}} If you have no active item, the first one you pick becomes the pocket item #{{BrokenHeart}} Gives 2 Broken Hearts which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player14}} Gives 1 Broken Hearts which replaces Hearts {{CoinHeart}} #{{Warning}} Picking up an item that grants you a pocket item will drop your current one")
 end
 
 local function BrokenHeartRemovingSystem(player)
@@ -65,8 +65,12 @@ function ShatteredSymbols:useOrigamiCrow(player)
         if OrigamiCrowCounter >= data.OrigamiCrowPreviousCounter then
             data.OrigamiCrowPreviousCounter = data.OrigamiCrowPreviousCounter + 1
             data.OrigamiCrowRelative = data.OrigamiCrowRelative + 1
-            BrokenHeartRemovingSystem(player) 
-            BrokenHeartRemovingSystem(player)
+            if (playerType == PlayerType.PLAYER_KEEPER or playerType == PlayerType.PLAYER_KEEPER_B) then
+                BrokenHeartRemovingSystem(player)
+            else
+                BrokenHeartRemovingSystem(player)
+                BrokenHeartRemovingSystem(player)
+            end
         end
         toPocket(player)
     else
