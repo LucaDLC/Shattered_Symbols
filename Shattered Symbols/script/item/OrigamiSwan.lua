@@ -3,7 +3,7 @@ local OrigamiSwanLocalID = Isaac.GetItemIdByName("Origami Swan")
 
 -- EID (External Item Descriptions)
 if EID then
-    EID:addCollectible(OrigamiSwanLocalID, "{{Trinket}} All trinkets you pick up become permanent items #{{BrokenHeart}} Gives 2 Broken Hearts which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}}")
+    EID:addCollectible(OrigamiSwanLocalID, "{{Trinket}} All trinkets you pick up become permanent items #{{BrokenHeart}} Gives 2 Broken Hearts which replaces Hearts in this order {{Heart}}{{BoneHeart}}{{SoulHeart}}{{BlackHeart}} #{{Player14}} Gives 1 Broken Hearts which replaces Hearts {{CoinHeart}}")
 end
 
 local function BrokenHeartRemovingSystem(player)
@@ -35,6 +35,7 @@ end
 
 function ShatteredSymbols:useOrigamiSwan(player)
     local data = player:GetData()
+    local playerType = player:GetPlayerType()
     local OrigamiSwanCounter = player:GetCollectibleNum(OrigamiSwanLocalID) 
 
     if not data.OrigamiSwanRelative then data.OrigamiSwanRelative = 0 end
@@ -56,8 +57,12 @@ function ShatteredSymbols:useOrigamiSwan(player)
         if OrigamiSwanCounter >= data.OrigamiSwanPreviousCounter then
             data.OrigamiSwanPreviousCounter = data.OrigamiSwanPreviousCounter + 1
             data.OrigamiSwanRelative = data.OrigamiSwanRelative + 1
-            BrokenHeartRemovingSystem(player)
-            BrokenHeartRemovingSystem(player)
+            if (playerType == PlayerType.PLAYER_KEEPER or playerType == PlayerType.PLAYER_KEEPER_B) then
+                BrokenHeartRemovingSystem(player)
+            else
+                BrokenHeartRemovingSystem(player)
+                BrokenHeartRemovingSystem(player)
+            end
         end
     else
         OrigamiSwanCounter = 0
